@@ -15,6 +15,10 @@ Encomenda::Encomenda(unsigned int id, Texto *texto, std::string lingua_destino, 
     _duracao_max_dias = duracao_max_dias;
 }
 
+unsigned int Encomenda::get_id() {
+    return _id;
+}
+
 Texto *Encomenda::get_texto() {
     return _texto;
 }

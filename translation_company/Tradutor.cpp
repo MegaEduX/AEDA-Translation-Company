@@ -15,6 +15,10 @@ Tradutor::Tradutor(unsigned int id, std::string nome, int anos_experiencia, std:
     _linguas = linguas;
 }
 
+unsigned int Tradutor::get_id() {
+    return _id;
+}
+
 int Tradutor::custoTraducao(Texto *texto) {
     
     

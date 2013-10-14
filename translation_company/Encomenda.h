@@ -22,6 +22,8 @@ class Encomenda {
 public:
     Encomenda(unsigned int id, Texto *texto, std::string lingua_destino, unsigned int duracao_max_dias);
     
+    unsigned int get_id();
+    
     Texto *get_texto();
     std::string get_lingua_destino();
     unsigned int get_duracao_max_dias();

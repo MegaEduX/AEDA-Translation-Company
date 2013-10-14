@@ -13,6 +13,18 @@
 
 #define init_db(var) database var(_dbfp.c_str())
 
+#define delete_record_wild(__TABLE_NAME__, __OBJ_NAME__)    init_db(db); \
+                                                            query qry(db, ("SELECT * FROM `__TABLE_NAME__` WHERE id=" + boost::lexical_cast<std::string>(__OBJ_NAME__->get_id()) + "LIMIT 1").c_str());    \
+                                                            bool exists = false;    \
+                                                            for (query::iterator i = qry.begin(); i != qry.end(); ++i)  \
+                                                                exists = !exists;   \
+                                                            if (!exists)    \
+                                                                return false;   \
+                                                            command cmd(db, ("DELETE FROM `__TABLE_NAME__` WHERE id=" + boost::lexical_cast<std::string>(__OBJ_NAME__->get_id())).c_str());    \
+                                                            if (!cmd.execute()) \
+                                                                return true;    \
+                                                            return false;
+
 using namespace sqlite3pp;
 
 DatabaseManager::DatabaseManager(std::string filepath) {
@@ -31,7 +43,7 @@ Texto *DatabaseManager::_get_texto_with_id(unsigned int id) {
         unsigned long palavras;
         std::string lingua, conteudo;
         
-        boost::tie(id, lingua, palavras, conteudo) = (*i).get_columns<unsigned int, std::string, unsigned long, std::string>(0, 1, 2, 3);
+        boost::tie(id, lingua, palavras, conteudo) = (*i).get_columns<int, std::string, double, std::string>(0, 1, 2, 3);
         
         Texto *texto = new Texto(id, lingua, palavras, conteudo);
         
@@ -53,7 +65,7 @@ std::vector<Texto *> DatabaseManager::get_textos() {
         unsigned long palavras;
         std::string lingua, conteudo;
         
-        boost::tie(id, lingua, palavras, conteudo) = (*i).get_columns<unsigned int, std::string, unsigned long, std::string>(0, 1, 2, 3);
+        boost::tie(id, lingua, palavras, conteudo) = (*i).get_columns<int, std::string, double, std::string>(0, 1, 2, 3);
         
         Texto *texto = new Texto(id, lingua, palavras, conteudo);
         
@@ -75,7 +87,7 @@ std::vector<Tradutor *> DatabaseManager::get_tradutores() {
         
         std::string nome, linguas;
         
-        boost::tie(id, nome, anos_experiencia, linguas) = (*i).get_columns<unsigned int, std::string, unsigned int, std::string>(0, 1, 2, 3);
+        boost::tie(id, nome, anos_experiencia, linguas) = (*i).get_columns<int, std::string, int, std::string>(0, 1, 2, 3);
         
         std::vector<std::string> linguas_vec;
         
@@ -101,7 +113,7 @@ std::vector<Encomenda *> DatabaseManager::get_encomendas() {
         
         std::string lingua_destino;
         
-        boost::tie(id, texto_id, lingua_destino, duracao_max_dias) = (*i).get_columns<unsigned int, unsigned int, std::string, int>(0, 1, 2, 3);
+        boost::tie(id, texto_id, lingua_destino, duracao_max_dias) = (*i).get_columns<int, int, std::string, int>(0, 1, 2, 3);
         
         Texto *texto = _get_texto_with_id(texto_id);
         
@@ -140,4 +152,16 @@ bool DatabaseManager::create_update_record(Texto *texto) {
         return true;
     
     return false;
+}
+
+bool DatabaseManager::delete_record(Texto *texto) {
+    delete_record_wild("textos", texto);
+}
+
+bool DatabaseManager::delete_record(Tradutor *tradutor) {
+    delete_record_wild("tradutores", tradutor);
+}
+
+bool DatabaseManager::delete_record(Encomenda *encomenda) {
+    delete_record_wild("encomendas", encomenda);
 }

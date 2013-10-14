@@ -15,6 +15,17 @@ Texto::Texto(unsigned int id, std::string lingua, std::string conteudo) {
     
     _lingua = lingua;
     _conteudo = conteudo;
+    
+    //  calcular palavras
+}
+
+Texto::Texto(unsigned int id, std::string lingua, unsigned long palavras, std::string conteudo) {
+    _id = id;
+    
+    _lingua = lingua;
+    _conteudo = conteudo;
+    
+    _palavras = palavras;
 }
 
 unsigned int Texto::get_id() {
