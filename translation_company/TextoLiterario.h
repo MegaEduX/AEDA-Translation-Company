@@ -14,12 +14,18 @@
 #include "Texto.h"
 
 class TextoLiterario : public Texto {
+    typedef Texto super;
+    
     std::string _titulo;
     std::string _autor;
     
 public:
+    TextoLiterario(unsigned int id, std::string lingua, std::string conteudo, std::string titulo, std::string autor);
+    
     std::string get_titulo();
     std::string get_autor();
+    
+    unsigned int complexidade();
 };
 
 #endif /* defined(__translation_company__TextoLiterario__) */

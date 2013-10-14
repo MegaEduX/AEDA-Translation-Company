@@ -23,6 +23,8 @@ class TextoNoticioso : public Texto {
     tipo_jornal _tipo;
     
 public:
+    TextoNoticioso(unsigned int id, std::string lingua, std::string conteudo, std::string assunto, tipo_jornal tipo);
+    
     std::string get_assunto();
     tipo_jornal get_tipo_jornal();
 };

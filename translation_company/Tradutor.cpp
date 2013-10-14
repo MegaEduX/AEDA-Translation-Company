@@ -8,7 +8,8 @@
 
 #include "Tradutor.h"
 
-Tradutor::Tradutor(std::string nome, int anos_experiencia, std::vector<std::string> linguas) {
+Tradutor::Tradutor(unsigned int id, std::string nome, int anos_experiencia, std::vector<std::string> linguas) {
+    _id = id;
     _nome = nome;
     _anos_experiencia = anos_experiencia;
     _linguas = linguas;

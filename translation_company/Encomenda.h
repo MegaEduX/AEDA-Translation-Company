@@ -14,12 +14,13 @@
 #include "Texto.h"
 
 class Encomenda {
+    unsigned int _id;
     Texto *_texto;
     std::string _lingua_destino;
     unsigned int _duracao_max_dias;
     
 public:
-    Encomenda(Texto *texto, std::string lingua_destino, unsigned int duracao_max_dias);
+    Encomenda(unsigned int id, Texto *texto, std::string lingua_destino, unsigned int duracao_max_dias);
     
     Texto *get_texto();
     std::string get_lingua_destino();

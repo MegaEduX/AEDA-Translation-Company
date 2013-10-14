@@ -16,8 +16,14 @@
 class TextoTecnico : public Texto {
     std::string _dominio;
     
+    typedef Texto super;
+    
 public:
+    TextoTecnico(unsigned int id, std::string lingua, std::string conteudo, std::string dominio_especialidade);
+    
     std::string get_dominio_especialidade();
+    
+    unsigned int complexidade();
 };
 
 #endif /* defined(__translation_company__TextoTecnico__) */

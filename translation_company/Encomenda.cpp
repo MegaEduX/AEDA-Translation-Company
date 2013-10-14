@@ -8,7 +8,8 @@
 
 #include "Encomenda.h"
 
-Encomenda::Encomenda(Texto *texto, std::string lingua_destino, unsigned int duracao_max_dias) {
+Encomenda::Encomenda(unsigned int id, Texto *texto, std::string lingua_destino, unsigned int duracao_max_dias) {
+    _id = id;
     _texto = texto;
     _lingua_destino = lingua_destino;
     _duracao_max_dias = duracao_max_dias;

@@ -7,3 +7,20 @@
 //
 
 #include "TextoLiterario.h"
+
+TextoLiterario::TextoLiterario(unsigned int id, std::string lingua, std::string conteudo, std::string titulo, std::string autor) : Texto(id, lingua, conteudo) {
+    _titulo = titulo;
+    _autor = autor;
+}
+
+std::string TextoLiterario::get_titulo() {
+    return _titulo;
+}
+
+std::string TextoLiterario::get_autor() {
+    return _autor;
+}
+
+unsigned int TextoLiterario::complexidade() {
+    return super::complexidade() * 2;
+}

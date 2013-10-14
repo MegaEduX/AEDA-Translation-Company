@@ -20,6 +20,7 @@ class Texto {
     
 public:
     Texto(unsigned int id, std::string lingua, std::string conteudo);
+    Texto(unsigned int id, std::string lingua, unsigned long palavras, std::string conteudo);
     
     unsigned int get_id();
     unsigned long get_palavras();
@@ -27,7 +28,7 @@ public:
     std::string get_lingua();
     std::string get_conteudo();
     
-    unsigned int complexidade();
+    virtual unsigned int complexidade();
 };
 
 #endif /* defined(__translation_company__Texto__) */

@@ -7,3 +7,15 @@
 //
 
 #include "TextoTecnico.h"
+
+TextoTecnico::TextoTecnico(unsigned int id, std::string lingua, std::string conteudo, std::string dominio_especialidade) : Texto(id, lingua, conteudo) {
+    _dominio = dominio_especialidade;
+}
+
+std::string TextoTecnico::get_dominio_especialidade() {
+    return _dominio;
+}
+
+unsigned int TextoTecnico::complexidade() {
+    return super::complexidade() * 3;
+}

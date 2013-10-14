@@ -15,12 +15,13 @@
 #include "Texto.h"
 
 class Tradutor {
+    unsigned int _id;
     std::string _nome;
     int _anos_experiencia;
     std::vector<std::string> _linguas;
     
 public:
-    Tradutor(std::string nome, int anos_experiencia, std::vector<std::string> linguas);
+    Tradutor(unsigned int id, std::string nome, int anos_experiencia, std::vector<std::string> linguas);
     
     int custoTraducao(Texto *);
     int tempoEstimado(Texto *);

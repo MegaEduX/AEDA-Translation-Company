@@ -7,3 +7,16 @@
 //
 
 #include "TextoNoticioso.h"
+
+TextoNoticioso::TextoNoticioso(unsigned int id, std::string lingua, std::string conteudo, std::string assunto, tipo_jornal tipo) : Texto(id, lingua, conteudo) {
+    _assunto = assunto;
+    _tipo = tipo;
+}
+
+std::string TextoNoticioso::get_assunto() {
+    return _assunto;
+}
+
+tipo_jornal TextoNoticioso::get_tipo_jornal() {
+    return _tipo;
+}

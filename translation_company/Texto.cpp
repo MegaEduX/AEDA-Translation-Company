@@ -24,3 +24,15 @@ unsigned int Texto::get_id() {
 unsigned long Texto::get_palavras() {
     return _conteudo.length();
 }
+
+std::string Texto::get_lingua() {
+    return _lingua;
+}
+
+std::string Texto::get_conteudo() {
+    return _conteudo;
+}
+
+unsigned int Texto::complexidade() {
+    return (unsigned int)(this->get_palavras() / 10);
+}

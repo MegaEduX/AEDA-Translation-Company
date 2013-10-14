@@ -15,6 +15,7 @@
 		6F05E8B3180C08F300695A9B /* TextoLiterario.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F05E8B1180C08F300695A9B /* TextoLiterario.cpp */; };
 		6F05E8B6180C092900695A9B /* TextoNoticioso.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F05E8B4180C092900695A9B /* TextoNoticioso.cpp */; };
 		6F05E8B8180C0A5D00695A9B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F05E8B7180C0A5C00695A9B /* libsqlite3.dylib */; };
+		6F05E8C1180C27F000695A9B /* DatabaseManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F05E8BF180C27F000695A9B /* DatabaseManager.cpp */; };
 		6F0F1E29180C0F3300504956 /* sqlite3pp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F0F1E25180C0F3300504956 /* sqlite3pp.cpp */; };
 		6F0F1E2A180C0F3300504956 /* sqlite3ppext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F0F1E27180C0F3300504956 /* sqlite3ppext.cpp */; };
 		6F0F1E2D180C14BE00504956 /* Encomenda.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F0F1E2B180C14BE00504956 /* Encomenda.cpp */; };
@@ -48,6 +49,8 @@
 		6F05E8B4180C092900695A9B /* TextoNoticioso.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextoNoticioso.cpp; sourceTree = "<group>"; };
 		6F05E8B5180C092900695A9B /* TextoNoticioso.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextoNoticioso.h; sourceTree = "<group>"; };
 		6F05E8B7180C0A5C00695A9B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		6F05E8BF180C27F000695A9B /* DatabaseManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DatabaseManager.cpp; sourceTree = "<group>"; };
+		6F05E8C0180C27F000695A9B /* DatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseManager.h; sourceTree = "<group>"; };
 		6F0F1E25180C0F3300504956 /* sqlite3pp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqlite3pp.cpp; sourceTree = "<group>"; };
 		6F0F1E26180C0F3300504956 /* sqlite3pp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3pp.h; sourceTree = "<group>"; };
 		6F0F1E27180C0F3300504956 /* sqlite3ppext.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqlite3ppext.cpp; sourceTree = "<group>"; };
@@ -88,12 +91,7 @@
 		6F05E89E180BFADA00695A9B /* translation_company */ = {
 			isa = PBXGroup;
 			children = (
-				6F0F1E25180C0F3300504956 /* sqlite3pp.cpp */,
-				6F0F1E26180C0F3300504956 /* sqlite3pp.h */,
-				6F0F1E27180C0F3300504956 /* sqlite3ppext.cpp */,
-				6F0F1E28180C0F3300504956 /* sqlite3ppext.h */,
-				6F05E89F180BFADA00695A9B /* main.cpp */,
-				6F05E8A1180BFADA00695A9B /* translation_company.1 */,
+				6F05E8BD180C21AE00695A9B /* sqlite3pp */,
 				6F05E8A9180BFAFD00695A9B /* Tradutor.h */,
 				6F05E8A8180BFAFD00695A9B /* Tradutor.cpp */,
 				6F05E8AC180C07A100695A9B /* Texto.h */,
@@ -106,6 +104,10 @@
 				6F05E8B4180C092900695A9B /* TextoNoticioso.cpp */,
 				6F0F1E2C180C14BE00504956 /* Encomenda.h */,
 				6F0F1E2B180C14BE00504956 /* Encomenda.cpp */,
+				6F05E8C0180C27F000695A9B /* DatabaseManager.h */,
+				6F05E8BF180C27F000695A9B /* DatabaseManager.cpp */,
+				6F05E89F180BFADA00695A9B /* main.cpp */,
+				6F05E8BE180C21C100695A9B /* Resources */,
 			);
 			path = translation_company;
 			sourceTree = "<group>";
@@ -116,6 +118,25 @@
 				6F05E8B7180C0A5C00695A9B /* libsqlite3.dylib */,
 			);
 			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		6F05E8BD180C21AE00695A9B /* sqlite3pp */ = {
+			isa = PBXGroup;
+			children = (
+				6F0F1E26180C0F3300504956 /* sqlite3pp.h */,
+				6F0F1E25180C0F3300504956 /* sqlite3pp.cpp */,
+				6F0F1E28180C0F3300504956 /* sqlite3ppext.h */,
+				6F0F1E27180C0F3300504956 /* sqlite3ppext.cpp */,
+			);
+			name = sqlite3pp;
+			sourceTree = "<group>";
+		};
+		6F05E8BE180C21C100695A9B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6F05E8A1180BFADA00695A9B /* translation_company.1 */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +190,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F05E8C1180C27F000695A9B /* DatabaseManager.cpp in Sources */,
 				6F0F1E2A180C0F3300504956 /* sqlite3ppext.cpp in Sources */,
 				6F0F1E2D180C14BE00504956 /* Encomenda.cpp in Sources */,
 				6F05E8AD180C07A100695A9B /* Texto.cpp in Sources */,
