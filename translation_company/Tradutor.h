@@ -17,13 +17,19 @@
 class Tradutor {
     unsigned int _id;
     std::string _nome;
-    int _anos_experiencia;
+    unsigned int _anos_experiencia;
     std::vector<std::string> _linguas;
     
 public:
-    Tradutor(unsigned int id, std::string nome, int anos_experiencia, std::vector<std::string> linguas);
+    Tradutor(unsigned int id, std::string nome, unsigned int anos_experiencia, std::vector<std::string> linguas);
     
     unsigned int get_id();
+    
+    std::string get_nome();
+    
+    unsigned int get_anos_experiencia();
+    
+    std::vector<std::string> get_linguas();
     
     int custoTraducao(Texto *);
     int tempoEstimado(Texto *);

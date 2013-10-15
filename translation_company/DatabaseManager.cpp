@@ -8,6 +8,8 @@
 
 #include "DatabaseManager.h"
 
+#include <fstream>
+
 #include <boost/lexical_cast.hpp>
 #include <boost/algorithm/string.hpp>
 
@@ -29,6 +31,54 @@ using namespace sqlite3pp;
 
 DatabaseManager::DatabaseManager(std::string filepath) {
     _dbfp = filepath;
+    
+    std::ifstream fs(_dbfp);
+    
+    bool file_exists = (fs ? true : false);
+    
+    fs.close();
+    
+    if (!file_exists)
+        _prepare_database();
+}
+
+DatabaseManager::~DatabaseManager() {
+    
+}
+
+bool DatabaseManager::_prepare_database() {
+    init_db(db);
+    
+    int res = 0;
+    
+    res = db.execute("CREATE TABLE `textos` (\
+                     id                 INT PRIMARY KEY         NOT NULL,   \
+                     lingua             VARCHAR(64)             NOT NULL,   \
+                     palavras           INT                     NOT NULL,   \
+                     conteudo           TEXT                    NOT NULL)");
+    
+    if (res)
+        return false;
+    
+    res = db.execute("CREATE TABLE `tradutores` (\
+                     id                 INT PRIMARY KEY         NOT NULL,   \
+                     nome               VARCHAR(128)            NOT NULL,   \
+                     anos_experiencia   INT                     NOT NULL,   \
+                     linguas            VARCHAR(256)            NOT NULL)");
+    
+    if (res)
+        return false;
+    
+    res = db.execute("CREATE TABLE `encomendas` (\
+                     id                 INT PRIMARY KEY         NOT NULL,   \
+                     texto_id           INT                     NOT NULL,   \
+                     lingua_destino     VARCHAR(64)             NOT NULL,   \
+                     duracao_max_dias   INT                     NOT NULL)");
+    
+    if (res)
+        return false;
+    
+    return true;
 }
 
 Texto *DatabaseManager::_get_texto_with_id(unsigned int id) {
@@ -132,7 +182,7 @@ bool DatabaseManager::create_update_record(Texto *texto) {
     //      - Exists:   Update.
     //      - Else:     Create.
     
-    std::string query_str = "SELECT * FROM `textos` WHERE id=" + boost::lexical_cast<std::string>(texto->get_id()) + "LIMIT 1";
+    std::string query_str = "SELECT * FROM `textos` WHERE id=" + boost::lexical_cast<std::string>(texto->get_id()) + " LIMIT 1";
     
     query qry(db, query_str.c_str());
     
@@ -147,6 +197,72 @@ bool DatabaseManager::create_update_record(Texto *texto) {
     cmd.bind(":lingua", texto->get_lingua().c_str());
     cmd.bind(":palavras", boost::lexical_cast<std::string>(texto->get_palavras()).c_str());
     cmd.bind(":conteudo", texto->get_conteudo().c_str());
+    
+    if (!cmd.execute())
+        return true;
+    
+    return false;
+}
+
+bool DatabaseManager::create_update_record(Tradutor *tradutor) {
+    init_db(db);
+    
+    //  Check for record existance
+    //      - Exists:   Update.
+    //      - Else:     Create.
+    
+    std::string query_str = "SELECT * FROM `tradutores` WHERE id=" + boost::lexical_cast<std::string>(tradutor->get_id()) + " LIMIT 1";
+    
+    query qry(db, query_str.c_str());
+    
+    std::string query = "INSERT INTO `tradutores` (id, nome, anos_experiencia, linguas) VALUES (:id, :nome, :anos_experiencia, :linguas)";
+    
+    for (query::iterator i = qry.begin(); i != qry.end(); ++i)
+        query = "UPDATE `textos` SET nome=:nome, anos_experiencia=:anos_experiencia, linguas=:linguas WHERE id=:id";
+    
+    std::stringstream ss;
+    
+    for (size_t i = 0; i < tradutor->get_linguas().size(); ++i) {
+        if (i != 0)
+            ss << ",";
+        ss << tradutor->get_linguas()[i];
+    }
+    
+    command cmd(db, query.c_str());
+    
+    cmd.bind(":id", boost::lexical_cast<std::string>(tradutor->get_id()).c_str());
+    cmd.bind(":nome", tradutor->get_nome().c_str());
+    cmd.bind(":anos_experiencia", boost::lexical_cast<std::string>(tradutor->get_anos_experiencia()).c_str());
+    cmd.bind(":linguas", ss.str().c_str());
+    
+    if (!cmd.execute())
+        return true;
+    
+    return false;
+}
+
+bool DatabaseManager::create_update_record(Encomenda *encomenda) {
+    init_db(db);
+    
+    //  Check for record existance
+    //      - Exists:   Update.
+    //      - Else:     Create.
+    
+    std::string query_str = "SELECT * FROM `encomendas` WHERE id=" + boost::lexical_cast<std::string>(encomenda->get_id()) + " LIMIT 1";
+    
+    query qry(db, query_str.c_str());
+    
+    std::string query = "INSERT INTO `encomendas` (id, texto_id, lingua_destino, duracao_max_dias) VALUES (:id, :texto_id, :lingua_destino, :duracao_max_dias)";
+    
+    for (query::iterator i = qry.begin(); i != qry.end(); ++i)
+        query = "UPDATE `textos` SET texto_id=:texto_id, lingua_destino=:lingua_destino, duracao_max_dias=:duracao_max_dias WHERE id=:id";
+    
+    command cmd(db, query.c_str());
+    
+    cmd.bind(":id", boost::lexical_cast<std::string>(encomenda->get_id()).c_str());
+    cmd.bind(":texto_id", boost::lexical_cast<std::string>(encomenda->get_texto()->get_id()).c_str());
+    cmd.bind(":lingua_destino", encomenda->get_lingua_destino().c_str());
+    cmd.bind(":duracao_max_dias", boost::lexical_cast<std::string>(encomenda->get_duracao_max_dias()).c_str());
     
     if (!cmd.execute())
         return true;

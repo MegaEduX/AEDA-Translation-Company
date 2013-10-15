@@ -23,6 +23,8 @@ class DatabaseManager {
     
     Texto *_get_texto_with_id(unsigned int id);
     
+    bool _prepare_database();
+    
 public:
     DatabaseManager(std::string filepath);
     ~DatabaseManager();

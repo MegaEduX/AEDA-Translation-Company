@@ -8,15 +8,20 @@
 
 #include <iostream>
 
-#include "sqlite3pp.h"
+#include "DatabaseManager.h"
 
 int main(int argc, const char * argv[])
 {
-    sqlite3pp::database db("test_db.db");
+    DatabaseManager dbman = DatabaseManager("test.db");
     
-    db.execute("CREATE TABLE `test` (\
-               ID INT PRIMARY   KEY     NOT NULL,\
-               NAME             TEXT    NOT NULL)");
+    std::vector<std::string> linguas;
+    
+    linguas.push_back("Portugues");
+    linguas.push_back("Ingles");
+    
+    Tradutor *trad = new Tradutor(0, "Eduardo Almeida", 5, linguas);
+    
+    dbman.create_update_record(trad);
     
     // insert code here...
     std::cout << "Hello, World!\n";

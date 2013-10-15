@@ -16,7 +16,7 @@
 		6F05E8B6180C092900695A9B /* TextoNoticioso.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F05E8B4180C092900695A9B /* TextoNoticioso.cpp */; };
 		6F05E8B8180C0A5D00695A9B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F05E8B7180C0A5C00695A9B /* libsqlite3.dylib */; };
 		6F05E8C1180C27F000695A9B /* DatabaseManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F05E8BF180C27F000695A9B /* DatabaseManager.cpp */; };
-		6F0F1E29180C0F3300504956 /* sqlite3pp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F0F1E25180C0F3300504956 /* sqlite3pp.cpp */; };
+		6F0F1E29180C0F3300504956 /* sqlite3pp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F0F1E25180C0F3300504956 /* sqlite3pp.cpp */; settings = {COMPILER_FLAGS = "-Wno-deprecated"; }; };
 		6F0F1E2A180C0F3300504956 /* sqlite3ppext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F0F1E27180C0F3300504956 /* sqlite3ppext.cpp */; };
 		6F0F1E2D180C14BE00504956 /* Encomenda.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F0F1E2B180C14BE00504956 /* Encomenda.cpp */; };
 /* End PBXBuildFile section */
