@@ -218,7 +218,7 @@ bool DatabaseManager::create_update_record(Tradutor *tradutor) {
     std::string query = "INSERT INTO `tradutores` (id, nome, anos_experiencia, linguas) VALUES (:id, :nome, :anos_experiencia, :linguas)";
     
     for (query::iterator i = qry.begin(); i != qry.end(); ++i)
-        query = "UPDATE `textos` SET nome=:nome, anos_experiencia=:anos_experiencia, linguas=:linguas WHERE id=:id";
+        query = "UPDATE `tradutores` SET nome=:nome, anos_experiencia=:anos_experiencia, linguas=:linguas WHERE id=:id";
     
     std::stringstream ss;
     
@@ -255,7 +255,7 @@ bool DatabaseManager::create_update_record(Encomenda *encomenda) {
     std::string query = "INSERT INTO `encomendas` (id, texto_id, lingua_destino, duracao_max_dias) VALUES (:id, :texto_id, :lingua_destino, :duracao_max_dias)";
     
     for (query::iterator i = qry.begin(); i != qry.end(); ++i)
-        query = "UPDATE `textos` SET texto_id=:texto_id, lingua_destino=:lingua_destino, duracao_max_dias=:duracao_max_dias WHERE id=:id";
+        query = "UPDATE `encomendas` SET texto_id=:texto_id, lingua_destino=:lingua_destino, duracao_max_dias=:duracao_max_dias WHERE id=:id";
     
     command cmd(db, query.c_str());
     

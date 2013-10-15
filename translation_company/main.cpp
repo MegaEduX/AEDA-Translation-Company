@@ -19,7 +19,7 @@ int main(int argc, const char * argv[])
     linguas.push_back("Portugues");
     linguas.push_back("Ingles");
     
-    Tradutor *trad = new Tradutor(0, "Eduardo Almeida", 5, linguas);
+    Tradutor *trad = new Tradutor(0, "Eduardo Almeida", 10, linguas);
     
     dbman.create_update_record(trad);
     
