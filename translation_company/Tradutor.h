@@ -15,24 +15,28 @@
 #include "Texto.h"
 
 class Tradutor {
+    static unsigned int _maior_id_tradutor;
+    
     unsigned int _id;
-    std::string _nome;
     unsigned int _anos_experiencia;
-    std::vector<std::string> _linguas;
+    
+    std::string _nome;
+    
+    std::vector<std::string> _linguas; 
     
 public:
     Tradutor(unsigned int id, std::string nome, unsigned int anos_experiencia, std::vector<std::string> linguas);
     
+    int custoTraducao(Texto *);
+    int tempoEstimado(Texto *);
+    
     unsigned int get_id();
+    unsigned int get_maior_id();
+    unsigned int get_anos_experiencia();
     
     std::string get_nome();
     
-    unsigned int get_anos_experiencia();
-    
     std::vector<std::string> get_linguas();
-    
-    int custoTraducao(Texto *);
-    int tempoEstimado(Texto *);
 };
 
 #endif /* defined(__translation_company__Tradutor__) */

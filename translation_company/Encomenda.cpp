@@ -8,11 +8,20 @@
 
 #include "Encomenda.h"
 
+unsigned int Encomenda::_maior_id_encomenda = 0;
+
 Encomenda::Encomenda(unsigned int id, Texto *texto, std::string lingua_destino, unsigned int duracao_max_dias) {
     _id = id;
     _texto = texto;
     _lingua_destino = lingua_destino;
     _duracao_max_dias = duracao_max_dias;
+    
+    if (id > _maior_id_encomenda)
+        _maior_id_encomenda = id;
+}
+
+unsigned int Encomenda::get_maior_id() {
+    return _maior_id_encomenda;
 }
 
 unsigned int Encomenda::get_id() {

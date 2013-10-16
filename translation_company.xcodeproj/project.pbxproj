@@ -57,7 +57,6 @@
 		6F0F1E28180C0F3300504956 /* sqlite3ppext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3ppext.h; sourceTree = "<group>"; };
 		6F0F1E2B180C14BE00504956 /* Encomenda.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Encomenda.cpp; sourceTree = "<group>"; };
 		6F0F1E2C180C14BE00504956 /* Encomenda.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Encomenda.h; sourceTree = "<group>"; };
-		6F688716180D86DB0047B1F3 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +134,6 @@
 		6F05E8BE180C21C100695A9B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6F688716180D86DB0047B1F3 /* README */,
 				6F05E8A1180BFADA00695A9B /* translation_company.1 */,
 			);
 			name = Resources;

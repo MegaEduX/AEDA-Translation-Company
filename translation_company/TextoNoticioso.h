@@ -20,6 +20,7 @@ typedef enum {
 
 class TextoNoticioso : public Texto {
     std::string _assunto;
+    
     tipo_jornal _tipo;
     
 public:
@@ -27,6 +28,7 @@ public:
     TextoNoticioso(unsigned int id, std::string lingua, unsigned long palavras, std::string conteudo, std::string assunto, tipo_jornal tipo);
     
     std::string get_assunto();
+    
     tipo_jornal get_tipo_jornal();
 };
 

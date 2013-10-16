@@ -15,18 +15,24 @@
 
 class Encomenda {
     unsigned int _id;
-    Texto *_texto;
-    std::string _lingua_destino;
     unsigned int _duracao_max_dias;
+    
+    static unsigned int _maior_id_encomenda;
+    
+    Texto *_texto;
+    
+    std::string _lingua_destino;
     
 public:
     Encomenda(unsigned int id, Texto *texto, std::string lingua_destino, unsigned int duracao_max_dias);
     
     unsigned int get_id();
+    unsigned int get_maior_id();
+    unsigned int get_duracao_max_dias();
     
     Texto *get_texto();
+    
     std::string get_lingua_destino();
-    unsigned int get_duracao_max_dias();
 };
 
 #endif /* defined(__translation_company__Encomenda__) */

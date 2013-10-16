@@ -10,11 +10,16 @@
 
 #include "Texto.h"
 
+unsigned int Texto::_maior_id_texto = 0;
+
 Texto::Texto(unsigned int id, std::string lingua, std::string conteudo) {
     _id = id;
     
     _lingua = lingua;
     _conteudo = conteudo;
+    
+    if (id > _maior_id_texto)
+        _maior_id_texto = id;
     
     //  calcular palavras
 }
@@ -26,6 +31,10 @@ Texto::Texto(unsigned int id, std::string lingua, unsigned long palavras, std::s
     _conteudo = conteudo;
     
     _palavras = palavras;
+}
+
+unsigned int Texto::get_maior_id() {
+    return _maior_id_texto;
 }
 
 unsigned int Texto::get_id() {
