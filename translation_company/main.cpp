@@ -13,8 +13,11 @@
 #include "TextoTecnico.h"
 #include "TextoLiterario.h"
 
-int main(int argc, const char * argv[])
-{
+#define RUN_TEST_CODE
+
+int main(int argc, const char * argv[]) {
+#ifdef RUN_TEST_CODE
+    
     DatabaseManager dbman = DatabaseManager("test.db");
     
     std::vector<std::string> linguas;
@@ -26,8 +29,12 @@ int main(int argc, const char * argv[])
 
     dbman.create_update_record(trad);
     
-    // insert code here...
-    std::cout << "Hello, World!\n";
+#else
+    
+    // Application Code Comes Here!
+    
+#endif
+    
     return 0;
 }
 
