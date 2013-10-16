@@ -20,6 +20,7 @@ class TextoTecnico : public Texto {
     
 public:
     TextoTecnico(unsigned int id, std::string lingua, std::string conteudo, std::string dominio_especialidade);
+    TextoTecnico(unsigned int id, std::string lingua, unsigned long palavras, std::string conteudo, std::string dominio_especialidade);
     
     std::string get_dominio_especialidade();
     

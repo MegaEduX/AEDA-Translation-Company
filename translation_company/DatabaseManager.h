@@ -15,8 +15,20 @@
 #include "sqlite3pp.h"
 
 #include "Texto.h"
+
+#include "TextoTecnico.h"
+#include "TextoLiterario.h"
+#include "TextoNoticioso.h"
+
 #include "Tradutor.h"
 #include "Encomenda.h"
+
+typedef enum {
+    kTextoBase,
+    kTextoTecnico,
+    kTextoLiterario,
+    kTextoNoticioso
+} kTexto;
 
 class DatabaseManager {
     std::string _dbfp;
@@ -30,6 +42,8 @@ public:
     ~DatabaseManager();
     
     std::vector<Texto *> get_textos();
+    void get_textos_by_type(std::vector<TextoTecnico *> &textos_tecnicos, std::vector<TextoLiterario *> &textos_literarios, std::vector<TextoNoticioso *> &textos_noticiosos);
+    
     std::vector<Tradutor *> get_tradutores();
     std::vector<Encomenda *> get_encomendas();
     

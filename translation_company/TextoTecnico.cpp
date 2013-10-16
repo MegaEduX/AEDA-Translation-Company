@@ -12,6 +12,10 @@ TextoTecnico::TextoTecnico(unsigned int id, std::string lingua, std::string cont
     _dominio = dominio_especialidade;
 }
 
+TextoTecnico::TextoTecnico(unsigned int id, std::string lingua, unsigned long palavras, std::string conteudo, std::string dominio_especialidade) : Texto(id, lingua, palavras, conteudo) {
+    _dominio = dominio_especialidade;
+}
+
 std::string TextoTecnico::get_dominio_especialidade() {
     return _dominio;
 }

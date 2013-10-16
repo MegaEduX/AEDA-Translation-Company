@@ -10,6 +10,9 @@
 
 #include "DatabaseManager.h"
 
+#include "TextoTecnico.h"
+#include "TextoLiterario.h"
+
 int main(int argc, const char * argv[])
 {
     DatabaseManager dbman = DatabaseManager("test.db");
@@ -20,7 +23,7 @@ int main(int argc, const char * argv[])
     linguas.push_back("Ingles");
     
     Tradutor *trad = new Tradutor(0, "Eduardo Almeida", 10, linguas);
-    
+
     dbman.create_update_record(trad);
     
     // insert code here...

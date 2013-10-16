@@ -13,6 +13,11 @@ TextoNoticioso::TextoNoticioso(unsigned int id, std::string lingua, std::string 
     _tipo = tipo;
 }
 
+TextoNoticioso::TextoNoticioso(unsigned int id, std::string lingua, unsigned long palavras, std::string conteudo, std::string assunto, tipo_jornal tipo) : Texto(id, lingua, palavras, conteudo) {
+    _assunto = assunto;
+    _tipo = tipo;
+}
+
 std::string TextoNoticioso::get_assunto() {
     return _assunto;
 }

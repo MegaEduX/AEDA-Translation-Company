@@ -21,6 +21,7 @@ class TextoLiterario : public Texto {
     
 public:
     TextoLiterario(unsigned int id, std::string lingua, std::string conteudo, std::string titulo, std::string autor);
+    TextoLiterario(unsigned int id, std::string lingua, unsigned long palavras, std::string conteudo, std::string titulo, std::string autor);
     
     std::string get_titulo();
     std::string get_autor();

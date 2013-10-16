@@ -13,6 +13,11 @@ TextoLiterario::TextoLiterario(unsigned int id, std::string lingua, std::string 
     _autor = autor;
 }
 
+TextoLiterario::TextoLiterario(unsigned int id, std::string lingua, unsigned long palavras, std::string conteudo, std::string titulo, std::string autor) : Texto(id, lingua, palavras, conteudo) {
+    _titulo = titulo;
+    _autor = autor;
+}
+
 std::string TextoLiterario::get_titulo() {
     return _titulo;
 }

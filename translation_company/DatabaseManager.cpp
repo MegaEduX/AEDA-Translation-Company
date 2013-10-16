@@ -6,12 +6,12 @@
 //  Copyright (c) 2013 Bitten Apps. All rights reserved.
 //
 
-#include "DatabaseManager.h"
-
 #include <fstream>
 
 #include <boost/lexical_cast.hpp>
 #include <boost/algorithm/string.hpp>
+
+#include "DatabaseManager.h"
 
 #define init_db(var) database var(_dbfp.c_str())
 
@@ -55,7 +55,9 @@ bool DatabaseManager::_prepare_database() {
                      id                 INT PRIMARY KEY         NOT NULL,   \
                      lingua             VARCHAR(64)             NOT NULL,   \
                      palavras           INT                     NOT NULL,   \
-                     conteudo           TEXT                    NOT NULL)");
+                     conteudo           TEXT                    NOT NULL,   \
+                     tipo_obj           INT                     NOT NULL,   \
+                     tipo_args          VARCHAR(256)            NOT NULL)");
     
     if (res)
         return false;
@@ -111,11 +113,51 @@ std::vector<Texto *> DatabaseManager::get_textos() {
     query qry(db, "SELECT * FROM `textos`");
     
     for (query::iterator i = qry.begin(); i != qry.end(); ++i) {
-        unsigned int id;
+        unsigned int id, tipo_obj;
         unsigned long palavras;
-        std::string lingua, conteudo;
+        std::string lingua, conteudo, tipo_args;
         
-        boost::tie(id, lingua, palavras, conteudo) = (*i).get_columns<int, std::string, double, std::string>(0, 1, 2, 3);
+        boost::tie(id, lingua, palavras, conteudo, tipo_obj, tipo_args) = (*i).get_columns<int, std::string, double, std::string, int, std::string>(0, 1, 2, 3, 4, 5);
+        
+        switch (tipo_obj) {
+            case kTextoTecnico: {
+                TextoTecnico *texto = new TextoTecnico(id, lingua, palavras, conteudo, tipo_args);
+                
+                return_vec.push_back(texto);
+                
+                break;
+            }
+                
+            case kTextoLiterario: {
+                std::vector<std::string> args;
+                
+                boost::split(args, tipo_args, boost::is_any_of(","));
+                
+                TextoLiterario *texto = new TextoLiterario(id, lingua, palavras, conteudo, args[0], args[1]);
+                
+                return_vec.push_back(texto);
+                
+                break;
+            }
+            
+            case kTextoNoticioso: {
+                std::vector<std::string> args;
+                
+                boost::split(args, tipo_args, boost::is_any_of(","));
+                
+                TextoNoticioso *texto = new TextoNoticioso(id, lingua, palavras, conteudo, args[0], (tipo_jornal)boost::lexical_cast<int>(args[1]));
+                
+                return_vec.push_back(texto);
+                
+                break;
+            }
+                
+            default: {
+                throw "Unrecognized text type.";
+                
+                break;
+            }
+        }
         
         Texto *texto = new Texto(id, lingua, palavras, conteudo);
         
@@ -123,6 +165,21 @@ std::vector<Texto *> DatabaseManager::get_textos() {
     }
     
     return return_vec;
+}
+
+void DatabaseManager::get_textos_by_type(std::vector<TextoTecnico *> &textos_tecnicos, std::vector<TextoLiterario *> &textos_literarios, std::vector<TextoNoticioso *> &textos_noticiosos) {
+    std::vector<Texto *> textosRaw = this->get_textos();
+    
+    for (int i = 0; i < textosRaw.size(); i++) {
+        if (dynamic_cast<TextoTecnico *>(textosRaw[i]))
+            textos_tecnicos.push_back((TextoTecnico *)textosRaw[i]);
+        else if (dynamic_cast<TextoLiterario *>(textosRaw[i]))
+             textos_literarios.push_back((TextoLiterario *)textosRaw[i]);
+        else if (dynamic_cast<TextoNoticioso *>(textosRaw[i]))
+             textos_noticiosos.push_back((TextoNoticioso *)textosRaw[i]);
+        else
+            throw "Unrecognized text type.";
+    }
 }
 
 std::vector<Tradutor *> DatabaseManager::get_tradutores() {
@@ -186,7 +243,7 @@ bool DatabaseManager::create_update_record(Texto *texto) {
     
     query qry(db, query_str.c_str());
     
-    std::string query = "INSERT INTO `textos` (id, lingua, palavras, conteudo) VALUES (:id, :lingua, :palavras, :conteudo)";
+    std::string query = "INSERT INTO `textos` (id, lingua, palavras, conteudo, tipo_obj, tipo_args) VALUES (:id, :lingua, :palavras, :conteudo, :tipo_obj, :tipo_args)";
     
     for (query::iterator i = qry.begin(); i != qry.end(); ++i)
         query = "UPDATE `textos` SET lingua=:lingua, palavras=:palavras, conteudo=:conteudo WHERE id=:id";
@@ -197,6 +254,25 @@ bool DatabaseManager::create_update_record(Texto *texto) {
     cmd.bind(":lingua", texto->get_lingua().c_str());
     cmd.bind(":palavras", boost::lexical_cast<std::string>(texto->get_palavras()).c_str());
     cmd.bind(":conteudo", texto->get_conteudo().c_str());
+    
+    if (dynamic_cast<TextoTecnico *>(texto)) {
+        cmd.bind(":tipo_obj", boost::lexical_cast<std::string>(kTextoTecnico).c_str());
+        
+        cmd.bind(":tipo_args", boost::lexical_cast<std::string>(((TextoTecnico *) texto)->get_dominio_especialidade()).c_str());
+    } else if (dynamic_cast<TextoLiterario *>(texto)) {
+        cmd.bind(":tipo_obj", boost::lexical_cast<std::string>(kTextoLiterario).c_str());
+        
+        cmd.bind(":tipo_args", (((TextoLiterario *) texto)->get_titulo() +
+                                "," +
+                                ((TextoLiterario *) texto)->get_autor()).c_str());
+    } else if (dynamic_cast<TextoNoticioso *>(texto)) {
+        cmd.bind(":tipo_obj", boost::lexical_cast<std::string>(kTextoNoticioso).c_str());
+        
+        cmd.bind(":tipo_args", (((TextoNoticioso *) texto)->get_assunto() +
+                                "," +
+                                boost::lexical_cast<std::string>(((TextoNoticioso *) texto)->get_tipo_jornal())).c_str());
+    } else
+        throw "Unrecognized text type.";
     
     if (!cmd.execute())
         return true;
