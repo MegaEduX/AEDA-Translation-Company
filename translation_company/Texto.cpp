@@ -7,8 +7,13 @@
 //
 
 #include <sstream>
+#include <vector>
+
+#include <boost/algorithm/string.hpp>
 
 #include "Texto.h"
+
+#define WHITESPACE_ENDLINE_CHARS " \t\n\v\f\r"
 
 unsigned int Texto::_maior_id_texto = 0;
 
@@ -21,7 +26,11 @@ Texto::Texto(unsigned int id, std::string lingua, std::string conteudo) {
     if (id > _maior_id_texto)
         _maior_id_texto = id;
     
-    //  calcular palavras
+    std::vector<std::string> result;
+    
+    boost::split(result, conteudo, boost::is_any_of(WHITESPACE_ENDLINE_CHARS), boost::token_compress_on);
+    
+    _palavras = result.size();
 }
 
 Texto::Texto(unsigned int id, std::string lingua, unsigned long palavras, std::string conteudo) {
@@ -29,6 +38,9 @@ Texto::Texto(unsigned int id, std::string lingua, unsigned long palavras, std::s
     
     _lingua = lingua;
     _conteudo = conteudo;
+    
+    if (id > _maior_id_texto)
+        _maior_id_texto = id;
     
     _palavras = palavras;
 }
