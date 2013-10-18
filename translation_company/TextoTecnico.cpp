@@ -20,6 +20,6 @@ std::string TextoTecnico::get_dominio_especialidade() {
     return _dominio;
 }
 
-unsigned int TextoTecnico::complexidade() {
-    return super::complexidade() * 3;
+unsigned int TextoTecnico::get_complexidade() {
+    return super::get_complexidade() * 3;
 }

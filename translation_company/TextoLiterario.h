@@ -26,7 +26,7 @@ public:
     std::string get_titulo();
     std::string get_autor();
     
-    unsigned int complexidade();
+    unsigned int get_complexidade();
 };
 
 #endif /* defined(__translation_company__TextoLiterario__) */

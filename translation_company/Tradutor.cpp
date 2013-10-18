@@ -40,14 +40,20 @@ std::vector<std::string> Tradutor::get_linguas() {
     return _linguas;
 }
 
-int Tradutor::custoTraducao(Texto *texto) {
-    //  To Be Implemented
+/*
+ *  We had no guidelines for these equations...
+ *  So we made up our own!
+ */
+
+double Tradutor::custoTraducao(Texto *texto) {
+    //  complexidade * anos de experiencia / 10
     
-    return -1;
+    return (int)(texto->get_complexidade() * _anos_experiencia / 10);
 }
 
-int Tradutor::tempoEstimado(Texto *texto) {
-    //  To Be Implemented
+unsigned int Tradutor::tempoEstimado(Texto *texto) {
+    //  complexidade * 20 / anos experiencia
+    //  tempo retornado em segundos
     
-    return -1;
+    return (int)(texto->get_complexidade() * 20 / _anos_experiencia);
 }

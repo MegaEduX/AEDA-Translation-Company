@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>723BB250-90C9-44DC-88AC-AD74DBDD9268</string>
+	<string>D4743FC6-7379-43E0-B126-B5347671A2C1</string>
 	<key>IDESourceControlProjectName</key>
 	<string>translation_company</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>336A340F-6EDF-4306-8086-73CE06B6E545</key>
-		<string>https://github.com/MegaEduX/TranslationCompany.git</string>
+		<key>CDAE7FDA-296D-42D8-9020-679E2D481DD7</key>
+		<string>https://git.edr.io/scm/aeda/translation-company.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>translation_company.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>336A340F-6EDF-4306-8086-73CE06B6E545</key>
+		<key>CDAE7FDA-296D-42D8-9020-679E2D481DD7</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/MegaEduX/TranslationCompany.git</string>
+	<string>https://git.edr.io/scm/aeda/translation-company.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>336A340F-6EDF-4306-8086-73CE06B6E545</string>
+	<string>CDAE7FDA-296D-42D8-9020-679E2D481DD7</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>336A340F-6EDF-4306-8086-73CE06B6E545</string>
+			<string>CDAE7FDA-296D-42D8-9020-679E2D481DD7</string>
 			<key>IDESourceControlWCCName</key>
 			<string>translation_company</string>
 		</dict>

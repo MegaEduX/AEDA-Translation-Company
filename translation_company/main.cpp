@@ -13,9 +13,12 @@
 #include "TextoTecnico.h"
 #include "TextoLiterario.h"
 
+//  Comment the following line of code to run the app.
+
 #define RUN_TEST_CODE
 
 int main(int argc, const char * argv[]) {
+    
 #ifdef RUN_TEST_CODE
     
     DatabaseManager dbman = DatabaseManager("test.db");
@@ -28,6 +31,7 @@ int main(int argc, const char * argv[]) {
     Tradutor *trad = new Tradutor(0, "Eduardo Almeida", 10, linguas);
 
     dbman.create_update_record(trad);
+    dbman.delete_record(trad);
     
 #else
     

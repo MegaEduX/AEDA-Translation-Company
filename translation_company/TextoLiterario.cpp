@@ -26,6 +26,6 @@ std::string TextoLiterario::get_autor() {
     return _autor;
 }
 
-unsigned int TextoLiterario::complexidade() {
-    return super::complexidade() * 2;
+unsigned int TextoLiterario::get_complexidade() {
+    return super::get_complexidade() * 2;
 }

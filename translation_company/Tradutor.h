@@ -27,9 +27,9 @@ class Tradutor {
 public:
     Tradutor(unsigned int id, std::string nome, unsigned int anos_experiencia, std::vector<std::string> linguas);
     
-    int custoTraducao(Texto *);
-    int tempoEstimado(Texto *);
+    double custoTraducao(Texto *);
     
+    unsigned int tempoEstimado(Texto *);
     unsigned int get_id();
     unsigned int get_maior_id();
     unsigned int get_anos_experiencia();

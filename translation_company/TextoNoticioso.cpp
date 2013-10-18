@@ -25,3 +25,7 @@ std::string TextoNoticioso::get_assunto() {
 tipo_jornal TextoNoticioso::get_tipo_jornal() {
     return _tipo;
 }
+
+unsigned int TextoNoticioso::get_complexidade() {
+    return super::get_complexidade() * 2;
+}

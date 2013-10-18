@@ -16,13 +16,13 @@
 #define init_db(var) database var(_dbfp.c_str())
 
 #define delete_record_wild(__TABLE_NAME__, __OBJ_NAME__)    init_db(db); \
-                                                            query qry(db, ("SELECT * FROM `__TABLE_NAME__` WHERE id=" + boost::lexical_cast<std::string>(__OBJ_NAME__->get_id()) + "LIMIT 1").c_str());    \
+                                                            query qry(db, (std::string("SELECT * FROM `") + __TABLE_NAME__ + std::string("` WHERE id=") + boost::lexical_cast<std::string>(__OBJ_NAME__->get_id()) + " LIMIT 1").c_str());    \
                                                             bool exists = false;    \
                                                             for (query::iterator i = qry.begin(); i != qry.end(); ++i)  \
                                                                 exists = !exists;   \
                                                             if (!exists)    \
                                                                 return false;   \
-                                                            command cmd(db, ("DELETE FROM `__TABLE_NAME__` WHERE id=" + boost::lexical_cast<std::string>(__OBJ_NAME__->get_id())).c_str());    \
+                                                            command cmd(db, (std::string("DELETE FROM `") + __TABLE_NAME__ + std::string("` WHERE id=") + boost::lexical_cast<std::string>(__OBJ_NAME__->get_id())).c_str());    \
                                                             if (!cmd.execute()) \
                                                                 return true;    \
                                                             return false;
@@ -86,7 +86,7 @@ bool DatabaseManager::_prepare_database() {
 Texto *DatabaseManager::_get_texto_with_id(unsigned int id) {
     init_db(db);
     
-    std::string query_str = "SELECT * FROM `textos` WHERE id=" + boost::lexical_cast<std::string>(id) + "LIMIT 1";
+    std::string query_str = "SELECT * FROM `textos` WHERE id=" + boost::lexical_cast<std::string>(id) + " LIMIT 1";
     
     query qry(db, query_str.c_str());
     

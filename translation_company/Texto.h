@@ -32,7 +32,7 @@ public:
     std::string get_lingua();
     std::string get_conteudo();
     
-    virtual unsigned int complexidade();
+    virtual unsigned int get_complexidade();
 };
 
 #endif /* defined(__translation_company__Texto__) */

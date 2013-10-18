@@ -19,6 +19,8 @@ typedef enum {
 } tipo_jornal;
 
 class TextoNoticioso : public Texto {
+    typedef Texto super;
+    
     std::string _assunto;
     
     tipo_jornal _tipo;
@@ -30,6 +32,8 @@ public:
     std::string get_assunto();
     
     tipo_jornal get_tipo_jornal();
+    
+    unsigned int get_complexidade();
 };
 
 #endif /* defined(__translation_company__TextoNoticioso__) */
