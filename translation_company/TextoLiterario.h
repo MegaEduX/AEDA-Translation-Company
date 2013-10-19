@@ -14,8 +14,6 @@
 #include "Texto.h"
 
 class TextoLiterario : public Texto {
-    typedef Texto super;
-    
     std::string _titulo;
     std::string _autor;
     

@@ -16,8 +16,6 @@
 class TextoTecnico : public Texto {
     std::string _dominio;
     
-    typedef Texto super;
-    
 public:
     TextoTecnico(unsigned int id, std::string lingua, std::string conteudo, std::string dominio_especialidade);
     TextoTecnico(unsigned int id, std::string lingua, unsigned long palavras, std::string conteudo, std::string dominio_especialidade);

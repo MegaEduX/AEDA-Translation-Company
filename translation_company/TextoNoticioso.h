@@ -19,8 +19,6 @@ typedef enum {
 } tipo_jornal;
 
 class TextoNoticioso : public Texto {
-    typedef Texto super;
-    
     std::string _assunto;
     
     tipo_jornal _tipo;

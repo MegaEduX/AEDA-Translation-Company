@@ -21,5 +21,5 @@ std::string TextoTecnico::get_dominio_especialidade() {
 }
 
 unsigned int TextoTecnico::get_complexidade() {
-    return super::get_complexidade() * 3;
+    return Texto::get_complexidade() * 3;
 }
