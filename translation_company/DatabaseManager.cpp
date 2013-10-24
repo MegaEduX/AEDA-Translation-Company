@@ -29,6 +29,21 @@
 
 using namespace sqlite3pp;
 
+DatabaseManager::DatabaseManager(std::string filepath, bool &db_existed) {
+    _dbfp = filepath;
+    
+    std::ifstream fs(_dbfp);
+    
+    bool file_exists = (fs ? true : false);
+    
+    fs.close();
+    
+    if (!file_exists)
+        _prepare_database();
+    
+    db_existed = file_exists;
+}
+
 DatabaseManager::DatabaseManager(std::string filepath) {
     _dbfp = filepath;
     

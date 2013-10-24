@@ -19,6 +19,7 @@
 		6F0F1E29180C0F3300504956 /* sqlite3pp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F0F1E25180C0F3300504956 /* sqlite3pp.cpp */; settings = {COMPILER_FLAGS = "-Wno-deprecated"; }; };
 		6F0F1E2A180C0F3300504956 /* sqlite3ppext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F0F1E27180C0F3300504956 /* sqlite3ppext.cpp */; };
 		6F0F1E2D180C14BE00504956 /* Encomenda.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F0F1E2B180C14BE00504956 /* Encomenda.cpp */; };
+		6F35193518199641008CB18F /* Additions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F35193318199641008CB18F /* Additions.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -57,6 +58,8 @@
 		6F0F1E28180C0F3300504956 /* sqlite3ppext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3ppext.h; sourceTree = "<group>"; };
 		6F0F1E2B180C14BE00504956 /* Encomenda.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Encomenda.cpp; sourceTree = "<group>"; };
 		6F0F1E2C180C14BE00504956 /* Encomenda.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Encomenda.h; sourceTree = "<group>"; };
+		6F35193318199641008CB18F /* Additions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Additions.cpp; sourceTree = "<group>"; };
+		6F35193418199641008CB18F /* Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Additions.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				6F05E8BD180C21AE00695A9B /* sqlite3pp */,
+				6F35193418199641008CB18F /* Additions.h */,
+				6F35193318199641008CB18F /* Additions.cpp */,
 				6F05E8A9180BFAFD00695A9B /* Tradutor.h */,
 				6F05E8A8180BFAFD00695A9B /* Tradutor.cpp */,
 				6F05E8AC180C07A100695A9B /* Texto.h */,
@@ -191,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F05E8C1180C27F000695A9B /* DatabaseManager.cpp in Sources */,
+				6F35193518199641008CB18F /* Additions.cpp in Sources */,
 				6F0F1E2A180C0F3300504956 /* sqlite3ppext.cpp in Sources */,
 				6F0F1E2D180C14BE00504956 /* Encomenda.cpp in Sources */,
 				6F05E8AD180C07A100695A9B /* Texto.cpp in Sources */,
