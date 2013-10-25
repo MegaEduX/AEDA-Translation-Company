@@ -21,7 +21,20 @@
 
 using namespace std;
 
+static const int baseASCIINumber = 48;
+
+static const int returnKeyPOSIX = 13;
+static const int returnKeyWindows = 10;
+
 static string db_path = "translation_company_data.db";
+
+void main_menu();
+
+void order_translation();
+void query_database();
+
+void search_translators();
+void search_orders();
 
 //  Comment the following line of code to run the app.
 
@@ -54,29 +67,156 @@ int main(int argc, const char * argv[]) {
     cout << endl;
     cout << endl;
     
-    bool db_existed;
+    main_menu();
     
-    DatabaseManager(db_path, db_existed);
+#endif
     
-    if (!db_existed) {
-        cout << "This appears to be your first time running \"Translation Company\"." << endl;
-        cout << "A new blank, clean database has been automatically created for you." << endl;
-    }
-    
+    return 0;
+}
+
+void main_menu() {
     cout << "-> Main Menu" << endl;
     
     cout << endl;
     
     cout << "1. Order a Translation" << endl;
     cout << "2. Query the Database" << endl;
+    
+    cout << endl;
+    
     cout << "0. Exit" << endl;
     
     cout << endl;
     
-    _getch();
+    cout << "Please press the key corresponding to your choice. ";
     
-#endif
-    
-    return 0;
+    while (true) {
+        int ch = _getch();
+        
+        switch (ch) {
+            case baseASCIINumber:
+                exit(0);
+                
+                break;
+                
+            case baseASCIINumber + 1:
+                order_translation();
+                
+                break;
+                
+            case baseASCIINumber + 2:
+                query_database();
+                
+                break;
+                
+            default:
+                cout << endl << "Invalid choice." << endl << endl;
+                
+                cout << "1. Order a Translation" << endl;
+                cout << "2. Query the Database" << endl;
+                
+                cout << endl;
+                
+                cout << "0. Exit" << endl;
+                
+                cout << endl;
+                
+                cout << "Please press the key corresponding to your new choice. ";
+                
+                break;
+        }
+    }
 }
+
+void order_translation() {
+    
+}
+
+void query_database() {
+    Additions::clearConsole();
+    
+    cout << "-> Query Database" << endl;
+    
+    cout << endl;
+    
+    cout << "1. Search for Translators" << endl;
+    cout << "2. Search for Orders" << endl;
+    
+    cout << endl;
+    
+    cout << "0. Go Back" << endl;
+    
+    cout << endl;
+    
+    cout << "Please press the key corresponding to your choice. ";
+    
+    while (true) {
+        int ch = _getch();
+        
+        switch (ch) {
+            case baseASCIINumber:
+                
+                main_menu();
+                
+                break;
+                
+            case baseASCIINumber + 1:
+                
+                search_translators();
+                
+                break;
+            
+            case baseASCIINumber + 2:
+                
+                search_orders();
+                
+                break;
+                
+            default:
+                
+                cout << endl << "Invalid choice." << endl;
+                
+                cout << endl;
+                
+                cout << "1. Search for Translators" << endl;
+                cout << "2. Search for Orders" << endl;
+                
+                cout << endl;
+                
+                cout << "0. Go Back" << endl;
+                
+                cout << "Please press the key corresponding to your choice. ";
+                
+                break;
+        }
+    }
+}
+
+void search_translators() {
+    Additions::clearConsole();
+    
+    cout << "-> Translator Search" << endl;
+    
+    cout << endl;
+    
+    cout << "Search by..." << endl;
+    
+    cout << "1. ID" << endl;
+    cout << "2. Name" << endl;
+    cout << "3. Years of Experience" << endl;
+    cout << "4. Language" << endl;
+    
+    cout << endl;
+    
+    cout << "0. Go Back" << endl;
+    
+    cout << endl;
+    
+    cout << "Please press the key corresponding to your choice. ";
+}
+
+void search_orders() {
+    
+}
+
 

@@ -38,7 +38,6 @@ class DatabaseManager {
     bool _prepare_database();
     
 public:
-    DatabaseManager(std::string filepath, bool &db_existed);
     DatabaseManager(std::string filepath);
     ~DatabaseManager();
     
