@@ -7,6 +7,7 @@
 //
 
 #include <iostream>
+#include <boost/lexical_cast.hpp>
 
 #ifdef RUN_TEST_CODE
 
@@ -251,20 +252,54 @@ void search_translators() {
 }
 
 void search_translators_step2(int search_type) {
+    cout << endl;
+    
+    cout << "Query: ";
+    
+    string str_in = Additions::getline();
+    
     std::vector<Tradutor *> translators = dbman.get_tradutores();
     
     for (int i = 0; i < translators.size(); i++) {
         Tradutor *ct = translators[i];
         
         switch (search_type) {
-            case 1:
+            case 1: {
+                int in_intval = boost::lexical_cast<int>(str_in);
                 
-                if (ct -> get_id()) {
-                    
+                if (ct->get_id() == in_intval) {
+                    //  Found it. Do something.
                 }
                 
                 break;
+            }
+            
+            case 2: {
+                if (!(ct->get_nome().compare(str_in))) {
+                    //  Found it. Do something.
+                }
                 
+                break;
+            }
+            
+            case 3: {
+                int in_intval = boost::lexical_cast<int>(str_in);
+                
+                if (ct->get_anos_experiencia() == in_intval) {
+                    //  Found it. Do something.
+                }
+            }
+                
+            case 4: {
+                std::vector<std::string> languages = ct->get_linguas();
+                
+                for (int j = 0; j < languages.size(); j++) {
+                    if (!(ct->get_linguas()[j].compare(str_in))) {
+                        //  Found it. Do something.
+                    }
+                }
+            }
+            
             default:
                 break;
         }
