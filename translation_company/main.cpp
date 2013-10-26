@@ -28,6 +28,8 @@ static const int returnKeyWindows = 10;
 
 static string db_path = "translation_company_data.db";
 
+static DatabaseManager dbman = DatabaseManager(db_path);
+
 void main_menu();
 
 void order_translation();
@@ -35,6 +37,8 @@ void query_database();
 
 void search_translators();
 void search_orders();
+
+void search_translators_step2(int search_type);
 
 //  Comment the following line of code to run the app.
 
@@ -185,7 +189,7 @@ void query_database() {
                 
                 cout << "0. Go Back" << endl;
                 
-                cout << "Please press the key corresponding to your choice. ";
+                cout << "Please press the key corresponding to your new choice. ";
                 
                 break;
         }
@@ -213,6 +217,58 @@ void search_translators() {
     cout << endl;
     
     cout << "Please press the key corresponding to your choice. ";
+    
+    int ch = _getch();
+    
+    while (ch < baseASCIINumber || ch > baseASCIINumber + 4) {
+        cout << endl << "Invalid choice." << endl;
+        
+        cout << endl;
+        
+        cout << "1. ID" << endl;
+        cout << "2. Name" << endl;
+        cout << "3. Years of Experience" << endl;
+        cout << "4. Language" << endl;
+        
+        cout << endl;
+        
+        cout << "0. Go Back" << endl;
+        
+        cout << endl;
+        
+        cout << "Please press the key corresponding to your new choice. ";
+    }
+    
+    if (ch == baseASCIINumber) {
+        query_database();
+        
+        return;
+    }
+    
+    int search_type = ch - baseASCIINumber;
+    
+    search_translators_step2(search_type);
+}
+
+void search_translators_step2(int search_type) {
+    std::vector<Tradutor *> translators = dbman.get_tradutores();
+    
+    for (int i = 0; i < translators.size(); i++) {
+        Tradutor *ct = translators[i];
+        
+        switch (search_type) {
+            case 1:
+                
+                if (ct -> get_id()) {
+                    
+                }
+                
+                break;
+                
+            default:
+                break;
+        }
+    }
 }
 
 void search_orders() {
