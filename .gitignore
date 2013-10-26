@@ -1,5 +1,16 @@
+# OS X Related
+
 .DS_Store
+
+# Windows Related
+
+Thumbs.db
+
+# Dropbox Related
+
 .dropbox
 Icon
 Iconr
 Icon\r
+Icon?
+Icon^M
