@@ -41,6 +41,8 @@ void search_orders();
 
 void search_translators_step2(int search_type);
 
+void display_translator_info(Tradutor *trad);
+
 //  Comment the following line of code to run the app.
 
 //  #define RUN_TEST_CODE
@@ -49,17 +51,16 @@ int main(int argc, const char * argv[]) {
     
 #ifdef RUN_TEST_CODE
     
-    DatabaseManager dbman = DatabaseManager("test.db");
-    
     std::vector<std::string> linguas;
     
     linguas.push_back("Portugues");
     linguas.push_back("Ingles");
     
     Tradutor *trad = new Tradutor(0, "Eduardo Almeida", 10, linguas);
+    Tradutor *trad2 = new Tradutor(1, "Pedro Santiago", 2, linguas);
 
     dbman.create_update_record(trad);
-    dbman.delete_record(trad);
+    dbman.create_update_record(trad2);
     
 #else
     
@@ -258,7 +259,11 @@ void search_translators_step2(int search_type) {
     
     string str_in = Additions::getline();
     
+    cout << endl << endl;
+    
     std::vector<Tradutor *> translators = dbman.get_tradutores();
+    
+    bool found = false;
     
     for (int i = 0; i < translators.size(); i++) {
         Tradutor *ct = translators[i];
@@ -268,7 +273,9 @@ void search_translators_step2(int search_type) {
                 int in_intval = boost::lexical_cast<int>(str_in);
                 
                 if (ct->get_id() == in_intval) {
-                    //  Found it. Do something.
+                    display_translator_info(ct);
+                    
+                    found = !found;
                 }
                 
                 break;
@@ -276,7 +283,9 @@ void search_translators_step2(int search_type) {
             
             case 2: {
                 if (!(ct->get_nome().compare(str_in))) {
-                    //  Found it. Do something.
+                    display_translator_info(ct);
+                    
+                    found = !found;
                 }
                 
                 break;
@@ -286,8 +295,12 @@ void search_translators_step2(int search_type) {
                 int in_intval = boost::lexical_cast<int>(str_in);
                 
                 if (ct->get_anos_experiencia() == in_intval) {
-                    //  Found it. Do something.
+                    display_translator_info(ct);
+                    
+                    found = !found;
                 }
+                
+                break;
             }
                 
             case 4: {
@@ -295,15 +308,65 @@ void search_translators_step2(int search_type) {
                 
                 for (int j = 0; j < languages.size(); j++) {
                     if (!(ct->get_linguas()[j].compare(str_in))) {
-                        //  Found it. Do something.
+                        display_translator_info(ct);
+                        
+                        found = !found;
+                        
+                        break;
                     }
                 }
+                
+                break;
             }
             
             default:
+                
                 break;
         }
     }
+    
+    cout << "End of listing." << endl;
+    
+    cout << endl;
+    
+    cout << "Press any key to go back to the Translator Search. ";
+    
+    _getch();
+    
+    search_translators();
+}
+
+void display_translator_info(Tradutor *trad) {
+    //  Additions::clearConsole();
+    
+    cout << "Translator Information (ID: " << trad->get_id() << ")" << endl;
+    
+    cout << endl;
+    
+    cout << "Name: " << trad->get_nome() << endl;
+    cout << "Years of Experience: " << trad->get_anos_experiencia() << endl;
+    
+    std::stringstream ss;
+    
+    for (size_t i = 0; i < trad->get_linguas().size(); ++i) {
+        if (i != 0)
+            ss << ", ";
+        ss << trad->get_linguas()[i];
+    }
+    
+    cout << "Languages: " << ss.str() << endl;
+    
+    cout << endl;
+    
+    /*cout << "End of listing." << endl;
+    
+    cout << endl;
+    
+    cout << "Press any key to go back to the Translator Search. ";
+    
+    _getch();
+    
+    search_translators();*/
 }
 
 void search_orders() {
