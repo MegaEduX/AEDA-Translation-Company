@@ -135,7 +135,95 @@ void main_menu() {
 }
 
 void order_translation() {
+    Additions::clearConsole();
     
+    cout << "-> Order a Translation" << endl;
+    cout << "(You may cancel this at any time by pressing ESC)" << endl;
+    
+    cout << endl;
+    
+    cout << "Text to Translate: ";
+    
+    string text = Additions::getline();
+    
+    if (Additions::gotESC(text)) {
+        Additions::clearConsole();
+        
+        main_menu();
+    }
+    
+    cout << endl << "Source Language: ";
+    
+    string src_lang = Additions::getline();
+    
+    if (Additions::gotESC(src_lang)) {
+        Additions::clearConsole();
+        
+        main_menu();
+    }
+    
+    cout << endl << "Destination Language: ";
+    
+    string dst_lang = Additions::getline();
+    
+    if (Additions::gotESC(dst_lang)) {
+        Additions::clearConsole();
+        
+        main_menu();
+    }
+    
+    if (!src_lang.compare(dst_lang)) {
+        cout << endl << endl << "I see what you did there..." << endl;
+        cout << endl << "Press any key to go back to the main menu.";
+        
+        _getch();
+        
+        Additions::clearConsole();
+        main_menu();
+    }
+    
+    std::vector<Tradutor *> translators = dbman.get_tradutores();
+    
+    int found = 0;
+    
+    for (int i = 0; i < translators.size(); i++) {
+        found = 0;
+        
+        for (int j = 0; j < translators[i]->get_linguas().size(); j++)
+            if (!src_lang.compare(translators[i]->get_linguas()[j]) || !dst_lang.compare(translators[i]->get_linguas()[j]))
+                found++;
+        
+        if (found == 2)
+            break;
+    }
+    
+    if (found < 2) {
+        cout << endl << endl << "We don't currently have any translator that can do the requested translation job.";
+        cout << endl << "Press any key to go back to the main menu.";
+        
+        _getch();
+        
+        Additions::clearConsole();
+        main_menu();
+    }
+    
+    cout << endl << "Deadline (in days): ";
+    
+    string deadline_str = Additions::getline();
+    
+    if (Additions::gotESC(deadline_str)) {
+        Additions::clearConsole();
+        
+        main_menu();
+    }
+    
+    unsigned int deadline = boost::lexical_cast<int>(deadline_str);
+    
+    //
+    //  TBD
+    //
+    
+    _getch();
 }
 
 void query_database() {
@@ -372,5 +460,3 @@ void display_translator_info(Tradutor *trad) {
 void search_orders() {
     
 }
-
-

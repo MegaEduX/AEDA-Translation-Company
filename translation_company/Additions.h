@@ -1,7 +1,7 @@
 //
 //  Additions.h
-//  Radio Station
 //
+//  Originally Created By:
 //  T3G12 - MIEIC 2012/2013
 //  Eduardo Almeida, Joao Almeida and Joao Ramos
 //
