@@ -10,11 +10,12 @@
 
 unsigned int Encomenda::_maior_id_encomenda = 0;
 
-Encomenda::Encomenda(unsigned int id, Texto *texto, std::string lingua_destino, unsigned int duracao_max_dias) {
+Encomenda::Encomenda(unsigned int id, const Texto *texto, std::string lingua_destino, unsigned int duracao_max_dias, const Tradutor *tradutor) {
     _id = id;
     _texto = texto;
     _lingua_destino = lingua_destino;
     _duracao_max_dias = duracao_max_dias;
+    _tradutor = tradutor;
     
     if (id > _maior_id_encomenda)
         _maior_id_encomenda = id;
@@ -28,8 +29,12 @@ unsigned int Encomenda::get_id() {
     return _id;
 }
 
-Texto *Encomenda::get_texto() {
+Texto *Encomenda::get_texto() const {
     return _texto;
+}
+
+Tradutor *Encomenda::get_tradutor() const {
+    return _tradutor;
 }
 
 std::string Encomenda::get_lingua_destino() {

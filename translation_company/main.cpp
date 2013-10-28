@@ -184,6 +184,8 @@ void order_translation() {
     
     std::vector<Tradutor *> translators = dbman.get_tradutores();
     
+    std::vector<Tradutor *> possible_translators;
+    
     int found = 0;
     
     for (int i = 0; i < translators.size(); i++) {
@@ -194,7 +196,7 @@ void order_translation() {
                 found++;
         
         if (found == 2)
-            break;
+            possible_translators.push_back(translators[i]);
     }
     
     if (found < 2) {
@@ -211,10 +213,17 @@ void order_translation() {
     
     string deadline_str = Additions::getline();
     
-    if (Additions::gotESC(deadline_str)) {
-        Additions::clearConsole();
+    while (!Additions::checkForOnlyNumeric(deadline_str)) {
+        if (Additions::gotESC(deadline_str)) {
+            Additions::clearConsole();
+            
+            main_menu();
+        }
         
-        main_menu();
+        cout << endl << "Answer needs to be numeric only." << endl;
+        cout << endl << "Deadline (in days): ";
+        
+        deadline_str = Additions::getline();
     }
     
     unsigned int deadline = boost::lexical_cast<int>(deadline_str);

@@ -75,7 +75,8 @@ bool DatabaseManager::_prepare_database() {
                      id                 INT PRIMARY KEY         NOT NULL,   \
                      texto_id           INT                     NOT NULL,   \
                      lingua_destino     VARCHAR(64)             NOT NULL,   \
-                     duracao_max_dias   INT                     NOT NULL)");
+                     duracao_max_dias   INT                     NOT NULL,  \
+                     tradutor_id        INT                     NOT NULL)");
     
     if (res)
         return false;
@@ -216,15 +217,27 @@ std::vector<Encomenda *> DatabaseManager::get_encomendas() {
     query qry(db, "SELECT * FROM `encomendas`");
     
     for (query::iterator i = qry.begin(); i != qry.end(); ++i) {
-        unsigned int id, texto_id, duracao_max_dias;
+        unsigned int id, texto_id, duracao_max_dias, trad_id;
         
         std::string lingua_destino;
         
-        boost::tie(id, texto_id, lingua_destino, duracao_max_dias) = (*i).get_columns<int, int, std::string, int>(0, 1, 2, 3);
+        boost::tie(id, texto_id, lingua_destino, duracao_max_dias, trad_id) = (*i).get_columns<int, int, std::string, int, int>(0, 1, 2, 3, 4);
         
         Texto *texto = _get_texto_with_id(texto_id);
         
-        Encomenda *encomenda = new Encomenda(id, texto, lingua_destino, duracao_max_dias);
+        Tradutor *tradutor = nullptr;
+        
+        std::vector<Tradutor *> tradutores = get_tradutores();
+        
+        for (int i = 0; i < tradutores.size(); i++) {
+            if (tradutores[i]->get_id() == trad_id) {
+                tradutor = tradutores[i];
+                
+                break;
+            }
+        }
+        
+        Encomenda *encomenda = new Encomenda(id, texto, lingua_destino, duracao_max_dias, tradutor);
         
         return_vec.push_back(encomenda);
     }
@@ -328,10 +341,10 @@ bool DatabaseManager::create_update_record(Encomenda *encomenda) {
     
     query qry(db, query_str.c_str());
     
-    std::string query = "INSERT INTO `encomendas` (id, texto_id, lingua_destino, duracao_max_dias) VALUES (:id, :texto_id, :lingua_destino, :duracao_max_dias)";
+    std::string query = "INSERT INTO `encomendas` (id, texto_id, lingua_destino, duracao_max_dias, tradutor_id) VALUES (:id, :texto_id, :lingua_destino, :duracao_max_dias, :tradutor_id)";
     
     for (query::iterator i = qry.begin(); i != qry.end(); ++i)
-        query = "UPDATE `encomendas` SET texto_id=:texto_id, lingua_destino=:lingua_destino, duracao_max_dias=:duracao_max_dias WHERE id=:id";
+        query = "UPDATE `encomendas` SET texto_id=:texto_id, lingua_destino=:lingua_destino, duracao_max_dias=:duracao_max_dias, tradutor_id=:tradutor_id WHERE id=:id";
     
     command cmd(db, query.c_str());
     
@@ -339,6 +352,7 @@ bool DatabaseManager::create_update_record(Encomenda *encomenda) {
     cmd.bind(":texto_id", boost::lexical_cast<std::string>(encomenda->get_texto()->get_id()).c_str());
     cmd.bind(":lingua_destino", encomenda->get_lingua_destino().c_str());
     cmd.bind(":duracao_max_dias", boost::lexical_cast<std::string>(encomenda->get_duracao_max_dias()).c_str());
+    cmd.bind(":tradutor_id", boost::lexical_cast<std::string>(encomenda->get_tradutor()->get_id()).c_str());
     
     if (!cmd.execute())
         return true;

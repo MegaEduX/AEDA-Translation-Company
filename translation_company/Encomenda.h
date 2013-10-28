@@ -12,6 +12,7 @@
 #include <iostream>
 
 #include "Texto.h"
+#include "Tradutor.h"
 
 class Encomenda {
     unsigned int _id;
@@ -20,17 +21,20 @@ class Encomenda {
     static unsigned int _maior_id_encomenda;
     
     Texto *_texto;
+    Tradutor *_tradutor;
     
     std::string _lingua_destino;
     
 public:
-    Encomenda(unsigned int id, Texto *texto, std::string lingua_destino, unsigned int duracao_max_dias);
+    Encomenda(unsigned int id, const Texto *texto, std::string lingua_destino, unsigned int duracao_max_dias, const Tradutor *tradutor);
     
     unsigned int get_id();
     unsigned int get_maior_id();
     unsigned int get_duracao_max_dias();
     
-    Texto *get_texto();
+    Texto *get_texto() const;
+    
+    Tradutor *get_tradutor() const;
     
     std::string get_lingua_destino();
 };
