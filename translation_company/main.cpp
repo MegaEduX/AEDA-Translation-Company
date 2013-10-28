@@ -37,9 +37,11 @@ void query_database();
 void search_translators();
 void search_orders();
 
-void search_translators_step2(int search_type);
+void search_translators_step2(unsigned int search_type);
+void search_orders_step2(unsigned int search_type);
 
 void display_translator_info(Tradutor *trad);
+void display_order_info(Encomenda *enc);
 
 void manage_translators();
 
@@ -424,7 +426,7 @@ void search_translators() {
     search_translators_step2(search_type);
 }
 
-void search_translators_step2(int search_type) {
+void search_translators_step2(unsigned int search_type) {
     cout << endl;
     
     cout << "Query: ";
@@ -551,11 +553,128 @@ void search_orders() {
     
     cout << "Please press the key corresponding to your choice. ";
     
-    /*  
-     *  TBD
-     */
+    int ch = _getch();
+    
+    while (ch < baseASCIINumber || ch > baseASCIINumber + 4) {
+        cout << endl << "Invalid choice." << endl;
+        
+        cout << endl;
+        
+        cout << "1. ID" << endl;
+        cout << "2. Source Language" << endl;
+        cout << "3. Destination Language" << endl;
+        cout << "4. Translator ID" << endl;
+        
+        cout << endl;
+        
+        cout << "0. Go Back" << endl;
+        
+        cout << endl;
+        
+        cout << "Please press the key corresponding to your new choice. ";
+    }
+    
+    if (ch == baseASCIINumber) {
+        Additions::clearConsole();
+        
+        main_menu();
+        
+        return;
+    }
+    
+    int search_type = ch - baseASCIINumber;
+    
+    search_orders_step2(search_type);
+}
+
+void search_orders_step2(unsigned int search_type) {
+    cout << endl;
+    
+    cout << "Query: ";
+    
+    string str_in = Additions::getline();
+    
+    cout << endl << endl;
+    
+    std::vector<Encomenda *> orders = dbman.get_encomendas();
+    
+    bool found = false;
+    
+    for (int i = 0; i < orders.size(); i++) {
+        Encomenda *enc = orders[i];
+        
+        switch (search_type) {
+            case 1: {
+                int in_intval = boost::lexical_cast<int>(str_in);
+                
+                if (enc->get_id() == in_intval) {
+                    display_order_info(enc);
+                    
+                    found = !found;
+                }
+                
+                break;
+            }
+                
+            case 2: {
+                if (!(enc->get_texto()->get_lingua().compare(str_in))) {
+                    display_order_info(enc);
+                    
+                    found = !found;
+                }
+                
+                break;
+            }
+                
+            case 3: {
+                if (!(enc->get_lingua_destino().compare(str_in))) {
+                    display_order_info(enc);
+                    
+                    found = !found;
+                }
+                
+                break;
+            }
+                
+            case 4: {
+                int in_intval = boost::lexical_cast<int>(str_in);
+                
+                if (enc->get_tradutor()->get_id() == in_intval) {
+                    display_order_info(enc);
+                    
+                    found = !found;
+                }
+                
+                break;
+            }
+                
+            default:
+                
+                break;
+        }
+    }
+    
+    cout << "End of listing." << endl;
+    
+    cout << endl;
+    
+    cout << "Press any key to go back to the Translator Search. ";
     
     _getch();
+    
+    search_orders();
+}
+
+void display_order_info(Encomenda *enc) {
+    cout << "Order Information (ID: " << enc->get_id() << ")" << endl;
+    
+    cout << endl;
+    
+    cout << "Source Language: " << enc->get_texto()->get_lingua() << endl;
+    cout << "Destination Language: " << enc->get_lingua_destino() << endl;
+    cout << "Text Size (in words): " << enc->get_texto()->get_palavras() << endl;
+    
+    cout << endl;
 }
 
 void manage_translators() {
