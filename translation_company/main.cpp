@@ -41,6 +41,8 @@ void search_translators_step2(int search_type);
 
 void display_translator_info(Tradutor *trad);
 
+void manage_translators();
+
 //  Comment the following line of code to run the app.
 
 //  #define RUN_TEST_CODE
@@ -85,6 +87,7 @@ void main_menu() {
     
     cout << "1. Order a Translation" << endl;
     cout << "2. Query the Database" << endl;
+    cout << "3. Manage Translators" << endl;
     
     cout << endl;
     
@@ -118,6 +121,7 @@ void main_menu() {
                 
                 cout << "1. Order a Translation" << endl;
                 cout << "2. Query the Database" << endl;
+                cout << "3. Manage Translators" << endl;
                 
                 cout << endl;
                 
@@ -328,6 +332,8 @@ void query_database() {
         switch (ch) {
             case baseASCIINumber:
                 
+                Additions::clearConsole();
+                
                 main_menu();
                 
                 break;
@@ -503,8 +509,6 @@ void search_translators_step2(int search_type) {
 }
 
 void display_translator_info(Tradutor *trad) {
-    //  Additions::clearConsole();
-    
     cout << "Translator Information (ID: " << trad->get_id() << ")" << endl;
     
     cout << endl;
@@ -523,18 +527,37 @@ void display_translator_info(Tradutor *trad) {
     cout << "Languages: " << ss.str() << endl;
     
     cout << endl;
-    
-    /*cout << "End of listing." << endl;
-    
-    cout << endl;
-    
-    cout << "Press any key to go back to the Translator Search. ";
-    
-    _getch();
-    
-    search_translators();*/
 }
 
 void search_orders() {
+    Additions::clearConsole();
+    
+    cout << "-> Order Search" << endl;
+    
+    cout << endl;
+    
+    cout << "Search by..." << endl;
+    
+    cout << "1. ID" << endl;
+    cout << "2. Source Language" << endl;
+    cout << "3. Destination Language" << endl;
+    cout << "4. Translator" << endl;
+    
+    cout << endl;
+    
+    cout << "0. Go Back" << endl;
+    
+    cout << endl;
+    
+    cout << "Please press the key corresponding to your choice. ";
+    
+    /*  
+     *  TBD
+     */
+    
+    _getch();
+}
+
+void manage_translators() {
     
 }
