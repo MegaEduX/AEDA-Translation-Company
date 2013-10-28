@@ -30,6 +30,12 @@ typedef enum {
     kTextoNoticioso
 } kTexto;
 
+typedef enum {
+    kClassTexto,
+    kClassTradutor,
+    kClassEncomenda
+} kClass;
+
 class DatabaseManager {
     std::string _dbfp;
     
@@ -55,6 +61,8 @@ public:
     
     bool create_update_record(Encomenda *encomenda);
     bool delete_record(Encomenda *encomenda);
+    
+    unsigned int get_maior_id(kClass asker);
 };
 
 #endif /* defined(__translation_company__DatabaseManager__) */

@@ -10,7 +10,9 @@
 
 #include "Texto.h"
 
-unsigned int Encomenda::_maior_id_encomenda = 0;
+#include "DatabaseManager.h"
+
+unsigned int Encomenda::_maior_id_encomenda = DatabaseManager(db_path).get_maior_id(kClassEncomenda);
 
 Encomenda::Encomenda(unsigned int id, Texto *texto, std::string lingua_destino, unsigned int duracao_max_dias) {
     _id = id;
@@ -23,12 +25,13 @@ Encomenda::Encomenda(unsigned int id, Texto *texto, std::string lingua_destino, 
         _maior_id_encomenda = id;
 }
 
-Encomenda::Encomenda(unsigned int id, Texto *texto, std::string lingua_destino, unsigned int duracao_max_dias, Tradutor *tradutor) {
+Encomenda::Encomenda(unsigned int id, Texto *texto, std::string lingua_destino, unsigned int duracao_max_dias, Tradutor *tradutor, uint64_t timestamp_entrega) {
     _id = id;
     _texto = texto;
     _lingua_destino = lingua_destino;
     _duracao_max_dias = duracao_max_dias;
     _tradutor = tradutor;
+    _timestamp_entrega = timestamp_entrega;
     
     if (id > _maior_id_encomenda)
         _maior_id_encomenda = id;
@@ -60,4 +63,12 @@ unsigned int Encomenda::get_duracao_max_dias() {
 
 void Encomenda::set_tradutor(Tradutor *tradutor) {
     _tradutor = tradutor;
+}
+
+uint64_t Encomenda::get_timestamp_entrega() {
+    return _timestamp_entrega;
+}
+
+void Encomenda::set_timestamp_entrega(uint64_t timestamp_entrega) {
+    _timestamp_entrega = timestamp_entrega;
 }

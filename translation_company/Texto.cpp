@@ -13,9 +13,11 @@
 
 #include "Texto.h"
 
+#include "DatabaseManager.h"
+
 #define WHITESPACE_ENDLINE_CHARS " \t\n\v\f\r"
 
-unsigned int Texto::_maior_id_texto = 0;
+unsigned int Texto::_maior_id_texto = DatabaseManager(db_path).get_maior_id(kClassTexto);
 
 Texto::Texto(unsigned int id, std::string lingua, std::string conteudo) {
     _id = id;

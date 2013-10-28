@@ -14,7 +14,7 @@
 
 #define days_to_seconds(days) days * 60 * 60 * 24
 
-unsigned int Tradutor::_maior_id_tradutor = 0;
+unsigned int Tradutor::_maior_id_tradutor = DatabaseManager(db_path).get_maior_id(kClassTradutor);
 
 Tradutor::Tradutor(unsigned int id, std::string nome, unsigned int anos_experiencia, std::vector<std::string> linguas) {
     _id = id;
@@ -69,18 +69,18 @@ unsigned int Tradutor::_get_tempo_ocupado() {
 double Tradutor::custoTraducao(Texto *texto) {
     //  complexidade * anos de experiencia / 10
     
-    return (int)(texto->get_complexidade() * _anos_experiencia / 10);
+    return (int)(texto->get_complexidade() * _anos_experiencia / 10 / 100);
 }
 
 unsigned int Tradutor::tempoEstimado(Texto *texto) {
     //  complexidade * 20 / anos experiencia
-    //  tempo retornado em dias
+    //  tempo retornado em segundos
     
     return (int)(texto->get_complexidade() * 20 / _anos_experiencia);
 }
 
 unsigned int Tradutor::tempoEstimado(Encomenda *encomenda) {
-    return (_get_tempo_ocupado() + tempoEstimado(encomenda->get_texto()));
+    return (_get_tempo_ocupado() + days_to_seconds(tempoEstimado(encomenda->get_texto())));
 }
 
 bool Tradutor::get_pode_satisfazer_encomenda(Encomenda *encomenda) {

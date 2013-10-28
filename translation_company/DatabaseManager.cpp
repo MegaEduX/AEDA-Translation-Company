@@ -75,8 +75,9 @@ bool DatabaseManager::_prepare_database() {
                      id                 INT PRIMARY KEY         NOT NULL,   \
                      texto_id           INT                     NOT NULL,   \
                      lingua_destino     VARCHAR(64)             NOT NULL,   \
-                     duracao_max_dias   INT                     NOT NULL,  \
-                     tradutor_id        INT                     NOT NULL)");
+                     duracao_max_dias   INT                     NOT NULL,   \
+                     tradutor_id        INT                     NOT NULL,   \
+                     competion_date     INT                     NOT NULL)");
     
     if (res)
         return false;
@@ -219,9 +220,11 @@ std::vector<Encomenda *> DatabaseManager::get_encomendas() {
     for (query::iterator i = qry.begin(); i != qry.end(); ++i) {
         unsigned int id, texto_id, duracao_max_dias, trad_id;
         
+        uint64_t timestamp_entrega;
+        
         std::string lingua_destino;
         
-        boost::tie(id, texto_id, lingua_destino, duracao_max_dias, trad_id) = (*i).get_columns<int, int, std::string, int, int>(0, 1, 2, 3, 4);
+        boost::tie(id, texto_id, lingua_destino, duracao_max_dias, trad_id, timestamp_entrega) = (*i).get_columns<int, int, std::string, int, int, long long>(0, 1, 2, 3, 4, 5);
         
         Texto *texto = _get_texto_with_id(texto_id);
         
@@ -237,7 +240,7 @@ std::vector<Encomenda *> DatabaseManager::get_encomendas() {
             }
         }
         
-        Encomenda *encomenda = new Encomenda(id, texto, lingua_destino, duracao_max_dias, tradutor);
+        Encomenda *encomenda = new Encomenda(id, texto, lingua_destino, duracao_max_dias, tradutor, timestamp_entrega);
         
         return_vec.push_back(encomenda);
     }
@@ -341,10 +344,10 @@ bool DatabaseManager::create_update_record(Encomenda *encomenda) {
     
     query qry(db, query_str.c_str());
     
-    std::string query = "INSERT INTO `encomendas` (id, texto_id, lingua_destino, duracao_max_dias, tradutor_id) VALUES (:id, :texto_id, :lingua_destino, :duracao_max_dias, :tradutor_id)";
+    std::string query = "INSERT INTO `encomendas` (id, texto_id, lingua_destino, duracao_max_dias, tradutor_id, timestamp_entrega) VALUES (:id, :texto_id, :lingua_destino, :duracao_max_dias, :tradutor_id, :timestamp_entrega)";
     
     for (query::iterator i = qry.begin(); i != qry.end(); ++i)
-        query = "UPDATE `encomendas` SET texto_id=:texto_id, lingua_destino=:lingua_destino, duracao_max_dias=:duracao_max_dias, tradutor_id=:tradutor_id WHERE id=:id";
+        query = "UPDATE `encomendas` SET texto_id=:texto_id, lingua_destino=:lingua_destino, duracao_max_dias=:duracao_max_dias, tradutor_id=:tradutor_id, timestamp_entrega=:timestamp_entrega WHERE id=:id";
     
     command cmd(db, query.c_str());
     
@@ -353,6 +356,7 @@ bool DatabaseManager::create_update_record(Encomenda *encomenda) {
     cmd.bind(":lingua_destino", encomenda->get_lingua_destino().c_str());
     cmd.bind(":duracao_max_dias", boost::lexical_cast<std::string>(encomenda->get_duracao_max_dias()).c_str());
     cmd.bind(":tradutor_id", boost::lexical_cast<std::string>(encomenda->get_tradutor()->get_id()).c_str());
+    cmd.bind(":timestamp_entrega", boost::lexical_cast<std::string>(encomenda->get_timestamp_entrega()).c_str());
     
     if (!cmd.execute())
         return true;
@@ -370,4 +374,22 @@ bool DatabaseManager::delete_record(Tradutor *tradutor) {
 
 bool DatabaseManager::delete_record(Encomenda *encomenda) {
     delete_record_wild("encomendas", encomenda);
+}
+
+unsigned int DatabaseManager::get_maior_id(kClass asker) {
+    init_db(db);
+    
+    std::string query_str = std::string("SELECT * FROM `") + std::string(asker == kClassEncomenda ? "encomendas" : (asker == kClassTexto ? "textos" : "tradutores")) + std::string("` SORT BY `id` DESC LIMIT 1");
+    
+    query qry(db, query_str.c_str());
+    
+    for (query::iterator i = qry.begin(); i != qry.end(); ++i) {
+        unsigned int id;
+        
+        boost::tie(id) = (*i).get_columns<int>(0);
+        
+        return id;
+    }
+    
+    return 0;
 }

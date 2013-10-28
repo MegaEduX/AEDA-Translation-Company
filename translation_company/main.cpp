@@ -234,7 +234,9 @@ void order_translation() {
     
     unsigned int deadline = boost::lexical_cast<int>(deadline_str);
     
-    Encomenda *enc = new Encomenda(Encomenda::get_maior_id() + 1, new Texto(Texto::get_maior_id() + 1, src_lang, text), dst_lang, deadline);
+    Texto *txt = new Texto(Texto::get_maior_id() + 1, src_lang, text);
+    
+    Encomenda *enc = new Encomenda(Encomenda::get_maior_id() + 1, txt, dst_lang, deadline);
     
     unsigned int least_time = 0xB4DF00D; // And this is why you should not code... while hungry.
     Tradutor *best_translator = nullptr;
@@ -260,8 +262,9 @@ void order_translation() {
         
         cout << endl;
         
-        cout << "Estimated Time: " << best_translator->tempoEstimado(enc) << endl;
-        cout << "Price: " << best_translator->custoTraducao(enc->get_texto()) << endl;
+        cout << "Translator Name: " << best_translator->get_nome() << endl;
+        cout << "Estimated Time: " << best_translator->tempoEstimado(enc) << " seconds" << endl;
+        cout << "Price: € " << best_translator->custoTraducao(enc->get_texto()) << endl;
         
         cout << endl;
         
@@ -277,6 +280,7 @@ void order_translation() {
                 case 121:   //  y
                     
                     dbman.create_update_record(enc);
+                    dbman.create_update_record(txt);
                     
                     cout << endl << endl << "The record was created.";
                     
