@@ -261,24 +261,47 @@ void order_translation() {
         
         cout << "Do you agree to these terms? (y/n) ";
         
-        switch (_getch()) {
-            case <#constant#>:
-                <#statements#>
-                break;
-                
-            default:
-                break;
-        }
+        bool should_loop = true;
         
+        while (should_loop) {
+            should_loop = false;
+            
+            switch (_getch()) {
+                case 89:    //  Y
+                case 121:   //  y
+                    
+                    dbman.create_update_record(enc);
+                    
+                    cout << endl << endl << "The record was created.";
+                    
+                    break;
+                    
+                case 78:    //  N
+                case 110:   //  n
+                    
+                    cout << endl << endl << "The operation was canceled.";
+                    
+                    break;
+                    
+                default:
+                    cout << endl << "Invalid Choice. Do you agree to these terms? (y/n) ";
+                    
+                    should_loop = true;
+                    
+                    break;
+            }
+        }
     } else {
-        //  No translator found.
+        cout << endl << endl << "No viable candidate translator was found.";
     }
     
-    //
-    //  TBD
-    //
+    cout << endl << endl << "Please press any key to go back to the Main Menu. ";
     
     _getch();
+    
+    Additions::clearConsole();
+    
+    main_menu();
 }
 
 void query_database() {
