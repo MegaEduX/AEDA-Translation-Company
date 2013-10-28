@@ -27,8 +27,6 @@ static const int baseASCIINumber = 48;
 static const int returnKeyPOSIX = 13;
 static const int returnKeyWindows = 10;
 
-static string db_path = "translation_company_data.db";
-
 static DatabaseManager dbman = DatabaseManager(db_path);
 
 void main_menu();
@@ -188,10 +186,10 @@ void order_translation() {
     
     int found = 0;
     
-    for (int i = 0; i < translators.size(); i++) {
+    for (unsigned int i = 0; i < translators.size(); i++) {
         found = 0;
         
-        for (int j = 0; j < translators[i]->get_linguas().size(); j++)
+        for (unsigned int j = 0; j < translators[i]->get_linguas().size(); j++)
             if (!src_lang.compare(translators[i]->get_linguas()[j]) || !dst_lang.compare(translators[i]->get_linguas()[j]))
                 found++;
         
@@ -226,7 +224,55 @@ void order_translation() {
         deadline_str = Additions::getline();
     }
     
+    cout << endl << endl << "Processing your request... ";
+    
     unsigned int deadline = boost::lexical_cast<int>(deadline_str);
+    
+    Encomenda *enc = new Encomenda(Encomenda::get_maior_id() + 1, new Texto(Texto::get_maior_id() + 1, src_lang, text), dst_lang, deadline);
+    
+    unsigned int least_time = 0xB4DF00D; // And this is why you should not code... while hungry.
+    Tradutor *best_translator = nullptr;
+    
+    for (unsigned int i = 0; i < possible_translators.size(); i++)
+        if (possible_translators[i]->get_pode_satisfazer_encomenda(enc)) {
+            unsigned int te = possible_translators[i]->tempoEstimado(enc);
+            
+            if (least_time > te || &best_translator == nullptr) {
+                least_time = te;
+                best_translator = possible_translators[i];
+            }
+        }
+    
+    cout << endl << endl;
+    
+    if (best_translator != nullptr) {
+        //  Found a translator.
+        
+        enc->set_tradutor(best_translator);
+        
+        cout << "We have found a translator suitable for your order." << endl;
+        
+        cout << endl;
+        
+        cout << "Estimated Time: " << best_translator->tempoEstimado(enc) << endl;
+        cout << "Price: " << best_translator->custoTraducao(enc->get_texto()) << endl;
+        
+        cout << endl;
+        
+        cout << "Do you agree to these terms? (y/n) ";
+        
+        switch (_getch()) {
+            case <#constant#>:
+                <#statements#>
+                break;
+                
+            default:
+                break;
+        }
+        
+    } else {
+        //  No translator found.
+    }
     
     //
     //  TBD

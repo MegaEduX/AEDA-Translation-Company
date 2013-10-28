@@ -14,6 +14,8 @@
 
 #include "Texto.h"
 
+class Encomenda;
+
 class Tradutor {
     static unsigned int _maior_id_tradutor;
     
@@ -22,7 +24,9 @@ class Tradutor {
     
     std::string _nome;
     
-    std::vector<std::string> _linguas; 
+    std::vector<std::string> _linguas;
+    
+    unsigned int _get_tempo_ocupado();
     
 public:
     Tradutor(unsigned int id, std::string nome, unsigned int anos_experiencia, std::vector<std::string> linguas);
@@ -30,9 +34,12 @@ public:
     double custoTraducao(Texto *);
     
     unsigned int tempoEstimado(Texto *);
+    unsigned int tempoEstimado(Encomenda *encomenda);
     unsigned int get_id();
     unsigned int get_maior_id();
     unsigned int get_anos_experiencia();
+    
+    bool get_pode_satisfazer_encomenda(Encomenda *encomenda);
     
     std::string get_nome();
     

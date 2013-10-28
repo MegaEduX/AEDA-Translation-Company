@@ -8,6 +8,12 @@
 
 #include "Tradutor.h"
 
+#include "Encomenda.h"
+
+#include "DatabaseManager.h"
+
+#define days_to_seconds(days) days * 60 * 60 * 24
+
 unsigned int Tradutor::_maior_id_tradutor = 0;
 
 Tradutor::Tradutor(unsigned int id, std::string nome, unsigned int anos_experiencia, std::vector<std::string> linguas) {
@@ -40,6 +46,21 @@ std::vector<std::string> Tradutor::get_linguas() {
     return _linguas;
 }
 
+unsigned int Tradutor::_get_tempo_ocupado() {
+    DatabaseManager dbman = DatabaseManager(db_path);
+    
+    unsigned int tempo_ocupado = 0;
+    
+    std::vector<Encomenda *> all_enc = dbman.get_encomendas();
+    
+    for (int i = 0; i < all_enc.size(); i++)
+        if (all_enc[i]->get_tradutor()->get_id() == _id) {
+            tempo_ocupado += tempoEstimado(all_enc[i]->get_texto());
+        }
+    
+    return tempo_ocupado;
+}
+
 /*
  *  We had no guidelines for these equations...
  *  So we made up our own!
@@ -53,7 +74,17 @@ double Tradutor::custoTraducao(Texto *texto) {
 
 unsigned int Tradutor::tempoEstimado(Texto *texto) {
     //  complexidade * 20 / anos experiencia
-    //  tempo retornado em segundos
+    //  tempo retornado em dias
     
     return (int)(texto->get_complexidade() * 20 / _anos_experiencia);
+}
+
+unsigned int Tradutor::tempoEstimado(Encomenda *encomenda) {
+    return (_get_tempo_ocupado() + tempoEstimado(encomenda->get_texto()));
+}
+
+bool Tradutor::get_pode_satisfazer_encomenda(Encomenda *encomenda) {
+    unsigned int te_est = _get_tempo_ocupado() + tempoEstimado(encomenda->get_texto());
+    
+    return (days_to_seconds(encomenda->get_duracao_max_dias()) > te_est);
 }

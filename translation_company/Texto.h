@@ -24,7 +24,7 @@ public:
     Texto(unsigned int id, std::string lingua, std::string conteudo);
     Texto(unsigned int id, std::string lingua, unsigned long palavras, std::string conteudo);
     
-    unsigned int get_maior_id();
+    static unsigned int get_maior_id();
     
     unsigned int get_id();
     unsigned long get_palavras();

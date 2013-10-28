@@ -8,9 +8,22 @@
 
 #include "Encomenda.h"
 
+#include "Texto.h"
+
 unsigned int Encomenda::_maior_id_encomenda = 0;
 
-Encomenda::Encomenda(unsigned int id, const Texto *texto, std::string lingua_destino, unsigned int duracao_max_dias, const Tradutor *tradutor) {
+Encomenda::Encomenda(unsigned int id, Texto *texto, std::string lingua_destino, unsigned int duracao_max_dias) {
+    _id = id;
+    _texto = texto;
+    _lingua_destino = lingua_destino;
+    _duracao_max_dias = duracao_max_dias;
+    _tradutor = nullptr;
+    
+    if (id > _maior_id_encomenda)
+        _maior_id_encomenda = id;
+}
+
+Encomenda::Encomenda(unsigned int id, Texto *texto, std::string lingua_destino, unsigned int duracao_max_dias, Tradutor *tradutor) {
     _id = id;
     _texto = texto;
     _lingua_destino = lingua_destino;
@@ -43,4 +56,8 @@ std::string Encomenda::get_lingua_destino() {
 
 unsigned int Encomenda::get_duracao_max_dias() {
     return _duracao_max_dias;
+}
+
+void Encomenda::set_tradutor(Tradutor *tradutor) {
+    _tradutor = tradutor;
 }

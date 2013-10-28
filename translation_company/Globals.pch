@@ -1,0 +1,14 @@
+//
+//  Globals.pch
+//  translation_company
+//
+//  Created by Eduardo Almeida on 28/10/13.
+//  Copyright (c) 2013 Bitten Apps. All rights reserved.
+//
+
+#ifndef translation_company_Globals_pch
+#define translation_company_Globals_pch
+
+#define db_path "translation_company_data.db"
+
+#endif
