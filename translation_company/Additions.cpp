@@ -180,4 +180,18 @@ namespace Additions {
         SetConsoleCursorPosition(hCon, upperLeftCorner);
 #endif
     }
+    
+    unsigned int currentTimestamp() {
+        return (unsigned int)time(NULL);
+    }
+    
+    std::string timestampToString(const long timestamp) {
+        char ret[256];
+        
+        struct tm *dt = localtime(&timestamp);
+        
+        strftime(ret, sizeof(ret), "%m%d%H%M%y", dt);
+        
+        return std::string(ret);
+    }
 }

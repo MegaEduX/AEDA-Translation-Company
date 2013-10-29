@@ -39,6 +39,10 @@ namespace Additions {
     void clearConsole();
     
     void waitForReturn();
+    
+    unsigned int currentTimestamp();
+    
+    std::string timestampToString(const long timestamp)
 }
 
 #endif
