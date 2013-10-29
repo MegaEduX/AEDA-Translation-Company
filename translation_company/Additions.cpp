@@ -8,6 +8,8 @@
 
 #include "Additions.h"
 
+#include <ctime>
+
 #ifdef WIN32 // Windows includes
 #include <windows.h>
 #include <conio.h>
@@ -186,12 +188,12 @@ namespace Additions {
     }
     
     std::string timestampToString(const long timestamp) {
-        char ret[256];
+        /*char ret[256];
         
         struct tm *dt = localtime(&timestamp);
         
-        strftime(ret, sizeof(ret), "%m%d%H%M%y", dt);
+        strftime(ret, sizeof(ret), "%c", dt);*/
         
-        return std::string(ret);
+        return std::string(ctime(&timestamp));
     }
 }

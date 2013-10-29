@@ -42,7 +42,7 @@ namespace Additions {
     
     unsigned int currentTimestamp();
     
-    std::string timestampToString(const long timestamp)
+    std::string timestampToString(const long timestamp);
 }
 
 #endif

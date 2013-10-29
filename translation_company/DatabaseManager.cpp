@@ -77,7 +77,7 @@ bool DatabaseManager::_prepare_database() {
                      lingua_destino     VARCHAR(64)             NOT NULL,   \
                      duracao_max_dias   INT                     NOT NULL,   \
                      tradutor_id        INT                     NOT NULL,   \
-                     competion_date     INT                     NOT NULL)");
+                     completion_date    INT                     NOT NULL)");
     
     if (res)
         return false;
@@ -344,10 +344,10 @@ bool DatabaseManager::create_update_record(Encomenda *encomenda) {
     
     query qry(db, query_str.c_str());
     
-    std::string query = "INSERT INTO `encomendas` (id, texto_id, lingua_destino, duracao_max_dias, tradutor_id, timestamp_entrega) VALUES (:id, :texto_id, :lingua_destino, :duracao_max_dias, :tradutor_id, :timestamp_entrega)";
+    std::string query = "INSERT INTO `encomendas` (id, texto_id, lingua_destino, duracao_max_dias, tradutor_id, completion_date) VALUES (:id, :texto_id, :lingua_destino, :duracao_max_dias, :tradutor_id, :completion_date)";
     
     for (query::iterator i = qry.begin(); i != qry.end(); ++i)
-        query = "UPDATE `encomendas` SET texto_id=:texto_id, lingua_destino=:lingua_destino, duracao_max_dias=:duracao_max_dias, tradutor_id=:tradutor_id, timestamp_entrega=:timestamp_entrega WHERE id=:id";
+        query = "UPDATE `encomendas` SET texto_id=:texto_id, lingua_destino=:lingua_destino, duracao_max_dias=:duracao_max_dias, tradutor_id=:tradutor_id, completion_date=:completion_date WHERE id=:id";
     
     command cmd(db, query.c_str());
     
@@ -356,7 +356,7 @@ bool DatabaseManager::create_update_record(Encomenda *encomenda) {
     cmd.bind(":lingua_destino", encomenda->get_lingua_destino().c_str());
     cmd.bind(":duracao_max_dias", boost::lexical_cast<std::string>(encomenda->get_duracao_max_dias()).c_str());
     cmd.bind(":tradutor_id", boost::lexical_cast<std::string>(encomenda->get_tradutor()->get_id()).c_str());
-    cmd.bind(":timestamp_entrega", boost::lexical_cast<std::string>(encomenda->get_timestamp_entrega()).c_str());
+    cmd.bind(":completion_date", boost::lexical_cast<std::string>(encomenda->get_timestamp_entrega()).c_str());
     
     if (!cmd.execute())
         return true;
@@ -379,7 +379,7 @@ bool DatabaseManager::delete_record(Encomenda *encomenda) {
 unsigned int DatabaseManager::get_maior_id(kClass asker) {
     init_db(db);
     
-    std::string query_str = std::string("SELECT * FROM `") + std::string(asker == kClassEncomenda ? "encomendas" : (asker == kClassTexto ? "textos" : "tradutores")) + std::string("` SORT BY `id` DESC LIMIT 1");
+    std::string query_str = std::string("SELECT * FROM `") + std::string(asker == kClassEncomenda ? "encomendas" : (asker == kClassTexto ? "textos" : "tradutores")) + std::string("` ORDER BY `id` DESC LIMIT 1");
     
     query qry(db, query_str.c_str());
     

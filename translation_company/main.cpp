@@ -118,6 +118,11 @@ void main_menu() {
                 
                 break;
                 
+            case baseASCIINumber + 3:
+                manage_translators();
+                
+                break;
+                
             default:
                 cout << endl << "Invalid choice." << endl << endl;
                 
@@ -143,6 +148,64 @@ void order_translation() {
     
     cout << "-> Order a Translation" << endl;
     cout << "(You may cancel this at any time by pressing ESC)" << endl;
+    
+    cout << endl;
+    
+    cout << "Available Text Types: (1) - Technical Text, (2) - Literary Text, (3) - News Article Text, (0) - Go Back" << endl;
+    
+    cout << endl;
+    
+    cout << "Source Text Type: ";
+    
+    kTexto text_type = kTextoBase;
+    
+    while (true) {
+        bool acceptable_answer = false;
+        
+        int ch = _getch();
+        
+        switch (ch) {
+            case baseASCIINumber:
+                
+                Additions::clearConsole();
+                
+                main_menu();
+                
+                break;
+                
+            case baseASCIINumber + 1:
+                
+                text_type = kTextoTecnico;
+                
+                acceptable_answer = true;
+                
+                break;
+                
+            case baseASCIINumber + 2:
+                
+                text_type = kTextoLiterario;
+                
+                acceptable_answer = true;
+                
+                break;
+            
+            case baseASCIINumber + 3:
+                text_type = kTextoNoticioso;
+                
+                acceptable_answer = true;
+                
+                break;
+                
+            default:
+                
+                cout << endl << "Invalid choice. Please try again. " << endl;
+                
+                break;
+        }
+        
+        if (acceptable_answer)
+            break;
+    }
     
     cout << endl;
     
@@ -230,11 +293,133 @@ void order_translation() {
         deadline_str = Additions::getline();
     }
     
+    cout << endl << "== Text Type - Specific Questions ==" << endl;
+    
+    cout << endl;
+    
+    string arg1;
+    string arg2;
+    
+    
+    switch (text_type) {
+        case kTextoTecnico:
+            
+            cout << "Dominio de Especialidade: ";
+            
+            arg1 = Additions::getline();
+            
+            break;
+            
+        case kTextoLiterario:
+            
+            cout << "Titulo: ";
+            
+            arg1 = Additions::getline();
+            
+            if (Additions::gotESC(arg1)) {
+                Additions::clearConsole();
+                
+                main_menu();
+            }
+            
+            cout << endl << "Autor: ";
+            
+            arg2 = Additions::getline();
+            
+            if (Additions::gotESC(arg2)) {
+                Additions::clearConsole();
+                
+                main_menu();
+            }
+            
+            break;
+            
+        case kTextoNoticioso:
+            
+            cout << "Assunto: ";
+            
+            arg1 = Additions::getline();
+            
+            if (Additions::gotESC(arg1)) {
+                Additions::clearConsole();
+                
+                main_menu();
+            }
+            
+            cout << endl;
+            
+            cout << endl << "Tipos de Jornal: (1) - Diario, (2) - Semanario" << endl;
+            
+            cout << endl << "Tipo de Jornal: ";
+            
+            while (true) {
+                bool can_break = false;
+                
+                switch (_getch()) {
+                    case baseASCIINumber + 1:
+                        
+                        arg2 = boost::lexical_cast<string>(0);
+                        
+                        can_break = true;
+                        
+                        break;
+                        
+                    case baseASCIINumber + 2:
+                        
+                        arg2 = boost::lexical_cast<string>(1);
+                        
+                        can_break = true;
+                        
+                        break;
+                        
+                    default:
+                        
+                        cout << endl << "Invalid choice. Please retry: ";
+                        
+                        break;
+                }
+                
+                if (can_break)
+                    break;
+            }
+            
+            break;
+            
+        default:
+            
+            throw "Unrecognized text type.";
+            
+            break;
+    }
+    
     cout << endl << endl << "Processing your request... ";
     
     unsigned int deadline = boost::lexical_cast<int>(deadline_str);
     
-    Texto *txt = new Texto(Texto::get_maior_id() + 1, src_lang, text);
+    Texto *txt = nullptr; /* = new Texto(Texto::get_maior_id() + 1, src_lang, text)*/
+    
+    switch (text_type) {
+        case kTextoTecnico:
+            
+            txt = new TextoTecnico(Texto::get_maior_id() + 1, src_lang, text, arg1);
+            
+            break;
+            
+        case kTextoLiterario:
+            
+            txt = new TextoLiterario(Texto::get_maior_id() + 1, src_lang, text, arg1, arg2);
+            
+            break;
+            
+        case kTextoNoticioso:
+            
+            txt = new TextoNoticioso(Texto::get_maior_id() + 1, src_lang, text, arg1, (tipo_jornal)boost::lexical_cast<int>(arg2));
+            
+            break;
+            
+        default:
+            break;
+    }
     
     Encomenda *enc = new Encomenda(Encomenda::get_maior_id() + 1, txt, dst_lang, deadline);
     
@@ -257,6 +442,7 @@ void order_translation() {
         //  Found a translator.
         
         enc->set_tradutor(best_translator);
+        enc->set_timestamp_entrega(time(NULL) + best_translator->tempoEstimado(enc));
         
         cout << "We have found a translator suitable for your order." << endl;
         
@@ -264,6 +450,7 @@ void order_translation() {
         
         cout << "Translator Name: " << best_translator->get_nome() << endl;
         cout << "Estimated Time: " << best_translator->tempoEstimado(enc) << " seconds" << endl;
+        cout << "Estimated Date: " << Additions::timestampToString(enc->get_timestamp_entrega()) << endl;
         cout << "Price: € " << best_translator->custoTraducao(enc->get_texto()) << endl;
         
         cout << endl;
