@@ -40,11 +40,13 @@ void search_orders();
 void search_translators_step2(unsigned int search_type);
 void search_orders_step2(unsigned int search_type);
 
-void display_translator_info(Tradutor *trad);
-void display_order_info(Encomenda *enc);
+void display_info(Tradutor *trad);
+void display_info(Encomenda *enc);
 
-void manage_translators();
-void manage_translators_step2(unsigned int search_type);
+void manage_database();
+
+void add_record();
+void edit_record();
 
 //  Comment the following line of code to run the app.
 
@@ -90,7 +92,7 @@ void main_menu() {
     
     cout << "1. Order a Translation" << endl;
     cout << "2. Query the Database" << endl;
-    cout << "3. Manage Translators" << endl;
+    cout << "3. Manage the Database" << endl;
     
     cout << endl;
     
@@ -120,7 +122,7 @@ void main_menu() {
                 break;
                 
             case baseASCIINumber + 3:
-                manage_translators();
+                manage_database();
                 
                 break;
                 
@@ -129,7 +131,7 @@ void main_menu() {
                 
                 cout << "1. Order a Translation" << endl;
                 cout << "2. Query the Database" << endl;
-                cout << "3. Manage Translators" << endl;
+                cout << "3. Manage the Database" << endl;
                 
                 cout << endl;
                 
@@ -152,7 +154,7 @@ void order_translation() {
     
     cout << endl;
     
-    cout << "Available Text Types: (1) - Technical Text, (2) - Literary Text, (3) - News Article Text, (0) - Go Back" << endl;
+    cout << "Available Text Types:" << endl << " (1) - Technical Text" <<  endl << " (2) - Literary Text" << endl << " (3) - News Article Text" << endl << " (0) - Go Back" << endl;
     
     cout << endl;
     
@@ -293,6 +295,8 @@ void order_translation() {
         
         deadline_str = Additions::getline();
     }
+    
+    cout << endl;
     
     cout << endl << "== Text Type - Specific Questions ==" << endl;
     
@@ -512,6 +516,7 @@ void query_database() {
     
     cout << "1. Search for Translators" << endl;
     cout << "2. Search for Orders" << endl;
+    cout << "3. Search for Texts" << endl; //   TBD
     
     cout << endl;
     
@@ -542,6 +547,12 @@ void query_database() {
             case baseASCIINumber + 2:
                 
                 search_orders();
+                
+                break;
+                
+            case baseASCIINumber + 3:
+                
+                //  TBD
                 
                 break;
                 
@@ -640,7 +651,7 @@ void search_translators_step2(unsigned int search_type) {
                 int in_intval = boost::lexical_cast<int>(str_in);
                 
                 if (ct->get_id() == in_intval) {
-                    display_translator_info(ct);
+                    display_info(ct);
                     
                     found = !found;
                 }
@@ -650,7 +661,7 @@ void search_translators_step2(unsigned int search_type) {
             
             case 2: {
                 if (!(ct->get_nome().compare(str_in))) {
-                    display_translator_info(ct);
+                    display_info(ct);
                     
                     found = !found;
                 }
@@ -662,7 +673,7 @@ void search_translators_step2(unsigned int search_type) {
                 int in_intval = boost::lexical_cast<int>(str_in);
                 
                 if (ct->get_anos_experiencia() == in_intval) {
-                    display_translator_info(ct);
+                    display_info(ct);
                     
                     found = !found;
                 }
@@ -675,7 +686,7 @@ void search_translators_step2(unsigned int search_type) {
                 
                 for (int j = 0; j < languages.size(); j++) {
                     if (!(ct->get_linguas()[j].compare(str_in))) {
-                        display_translator_info(ct);
+                        display_info(ct);
                         
                         found = !found;
                         
@@ -703,7 +714,7 @@ void search_translators_step2(unsigned int search_type) {
     search_translators();
 }
 
-void display_translator_info(Tradutor *trad) {
+void display_info(Tradutor *trad) {
     cout << "Translator Information (ID: " << trad->get_id() << ")" << endl;
     
     cout << endl;
@@ -787,6 +798,26 @@ void search_orders_step2(unsigned int search_type) {
     
     string str_in = Additions::getline();
     
+    if (Additions::gotESC(str_in)) {
+        Additions::clearConsole();
+        
+        main_menu();
+    }
+    
+    if (search_type == 1 || search_type == 4) {
+        while (!Additions::checkForOnlyNumeric(str_in)) {
+            cout << endl << "This option requires a numeric query. Please retry.";
+            cout << endl << "You may also go back to the previous screen by using the ESC key.";
+            cout << endl << endl << "Query: ";
+            
+            if (Additions::gotESC(str_in)) {
+                Additions::clearConsole();
+                
+                search_orders();
+            }
+        }
+    }
+    
     cout << endl << endl;
     
     std::vector<Encomenda *> orders = dbman.get_encomendas();
@@ -798,14 +829,10 @@ void search_orders_step2(unsigned int search_type) {
         
         switch (search_type) {
             case 1: {
-                if (!Additions::checkForOnlyNumeric(str_in)) {
-                    //  Do something here.
-                }
-                
                 int in_intval = boost::lexical_cast<int>(str_in);
                 
                 if (enc->get_id() == in_intval) {
-                    display_order_info(enc);
+                    display_info(enc);
                     
                     found = !found;
                 }
@@ -815,7 +842,7 @@ void search_orders_step2(unsigned int search_type) {
                 
             case 2: {
                 if (!(enc->get_texto()->get_lingua().compare(str_in))) {
-                    display_order_info(enc);
+                    display_info(enc);
                     
                     found = !found;
                 }
@@ -825,7 +852,7 @@ void search_orders_step2(unsigned int search_type) {
                 
             case 3: {
                 if (!(enc->get_lingua_destino().compare(str_in))) {
-                    display_order_info(enc);
+                    display_info(enc);
                     
                     found = !found;
                 }
@@ -834,14 +861,10 @@ void search_orders_step2(unsigned int search_type) {
             }
                 
             case 4: {
-                if (!Additions::checkForOnlyNumeric(str_in)) {
-                    //  Do something here.
-                }
-                
                 int in_intval = boost::lexical_cast<int>(str_in);
                 
                 if (enc->get_tradutor()->get_id() == in_intval) {
-                    display_order_info(enc);
+                    display_info(enc);
                     
                     found = !found;
                 }
@@ -866,7 +889,7 @@ void search_orders_step2(unsigned int search_type) {
     search_orders();
 }
 
-void display_order_info(Encomenda *enc) {
+void display_info(Encomenda *enc) {
     cout << "Order Information (ID: " << enc->get_id() << ")" << endl;
     
     cout << endl;
@@ -878,62 +901,122 @@ void display_order_info(Encomenda *enc) {
     cout << endl;
 }
 
-void manage_translators() {
+void manage_database() {
     Additions::clearConsole();
     
-    cout << "-> Manage Translators" << endl;
+    cout << "-> Manage Database" << endl;
     
     cout << endl;
     
-    cout << "Search by..." << endl;
-    
-    cout << "1. ID" << endl;
-    cout << "2. Name" << endl;
-    cout << "3. Years of Experience" << endl;
-    cout << "4. Language" << endl;
+    cout << "1. Add a Record" << endl;
+    cout << "2. Edit (or Delete) a Record" << endl;
     
     cout << endl;
     
     cout << "0. Go Back" << endl;
     
+    /*cout << "1. Search for Translators" << endl;
+    cout << "2. Search for Orders" << endl;
+    cout << "3. Search for Texts" << endl; //   TBD
+    
     cout << endl;
+    
+    cout << "0. Go Back" << endl;
+    
+    cout << endl;*/
     
     cout << "Please press the key corresponding to your choice. ";
     
-    int ch = _getch();
-    
-    while (ch < baseASCIINumber || ch > baseASCIINumber + 4) {
-        cout << endl << "Invalid choice." << endl;
+    while (true) {
+        int ch = _getch();
         
-        cout << endl;
-        
-        cout << "1. ID" << endl;
-        cout << "2. Name" << endl;
-        cout << "3. Years of Experience" << endl;
-        cout << "4. Language" << endl;
-        
-        cout << endl;
-        
-        cout << "0. Go Back" << endl;
-        
-        cout << endl;
-        
-        cout << "Please press the key corresponding to your new choice. ";
+        switch (ch) {
+            case baseASCIINumber:
+                
+                Additions::clearConsole();
+                
+                main_menu();
+                
+                break;
+                
+            case baseASCIINumber + 1:
+                
+                add_record();
+                
+                break;
+                
+            case baseASCIINumber + 2:
+                
+                edit_record();
+                
+                break;
+                
+            default:
+                
+                cout << endl << "Invalid choice." << endl;
+                
+                cout << endl;
+                
+                cout << "1. Add a Record" << endl;
+                cout << "2. Edit (or Delete) a Record" << endl;
+                
+                cout << endl;
+                
+                cout << "0. Go Back" << endl;
+                
+                cout << "Please press the key corresponding to your new choice. ";
+                
+                break;
+        }
     }
+}
+
+void add_record() {
+    Additions::clearConsole();
+    
+    cout << "-> Add a Record" << endl;
+    
+    cout << endl;
+    
+    cout << "Only translator records can be created manually." << endl;
+    cout << "The rest of the records are created through the \"Order Translation\" interface." << endl;
+    
+    cout << endl;
+    
+    cout << "Press any key to continue (or 0 to go back to the previous menu). ";
+    
+    int ch = _getch();
     
     if (ch == baseASCIINumber) {
         Additions::clearConsole();
         
-        main_menu();
-        
-        return;
+        manage_database();
     }
     
-    int search_type = ch - baseASCIINumber;
+    cout << endl << endl;
     
-    manage_translators_step2(search_type);
+    cout << "Name: ";
+    
+    string tr_name = Additions::getline();
+    
+    cout << "Years of Experience: ";
+    
+    string tr_expy_str = Additions::getline();
+    
+    while (!Additions::checkForOnlyNumeric(tr_expy_str)) {
+        cout << endl << "This field requires a numeric-only value. Please try again." << endl << endl;
+        
+        tr_expy_str = Additions::getline();
+    }
+    
+    int tr_expy = boost::lexical_cast<int>(tr_expy_str);
+    
+    //
+    //  ask the user for each language, separated by returns,
+    //  until the ESC key is pressed.
+    //
 }
 
-void manage_translators_step2(unsigned int search_type) {
+void edit_record() {
     
 }

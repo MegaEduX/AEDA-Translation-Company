@@ -69,7 +69,9 @@ unsigned int Tradutor::_get_tempo_ocupado() {
 double Tradutor::custoTraducao(Texto *texto) {
     //  complexidade * anos de experiencia / 10
     
-    return ((double)texto->get_complexidade() * (double)_anos_experiencia / 1000.0f);
+    //  flat rate: € 1
+    
+    return (1.00f + (double)texto->get_complexidade() * (double)_anos_experiencia / 1000.0f);
 }
 
 unsigned int Tradutor::tempoEstimado(Texto *texto) {
