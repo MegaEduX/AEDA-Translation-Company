@@ -44,6 +44,7 @@ void display_translator_info(Tradutor *trad);
 void display_order_info(Encomenda *enc);
 
 void manage_translators();
+void manage_translators_step2(unsigned int search_type);
 
 //  Comment the following line of code to run the app.
 
@@ -884,5 +885,55 @@ void manage_translators() {
     
     cout << endl;
     
-    //  TBD
+    cout << "Search by..." << endl;
+    
+    cout << "1. ID" << endl;
+    cout << "2. Name" << endl;
+    cout << "3. Years of Experience" << endl;
+    cout << "4. Language" << endl;
+    
+    cout << endl;
+    
+    cout << "0. Go Back" << endl;
+    
+    cout << endl;
+    
+    cout << "Please press the key corresponding to your choice. ";
+    
+    int ch = _getch();
+    
+    while (ch < baseASCIINumber || ch > baseASCIINumber + 4) {
+        cout << endl << "Invalid choice." << endl;
+        
+        cout << endl;
+        
+        cout << "1. ID" << endl;
+        cout << "2. Name" << endl;
+        cout << "3. Years of Experience" << endl;
+        cout << "4. Language" << endl;
+        
+        cout << endl;
+        
+        cout << "0. Go Back" << endl;
+        
+        cout << endl;
+        
+        cout << "Please press the key corresponding to your new choice. ";
+    }
+    
+    if (ch == baseASCIINumber) {
+        Additions::clearConsole();
+        
+        main_menu();
+        
+        return;
+    }
+    
+    int search_type = ch - baseASCIINumber;
+    
+    manage_translators_step2(search_type);
+}
+
+void manage_translators_step2(unsigned int search_type) {
+    
 }
