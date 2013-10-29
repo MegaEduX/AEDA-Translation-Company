@@ -76,15 +76,20 @@ unsigned int Tradutor::tempoEstimado(Texto *texto) {
     //  complexidade * 20 / anos experiencia
     //  tempo retornado em segundos
     
-    return (int)(texto->get_complexidade() * 20 / _anos_experiencia);
+    if (texto && texto != nullptr)
+        return (int)(texto->get_complexidade() * 20 / _anos_experiencia);
+    
+    return 0;
 }
 
 unsigned int Tradutor::tempoEstimado(Encomenda *encomenda) {
-    return (_get_tempo_ocupado() + tempoEstimado(encomenda->get_texto()));
+    Texto *enc_text = encomenda->get_texto();
+    
+    return (_get_tempo_ocupado() + tempoEstimado(enc_text)); /* (texto->get_complexidade() * 20 / _anos_experiencia) */
 }
 
 bool Tradutor::get_pode_satisfazer_encomenda(Encomenda *encomenda) {
-    unsigned int te_est = _get_tempo_ocupado() + tempoEstimado(encomenda->get_texto());
+    unsigned int te_est = tempoEstimado(encomenda);
     
     return (days_to_seconds(encomenda->get_duracao_max_dias()) > te_est);
 }

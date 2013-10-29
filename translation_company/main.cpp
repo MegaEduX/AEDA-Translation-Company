@@ -300,18 +300,16 @@ void order_translation() {
     string arg1;
     string arg2;
     
-    
     switch (text_type) {
-        case kTextoTecnico:
-            
+        case kTextoTecnico: {
             cout << "Dominio de Especialidade: ";
             
             arg1 = Additions::getline();
             
             break;
+        }
             
-        case kTextoLiterario:
-            
+        case kTextoLiterario: {
             cout << "Titulo: ";
             
             arg1 = Additions::getline();
@@ -333,9 +331,9 @@ void order_translation() {
             }
             
             break;
+        }
             
-        case kTextoNoticioso:
-            
+        case kTextoNoticioso: {
             cout << "Assunto: ";
             
             arg1 = Additions::getline();
@@ -384,19 +382,20 @@ void order_translation() {
             }
             
             break;
+        }
             
-        default:
-            
+        default: {
             throw "Unrecognized text type.";
             
             break;
+        }
     }
     
     cout << endl << endl << "Processing your request... ";
     
     unsigned int deadline = boost::lexical_cast<int>(deadline_str);
     
-    Texto *txt = nullptr; /* = new Texto(Texto::get_maior_id() + 1, src_lang, text)*/
+    Texto *txt; /* = new Texto(Texto::get_maior_id() + 1, src_lang, text)*/
     
     switch (text_type) {
         case kTextoTecnico:
@@ -418,12 +417,14 @@ void order_translation() {
             break;
             
         default:
+            throw "Hue Hue Hue...";
+            
             break;
     }
     
     Encomenda *enc = new Encomenda(Encomenda::get_maior_id() + 1, txt, dst_lang, deadline);
     
-    unsigned int least_time = 0xB4DF00D; // And this is why you should not code... while hungry.
+    unsigned int least_time = 0xDEADBEEF; // And this is why you should not code... while hungry.
     Tradutor *best_translator = nullptr;
     
     for (unsigned int i = 0; i < possible_translators.size(); i++)
@@ -734,7 +735,7 @@ void search_orders() {
     cout << "1. ID" << endl;
     cout << "2. Source Language" << endl;
     cout << "3. Destination Language" << endl;
-    cout << "4. Translator" << endl;
+    cout << "4. Translator ID" << endl;
     
     cout << endl;
     
@@ -796,6 +797,10 @@ void search_orders_step2(unsigned int search_type) {
         
         switch (search_type) {
             case 1: {
+                if (!Additions::checkForOnlyNumeric(str_in)) {
+                    //  Do something here.
+                }
+                
                 int in_intval = boost::lexical_cast<int>(str_in);
                 
                 if (enc->get_id() == in_intval) {
@@ -828,6 +833,10 @@ void search_orders_step2(unsigned int search_type) {
             }
                 
             case 4: {
+                if (!Additions::checkForOnlyNumeric(str_in)) {
+                    //  Do something here.
+                }
+                
                 int in_intval = boost::lexical_cast<int>(str_in);
                 
                 if (enc->get_tradutor()->get_id() == in_intval) {
@@ -869,5 +878,11 @@ void display_order_info(Encomenda *enc) {
 }
 
 void manage_translators() {
+    Additions::clearConsole();
     
+    cout << "-> Manage Translators" << endl;
+    
+    cout << endl;
+    
+    //  TBD
 }
