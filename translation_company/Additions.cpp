@@ -188,12 +188,6 @@ namespace Additions {
     }
     
     std::string timestampToString(const long timestamp) {
-        /*char ret[256];
-        
-        struct tm *dt = localtime(&timestamp);
-        
-        strftime(ret, sizeof(ret), "%c", dt);*/
-        
         return std::string(ctime(&timestamp));
     }
 }
