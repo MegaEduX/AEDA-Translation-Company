@@ -48,6 +48,12 @@ void manage_database();
 void add_record();
 void edit_record();
 
+void edit_record_step2(unsigned int obj_type);
+
+void edit_record_step3(Tradutor *obj);
+void edit_record_step3(Texto *obj);
+void edit_record_step3(Encomenda *obj);
+
 //  Comment the following line of code to run the app.
 
 //  #define RUN_TEST_CODE
@@ -1053,7 +1059,123 @@ void edit_record() {
     cout << "2. Edit an Order" << endl;
     cout << "3. Edit a Text" << endl;
     
-    //
-    //  TBD
-    //
+    cout << endl;
+    
+    cout << "0. Go Back" << endl;
+    
+    cout << endl << "Please press the key corresponding to your choice. ";
+    
+    while (true) {
+        int ch = _getch();
+        
+        switch (ch) {
+            case baseASCIINumber:
+                
+                Additions::clearConsole();
+                
+                manage_database();
+                
+                break;
+                
+            case baseASCIINumber + 1:
+            case baseASCIINumber + 2:
+            case baseASCIINumber + 3:
+                
+                edit_record_step2(ch - baseASCIINumber);
+                
+                break;
+                
+            default:
+                
+                cout << endl << "Invalid choice." << endl;
+                
+                cout << endl;
+                
+                cout << "1. Edit a Translator" << endl;
+                cout << "2. Edit an Order" << endl;
+                cout << "3. Edit a Text" << endl;
+                
+                cout << endl;
+                
+                cout << "0. Go Back" << endl;
+                
+                cout << endl << "Please press the key corresponding to your new choice. ";
+                
+                break;
+        }
+    }
+}
+
+void edit_record_step2(unsigned int obj_type) {
+    cout << endl;
+    
+    cout << "Object ID: ";
+    
+    string str_in = Additions::getline();
+    
+    while (!Additions::checkForOnlyNumeric(str_in)) {
+        cout << endl << "The ID must not contain non-numeric characters." << endl << endl;
+        cout << "Object ID: ";
+        
+        str_in = Additions::getline();
+    }
+    
+    int in_intval = boost::lexical_cast<int>(str_in);
+    
+    cout << endl << endl;
+    
+    switch (obj_type) {
+        case 1: {
+            vector<Tradutor *> trad = dbman.get_tradutores();
+            
+            for (int i = 0; i < trad.size(); i++)
+                if (trad[i]->get_id() == in_intval) {
+                    edit_record_step3(trad[i]);
+                    
+                    return;
+                }
+            
+            break;
+        }
+            
+        case 2: {
+            vector<Encomenda *> ord = dbman.get_encomendas();
+            
+            for (int i = 0; i < ord.size(); i++)
+                if (ord[i]->get_id() == in_intval) {
+                    edit_record_step3(ord[i]);
+                    
+                    return;
+                }
+            
+            break;
+        }
+            
+        case 3: {
+            vector<Texto *> txt = dbman.get_textos();
+            
+            for (int i = 0; i < txt.size(); i++)
+                if (txt[i]->get_id() == in_intval) {
+                    edit_record_step3(txt[i]);
+                    
+                    return;
+                }
+            
+            break;
+        }
+            
+        default:
+            
+            break;
+    }
+    
+    cout << "No result matched your search." << endl;
+    
+    cout << endl;
+    
+    cout << "Press any key to go back to the Database Management menu. ";
+    
+    _getch();
+    
+    manage_database();
 }
