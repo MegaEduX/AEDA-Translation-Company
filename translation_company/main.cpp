@@ -71,6 +71,8 @@ int main(int argc, const char * argv[]) {
     
     // Application Code Comes Here!
     
+    Additions::clearConsole();
+    
     cout << "  /////////////////////////////" << endl;
     cout << " //   Translation Company   //" << endl;
     cout << "/////////////////////////////" << endl;
@@ -925,7 +927,7 @@ void manage_database() {
     
     cout << endl;*/
     
-    cout << "Please press the key corresponding to your choice. ";
+    cout << endl << "Please press the key corresponding to your choice. ";
     
     while (true) {
         int ch = _getch();
@@ -964,7 +966,7 @@ void manage_database() {
                 
                 cout << "0. Go Back" << endl;
                 
-                cout << "Please press the key corresponding to your new choice. ";
+                cout << endl << "Please press the key corresponding to your new choice. ";
                 
                 break;
         }
@@ -999,22 +1001,45 @@ void add_record() {
     
     string tr_name = Additions::getline();
     
-    cout << "Years of Experience: ";
+    cout << endl << "Years of Experience: ";
     
     string tr_expy_str = Additions::getline();
     
     while (!Additions::checkForOnlyNumeric(tr_expy_str)) {
-        cout << endl << "This field requires a numeric-only value. Please try again." << endl << endl;
+        cout << endl << endl<< "This field requires a numeric-only value. Please try again." << endl << endl;
+        
+        cout << "Years of Experience: ";
         
         tr_expy_str = Additions::getline();
     }
     
     int tr_expy = boost::lexical_cast<int>(tr_expy_str);
     
-    //
-    //  ask the user for each language, separated by returns,
-    //  until the ESC key is pressed.
-    //
+    cout << endl << "Languages (separated by return, ESC to terminate): ";
+    
+    vector<string> languages;
+    
+    string lang = Additions::getline();
+    
+    while (!Additions::gotESC(lang)) {
+        languages.push_back(lang);
+        
+        cout << endl;
+        
+        lang = Additions::getline();
+    }
+    
+    cout << endl << "Language Count: " << languages.size() << endl;
+    
+    Tradutor *trad = new Tradutor(Tradutor::get_maior_id() + 1, tr_name, tr_expy, languages);
+    
+    dbman.create_update_record(trad);
+    
+    cout << endl << "Record successfully created! Press any key to continue... ";
+    
+    _getch();
+    
+    manage_database();
 }
 
 void edit_record() {

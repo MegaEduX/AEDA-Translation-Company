@@ -36,8 +36,9 @@ public:
     unsigned int tempoEstimado(Texto *);
     unsigned int tempoEstimado(Encomenda *encomenda);
     unsigned int get_id();
-    unsigned int get_maior_id();
     unsigned int get_anos_experiencia();
+    
+    static unsigned int get_maior_id();
     
     bool get_pode_satisfazer_encomenda(Encomenda *encomenda);
     
