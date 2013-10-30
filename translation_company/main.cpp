@@ -1043,5 +1043,17 @@ void add_record() {
 }
 
 void edit_record() {
+    Additions::clearConsole();
     
+    cout << "-> Modify / Delete a Record" << endl;
+    
+    cout << endl;
+    
+    cout << "1. Edit a Translator" << endl;
+    cout << "2. Edit an Order" << endl;
+    cout << "3. Edit a Text" << endl;
+    
+    //
+    //  TBD
+    //
 }
