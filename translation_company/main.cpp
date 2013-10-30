@@ -1190,65 +1190,134 @@ void edit_record_step2(unsigned int obj_type) {
 }
 
 void edit_record_step3(Tradutor *obj) {
-    cout << "Name [" << obj->get_nome() << "] : ";
+    cout << "-> Translator Editor (ID: " << obj->get_id() << ")" << endl;
     
-    string new_name = Additions::getline();
+    cout << endl;
     
-    if (new_name.size() || new_name != "")
-        obj->set_nome(new_name);
+    cout << "1. Edit Record" << endl;
+    cout << "2. Delete Record" << endl;
     
-    while (true) {
-        cout << endl << "Years of Experience [" << obj->get_anos_experiencia() << "] : ";
-        
-        string new_yexp_str = Additions::getline();
-        
-        if (new_name.size() || new_name != "") {
-            if (Additions::checkForOnlyNumeric(new_yexp_str)) {
-                int new_yexp = boost::lexical_cast<int>(new_yexp_str);
+    cout << endl;
+    
+    cout << "0. Go Back";
+    
+    cout << endl;
+    
+    cout << endl << "Please press the key corresponding to your new choice. ";
+    
+    int ch = _getch();
+    
+    switch (ch) {
+        case baseASCIINumber:
+            
+            Additions::clearConsole();
+            
+            edit_record();
+            
+            break;
+            
+        case baseASCIINumber + 1: {
+            cout << endl << endl;
+            
+            cout << "Name [" << obj->get_nome() << "] : ";
+            
+            string new_name = Additions::getline();
+            
+            if (new_name.size() || new_name != "")
+                obj->set_nome(new_name);
+            
+            while (true) {
+                cout << endl << "Years of Experience [" << obj->get_anos_experiencia() << "] : ";
                 
-                obj->set_anos_experiencia(new_yexp);
+                string new_yexp_str = Additions::getline();
                 
-                break;
-            } else
-                cout << endl << "Years of Experience must be an integer. Please retry." << endl;
-        } else {
+                if (new_name.size() || new_name != "") {
+                    if (Additions::checkForOnlyNumeric(new_yexp_str)) {
+                        int new_yexp = boost::lexical_cast<int>(new_yexp_str);
+                        
+                        obj->set_anos_experiencia(new_yexp);
+                        
+                        break;
+                    } else
+                        cout << endl << "Years of Experience must be an integer. Please retry." << endl;
+                } else {
+                    break;
+                }
+            }
+            
+            vector<string> langs = obj->get_linguas();
+            
+            string imploded = boost::algorithm::join(langs, ", ");
+            
+            cout << endl << "Languages [" << imploded << "] " << endl;
+            cout << endl << "Press Return with a blank input to end." << endl;
+            
+            vector<string> new_langs;
+            
+            for (unsigned int lg_count = 1; ; lg_count++) {
+                cout << endl << "Language " << lg_count << ": ";
+                
+                string lang = Additions::getline();
+                
+                if (!lang.size() || lang == "")
+                    break;
+                
+                new_langs.push_back(lang);
+            }
+            
+            if (new_langs.size())
+                obj->set_linguas(new_langs);
+            
+            dbman.create_update_record(obj);
+            
+            cout << endl << endl << "The operation was successful.";
+            cout << endl << "Press any key to continue.";
+            
+            _getch();
+            
+            Additions::clearConsole();
+            
+            edit_record();
+            
+            return;
+            
             break;
         }
-    }
-    
-    vector<string> langs = obj->get_linguas();
-    
-    string imploded = boost::algorithm::join(langs, ", ");
-    
-    cout << endl << "Languages [" << imploded << "] " << endl;
-    cout << endl << "Press Return with a blank input to end." << endl;
-    
-    vector<string> new_langs;
-    
-    for (unsigned int lg_count = 1; ; lg_count++) {
-        cout << endl << "Language " << lg_count << ": ";
-        
-        string lang = Additions::getline();
-        
-        if (!lang.size() || lang == "")
+            
+        case baseASCIINumber + 2: {
+            dbman.delete_record(obj);
+            
+            cout << endl << endl << "The operation was successful.";
+            cout << endl << "Press any key to continue.";
+            
+            _getch();
+            
+            Additions::clearConsole();
+            
+            edit_record();
+            
+            return;
+            
             break;
-        
-        new_langs.push_back(lang);
+        }
+            
+        default:
+            
+            cout << endl << "Invalid choice." << endl;
+            
+            cout << endl;
+            
+            cout << "1. Edit Record";
+            cout << "2. Delete Record";
+            
+            cout << endl;
+            
+            cout << "0. Go Back" << endl;
+            
+            cout << endl << "Please press the key corresponding to your new choice. ";
+            
+            break;
     }
-    
-    if (new_langs.size())
-        obj->set_linguas(new_langs);
-    
-    dbman.create_update_record(obj);
-    
-    cout << endl << endl << "The operation has been successful.";
-    cout << endl << "Press any key to continue.";
-    
-    _getch();
-    
-    Additions::clearConsole();
-    
-    edit_record();
 }
 
 void edit_record_step3(Texto *obj) {
@@ -1256,5 +1325,63 @@ void edit_record_step3(Texto *obj) {
 }
 
 void edit_record_step3(Encomenda *obj) {
+    cout << "-> Order Editor (ID: " << obj->get_id() << ")" << endl;
     
+    cout << endl;
+    
+    cout << "Due to the nature of this record, it must not be edited." << endl;
+    cout << endl << "1. Delete Record" << endl;
+    
+    cout << endl;
+    
+    cout << "0. Go Back";
+    
+    cout << endl;
+    
+    cout << endl << "Please press the key corresponding to your new choice. ";
+    
+    int ch = _getch();
+    
+    switch (ch) {
+        case baseASCIINumber:
+            
+            Additions::clearConsole();
+            
+            edit_record();
+            
+            break;
+            
+        case baseASCIINumber + 1: {
+            dbman.delete_record(obj);
+            
+            cout << endl << endl << "The operation was successful.";
+            cout << endl << "Press any key to continue.";
+            
+            _getch();
+            
+            Additions::clearConsole();
+            
+            edit_record();
+            
+            return;
+            
+            break;
+        }
+            
+        default:
+            
+            cout << endl << "Invalid choice." << endl;
+            
+            cout << endl;
+            
+            cout << "1. Delete Record";
+            
+            cout << endl;
+            
+            cout << "0. Go Back" << endl;
+            
+            cout << endl << "Please press the key corresponding to your new choice. ";
+            
+            break;
+    }
 }
