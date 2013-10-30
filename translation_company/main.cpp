@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <boost/lexical_cast.hpp>
+#include <boost/algorithm/string.hpp>
 
 #ifdef RUN_TEST_CODE
 
@@ -1114,6 +1115,14 @@ void edit_record_step2(unsigned int obj_type) {
     string str_in = Additions::getline();
     
     while (!Additions::checkForOnlyNumeric(str_in)) {
+        if (Additions::gotESC(str_in)) {
+            Additions::clearConsole();
+            
+            edit_record();
+            
+            return;
+        }
+        
         cout << endl << "The ID must not contain non-numeric characters." << endl << endl;
         cout << "Object ID: ";
         
@@ -1178,4 +1187,74 @@ void edit_record_step2(unsigned int obj_type) {
     _getch();
     
     manage_database();
+}
+
+void edit_record_step3(Tradutor *obj) {
+    cout << "Name [" << obj->get_nome() << "] : ";
+    
+    string new_name = Additions::getline();
+    
+    if (new_name.size() || new_name != "")
+        obj->set_nome(new_name);
+    
+    while (true) {
+        cout << endl << "Years of Experience [" << obj->get_anos_experiencia() << "] : ";
+        
+        string new_yexp_str = Additions::getline();
+        
+        if (new_name.size() || new_name != "") {
+            if (Additions::checkForOnlyNumeric(new_yexp_str)) {
+                int new_yexp = boost::lexical_cast<int>(new_yexp_str);
+                
+                obj->set_anos_experiencia(new_yexp);
+                
+                break;
+            } else
+                cout << endl << "Years of Experience must be an integer. Please retry." << endl;
+        } else {
+            break;
+        }
+    }
+    
+    vector<string> langs = obj->get_linguas();
+    
+    string imploded = boost::algorithm::join(langs, ", ");
+    
+    cout << endl << "Languages [" << imploded << "] " << endl;
+    cout << endl << "Press Return with a blank input to end." << endl;
+    
+    vector<string> new_langs;
+    
+    for (unsigned int lg_count = 1; ; lg_count++) {
+        cout << endl << "Language " << lg_count << ": ";
+        
+        string lang = Additions::getline();
+        
+        if (!lang.size() || lang == "")
+            break;
+        
+        new_langs.push_back(lang);
+    }
+    
+    if (new_langs.size())
+        obj->set_linguas(new_langs);
+    
+    dbman.create_update_record(obj);
+    
+    cout << endl << endl << "The operation has been successful.";
+    cout << endl << "Press any key to continue.";
+    
+    _getch();
+    
+    Additions::clearConsole();
+    
+    edit_record();
+}
+
+void edit_record_step3(Texto *obj) {
+    
+}
+
+void edit_record_step3(Encomenda *obj) {
+    
 }

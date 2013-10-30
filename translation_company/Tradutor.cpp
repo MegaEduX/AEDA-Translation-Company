@@ -38,12 +38,24 @@ std::string Tradutor::get_nome() {
     return _nome;
 }
 
+void Tradutor::set_nome(std::string nome) {
+    _nome = nome;
+}
+
 unsigned int Tradutor::get_anos_experiencia() {
     return _anos_experiencia;
 }
 
+void Tradutor::set_anos_experiencia(unsigned int anos_exp) {
+    _anos_experiencia = anos_exp;
+}
+
 std::vector<std::string> Tradutor::get_linguas() {
     return _linguas;
+}
+
+void Tradutor::set_linguas(std::vector<std::string> linguas) {
+    _linguas = linguas;
 }
 
 unsigned int Tradutor::_get_tempo_ocupado() {

@@ -35,16 +35,21 @@ public:
     
     unsigned int tempoEstimado(Texto *);
     unsigned int tempoEstimado(Encomenda *encomenda);
+    
     unsigned int get_id();
+    
     unsigned int get_anos_experiencia();
+    void set_anos_experiencia(unsigned int anos_exp);
     
     static unsigned int get_maior_id();
     
     bool get_pode_satisfazer_encomenda(Encomenda *encomenda);
     
     std::string get_nome();
+    void set_nome(std::string nome);
     
     std::vector<std::string> get_linguas();
+    void set_linguas(std::vector<std::string> linguas);
 };
 
 #endif /* defined(__translation_company__Tradutor__) */
