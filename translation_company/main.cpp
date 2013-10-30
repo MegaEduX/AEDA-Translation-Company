@@ -52,8 +52,9 @@ void edit_record();
 void edit_record_step2(unsigned int obj_type);
 
 void edit_record_step3(Tradutor *obj);
-void edit_record_step3(Texto *obj);
-void edit_record_step3(Encomenda *obj);
+
+template <class T>
+void delete_record_step3(T *obj);
 
 //  Comment the following line of code to run the app.
 
@@ -601,6 +602,10 @@ void search_translators() {
     
     cout << endl;
     
+    cout << "5. List All Translators" << endl;
+    
+    cout << endl;
+    
     cout << "0. Go Back" << endl;
     
     cout << endl;
@@ -609,7 +614,7 @@ void search_translators() {
     
     int ch = _getch();
     
-    while (ch < baseASCIINumber || ch > baseASCIINumber + 4) {
+    while (ch < baseASCIINumber || ch > baseASCIINumber + 5) {
         cout << endl << "Invalid choice." << endl;
         
         cout << endl;
@@ -618,6 +623,10 @@ void search_translators() {
         cout << "2. Name" << endl;
         cout << "3. Years of Experience" << endl;
         cout << "4. Language" << endl;
+        
+        cout << endl;
+        
+        cout << "5. List All Translators" << endl;
         
         cout << endl;
         
@@ -642,11 +651,25 @@ void search_translators() {
 void search_translators_step2(unsigned int search_type) {
     cout << endl;
     
-    cout << "Query: ";
+    string str_in;
     
-    string str_in = Additions::getline();
+    if (search_type != 5) {
+        cout << "Query: ";
+        
+        str_in = Additions::getline();
+        
+        if (Additions::gotESC(str_in)) {
+            Additions::clearConsole();
+            
+            query_database();
+            
+            return;
+        }
+        
+        cout << endl;
+    }
     
-    cout << endl << endl;
+    cout << endl;
     
     std::vector<Tradutor *> translators = dbman.get_tradutores();
     
@@ -662,7 +685,7 @@ void search_translators_step2(unsigned int search_type) {
                 if (ct->get_id() == in_intval) {
                     display_info(ct);
                     
-                    found = !found;
+                    found = true;
                 }
                 
                 break;
@@ -672,7 +695,7 @@ void search_translators_step2(unsigned int search_type) {
                 if (!(ct->get_nome().compare(str_in))) {
                     display_info(ct);
                     
-                    found = !found;
+                    found = true;
                 }
                 
                 break;
@@ -684,7 +707,7 @@ void search_translators_step2(unsigned int search_type) {
                 if (ct->get_anos_experiencia() == in_intval) {
                     display_info(ct);
                     
-                    found = !found;
+                    found = true;
                 }
                 
                 break;
@@ -697,11 +720,19 @@ void search_translators_step2(unsigned int search_type) {
                     if (!(ct->get_linguas()[j].compare(str_in))) {
                         display_info(ct);
                         
-                        found = !found;
+                        found = true;
                         
                         break;
                     }
                 }
+                
+                break;
+            }
+                
+            case 5: {
+                display_info(ct);
+                
+                found = true;
                 
                 break;
             }
@@ -760,6 +791,10 @@ void search_orders() {
     
     cout << endl;
     
+    cout << "5. List All Orders" << endl;
+    
+    cout << endl;
+    
     cout << "0. Go Back" << endl;
     
     cout << endl;
@@ -768,7 +803,7 @@ void search_orders() {
     
     int ch = _getch();
     
-    while (ch < baseASCIINumber || ch > baseASCIINumber + 4) {
+    while (ch < baseASCIINumber || ch > baseASCIINumber + 5) {
         cout << endl << "Invalid choice." << endl;
         
         cout << endl;
@@ -777,6 +812,10 @@ void search_orders() {
         cout << "2. Source Language" << endl;
         cout << "3. Destination Language" << endl;
         cout << "4. Translator ID" << endl;
+        
+        cout << endl;
+        
+        cout << "5. List All Orders" << endl;
         
         cout << endl;
         
@@ -803,31 +842,37 @@ void search_orders() {
 void search_orders_step2(unsigned int search_type) {
     cout << endl;
     
-    cout << "Query: ";
+    string str_in;
     
-    string str_in = Additions::getline();
-    
-    if (Additions::gotESC(str_in)) {
-        Additions::clearConsole();
+    if (search_type != 5) {
+        cout << "Query: ";
         
-        main_menu();
-    }
-    
-    if (search_type == 1 || search_type == 4) {
-        while (!Additions::checkForOnlyNumeric(str_in)) {
-            cout << endl << "This option requires a numeric query. Please retry.";
-            cout << endl << "You may also go back to the previous screen by using the ESC key.";
-            cout << endl << endl << "Query: ";
+        str_in = Additions::getline();
+        
+        if (Additions::gotESC(str_in)) {
+            Additions::clearConsole();
             
-            if (Additions::gotESC(str_in)) {
-                Additions::clearConsole();
+            main_menu();
+        }
+        
+        cout << endl;
+        
+        if (search_type == 1 || search_type == 4) {
+            while (!Additions::checkForOnlyNumeric(str_in)) {
+                cout << endl << "This option requires a numeric query. Please retry.";
+                cout << endl << "You may also go back to the previous screen by using the ESC key.";
+                cout << endl << endl << "Query: ";
                 
-                search_orders();
+                if (Additions::gotESC(str_in)) {
+                    Additions::clearConsole();
+                    
+                    search_orders();
+                }
             }
         }
     }
     
-    cout << endl << endl;
+    cout << endl;
     
     std::vector<Encomenda *> orders = dbman.get_encomendas();
     
@@ -843,7 +888,7 @@ void search_orders_step2(unsigned int search_type) {
                 if (enc->get_id() == in_intval) {
                     display_info(enc);
                     
-                    found = !found;
+                    found = true;
                 }
                 
                 break;
@@ -853,7 +898,7 @@ void search_orders_step2(unsigned int search_type) {
                 if (!(enc->get_texto()->get_lingua().compare(str_in))) {
                     display_info(enc);
                     
-                    found = !found;
+                    found = true;
                 }
                 
                 break;
@@ -863,7 +908,7 @@ void search_orders_step2(unsigned int search_type) {
                 if (!(enc->get_lingua_destino().compare(str_in))) {
                     display_info(enc);
                     
-                    found = !found;
+                    found = true;
                 }
                 
                 break;
@@ -875,11 +920,19 @@ void search_orders_step2(unsigned int search_type) {
                 if (enc->get_tradutor()->get_id() == in_intval) {
                     display_info(enc);
                     
-                    found = !found;
+                    found = true;
                 }
                 
                 break;
             }
+                
+            case 5:
+                
+                display_info(enc);
+                
+                found = true;
+                
+                break;
                 
             default:
                 
@@ -906,6 +959,8 @@ void display_info(Encomenda *enc) {
     cout << "Source Language: " << enc->get_texto()->get_lingua() << endl;
     cout << "Destination Language: " << enc->get_lingua_destino() << endl;
     cout << "Text Size (in words): " << enc->get_texto()->get_palavras() << endl;
+    cout << "Date of Delivery: " << Additions::timestampToString(enc->get_timestamp_entrega()) << endl;
+    cout << "Deliveried? " << (time(NULL) > enc->get_timestamp_entrega() ? "Yes" : "No") << "." << endl;
     
     cout << endl;
 }
@@ -1008,9 +1063,21 @@ void add_record() {
     
     string tr_name = Additions::getline();
     
+    if (Additions::gotESC(tr_name)) {
+        Additions::clearConsole();
+        
+        manage_database();
+    }
+    
     cout << endl << "Years of Experience: ";
     
     string tr_expy_str = Additions::getline();
+    
+    if (Additions::gotESC(tr_expy_str)) {
+        Additions::clearConsole();
+        
+        manage_database();
+    }
     
     while (!Additions::checkForOnlyNumeric(tr_expy_str)) {
         cout << endl << endl<< "This field requires a numeric-only value. Please try again." << endl << endl;
@@ -1018,17 +1085,29 @@ void add_record() {
         cout << "Years of Experience: ";
         
         tr_expy_str = Additions::getline();
+        
+        if (Additions::gotESC(tr_name)) {
+            Additions::clearConsole();
+            
+            manage_database();
+        }
     }
     
     int tr_expy = boost::lexical_cast<int>(tr_expy_str);
     
-    cout << endl << "Languages (separated by return, ESC to terminate): ";
+    cout << endl << "Languages (separated by return, blank input to terminate): ";
     
     vector<string> languages;
     
     string lang = Additions::getline();
     
-    while (!Additions::gotESC(lang)) {
+    if (Additions::gotESC(lang)) {
+        Additions::clearConsole();
+        
+        manage_database();
+    }
+    
+    while (lang.size() && lang != "") {
         languages.push_back(lang);
         
         cout << endl;
@@ -1152,7 +1231,7 @@ void edit_record_step2(unsigned int obj_type) {
             
             for (int i = 0; i < ord.size(); i++)
                 if (ord[i]->get_id() == in_intval) {
-                    edit_record_step3(ord[i]);
+                    delete_record_step3(ord[i]);
                     
                     return;
                 }
@@ -1165,7 +1244,7 @@ void edit_record_step2(unsigned int obj_type) {
             
             for (int i = 0; i < txt.size(); i++)
                 if (txt[i]->get_id() == in_intval) {
-                    edit_record_step3(txt[i]);
+                    delete_record_step3(txt[i]);
                     
                     return;
                 }
@@ -1320,11 +1399,8 @@ void edit_record_step3(Tradutor *obj) {
     }
 }
 
-void edit_record_step3(Texto *obj) {
-    
-}
-
-void edit_record_step3(Encomenda *obj) {
+template <class T>
+void delete_record_step3(T *obj) {
     cout << "-> Order Editor (ID: " << obj->get_id() << ")" << endl;
     
     cout << endl;
