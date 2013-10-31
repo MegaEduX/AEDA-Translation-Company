@@ -37,9 +37,11 @@ void query_database();
 
 void search_translators();
 void search_orders();
+void search_texts();
 
 void search_translators_step2(unsigned int search_type);
 void search_orders_step2(unsigned int search_type);
+void search_texts_step2(unsigned int search_type);
 
 void display_info(Tradutor *trad);
 void display_info(Encomenda *enc);
@@ -279,7 +281,7 @@ void order_translation() {
             possible_translators.push_back(translators[i]);
     }
     
-    if (found < 2) {
+    if (!possible_translators.size()) {
         cout << endl << endl << "We don't currently have any translator that can do the requested translation job.";
         cout << endl << "Press any key to go back to the main menu.";
         
@@ -963,6 +965,74 @@ void display_info(Encomenda *enc) {
     cout << "Deliveried? " << (time(NULL) > enc->get_timestamp_entrega() ? "Yes" : "No") << "." << endl;
     
     cout << endl;
+}
+
+void search_texts() {
+    Additions::clearConsole();
+    
+    cout << "-> Text Search" << endl;
+    
+    cout << endl;
+    
+    cout << "Search by..." << endl;
+    
+    cout << "1. ID" << endl;
+    cout << "2. Language" << endl;
+    cout << "3. Word Count" << endl;
+    cout << "4. Parent Order" << endl;
+    
+    cout << endl;
+    
+    cout << "5. List All Texts" << endl;
+    
+    cout << endl;
+    
+    cout << "0. Go Back" << endl;
+    
+    cout << endl;
+    
+    cout << "Please press the key corresponding to your choice. ";
+    
+    int ch = _getch();
+    
+    while (ch < baseASCIINumber || ch > baseASCIINumber + 5) {
+        cout << endl << "Invalid choice." << endl;
+        
+        cout << endl;
+        
+        cout << "1. ID" << endl;
+        cout << "2. Language" << endl;
+        cout << "3. Word Count" << endl;
+        cout << "4. Parent Order" << endl;
+        
+        cout << endl;
+        
+        cout << "5. List All Orders" << endl;
+        
+        cout << endl;
+        
+        cout << "0. Go Back" << endl;
+        
+        cout << endl;
+        
+        cout << "Please press the key corresponding to your new choice. ";
+    }
+    
+    if (ch == baseASCIINumber) {
+        Additions::clearConsole();
+        
+        main_menu();
+        
+        return;
+    }
+    
+    int search_type = ch - baseASCIINumber;
+    
+    search_orders_step2(search_type);
+}
+
+void search_texts_step2(unsigned int search_type) {
+    
 }
 
 void manage_database() {
