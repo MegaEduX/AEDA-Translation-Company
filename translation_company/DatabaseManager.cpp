@@ -160,10 +160,6 @@ std::vector<Texto *> DatabaseManager::get_textos() {
                 break;
             }
         }
-        
-        Texto *texto = new Texto(id, lingua, palavras, conteudo);
-        
-        return_vec.push_back(texto);
     }
     
     return return_vec;

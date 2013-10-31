@@ -45,6 +45,7 @@ void search_texts_step2(unsigned int search_type);
 
 void display_info(Tradutor *trad);
 void display_info(Encomenda *enc);
+void display_info(Texto *txt);
 
 void manage_database();
 
@@ -528,7 +529,7 @@ void query_database() {
     
     cout << "1. Search for Translators" << endl;
     cout << "2. Search for Orders" << endl;
-    cout << "3. Search for Texts" << endl; //   TBD
+    cout << "3. Search for Texts" << endl;
     
     cout << endl;
     
@@ -564,7 +565,7 @@ void query_database() {
                 
             case baseASCIINumber + 3:
                 
-                //  TBD
+                search_texts();
                 
                 break;
                 
@@ -1003,7 +1004,7 @@ void search_texts() {
         cout << "1. ID" << endl;
         cout << "2. Language" << endl;
         cout << "3. Word Count" << endl;
-        cout << "4. Parent Order" << endl;
+        cout << "4. Parent Order ID" << endl;
         
         cout << endl;
         
@@ -1028,11 +1029,138 @@ void search_texts() {
     
     int search_type = ch - baseASCIINumber;
     
-    search_orders_step2(search_type);
+    search_texts_step2(search_type);
 }
 
 void search_texts_step2(unsigned int search_type) {
+    cout << endl;
     
+    string str_in;
+    
+    if (search_type != 5) {
+        cout << "Query: ";
+        
+        str_in = Additions::getline();
+        
+        if (Additions::gotESC(str_in)) {
+            Additions::clearConsole();
+            
+            main_menu();
+        }
+        
+        cout << endl;
+        
+        if (search_type == 1 || search_type == 3 || search_type == 4) {
+            while (!Additions::checkForOnlyNumeric(str_in)) {
+                cout << endl << "This option requires a numeric query. Please retry.";
+                cout << endl << "You may also go back to the previous screen by using the ESC key.";
+                cout << endl << endl << "Query: ";
+                
+                if (Additions::gotESC(str_in)) {
+                    Additions::clearConsole();
+                    
+                    search_orders();
+                }
+            }
+        }
+    }
+    
+    cout << endl;
+    
+    std::vector<Texto *> texts = dbman.get_textos();
+    
+    bool found = false;
+    
+    for (int i = 0; i < texts.size(); i++) {
+        Texto *txt = texts[i];
+        
+        switch (search_type) {
+            case 1: {
+                int in_intval = boost::lexical_cast<int>(str_in);
+                
+                if (txt->get_id() == in_intval) {
+                    display_info(txt);
+                    
+                    found = true;
+                }
+                
+                break;
+            }
+                
+            case 2: {
+                if (!(txt->get_lingua().compare(str_in))) {
+                    display_info(txt);
+                    
+                    found = true;
+                }
+                
+                break;
+            }
+                
+            case 3: {
+                int in_intval = boost::lexical_cast<int>(str_in);
+                
+                if (txt->get_palavras() == in_intval) {
+                    display_info(txt);
+                    
+                    found = true;
+                }
+                
+                break;
+            }
+                
+            case 4: {
+                int in_intval = boost::lexical_cast<int>(str_in);
+                
+                vector<Encomenda *> orders = dbman.get_encomendas();
+                
+                for (unsigned int i = 0; i < orders.size(); i++)
+                    if (orders[i]->get_texto()->get_id() == in_intval) {
+                        display_info(txt);
+                        
+                        found = true;
+                    }
+                
+                break;
+            }
+                
+            case 5: {
+                
+                display_info(txt);
+                
+                found = true;
+                
+                break;
+            }
+                
+            default:
+                
+                break;
+        }
+    }
+    
+    cout << "End of listing." << endl;
+    
+    cout << endl;
+    
+    cout << "Press any key to go back to the Text Search. ";
+    
+    _getch();
+    
+    search_texts();
+}
+
+void display_info(Texto *txt) {
+    cout << "Text Information (ID: " << txt->get_id() << ")" << endl;
+    
+    cout << endl;
+    
+    cout << "Language: " << txt->get_lingua() << endl;
+    cout << "Word Count: " << txt->get_palavras() << endl;
+    cout << endl;
+    cout << "Contents: " << txt->get_conteudo() << endl;
+    
+    cout << endl;
 }
 
 void manage_database() {
@@ -1048,16 +1176,6 @@ void manage_database() {
     cout << endl;
     
     cout << "0. Go Back" << endl;
-    
-    /*cout << "1. Search for Translators" << endl;
-    cout << "2. Search for Orders" << endl;
-    cout << "3. Search for Texts" << endl; //   TBD
-    
-    cout << endl;
-    
-    cout << "0. Go Back" << endl;
-    
-    cout << endl;*/
     
     cout << endl << "Please press the key corresponding to your choice. ";
     
