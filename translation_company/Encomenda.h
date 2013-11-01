@@ -35,14 +35,18 @@ public:
     static unsigned int get_maior_id();
     
     unsigned int get_id();
+    
     unsigned int get_duracao_max_dias();
+    void set_duracao_max_dias(unsigned int dias);
     
     Texto *get_texto() const;
+    void set_texto(Texto *);
     
     Tradutor *get_tradutor() const;
     void set_tradutor(Tradutor *);
     
     std::string get_lingua_destino();
+    void set_lingua_destino(std::string lingua);
     
     uint64_t get_timestamp_entrega();
     void set_timestamp_entrega(uint64_t timestamp_entrega);

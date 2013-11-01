@@ -43,7 +43,7 @@ public:
     
     static unsigned int get_maior_id();
     
-    bool get_pode_satisfazer_encomenda(Encomenda *encomenda);
+    bool podeSatisfazerEncomenda(Encomenda *encomenda);
     
     std::string get_nome();
     void set_nome(std::string nome);

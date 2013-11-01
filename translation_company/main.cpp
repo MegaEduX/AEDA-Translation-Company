@@ -446,7 +446,7 @@ void order_translation() {
     Tradutor *best_translator = nullptr;
     
     for (unsigned int i = 0; i < possible_translators.size(); i++)
-        if (possible_translators[i]->get_pode_satisfazer_encomenda(enc)) {
+        if (possible_translators[i]->podeSatisfazerEncomenda(enc)) {
             unsigned int te = possible_translators[i]->tempoEstimado(enc);
             
             if (least_time > te || &best_translator == nullptr) {

@@ -49,8 +49,16 @@ Texto *Encomenda::get_texto() const {
     return _texto;
 }
 
-Tradutor *Encomenda::get_tradutor() const {
+void Encomenda::set_texto(Texto *texto) {
+    _texto = texto;
+}
+
+Tradutor* Encomenda::get_tradutor() const {
     return _tradutor;
+}
+
+void Encomenda::set_tradutor(Tradutor *trad) {
+    _tradutor = trad;
 }
 
 std::string Encomenda::get_lingua_destino() {
@@ -61,8 +69,8 @@ unsigned int Encomenda::get_duracao_max_dias() {
     return _duracao_max_dias;
 }
 
-void Encomenda::set_tradutor(Tradutor *tradutor) {
-    _tradutor = tradutor;
+void Encomenda::set_duracao_max_dias(unsigned int dias) {
+    _duracao_max_dias = dias;
 }
 
 uint64_t Encomenda::get_timestamp_entrega() {
