@@ -15,6 +15,11 @@
 
 class Texto;
 
+/**
+ *  Encomenda class.
+ *  This class packages the details about an order and provides some functionality on them.
+ */
+
 class Encomenda {
     unsigned int _id;
     unsigned int _duracao_max_dias;

@@ -29,11 +29,11 @@
  */
 
 typedef enum {
-    kTextoBase,
-    kTextoTecnico,
-    kTextoLiterario,
-    kTextoNoticioso
-} kTexto;
+    kTextoBase,         /**< Base Text. */
+    kTextoTecnico,      /**< Technical Text. */
+    kTextoLiterario,    /**< Literary Text. */
+    kTextoNoticioso     /**< News Text. */
+} kTexto;               /**< Text enum. */
 
 /**
  *  Class enum.
@@ -41,10 +41,10 @@ typedef enum {
  */
 
 typedef enum {
-    kClassTexto,
-    kClassTradutor,
-    kClassEncomenda
-} kClass;
+    kClassTexto,        /**< Class Texto. */
+    kClassTradutor,     /**< Class Translator. */
+    kClassEncomenda     /**< Class Order. */
+} kClass;               /**< Class Enum. */
 
 /**
  *  Database Manager class.

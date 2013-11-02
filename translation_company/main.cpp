@@ -140,6 +140,9 @@ void main_menu() {
                 break;
                 
             default:
+                
+                cout << endl;
+                
                 cout << endl << "Invalid choice." << endl << endl;
                 
                 cout << "1. Order a Translation" << endl;
@@ -571,16 +574,21 @@ void query_database() {
                 
             default:
                 
+                cout << endl;
+                
                 cout << endl << "Invalid choice." << endl;
                 
                 cout << endl;
                 
                 cout << "1. Search for Translators" << endl;
                 cout << "2. Search for Orders" << endl;
+                cout << "3. Search for Texts" << endl;
                 
                 cout << endl;
                 
                 cout << "0. Go Back" << endl;
+                
+                cout << endl;
                 
                 cout << "Please press the key corresponding to your new choice. ";
                 
@@ -618,6 +626,8 @@ void search_translators() {
     int ch = _getch();
     
     while (ch < baseASCIINumber || ch > baseASCIINumber + 5) {
+        cout << endl;
+        
         cout << endl << "Invalid choice." << endl;
         
         cout << endl;
@@ -638,6 +648,8 @@ void search_translators() {
         cout << endl;
         
         cout << "Please press the key corresponding to your new choice. ";
+        
+        ch = _getch();
     }
     
     if (ch == baseASCIINumber) {
@@ -807,6 +819,8 @@ void search_orders() {
     int ch = _getch();
     
     while (ch < baseASCIINumber || ch > baseASCIINumber + 5) {
+        cout << endl;
+        
         cout << endl << "Invalid choice." << endl;
         
         cout << endl;
@@ -827,6 +841,8 @@ void search_orders() {
         cout << endl;
         
         cout << "Please press the key corresponding to your new choice. ";
+        
+        ch = _getch();
     }
     
     if (ch == baseASCIINumber) {
@@ -997,6 +1013,8 @@ void search_texts() {
     int ch = _getch();
     
     while (ch < baseASCIINumber || ch > baseASCIINumber + 5) {
+        cout << endl;
+        
         cout << endl << "Invalid choice." << endl;
         
         cout << endl;
@@ -1017,6 +1035,8 @@ void search_texts() {
         cout << endl;
         
         cout << "Please press the key corresponding to your new choice. ";
+        
+        ch = _getch();
     }
     
     if (ch == baseASCIINumber) {
@@ -1205,6 +1225,8 @@ void manage_database() {
                 
             default:
                 
+                cout << endl;
+                
                 cout << endl << "Invalid choice." << endl;
                 
                 cout << endl;
@@ -1354,6 +1376,8 @@ void edit_record() {
                 break;
                 
             default:
+                
+                cout << endl;
                 
                 cout << endl << "Invalid choice." << endl;
                 
