@@ -265,7 +265,14 @@ bool DatabaseManager::create_update_record(Texto *texto) {
     cmd.bind(":id", boost::lexical_cast<std::string>(texto->get_id()).c_str());
     cmd.bind(":lingua", texto->get_lingua().c_str());
     cmd.bind(":palavras", boost::lexical_cast<std::string>(texto->get_palavras()).c_str());
-    cmd.bind(":conteudo", texto->get_conteudo().c_str());
+    
+    /*
+     *  I can't just blindly do a .c_str() conversion here as it will break the text if it is too long.
+     */
+    
+    std::vector<char> contents_char(texto->get_conteudo().begin(), texto->get_conteudo().end());
+    
+    cmd.bind(":conteudo", &contents_char[0]);
     
     if (dynamic_cast<TextoTecnico *>(texto)) {
         cmd.bind(":tipo_obj", boost::lexical_cast<std::string>(kTextoTecnico).c_str());

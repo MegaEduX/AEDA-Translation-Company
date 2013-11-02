@@ -25,8 +25,17 @@ using namespace std;
 
 static const int baseASCIINumber = 48;
 
-static const int returnKeyPOSIX = 13;
-static const int returnKeyWindows = 10;
+#ifdef WIN32
+
+static const int returnKey = 13;
+static const int escKey = 0; /* Unknown. */
+
+#else
+
+static const int returnKey = 10;
+static const int escKey = 27;
+
+#endif
 
 static DatabaseManager dbman = DatabaseManager(db_path);
 
@@ -109,7 +118,7 @@ void main_menu() {
     
     cout << endl;
     
-    cout << "0. Exit" << endl;
+    cout << "ESC. Exit" << endl;
     
     cout << endl;
     
@@ -119,7 +128,7 @@ void main_menu() {
         int ch = _getch();
         
         switch (ch) {
-            case baseASCIINumber:
+            case escKey:
                 exit(0);
                 
                 break;
@@ -151,7 +160,7 @@ void main_menu() {
                 
                 cout << endl;
                 
-                cout << "0. Exit" << endl;
+                cout << "ESC. Exit" << endl;
                 
                 cout << endl;
                 
@@ -170,11 +179,11 @@ void order_translation() {
     
     cout << endl;
     
-    cout << "Available Text Types:" << endl << " (1) - Technical Text" <<  endl << " (2) - Literary Text" << endl << " (3) - News Article Text" << endl << " (0) - Go Back" << endl;
+    cout << "Available Text Types:" << endl << " (1) - Technical Text" <<  endl << " (2) - Literary Text" << endl << " (3) - News Article Text" << endl;
     
     cout << endl;
     
-    cout << "Source Text Type: ";
+    cout << "Please choose one. ";
     
     kTexto text_type = kTextoBase;
     
@@ -184,7 +193,7 @@ void order_translation() {
         int ch = _getch();
         
         switch (ch) {
-            case baseASCIINumber:
+            case escKey:
                 
                 Additions::clearConsole();
                 
@@ -217,7 +226,7 @@ void order_translation() {
                 
             default:
                 
-                cout << endl << "Invalid choice. Please try again. " << endl;
+                cout << endl << "Invalid choice. Please try again. ";
                 
                 break;
         }
@@ -536,7 +545,7 @@ void query_database() {
     
     cout << endl;
     
-    cout << "0. Go Back" << endl;
+    cout << "ESC. Go Back" << endl;
     
     cout << endl;
     
@@ -546,7 +555,7 @@ void query_database() {
         int ch = _getch();
         
         switch (ch) {
-            case baseASCIINumber:
+            case escKey:
                 
                 Additions::clearConsole();
                 
@@ -586,7 +595,7 @@ void query_database() {
                 
                 cout << endl;
                 
-                cout << "0. Go Back" << endl;
+                cout << "ESC. Go Back" << endl;
                 
                 cout << endl;
                 
@@ -617,7 +626,7 @@ void search_translators() {
     
     cout << endl;
     
-    cout << "0. Go Back" << endl;
+    cout << "ESC. Go Back" << endl;
     
     cout << endl;
     
@@ -625,9 +634,7 @@ void search_translators() {
     
     int ch = _getch();
     
-    while (ch < baseASCIINumber || ch > baseASCIINumber + 5) {
-        cout << endl;
-        
+    while (ch != escKey && (ch < baseASCIINumber + 1 || ch > baseASCIINumber + 5)) {
         cout << endl << "Invalid choice." << endl;
         
         cout << endl;
@@ -643,7 +650,7 @@ void search_translators() {
         
         cout << endl;
         
-        cout << "0. Go Back" << endl;
+        cout << "ESC. Go Back" << endl;
         
         cout << endl;
         
@@ -652,7 +659,7 @@ void search_translators() {
         ch = _getch();
     }
     
-    if (ch == baseASCIINumber) {
+    if (ch == escKey) {
         query_database();
         
         return;
@@ -810,7 +817,7 @@ void search_orders() {
     
     cout << endl;
     
-    cout << "0. Go Back" << endl;
+    cout << "ESC. Go Back" << endl;
     
     cout << endl;
     
@@ -818,7 +825,7 @@ void search_orders() {
     
     int ch = _getch();
     
-    while (ch < baseASCIINumber || ch > baseASCIINumber + 5) {
+    while (ch != escKey && (ch < baseASCIINumber + 1 || ch > baseASCIINumber + 5)) {
         cout << endl;
         
         cout << endl << "Invalid choice." << endl;
@@ -836,7 +843,7 @@ void search_orders() {
         
         cout << endl;
         
-        cout << "0. Go Back" << endl;
+        cout << "ESC. Go Back" << endl;
         
         cout << endl;
         
@@ -845,7 +852,7 @@ void search_orders() {
         ch = _getch();
     }
     
-    if (ch == baseASCIINumber) {
+    if (ch == escKey) {
         Additions::clearConsole();
         
         main_menu();
@@ -1004,7 +1011,7 @@ void search_texts() {
     
     cout << endl;
     
-    cout << "0. Go Back" << endl;
+    cout << "ESC. Go Back" << endl;
     
     cout << endl;
     
@@ -1012,7 +1019,7 @@ void search_texts() {
     
     int ch = _getch();
     
-    while (ch < baseASCIINumber || ch > baseASCIINumber + 5) {
+    while (ch != escKey && (ch < baseASCIINumber + 1 || ch > baseASCIINumber + 5)) {
         cout << endl;
         
         cout << endl << "Invalid choice." << endl;
@@ -1030,7 +1037,7 @@ void search_texts() {
         
         cout << endl;
         
-        cout << "0. Go Back" << endl;
+        cout << "ESC. Go Back" << endl;
         
         cout << endl;
         
@@ -1195,7 +1202,7 @@ void manage_database() {
     
     cout << endl;
     
-    cout << "0. Go Back" << endl;
+    cout << "ESC. Go Back" << endl;
     
     cout << endl << "Please press the key corresponding to your choice. ";
     
@@ -1203,7 +1210,7 @@ void manage_database() {
         int ch = _getch();
         
         switch (ch) {
-            case baseASCIINumber:
+            case escKey:
                 
                 Additions::clearConsole();
                 
@@ -1236,7 +1243,7 @@ void manage_database() {
                 
                 cout << endl;
                 
-                cout << "0. Go Back" << endl;
+                cout << "ESC. Go Back" << endl;
                 
                 cout << endl << "Please press the key corresponding to your new choice. ";
                 
@@ -1257,11 +1264,11 @@ void add_record() {
     
     cout << endl;
     
-    cout << "Press any key to continue (or 0 to go back to the previous menu). ";
+    cout << "Press any key to continue (or ESC to go back to the previous menu). ";
     
     int ch = _getch();
     
-    if (ch == baseASCIINumber) {
+    if (ch == escKey) {
         Additions::clearConsole();
         
         manage_database();
@@ -1351,7 +1358,7 @@ void edit_record() {
     
     cout << endl;
     
-    cout << "0. Go Back" << endl;
+    cout << "ESC. Go Back" << endl;
     
     cout << endl << "Please press the key corresponding to your choice. ";
     
@@ -1359,7 +1366,7 @@ void edit_record() {
         int ch = _getch();
         
         switch (ch) {
-            case baseASCIINumber:
+            case escKey:
                 
                 Additions::clearConsole();
                 
@@ -1389,7 +1396,7 @@ void edit_record() {
                 
                 cout << endl;
                 
-                cout << "0. Go Back" << endl;
+                cout << "ESC. Go Back" << endl;
                 
                 cout << endl << "Please press the key corresponding to your new choice. ";
                 
@@ -1490,7 +1497,7 @@ void edit_record_step3(Tradutor *obj) {
     
     cout << endl;
     
-    cout << "0. Go Back";
+    cout << "ESC. Go Back";
     
     cout << endl;
     
@@ -1499,7 +1506,7 @@ void edit_record_step3(Tradutor *obj) {
     int ch = _getch();
     
     switch (ch) {
-        case baseASCIINumber:
+        case escKey:
             
             Additions::clearConsole();
             
@@ -1603,7 +1610,7 @@ void edit_record_step3(Tradutor *obj) {
             
             cout << endl;
             
-            cout << "0. Go Back" << endl;
+            cout << "ESC. Go Back" << endl;
             
             cout << endl << "Please press the key corresponding to your new choice. ";
             
@@ -1622,7 +1629,7 @@ void delete_record_step3(T *obj) {
     
     cout << endl;
     
-    cout << "0. Go Back";
+    cout << "ESC. Go Back";
     
     cout << endl;
     
@@ -1666,7 +1673,7 @@ void delete_record_step3(T *obj) {
             
             cout << endl;
             
-            cout << "0. Go Back" << endl;
+            cout << "ESC. Go Back" << endl;
             
             cout << endl << "Please press the key corresponding to your new choice. ";
             
