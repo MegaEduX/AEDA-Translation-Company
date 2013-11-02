@@ -1,6 +1,7 @@
 ## Compiling
 
 Dependencies:
+
 * boost
 * libsqlite3
 
