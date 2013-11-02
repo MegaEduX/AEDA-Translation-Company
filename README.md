@@ -7,8 +7,12 @@ Dependencies:
 
 ## Compiling (Docs)
 
-```./make_docs.sh```
+```
+./make_docs.sh
+```
 
 ### Git error: RPC failed?
 
-```git config http.postBuffer 524288000```
+```
+git config http.postBuffer 524288000
+```
