@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['search_5forders',['search_orders',['../main_8cpp.html#a263a2a48210ae4eb7df1068079f07256',1,'main.cpp']]],
+  ['search_5forders_5fstep2',['search_orders_step2',['../main_8cpp.html#aa2e210584b9861d5f1facf9d9513ee91',1,'main.cpp']]],
+  ['search_5ftexts',['search_texts',['../main_8cpp.html#aeefb5bb46bb8d645f65495447d192fa1',1,'main.cpp']]],
+  ['search_5ftexts_5fstep2',['search_texts_step2',['../main_8cpp.html#a75f6be843294d005eccc4d2417148b40',1,'main.cpp']]],
+  ['search_5ftranslators',['search_translators',['../main_8cpp.html#a27ad8a4d3dfbab18406f7c26c4888b44',1,'main.cpp']]],
+  ['search_5ftranslators_5fstep2',['search_translators_step2',['../main_8cpp.html#ac5074b731240b66f098ff4f158aa18bc',1,'main.cpp']]],
+  ['set_5fanos_5fexperiencia',['set_anos_experiencia',['../class_tradutor.html#a938cfc1c263b3504fc4d7fbdc939b087',1,'Tradutor']]],
+  ['set_5fconteudo',['set_conteudo',['../class_texto.html#a94ae33fe47a0ef32a5761a12e097910d',1,'Texto']]],
+  ['set_5fdominio_5fespecialidade',['set_dominio_especialidade',['../class_texto_tecnico.html#af66d0b574c0e3316870fb8fdc3223c74',1,'TextoTecnico']]],
+  ['set_5fduracao_5fmax_5fdias',['set_duracao_max_dias',['../class_encomenda.html#ab3b5fc8fdde834b5c80f42ff0a2bf88b',1,'Encomenda']]],
+  ['set_5flingua',['set_lingua',['../class_texto.html#a297021cc2780c0bf398119bf0e4977e0',1,'Texto']]],
+  ['set_5flingua_5fdestino',['set_lingua_destino',['../class_encomenda.html#af8b12f8fba9c65a937f60ed81f9e0770',1,'Encomenda']]],
+  ['set_5flinguas',['set_linguas',['../class_tradutor.html#a83ed5b48e00f3a15c579e209bb01d53f',1,'Tradutor']]],
+  ['set_5fnome',['set_nome',['../class_tradutor.html#aa50fdceab0ca03dfe5c2a1639bc5869e',1,'Tradutor']]],
+  ['set_5ftexto',['set_texto',['../class_encomenda.html#ab814e5f0fbbb1950393a376eb65f7c63',1,'Encomenda']]],
+  ['set_5ftimestamp_5fentrega',['set_timestamp_entrega',['../class_encomenda.html#a894c2ddbe25e0fa49f19fe35134ce3ba',1,'Encomenda']]],
+  ['set_5ftradutor',['set_tradutor',['../class_encomenda.html#a05d46d1c4f6e83df419b2feb7cb9a082',1,'Encomenda']]]
+];

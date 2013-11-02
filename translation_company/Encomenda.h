@@ -2,8 +2,8 @@
 //  Encomenda.h
 //  translation_company
 //
-//  Created by Eduardo Almeida on 14/10/13.
-//  Copyright (c) 2013 Bitten Apps. All rights reserved.
+//  Created by Eduardo Almeida and Pedro Santiago on 14/10/13.
+//  AEDA (EIC0013) 2013/2014 - T1G04 - First Project
 //
 
 #ifndef __translation_company__Encomenda__

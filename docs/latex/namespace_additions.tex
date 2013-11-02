@@ -1,0 +1,183 @@
+\hypertarget{namespace_additions}{\section{Additions Namespace Reference}
+\label{namespace_additions}\index{Additions@{Additions}}
+}
+
+
+\hyperlink{namespace_additions}{Additions} namespace.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{namespace_additions_a05946b8c576a8237b5b447f70e55a79d}{wait\-For\-Return} ()
+\begin{DoxyCompactList}\small\item\em Waits until the return key is pressed. \end{DoxyCompactList}\item 
+std\-::vector$<$ std\-::string $>$ \hyperlink{namespace_additions_a1abf6964ffd9abf97c743c514c2f401a}{explode} (const std\-::string \&delimiter, const std\-::string \&str)
+\begin{DoxyCompactList}\small\item\em Converts a demlimiter-\/separated string into a vector. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{namespace_additions_aa81067806f9cd7e83231a302d0e4ab08}{get\-\_\-file\-\_\-contents} (const char $\ast$filename)
+\begin{DoxyCompactList}\small\item\em Reads the content of a given file. \end{DoxyCompactList}\item 
+bool \hyperlink{namespace_additions_a5dfbe44598a91e2e617b6afc56dbf6fa}{got\-E\-S\-C} (std\-::string str)
+\begin{DoxyCompactList}\small\item\em Checks if the E\-S\-C key was pressed during a \hyperlink{namespace_additions_a9adf5327d4aa6631c5395cd58ab88237}{getline()} input. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{namespace_additions_a9adf5327d4aa6631c5395cd58ab88237}{getline} ()
+\begin{DoxyCompactList}\small\item\em Reads the input from the standard input. \end{DoxyCompactList}\item 
+bool \hyperlink{namespace_additions_a5b3d2c5561dcb114fbd92abc7acadc4d}{check\-For\-Only\-Numeric} (std\-::string str)
+\begin{DoxyCompactList}\small\item\em Checks if a given string consists of numeric characters only. \end{DoxyCompactList}\item 
+void \hyperlink{namespace_additions_af13c3c94d99ca27753ac564159b625d3}{clear\-Console} ()
+\begin{DoxyCompactList}\small\item\em Clears the console. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{namespace_additions_a58d17107bba40cd0b819f7e595a4dd4e}{current\-Timestamp} ()
+\begin{DoxyCompactList}\small\item\em Returns the current U\-N\-I\-X timestamp. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{namespace_additions_a902a81e9c6d0e2ffdd28a1f6a9d9304a}{timestamp\-To\-String} (const long timestamp)
+\begin{DoxyCompactList}\small\item\em Converts an U\-N\-I\-X timestamp to an user-\/readable string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{namespace_additions}{Additions} namespace. Contains a lot of useful functions, in C and C++. This file was initially created for use on E\-I\-C0012 (P\-R\-O\-G). 
+
+\subsection{Function Documentation}
+\hypertarget{namespace_additions_a5b3d2c5561dcb114fbd92abc7acadc4d}{\index{Additions@{Additions}!check\-For\-Only\-Numeric@{check\-For\-Only\-Numeric}}
+\index{check\-For\-Only\-Numeric@{check\-For\-Only\-Numeric}!Additions@{Additions}}
+\subsubsection[{check\-For\-Only\-Numeric}]{\setlength{\rightskip}{0pt plus 5cm}bool Additions\-::check\-For\-Only\-Numeric (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{str}
+\end{DoxyParamCaption}
+)}}\label{namespace_additions_a5b3d2c5561dcb114fbd92abc7acadc4d}
+
+
+Checks if a given string consists of numeric characters only. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to test against. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true or false, depending on the result. 
+\end{DoxyReturn}
+\hypertarget{namespace_additions_af13c3c94d99ca27753ac564159b625d3}{\index{Additions@{Additions}!clear\-Console@{clear\-Console}}
+\index{clear\-Console@{clear\-Console}!Additions@{Additions}}
+\subsubsection[{clear\-Console}]{\setlength{\rightskip}{0pt plus 5cm}void Additions\-::clear\-Console (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{namespace_additions_af13c3c94d99ca27753ac564159b625d3}
+
+
+Clears the console. 
+
+\hypertarget{namespace_additions_a58d17107bba40cd0b819f7e595a4dd4e}{\index{Additions@{Additions}!current\-Timestamp@{current\-Timestamp}}
+\index{current\-Timestamp@{current\-Timestamp}!Additions@{Additions}}
+\subsubsection[{current\-Timestamp}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Additions\-::current\-Timestamp (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{namespace_additions_a58d17107bba40cd0b819f7e595a4dd4e}
+
+
+Returns the current U\-N\-I\-X timestamp. 
+
+\begin{DoxyReturn}{Returns}
+The U\-N\-I\-X timestamp. 
+\end{DoxyReturn}
+\hypertarget{namespace_additions_a1abf6964ffd9abf97c743c514c2f401a}{\index{Additions@{Additions}!explode@{explode}}
+\index{explode@{explode}!Additions@{Additions}}
+\subsubsection[{explode}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ std\-::string $>$ Additions\-::explode (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{delimiter, }
+\item[{const std\-::string \&}]{str}
+\end{DoxyParamCaption}
+)}}\label{namespace_additions_a1abf6964ffd9abf97c743c514c2f401a}
+
+
+Converts a demlimiter-\/separated string into a vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delimiter} & The delimiter. \\
+\hline
+{\em str} & The string to work with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An array with the \char`\"{}exploded\char`\"{} string. 
+\end{DoxyReturn}
+\hypertarget{namespace_additions_aa81067806f9cd7e83231a302d0e4ab08}{\index{Additions@{Additions}!get\-\_\-file\-\_\-contents@{get\-\_\-file\-\_\-contents}}
+\index{get\-\_\-file\-\_\-contents@{get\-\_\-file\-\_\-contents}!Additions@{Additions}}
+\subsubsection[{get\-\_\-file\-\_\-contents}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Additions\-::get\-\_\-file\-\_\-contents (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{filename}
+\end{DoxyParamCaption}
+)}}\label{namespace_additions_aa81067806f9cd7e83231a302d0e4ab08}
+
+
+Reads the content of a given file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The path to the file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The file contents.. 
+\end{DoxyReturn}
+\hypertarget{namespace_additions_a9adf5327d4aa6631c5395cd58ab88237}{\index{Additions@{Additions}!getline@{getline}}
+\index{getline@{getline}!Additions@{Additions}}
+\subsubsection[{getline}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Additions\-::getline (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{namespace_additions_a9adf5327d4aa6631c5395cd58ab88237}
+
+
+Reads the input from the standard input. 
+
+\begin{DoxyReturn}{Returns}
+The input, as a string. 
+\end{DoxyReturn}
+\hypertarget{namespace_additions_a5dfbe44598a91e2e617b6afc56dbf6fa}{\index{Additions@{Additions}!got\-E\-S\-C@{got\-E\-S\-C}}
+\index{got\-E\-S\-C@{got\-E\-S\-C}!Additions@{Additions}}
+\subsubsection[{got\-E\-S\-C}]{\setlength{\rightskip}{0pt plus 5cm}bool Additions\-::got\-E\-S\-C (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{str}
+\end{DoxyParamCaption}
+)}}\label{namespace_additions_a5dfbe44598a91e2e617b6afc56dbf6fa}
+
+
+Checks if the E\-S\-C key was pressed during a \hyperlink{namespace_additions_a9adf5327d4aa6631c5395cd58ab88237}{getline()} input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The \hyperlink{namespace_additions_a9adf5327d4aa6631c5395cd58ab88237}{getline()} input result. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true or false, depending on the result. 
+\end{DoxyReturn}
+\hypertarget{namespace_additions_a902a81e9c6d0e2ffdd28a1f6a9d9304a}{\index{Additions@{Additions}!timestamp\-To\-String@{timestamp\-To\-String}}
+\index{timestamp\-To\-String@{timestamp\-To\-String}!Additions@{Additions}}
+\subsubsection[{timestamp\-To\-String}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Additions\-::timestamp\-To\-String (
+\begin{DoxyParamCaption}
+\item[{const long}]{timestamp}
+\end{DoxyParamCaption}
+)}}\label{namespace_additions_a902a81e9c6d0e2ffdd28a1f6a9d9304a}
+
+
+Converts an U\-N\-I\-X timestamp to an user-\/readable string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em timestamp} & An U\-N\-I\-X timestamp. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An user-\/readable string representation. 
+\end{DoxyReturn}
+\hypertarget{namespace_additions_a05946b8c576a8237b5b447f70e55a79d}{\index{Additions@{Additions}!wait\-For\-Return@{wait\-For\-Return}}
+\index{wait\-For\-Return@{wait\-For\-Return}!Additions@{Additions}}
+\subsubsection[{wait\-For\-Return}]{\setlength{\rightskip}{0pt plus 5cm}void Additions\-::wait\-For\-Return (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{namespace_additions_a05946b8c576a8237b5b447f70e55a79d}
+
+
+Waits until the return key is pressed. 
+

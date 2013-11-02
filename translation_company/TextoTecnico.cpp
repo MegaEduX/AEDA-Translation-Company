@@ -2,8 +2,8 @@
 //  TextoTecnico.cpp
 //  translation_company
 //
-//  Created by Eduardo Almeida on 14/10/13.
-//  Copyright (c) 2013 Bitten Apps. All rights reserved.
+//  Created by Eduardo Almeida and Pedro Santiago on 14/10/13.
+//  AEDA (EIC0013) 2013/2014 - T1G04 - First Project
 //
 
 #include "TextoTecnico.h"
@@ -18,6 +18,10 @@ TextoTecnico::TextoTecnico(unsigned int id, std::string lingua, unsigned long pa
 
 std::string TextoTecnico::get_dominio_especialidade() {
     return _dominio;
+}
+
+void TextoTecnico::set_dominio_especialidade(std::string dominio) {
+    _dominio = dominio;
 }
 
 unsigned int TextoTecnico::get_complexidade() {

@@ -21,9 +21,8 @@
 
 #ifndef WIN32
 int _getch() {
-    struct termios oldt,
-    newt;
-    int            ch;
+    struct termios oldt, newt;
+    int ch;
     tcgetattr( STDIN_FILENO, &oldt );
     newt = oldt;
     newt.c_lflag &= ~( ICANON | ECHO );

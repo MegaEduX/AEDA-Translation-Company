@@ -2,8 +2,8 @@
 //  Texto.cpp
 //  translation_company
 //
-//  Created by Eduardo Almeida on 14/10/13.
-//  Copyright (c) 2013 Bitten Apps. All rights reserved.
+//  Created by Eduardo Almeida and Pedro Santiago on 14/10/13.
+//  AEDA (EIC0013) 2013/2014 - T1G04 - First Project
 //
 
 #include <sstream>
@@ -63,8 +63,16 @@ std::string Texto::get_lingua() {
     return _lingua;
 }
 
+void Texto::set_lingua(std::string lingua) {
+    _lingua = lingua;
+}
+
 std::string Texto::get_conteudo() {
     return _conteudo;
+}
+
+void Texto::set_conteudo(std::string conteudo) {
+    _conteudo = conteudo;
 }
 
 unsigned int Texto::get_complexidade() {

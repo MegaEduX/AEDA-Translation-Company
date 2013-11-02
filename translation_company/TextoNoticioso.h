@@ -2,8 +2,8 @@
 //  TextoNoticioso.h
 //  translation_company
 //
-//  Created by Eduardo Almeida on 14/10/13.
-//  Copyright (c) 2013 Bitten Apps. All rights reserved.
+//  Created by Eduardo Almeida and Pedro Santiago on 14/10/13.
+//  AEDA (EIC0013) 2013/2014 - T1G04 - First Project
 //
 
 #ifndef __translation_company__TextoNoticioso__
@@ -17,6 +17,11 @@ typedef enum {
     tipo_jornal_diario,
     tipo_jornal_semanario
 } tipo_jornal;
+
+/**
+ *  Texto Noticioso class.
+ *  Subclass of Texto, this handles a specific type of Text (News Text).
+ */
 
 class TextoNoticioso : public Texto {
     std::string _assunto;

@@ -2,8 +2,8 @@
 //  Tradutor.h
 //  translation_company
 //
-//  Created by Eduardo Almeida on 14/10/13.
-//  Copyright (c) 2013 Bitten Apps. All rights reserved.
+//  Created by Eduardo Almeida and Pedro Santiago on 14/10/13.
+//  AEDA (EIC0013) 2013/2014 - T1G04 - First Project
 //
 
 #ifndef __translation_company__Tradutor__
@@ -15,6 +15,11 @@
 #include "Texto.h"
 
 class Encomenda;
+
+/**
+ *  Tradutor class.
+ *  This class packages the details about a translator and provides some functionality on them.
+ */
 
 class Tradutor {
     static unsigned int _maior_id_tradutor;

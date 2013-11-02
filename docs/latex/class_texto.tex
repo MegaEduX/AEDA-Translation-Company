@@ -1,0 +1,144 @@
+\hypertarget{class_texto}{\section{Texto Class Reference}
+\label{class_texto}\index{Texto@{Texto}}
+}
+
+
+\hyperlink{class_texto}{Texto} class.  
+
+
+
+
+{\ttfamily \#include $<$Texto.\-h$>$}
+
+
+
+Inheritance diagram for Texto\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_texto__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_texto_a7034548c1e8e2007b0825ef3a01b1b88}{Texto} (unsigned int id, std\-::string lingua, std\-::string conteudo)
+\item 
+\hyperlink{class_texto_a3ccc9eb8eb980eda5e5f6583cbb60425}{Texto} (unsigned int id, std\-::string lingua, unsigned long palavras, std\-::string conteudo)
+\item 
+unsigned int \hyperlink{class_texto_a4e1b7a020c3b1cffe4518937cdd6f565}{get\-\_\-id} ()
+\item 
+unsigned long \hyperlink{class_texto_a249af46529ab15e98103f1ebe9c3cabb}{get\-\_\-palavras} ()
+\item 
+std\-::string \hyperlink{class_texto_adfaca963b37bef9a739def84e2c810b6}{get\-\_\-lingua} ()
+\item 
+void \hyperlink{class_texto_a297021cc2780c0bf398119bf0e4977e0}{set\-\_\-lingua} (std\-::string lingua)
+\item 
+std\-::string \hyperlink{class_texto_a01a9590011195b1a258e2d3bd247ceb0}{get\-\_\-conteudo} ()
+\item 
+void \hyperlink{class_texto_a94ae33fe47a0ef32a5761a12e097910d}{set\-\_\-conteudo} (std\-::string conteudo)
+\item 
+virtual unsigned int \hyperlink{class_texto_aebb31cd3a54949bf24016e65a4b86336}{get\-\_\-complexidade} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned int \hyperlink{class_texto_a674eed23fb437d4f07634f9d6559d325}{get\-\_\-maior\-\_\-id} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_texto}{Texto} class. 
+
+You should not use this class directly. Please use one of the subclasses (\hyperlink{class_texto_tecnico}{Texto\-Tecnico}, \hyperlink{class_texto_literario}{Texto\-Literario} or \hyperlink{class_texto_noticioso}{Texto\-Noticioso}). 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_texto_a7034548c1e8e2007b0825ef3a01b1b88}{\index{Texto@{Texto}!Texto@{Texto}}
+\index{Texto@{Texto}!Texto@{Texto}}
+\subsubsection[{Texto}]{\setlength{\rightskip}{0pt plus 5cm}Texto\-::\-Texto (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{id, }
+\item[{std\-::string}]{lingua, }
+\item[{std\-::string}]{conteudo}
+\end{DoxyParamCaption}
+)}}\label{class_texto_a7034548c1e8e2007b0825ef3a01b1b88}
+\hypertarget{class_texto_a3ccc9eb8eb980eda5e5f6583cbb60425}{\index{Texto@{Texto}!Texto@{Texto}}
+\index{Texto@{Texto}!Texto@{Texto}}
+\subsubsection[{Texto}]{\setlength{\rightskip}{0pt plus 5cm}Texto\-::\-Texto (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{id, }
+\item[{std\-::string}]{lingua, }
+\item[{unsigned long}]{palavras, }
+\item[{std\-::string}]{conteudo}
+\end{DoxyParamCaption}
+)}}\label{class_texto_a3ccc9eb8eb980eda5e5f6583cbb60425}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_texto_aebb31cd3a54949bf24016e65a4b86336}{\index{Texto@{Texto}!get\-\_\-complexidade@{get\-\_\-complexidade}}
+\index{get\-\_\-complexidade@{get\-\_\-complexidade}!Texto@{Texto}}
+\subsubsection[{get\-\_\-complexidade}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Texto\-::get\-\_\-complexidade (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_texto_aebb31cd3a54949bf24016e65a4b86336}
+
+
+Reimplemented in \hyperlink{class_texto_noticioso_a5179276c932815f134aa1e70a6840d64}{Texto\-Noticioso}, \hyperlink{class_texto_literario_a7c09b8153bca93502a12fd7fbaa1e225}{Texto\-Literario}, and \hyperlink{class_texto_tecnico_a032479cf2086b94534b5d41b94440c2b}{Texto\-Tecnico}.
+
+\hypertarget{class_texto_a01a9590011195b1a258e2d3bd247ceb0}{\index{Texto@{Texto}!get\-\_\-conteudo@{get\-\_\-conteudo}}
+\index{get\-\_\-conteudo@{get\-\_\-conteudo}!Texto@{Texto}}
+\subsubsection[{get\-\_\-conteudo}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Texto\-::get\-\_\-conteudo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_texto_a01a9590011195b1a258e2d3bd247ceb0}
+\hypertarget{class_texto_a4e1b7a020c3b1cffe4518937cdd6f565}{\index{Texto@{Texto}!get\-\_\-id@{get\-\_\-id}}
+\index{get\-\_\-id@{get\-\_\-id}!Texto@{Texto}}
+\subsubsection[{get\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Texto\-::get\-\_\-id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_texto_a4e1b7a020c3b1cffe4518937cdd6f565}
+\hypertarget{class_texto_adfaca963b37bef9a739def84e2c810b6}{\index{Texto@{Texto}!get\-\_\-lingua@{get\-\_\-lingua}}
+\index{get\-\_\-lingua@{get\-\_\-lingua}!Texto@{Texto}}
+\subsubsection[{get\-\_\-lingua}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Texto\-::get\-\_\-lingua (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_texto_adfaca963b37bef9a739def84e2c810b6}
+\hypertarget{class_texto_a674eed23fb437d4f07634f9d6559d325}{\index{Texto@{Texto}!get\-\_\-maior\-\_\-id@{get\-\_\-maior\-\_\-id}}
+\index{get\-\_\-maior\-\_\-id@{get\-\_\-maior\-\_\-id}!Texto@{Texto}}
+\subsubsection[{get\-\_\-maior\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Texto\-::get\-\_\-maior\-\_\-id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_texto_a674eed23fb437d4f07634f9d6559d325}
+\hypertarget{class_texto_a249af46529ab15e98103f1ebe9c3cabb}{\index{Texto@{Texto}!get\-\_\-palavras@{get\-\_\-palavras}}
+\index{get\-\_\-palavras@{get\-\_\-palavras}!Texto@{Texto}}
+\subsubsection[{get\-\_\-palavras}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long Texto\-::get\-\_\-palavras (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_texto_a249af46529ab15e98103f1ebe9c3cabb}
+\hypertarget{class_texto_a94ae33fe47a0ef32a5761a12e097910d}{\index{Texto@{Texto}!set\-\_\-conteudo@{set\-\_\-conteudo}}
+\index{set\-\_\-conteudo@{set\-\_\-conteudo}!Texto@{Texto}}
+\subsubsection[{set\-\_\-conteudo}]{\setlength{\rightskip}{0pt plus 5cm}void Texto\-::set\-\_\-conteudo (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{conteudo}
+\end{DoxyParamCaption}
+)}}\label{class_texto_a94ae33fe47a0ef32a5761a12e097910d}
+\hypertarget{class_texto_a297021cc2780c0bf398119bf0e4977e0}{\index{Texto@{Texto}!set\-\_\-lingua@{set\-\_\-lingua}}
+\index{set\-\_\-lingua@{set\-\_\-lingua}!Texto@{Texto}}
+\subsubsection[{set\-\_\-lingua}]{\setlength{\rightskip}{0pt plus 5cm}void Texto\-::set\-\_\-lingua (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{lingua}
+\end{DoxyParamCaption}
+)}}\label{class_texto_a297021cc2780c0bf398119bf0e4977e0}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_texto_8h}{Texto.\-h}\item 
+\hyperlink{_texto_8cpp}{Texto.\-cpp}\end{DoxyCompactItemize}

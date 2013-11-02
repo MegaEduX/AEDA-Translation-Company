@@ -1,0 +1,59 @@
+\hypertarget{_database_manager_8cpp}{\section{Database\-Manager.\-cpp File Reference}
+\label{_database_manager_8cpp}\index{Database\-Manager.\-cpp@{Database\-Manager.\-cpp}}
+}
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$boost/lexical\-\_\-cast.\-hpp$>$}\\*
+{\ttfamily \#include $<$boost/algorithm/string.\-hpp$>$}\\*
+{\ttfamily \#include \char`\"{}Database\-Manager.\-h\char`\"{}}\\*
+Include dependency graph for Database\-Manager.\-cpp\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_database_manager_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_database_manager_8cpp_ad6f45b5277e7bb783bcfaed8f19388cb}{init\-\_\-db}(var)~database var(\-\_\-dbfp.\-c\-\_\-str())
+\item 
+\#define \hyperlink{_database_manager_8cpp_ad310b004d92e4d009daa379555ec5810}{delete\-\_\-record\-\_\-wild}(\-\_\-\-\_\-\-T\-A\-B\-L\-E\-\_\-\-N\-A\-M\-E\-\_\-\-\_\-, \-\_\-\-\_\-\-O\-B\-J\-\_\-\-N\-A\-M\-E\-\_\-\-\_\-)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_database_manager_8cpp_ad310b004d92e4d009daa379555ec5810}{\index{Database\-Manager.\-cpp@{Database\-Manager.\-cpp}!delete\-\_\-record\-\_\-wild@{delete\-\_\-record\-\_\-wild}}
+\index{delete\-\_\-record\-\_\-wild@{delete\-\_\-record\-\_\-wild}!DatabaseManager.cpp@{Database\-Manager.\-cpp}}
+\subsubsection[{delete\-\_\-record\-\_\-wild}]{\setlength{\rightskip}{0pt plus 5cm}\#define delete\-\_\-record\-\_\-wild(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-\-\_\-\-T\-A\-B\-L\-E\-\_\-\-N\-A\-M\-E\-\_\-\-\_\-, }
+\item[{}]{\-\_\-\-\_\-\-O\-B\-J\-\_\-\-N\-A\-M\-E\-\_\-\-\_\-}
+\end{DoxyParamCaption}
+)}}\label{_database_manager_8cpp_ad310b004d92e4d009daa379555ec5810}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\hyperlink{_database_manager_8cpp_ad6f45b5277e7bb783bcfaed8f19388cb}{init\_db}(db); \(\backslash\)
+                                                            query qry(db, (std::string(\textcolor{stringliteral}{"SELECT * FROM `"}) +
+       \_\_TABLE\_NAME\_\_ + std::string(\textcolor{stringliteral}{"` WHERE id="}) + boost::lexical\_cast<std::string>(\_\_OBJ\_NAME\_\_->get\_id()) + \textcolor{stringliteral}{"
+       LIMIT 1"}).c\_str());    \(\backslash\)
+                                                            bool exists = \textcolor{keyword}{false};    \(\backslash\)
+                                                            for (query::iterator i = qry.begin(); i != qry.
+      end(); ++i)  \(\backslash\)
+                                                                exists = !exists;   \(\backslash\)
+                                                            if (!exists)    \(\backslash\)
+                                                                return \textcolor{keyword}{false};   \(\backslash\)
+                                                            command cmd(db, (std::string(\textcolor{stringliteral}{"DELETE FROM `"}) +
+       \_\_TABLE\_NAME\_\_ + std::string(\textcolor{stringliteral}{"` WHERE id="}) + boost::lexical\_cast<std::string>(\_\_OBJ\_NAME\_\_->get\_id())).
+      c\_str());    \(\backslash\)
+                                                            if (!cmd.execute()) \(\backslash\)
+                                                                \textcolor{keywordflow}{return} \textcolor{keyword}{true};    \(\backslash\)
+                                                            return \textcolor{keyword}{false};
+\end{DoxyCode}
+\hypertarget{_database_manager_8cpp_ad6f45b5277e7bb783bcfaed8f19388cb}{\index{Database\-Manager.\-cpp@{Database\-Manager.\-cpp}!init\-\_\-db@{init\-\_\-db}}
+\index{init\-\_\-db@{init\-\_\-db}!DatabaseManager.cpp@{Database\-Manager.\-cpp}}
+\subsubsection[{init\-\_\-db}]{\setlength{\rightskip}{0pt plus 5cm}\#define init\-\_\-db(
+\begin{DoxyParamCaption}
+\item[{}]{var}
+\end{DoxyParamCaption}
+)~database var(\-\_\-dbfp.\-c\-\_\-str())}}\label{_database_manager_8cpp_ad6f45b5277e7bb783bcfaed8f19388cb}
