@@ -28,7 +28,7 @@ static const int baseASCIINumber = 48;
 #ifdef WIN32
 
 static const int returnKey = 13;
-static const int escKey = 0; /* Unknown. */
+static const int escKey = 27;
 
 #else
 

@@ -21,4 +21,4 @@ mv html docs/
 
 mv docs ../docs
 
-ln -s ../docs/html/index.html ../docs/index.html
+ln -s html/index.html ../docs/index.html
