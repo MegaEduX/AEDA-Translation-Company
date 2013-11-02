@@ -88,8 +88,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//  TextoLiterario.h</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//  translation_company</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//  Created by Eduardo Almeida on 14/10/13.</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//  Copyright (c) 2013 Bitten Apps. All rights reserved.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//  Created by Eduardo Almeida and Pedro Santiago on 14/10/13.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//  AEDA (EIC0013) 2013/2014 - T1G04 - First Project</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef __translation_company__TextoLiterario__</span></div>
@@ -104,27 +104,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    std::string _autor;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="class_texto_literario.html#addeb2b30770693455c5395a4a3fb941c">TextoLiterario</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <span class="keywordtype">id</span>, std::string lingua, std::string conteudo, std::string titulo, std::string autor);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="class_texto_literario.html#addeb2b30770693455c5395a4a3fb941c">TextoLiterario</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <span class="keywordtype">id</span>, std::string lingua, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> palavras, std::string conteudo, std::string titulo, std::string autor);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    std::string <a class="code" href="class_texto_literario.html#adca504c785afdb9e77542b2bdca90a37">get_titulo</a>();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    std::string <a class="code" href="class_texto_literario.html#acb31c6be6750cea439dde8636bf960ff">get_autor</a>();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_texto_literario.html#a7c09b8153bca93502a12fd7fbaa1e225">get_complexidade</a>();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* defined(__translation_company__TextoLiterario__) */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="class_texto_literario.html#addeb2b30770693455c5395a4a3fb941c">TextoLiterario</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <span class="keywordtype">id</span>, std::string lingua, std::string conteudo, std::string titulo, std::string autor);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="class_texto_literario.html#addeb2b30770693455c5395a4a3fb941c">TextoLiterario</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <span class="keywordtype">id</span>, std::string lingua, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> palavras, std::string conteudo, std::string titulo, std::string autor);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    std::string <a class="code" href="class_texto_literario.html#adca504c785afdb9e77542b2bdca90a37">get_titulo</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_texto_literario.html#acfb7945b3d45250c316a3b6dc688383c">set_titulo</a>(std::string titulo);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    std::string <a class="code" href="class_texto_literario.html#acb31c6be6750cea439dde8636bf960ff">get_autor</a>();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_texto_literario.html#a859bcc3c015ebcced7b4691990d3ec2a">set_autor</a>(std::string autor);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_texto_literario.html#a286c1693b71a45d4d577dcd15871892c">complexidade</a>();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;};</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* defined(__translation_company__TextoLiterario__) */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="class_texto_literario_html_a286c1693b71a45d4d577dcd15871892c"><div class="ttname"><a href="class_texto_literario.html#a286c1693b71a45d4d577dcd15871892c">TextoLiterario::complexidade</a></div><div class="ttdeci">unsigned int complexidade()</div><div class="ttdoc">Calculates the complexity of the text. </div><div class="ttdef"><b>Definition:</b> TextoLiterario.cpp:37</div></div>
 <div class="ttc" id="_texto_8h_html"><div class="ttname"><a href="_texto_8h.html">Texto.h</a></div></div>
 <div class="ttc" id="class_texto_literario_html"><div class="ttname"><a href="class_texto_literario.html">TextoLiterario</a></div><div class="ttdoc">Texto Literario class. </div><div class="ttdef"><b>Definition:</b> TextoLiterario.h:21</div></div>
-<div class="ttc" id="class_texto_literario_html_a7c09b8153bca93502a12fd7fbaa1e225"><div class="ttname"><a href="class_texto_literario.html#a7c09b8153bca93502a12fd7fbaa1e225">TextoLiterario::get_complexidade</a></div><div class="ttdeci">unsigned int get_complexidade()</div><div class="ttdef"><b>Definition:</b> TextoLiterario.cpp:29</div></div>
 <div class="ttc" id="class_texto_html"><div class="ttname"><a href="class_texto.html">Texto</a></div><div class="ttdoc">Texto class. </div><div class="ttdef"><b>Definition:</b> Texto.h:20</div></div>
-<div class="ttc" id="class_texto_literario_html_addeb2b30770693455c5395a4a3fb941c"><div class="ttname"><a href="class_texto_literario.html#addeb2b30770693455c5395a4a3fb941c">TextoLiterario::TextoLiterario</a></div><div class="ttdeci">TextoLiterario(unsigned int id, std::string lingua, std::string conteudo, std::string titulo, std::string autor)</div><div class="ttdef"><b>Definition:</b> TextoLiterario.cpp:11</div></div>
-<div class="ttc" id="class_texto_literario_html_adca504c785afdb9e77542b2bdca90a37"><div class="ttname"><a href="class_texto_literario.html#adca504c785afdb9e77542b2bdca90a37">TextoLiterario::get_titulo</a></div><div class="ttdeci">std::string get_titulo()</div><div class="ttdef"><b>Definition:</b> TextoLiterario.cpp:21</div></div>
-<div class="ttc" id="class_texto_literario_html_acb31c6be6750cea439dde8636bf960ff"><div class="ttname"><a href="class_texto_literario.html#acb31c6be6750cea439dde8636bf960ff">TextoLiterario::get_autor</a></div><div class="ttdeci">std::string get_autor()</div><div class="ttdef"><b>Definition:</b> TextoLiterario.cpp:25</div></div>
+<div class="ttc" id="class_texto_literario_html_acfb7945b3d45250c316a3b6dc688383c"><div class="ttname"><a href="class_texto_literario.html#acfb7945b3d45250c316a3b6dc688383c">TextoLiterario::set_titulo</a></div><div class="ttdeci">void set_titulo(std::string titulo)</div><div class="ttdoc">Setter for the title of the text. </div><div class="ttdef"><b>Definition:</b> TextoLiterario.cpp:25</div></div>
+<div class="ttc" id="class_texto_literario_html_a859bcc3c015ebcced7b4691990d3ec2a"><div class="ttname"><a href="class_texto_literario.html#a859bcc3c015ebcced7b4691990d3ec2a">TextoLiterario::set_autor</a></div><div class="ttdeci">void set_autor(std::string autor)</div><div class="ttdoc">Setter for the author of the text. </div><div class="ttdef"><b>Definition:</b> TextoLiterario.cpp:33</div></div>
+<div class="ttc" id="class_texto_literario_html_addeb2b30770693455c5395a4a3fb941c"><div class="ttname"><a href="class_texto_literario.html#addeb2b30770693455c5395a4a3fb941c">TextoLiterario::TextoLiterario</a></div><div class="ttdeci">TextoLiterario(unsigned int id, std::string lingua, std::string conteudo, std::string titulo, std::string autor)</div><div class="ttdoc">Class Constructor. </div><div class="ttdef"><b>Definition:</b> TextoLiterario.cpp:11</div></div>
+<div class="ttc" id="class_texto_literario_html_adca504c785afdb9e77542b2bdca90a37"><div class="ttname"><a href="class_texto_literario.html#adca504c785afdb9e77542b2bdca90a37">TextoLiterario::get_titulo</a></div><div class="ttdeci">std::string get_titulo()</div><div class="ttdoc">Getter for the title of the text. </div><div class="ttdef"><b>Definition:</b> TextoLiterario.cpp:21</div></div>
+<div class="ttc" id="class_texto_literario_html_acb31c6be6750cea439dde8636bf960ff"><div class="ttname"><a href="class_texto_literario.html#acb31c6be6750cea439dde8636bf960ff">TextoLiterario::get_autor</a></div><div class="ttdeci">std::string get_autor()</div><div class="ttdoc">Getter for the author of the text. </div><div class="ttdef"><b>Definition:</b> TextoLiterario.cpp:29</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Nov 2 2013 19:09:07 for Translation Company (AEDA) by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Nov 2 2013 20:14:36 for Translation Company (AEDA) by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

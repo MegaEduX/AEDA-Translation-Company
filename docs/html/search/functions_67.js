@@ -3,7 +3,6 @@ var searchData=
   ['get_5fanos_5fexperiencia',['get_anos_experiencia',['../class_tradutor.html#a001f11f69661085cb11192d3c6f5d556',1,'Tradutor']]],
   ['get_5fassunto',['get_assunto',['../class_texto_noticioso.html#afd686397a10b9e6afa8eb9f1aaf5d21e',1,'TextoNoticioso']]],
   ['get_5fautor',['get_autor',['../class_texto_literario.html#acb31c6be6750cea439dde8636bf960ff',1,'TextoLiterario']]],
-  ['get_5fcomplexidade',['get_complexidade',['../class_texto.html#aebb31cd3a54949bf24016e65a4b86336',1,'Texto::get_complexidade()'],['../class_texto_literario.html#a7c09b8153bca93502a12fd7fbaa1e225',1,'TextoLiterario::get_complexidade()'],['../class_texto_noticioso.html#a5179276c932815f134aa1e70a6840d64',1,'TextoNoticioso::get_complexidade()'],['../class_texto_tecnico.html#a032479cf2086b94534b5d41b94440c2b',1,'TextoTecnico::get_complexidade()']]],
   ['get_5fconteudo',['get_conteudo',['../class_texto.html#a01a9590011195b1a258e2d3bd247ceb0',1,'Texto']]],
   ['get_5fdominio_5fespecialidade',['get_dominio_especialidade',['../class_texto_tecnico.html#af0541bfc3a8fc861eb13abba28a6768d',1,'TextoTecnico']]],
   ['get_5fduracao_5fmax_5fdias',['get_duracao_max_dias',['../class_encomenda.html#a179dcd8d6ccaa8de0bf87a922c5ce2f8',1,'Encomenda']]],

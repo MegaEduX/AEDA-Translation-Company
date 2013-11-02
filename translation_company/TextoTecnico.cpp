@@ -24,6 +24,6 @@ void TextoTecnico::set_dominio_especialidade(std::string dominio) {
     _dominio = dominio;
 }
 
-unsigned int TextoTecnico::get_complexidade() {
-    return Texto::get_complexidade() * 3;
+unsigned int TextoTecnico::complexidade() {
+    return Texto::complexidade() * 3;
 }

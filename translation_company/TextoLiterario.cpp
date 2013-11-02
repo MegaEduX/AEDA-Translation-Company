@@ -22,10 +22,18 @@ std::string TextoLiterario::get_titulo() {
     return _titulo;
 }
 
+void TextoLiterario::set_titulo(std::string titulo) {
+    _titulo = titulo;
+}
+
 std::string TextoLiterario::get_autor() {
     return _autor;
 }
 
-unsigned int TextoLiterario::get_complexidade() {
-    return Texto::get_complexidade() * 2;
+void TextoLiterario::set_autor(std::string autor) {
+    _autor = autor;
+}
+
+unsigned int TextoLiterario::complexidade() {
+    return Texto::complexidade() * 2;
 }

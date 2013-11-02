@@ -14,34 +14,34 @@
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_tradutor_a856f362e6c97ea42d04875e6c9d012e3}{Tradutor} (unsigned int id, std\-::string nome, unsigned int anos\-\_\-experiencia, std\-::vector$<$ std\-::string $>$ linguas)
-\item 
-double \hyperlink{class_tradutor_a213336fc8d553cc286688f5dbbd467c3}{custo\-Traducao} (\hyperlink{class_texto}{Texto} $\ast$)
-\item 
-unsigned int \hyperlink{class_tradutor_aad8db1d61a7505532cda73240d76412d}{tempo\-Estimado} (\hyperlink{class_texto}{Texto} $\ast$)
-\item 
+\begin{DoxyCompactList}\small\item\em Class Constructor. \end{DoxyCompactList}\item 
+double \hyperlink{class_tradutor_ab55718903fb3e7cc5c1b21b87d64393a}{custo\-Traducao} (\hyperlink{class_texto}{Texto} $\ast$texto)
+\begin{DoxyCompactList}\small\item\em Calculates the cost of a given translation. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{class_tradutor_a1ca7c608db7e9145e8b9105e19e5900a}{tempo\-Estimado} (\hyperlink{class_texto}{Texto} $\ast$text)
+\begin{DoxyCompactList}\small\item\em Calculates the time to fullfill a translation. \end{DoxyCompactList}\item 
 unsigned int \hyperlink{class_tradutor_acd53cf00b851be61350100c9aa6ef3c0}{tempo\-Estimado} (\hyperlink{class_encomenda}{Encomenda} $\ast$encomenda)
-\item 
+\begin{DoxyCompactList}\small\item\em Calculates the time to fullfill a given order. \end{DoxyCompactList}\item 
 unsigned int \hyperlink{class_tradutor_adc3d4f5ae46ebd92072c644f9fe0e479}{get\-\_\-id} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Getter for the I\-D of the translator. \end{DoxyCompactList}\item 
 unsigned int \hyperlink{class_tradutor_a001f11f69661085cb11192d3c6f5d556}{get\-\_\-anos\-\_\-experiencia} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Getter for the years of experience of the translator. \end{DoxyCompactList}\item 
 void \hyperlink{class_tradutor_a938cfc1c263b3504fc4d7fbdc939b087}{set\-\_\-anos\-\_\-experiencia} (unsigned int anos\-\_\-exp)
-\item 
+\begin{DoxyCompactList}\small\item\em Setter for the years of experience of the translator. \end{DoxyCompactList}\item 
 bool \hyperlink{class_tradutor_a1d22a38c8eaa3753d44b521bb3aab2af}{pode\-Satisfazer\-Encomenda} (\hyperlink{class_encomenda}{Encomenda} $\ast$encomenda)
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if the translator is able to fullfill a given translation. \end{DoxyCompactList}\item 
 std\-::string \hyperlink{class_tradutor_a3547a7d337cd421be409e5bf63418964}{get\-\_\-nome} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Getter for name of the translator. \end{DoxyCompactList}\item 
 void \hyperlink{class_tradutor_aa50fdceab0ca03dfe5c2a1639bc5869e}{set\-\_\-nome} (std\-::string nome)
-\item 
+\begin{DoxyCompactList}\small\item\em Setter for name of the translator. \end{DoxyCompactList}\item 
 std\-::vector$<$ std\-::string $>$ \hyperlink{class_tradutor_a011b86fa2dae11c6ccdda1cbeb844e94}{get\-\_\-linguas} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Getter for the languages known to the translator. \end{DoxyCompactList}\item 
 void \hyperlink{class_tradutor_a83ed5b48e00f3a15c579e209bb01d53f}{set\-\_\-linguas} (std\-::vector$<$ std\-::string $>$ linguas)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Setter for the languages known to the translator. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static unsigned int \hyperlink{class_tradutor_af2caad7e33c443f238851c5bb2d63930}{get\-\_\-maior\-\_\-id} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Getter for the biggest translator I\-D (of all known translators). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -62,14 +62,41 @@ This class packages the details about a translator and provides some functionali
 )}}\label{class_tradutor_a856f362e6c97ea42d04875e6c9d012e3}
 
 
+Class Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The object I\-D. \\
+\hline
+{\em nome} & The name of the translator. \\
+\hline
+{\em anos\-\_\-experiencia} & The experience of the translator, in years. Should be at least 1. \\
+\hline
+{\em linguas} & The maximum number of days the order should be fullfilled in. \\
+\hline
+\end{DoxyParams}
+
+
 \subsection{Member Function Documentation}
-\hypertarget{class_tradutor_a213336fc8d553cc286688f5dbbd467c3}{\index{Tradutor@{Tradutor}!custo\-Traducao@{custo\-Traducao}}
+\hypertarget{class_tradutor_ab55718903fb3e7cc5c1b21b87d64393a}{\index{Tradutor@{Tradutor}!custo\-Traducao@{custo\-Traducao}}
 \index{custo\-Traducao@{custo\-Traducao}!Tradutor@{Tradutor}}
 \subsubsection[{custo\-Traducao}]{\setlength{\rightskip}{0pt plus 5cm}double Tradutor\-::custo\-Traducao (
 \begin{DoxyParamCaption}
 \item[{{\bf Texto} $\ast$}]{texto}
 \end{DoxyParamCaption}
-)}}\label{class_tradutor_a213336fc8d553cc286688f5dbbd467c3}
+)}}\label{class_tradutor_ab55718903fb3e7cc5c1b21b87d64393a}
+
+
+Calculates the cost of a given translation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texto} & The text to translate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The cost (in euros). 
+\end{DoxyReturn}
 \hypertarget{class_tradutor_a001f11f69661085cb11192d3c6f5d556}{\index{Tradutor@{Tradutor}!get\-\_\-anos\-\_\-experiencia@{get\-\_\-anos\-\_\-experiencia}}
 \index{get\-\_\-anos\-\_\-experiencia@{get\-\_\-anos\-\_\-experiencia}!Tradutor@{Tradutor}}
 \subsubsection[{get\-\_\-anos\-\_\-experiencia}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Tradutor\-::get\-\_\-anos\-\_\-experiencia (
@@ -77,6 +104,13 @@ This class packages the details about a translator and provides some functionali
 {}
 \end{DoxyParamCaption}
 )}}\label{class_tradutor_a001f11f69661085cb11192d3c6f5d556}
+
+
+Getter for the years of experience of the translator. 
+
+\begin{DoxyReturn}{Returns}
+The experience of the translator, in years. 
+\end{DoxyReturn}
 \hypertarget{class_tradutor_adc3d4f5ae46ebd92072c644f9fe0e479}{\index{Tradutor@{Tradutor}!get\-\_\-id@{get\-\_\-id}}
 \index{get\-\_\-id@{get\-\_\-id}!Tradutor@{Tradutor}}
 \subsubsection[{get\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Tradutor\-::get\-\_\-id (
@@ -84,6 +118,13 @@ This class packages the details about a translator and provides some functionali
 {}
 \end{DoxyParamCaption}
 )}}\label{class_tradutor_adc3d4f5ae46ebd92072c644f9fe0e479}
+
+
+Getter for the I\-D of the translator. 
+
+\begin{DoxyReturn}{Returns}
+The I\-D of the order. 
+\end{DoxyReturn}
 \hypertarget{class_tradutor_a011b86fa2dae11c6ccdda1cbeb844e94}{\index{Tradutor@{Tradutor}!get\-\_\-linguas@{get\-\_\-linguas}}
 \index{get\-\_\-linguas@{get\-\_\-linguas}!Tradutor@{Tradutor}}
 \subsubsection[{get\-\_\-linguas}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ std\-::string $>$ Tradutor\-::get\-\_\-linguas (
@@ -91,6 +132,13 @@ This class packages the details about a translator and provides some functionali
 {}
 \end{DoxyParamCaption}
 )}}\label{class_tradutor_a011b86fa2dae11c6ccdda1cbeb844e94}
+
+
+Getter for the languages known to the translator. 
+
+\begin{DoxyReturn}{Returns}
+A vector containing the languages known to the translator. 
+\end{DoxyReturn}
 \hypertarget{class_tradutor_af2caad7e33c443f238851c5bb2d63930}{\index{Tradutor@{Tradutor}!get\-\_\-maior\-\_\-id@{get\-\_\-maior\-\_\-id}}
 \index{get\-\_\-maior\-\_\-id@{get\-\_\-maior\-\_\-id}!Tradutor@{Tradutor}}
 \subsubsection[{get\-\_\-maior\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Tradutor\-::get\-\_\-maior\-\_\-id (
@@ -98,6 +146,13 @@ This class packages the details about a translator and provides some functionali
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{class_tradutor_af2caad7e33c443f238851c5bb2d63930}
+
+
+Getter for the biggest translator I\-D (of all known translators). 
+
+\begin{DoxyReturn}{Returns}
+The biggest translator I\-D. 
+\end{DoxyReturn}
 \hypertarget{class_tradutor_a3547a7d337cd421be409e5bf63418964}{\index{Tradutor@{Tradutor}!get\-\_\-nome@{get\-\_\-nome}}
 \index{get\-\_\-nome@{get\-\_\-nome}!Tradutor@{Tradutor}}
 \subsubsection[{get\-\_\-nome}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Tradutor\-::get\-\_\-nome (
@@ -105,6 +160,13 @@ This class packages the details about a translator and provides some functionali
 {}
 \end{DoxyParamCaption}
 )}}\label{class_tradutor_a3547a7d337cd421be409e5bf63418964}
+
+
+Getter for name of the translator. 
+
+\begin{DoxyReturn}{Returns}
+The name of the translator. 
+\end{DoxyReturn}
 \hypertarget{class_tradutor_a1d22a38c8eaa3753d44b521bb3aab2af}{\index{Tradutor@{Tradutor}!pode\-Satisfazer\-Encomenda@{pode\-Satisfazer\-Encomenda}}
 \index{pode\-Satisfazer\-Encomenda@{pode\-Satisfazer\-Encomenda}!Tradutor@{Tradutor}}
 \subsubsection[{pode\-Satisfazer\-Encomenda}]{\setlength{\rightskip}{0pt plus 5cm}bool Tradutor\-::pode\-Satisfazer\-Encomenda (
@@ -112,6 +174,18 @@ This class packages the details about a translator and provides some functionali
 \item[{{\bf Encomenda} $\ast$}]{encomenda}
 \end{DoxyParamCaption}
 )}}\label{class_tradutor_a1d22a38c8eaa3753d44b521bb3aab2af}
+
+
+Checks if the translator is able to fullfill a given translation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em encomenda} & The order to check against. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true or false, depending whether the order can be, or not, fullfilled. 
+\end{DoxyReturn}
 \hypertarget{class_tradutor_a938cfc1c263b3504fc4d7fbdc939b087}{\index{Tradutor@{Tradutor}!set\-\_\-anos\-\_\-experiencia@{set\-\_\-anos\-\_\-experiencia}}
 \index{set\-\_\-anos\-\_\-experiencia@{set\-\_\-anos\-\_\-experiencia}!Tradutor@{Tradutor}}
 \subsubsection[{set\-\_\-anos\-\_\-experiencia}]{\setlength{\rightskip}{0pt plus 5cm}void Tradutor\-::set\-\_\-anos\-\_\-experiencia (
@@ -119,6 +193,15 @@ This class packages the details about a translator and provides some functionali
 \item[{unsigned int}]{anos\-\_\-exp}
 \end{DoxyParamCaption}
 )}}\label{class_tradutor_a938cfc1c263b3504fc4d7fbdc939b087}
+
+
+Setter for the years of experience of the translator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em anos\-\_\-exp} & The experience of the translator, in years. \\
+\hline
+\end{DoxyParams}
 \hypertarget{class_tradutor_a83ed5b48e00f3a15c579e209bb01d53f}{\index{Tradutor@{Tradutor}!set\-\_\-linguas@{set\-\_\-linguas}}
 \index{set\-\_\-linguas@{set\-\_\-linguas}!Tradutor@{Tradutor}}
 \subsubsection[{set\-\_\-linguas}]{\setlength{\rightskip}{0pt plus 5cm}void Tradutor\-::set\-\_\-linguas (
@@ -126,6 +209,13 @@ This class packages the details about a translator and provides some functionali
 \item[{std\-::vector$<$ std\-::string $>$}]{linguas}
 \end{DoxyParamCaption}
 )}}\label{class_tradutor_a83ed5b48e00f3a15c579e209bb01d53f}
+
+
+Setter for the languages known to the translator. 
+
+\begin{DoxyReturn}{Returns}
+A vector containing the languages known to the translator. 
+\end{DoxyReturn}
 \hypertarget{class_tradutor_aa50fdceab0ca03dfe5c2a1639bc5869e}{\index{Tradutor@{Tradutor}!set\-\_\-nome@{set\-\_\-nome}}
 \index{set\-\_\-nome@{set\-\_\-nome}!Tradutor@{Tradutor}}
 \subsubsection[{set\-\_\-nome}]{\setlength{\rightskip}{0pt plus 5cm}void Tradutor\-::set\-\_\-nome (
@@ -133,13 +223,34 @@ This class packages the details about a translator and provides some functionali
 \item[{std\-::string}]{nome}
 \end{DoxyParamCaption}
 )}}\label{class_tradutor_aa50fdceab0ca03dfe5c2a1639bc5869e}
-\hypertarget{class_tradutor_aad8db1d61a7505532cda73240d76412d}{\index{Tradutor@{Tradutor}!tempo\-Estimado@{tempo\-Estimado}}
+
+
+Setter for name of the translator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome} & The name of the translator. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_tradutor_a1ca7c608db7e9145e8b9105e19e5900a}{\index{Tradutor@{Tradutor}!tempo\-Estimado@{tempo\-Estimado}}
 \index{tempo\-Estimado@{tempo\-Estimado}!Tradutor@{Tradutor}}
 \subsubsection[{tempo\-Estimado}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Tradutor\-::tempo\-Estimado (
 \begin{DoxyParamCaption}
-\item[{{\bf Texto} $\ast$}]{texto}
+\item[{{\bf Texto} $\ast$}]{text}
 \end{DoxyParamCaption}
-)}}\label{class_tradutor_aad8db1d61a7505532cda73240d76412d}
+)}}\label{class_tradutor_a1ca7c608db7e9145e8b9105e19e5900a}
+
+
+Calculates the time to fullfill a translation. 
+
+Please note that this function does N\-O\-T take into account other work the translator may have. 
+\begin{DoxyParams}{Parameters}
+{\em texto} & The text to translate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The time, in seconds. 
+\end{DoxyReturn}
 \hypertarget{class_tradutor_acd53cf00b851be61350100c9aa6ef3c0}{\index{Tradutor@{Tradutor}!tempo\-Estimado@{tempo\-Estimado}}
 \index{tempo\-Estimado@{tempo\-Estimado}!Tradutor@{Tradutor}}
 \subsubsection[{tempo\-Estimado}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Tradutor\-::tempo\-Estimado (
@@ -147,6 +258,18 @@ This class packages the details about a translator and provides some functionali
 \item[{{\bf Encomenda} $\ast$}]{encomenda}
 \end{DoxyParamCaption}
 )}}\label{class_tradutor_acd53cf00b851be61350100c9aa6ef3c0}
+
+
+Calculates the time to fullfill a given order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texto} & The text to translate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The time, in seconds. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}

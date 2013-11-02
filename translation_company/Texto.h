@@ -27,24 +27,80 @@ class Texto {
     static unsigned int _maior_id_texto;
     
 public:
+    /**
+     *  Class Constructor.
+     *  @param id The object ID.
+     *  @param lingua The language the text is written in.
+     *  @param conteudo The plain text contents of the text.
+     */
+    
     Texto(unsigned int id, std::string lingua, std::string conteudo);
+    
+    /**
+     *  Class Constructor.
+     *  @param id The object ID.
+     *  @param lingua The language the text is written in.
+     *  @param palavras The word count of conteudo.
+     *  @param conteudo The plain text contents of the text.
+     */
+    
     Texto(unsigned int id, std::string lingua, unsigned long palavras, std::string conteudo);
+    
+    /**
+     *  Getter for the biggest ID of the known text objects.
+     *  @return The biggest known ID.
+     */
     
     static unsigned int get_maior_id();
     
+    /**
+     *  Getter for the ID of the text.
+     *  @return The ID.
+     */
+    
     unsigned int get_id();
+    
+    /**
+     *  Getter for the word count of the text content.
+     *  @return Word Count of the text content.
+     */
     
     unsigned long get_palavras();
     
+    /**
+     *  Getter for the language of the text.
+     *  @return Language of the text.
+     */
+    
     std::string get_lingua();
+    
+    /**
+     *  Setter for the language of the text.
+     *  @param lingua Language of the text.
+     */
     
     void set_lingua(std::string lingua);
     
+    /**
+     *  Getter for the text content.
+     *  @return Text Content (in plain text).
+     */
+    
     std::string get_conteudo();
+    
+    /**
+     *  Setter for the text content.
+     *  @return Text Content (in plain text).
+     */
     
     void set_conteudo(std::string conteudo);
     
-    virtual unsigned int get_complexidade();
+    /**
+     *  Calculates the complexity of the text.
+     *  @return Complexity value.
+     */
+    
+    virtual unsigned int complexidade();
 };
 
 #endif /* defined(__translation_company__Texto__) */

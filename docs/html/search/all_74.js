@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['tempoestimado',['tempoEstimado',['../class_tradutor.html#aad8db1d61a7505532cda73240d76412d',1,'Tradutor::tempoEstimado(Texto *)'],['../class_tradutor.html#acd53cf00b851be61350100c9aa6ef3c0',1,'Tradutor::tempoEstimado(Encomenda *encomenda)']]],
+  ['tempoestimado',['tempoEstimado',['../class_tradutor.html#a1ca7c608db7e9145e8b9105e19e5900a',1,'Tradutor::tempoEstimado(Texto *text)'],['../class_tradutor.html#acd53cf00b851be61350100c9aa6ef3c0',1,'Tradutor::tempoEstimado(Encomenda *encomenda)']]],
   ['texto',['Texto',['../class_texto.html',1,'Texto'],['../class_texto.html#a7034548c1e8e2007b0825ef3a01b1b88',1,'Texto::Texto(unsigned int id, std::string lingua, std::string conteudo)'],['../class_texto.html#a3ccc9eb8eb980eda5e5f6583cbb60425',1,'Texto::Texto(unsigned int id, std::string lingua, unsigned long palavras, std::string conteudo)']]],
   ['texto_2ecpp',['Texto.cpp',['../_texto_8cpp.html',1,'']]],
   ['texto_2eh',['Texto.h',['../_texto_8h.html',1,'']]],

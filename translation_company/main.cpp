@@ -308,14 +308,14 @@ void order_translation() {
     
     string deadline_str = Additions::getline();
     
-    while (!Additions::checkForOnlyNumeric(deadline_str)) {
+    while (!Additions::checkForOnlyNumeric(deadline_str) || boost::lexical_cast<int>(deadline_str)) {
         if (Additions::gotESC(deadline_str)) {
             Additions::clearConsole();
             
             main_menu();
         }
         
-        cout << endl << "Answer needs to be numeric only." << endl;
+        cout << endl << "Answer needs to be numeric only, and at least 1." << endl;
         cout << endl << "Deadline (in days): ";
         
         deadline_str = Additions::getline();
@@ -447,7 +447,7 @@ void order_translation() {
             break;
             
         default:
-            throw "Hue Hue Hue...";
+            throw "Unrecognized text type.";
             
             break;
     }
@@ -455,6 +455,7 @@ void order_translation() {
     Encomenda *enc = new Encomenda(Encomenda::get_maior_id() + 1, txt, dst_lang, deadline);
     
     unsigned int least_time = 0xDEADBEEF; // And this is why you should not code... while hungry.
+    
     Tradutor *best_translator = nullptr;
     
     for (unsigned int i = 0; i < possible_translators.size(); i++)
@@ -1296,8 +1297,8 @@ void add_record() {
         manage_database();
     }
     
-    while (!Additions::checkForOnlyNumeric(tr_expy_str)) {
-        cout << endl << endl<< "This field requires a numeric-only value. Please try again." << endl << endl;
+    while (!Additions::checkForOnlyNumeric(tr_expy_str) || boost::lexical_cast<int>(tr_expy_str) == 0) {
+        cout << endl << endl << "This field requires a numeric-only value, which needs to be bigger than zero. Please try again." << endl << endl;
         
         cout << "Years of Experience: ";
         

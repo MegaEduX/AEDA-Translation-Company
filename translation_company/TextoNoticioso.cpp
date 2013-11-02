@@ -26,6 +26,6 @@ tipo_jornal TextoNoticioso::get_tipo_jornal() {
     return _tipo;
 }
 
-unsigned int TextoNoticioso::get_complexidade() {
-    return Texto::get_complexidade() * 2;
+unsigned int TextoNoticioso::complexidade() {
+    return Texto::complexidade() * 2;
 }

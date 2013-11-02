@@ -39,7 +39,7 @@ public:
      *  @param id The object ID.
      *  @param texto The text associated with the order.
      *  @param lingua_destino The language "texto" should be translated to.
-     *  @param duracao_max_dias The maximum number of days the order should be fullfilled in.
+     *  @param duracao_max_dias The maximum number of days the order should be fullfilled in. Should be at least 1.
      */
     
     Encomenda(unsigned int id, Texto *texto, std::string lingua_destino, unsigned int duracao_max_dias);
@@ -49,7 +49,7 @@ public:
      *  @param id The object ID.
      *  @param texto The text associated with the order.
      *  @param lingua_destino The language "texto" should be translated to.
-     *  @param duracao_max_dias The maximum number of days the order should be fullfilled in.
+     *  @param duracao_max_dias The maximum number of days the order should be fullfilled in. Should be at least 1.
      *  @param tradutor The translator associated with the order.
      *  @param timestamp_entrega The date, refered to as a timestamp, when the order will be fullfilled.
      */

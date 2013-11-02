@@ -75,6 +75,6 @@ void Texto::set_conteudo(std::string conteudo) {
     _conteudo = conteudo;
 }
 
-unsigned int Texto::get_complexidade() {
+unsigned int Texto::complexidade() {
     return (unsigned int)(this->get_palavras() / 10);
 }

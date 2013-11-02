@@ -83,7 +83,7 @@ double Tradutor::custoTraducao(Texto *texto) {
     
     //  flat rate: € 1
     
-    return (1.00f + (double)texto->get_complexidade() * (double)_anos_experiencia / 1000.0f);
+    return (1.00f + (double)texto->complexidade() * (double)_anos_experiencia / 1000.0f);
 }
 
 unsigned int Tradutor::tempoEstimado(Texto *texto) {
@@ -91,7 +91,7 @@ unsigned int Tradutor::tempoEstimado(Texto *texto) {
     //  tempo retornado em segundos
     
     if (texto && texto != nullptr)
-        return (int)(texto->get_complexidade() * 20 / _anos_experiencia);
+        return (int)(texto->complexidade() * 20 / _anos_experiencia);
     
     return 0;
 }
@@ -99,7 +99,7 @@ unsigned int Tradutor::tempoEstimado(Texto *texto) {
 unsigned int Tradutor::tempoEstimado(Encomenda *encomenda) {
     Texto *enc_text = encomenda->get_texto();
     
-    return (_get_tempo_ocupado() + tempoEstimado(enc_text)); /* (texto->get_complexidade() * 20 / _anos_experiencia) */
+    return (_get_tempo_ocupado() + tempoEstimado(enc_text)); /* (texto->complexidade() * 20 / _anos_experiencia) */
 }
 
 bool Tradutor::podeSatisfazerEncomenda(Encomenda *encomenda) {
