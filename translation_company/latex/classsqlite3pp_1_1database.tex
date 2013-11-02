@@ -1,0 +1,106 @@
+\hypertarget{classsqlite3pp_1_1database}{\section{sqlite3pp\-:\-:database Class Reference}
+\label{classsqlite3pp_1_1database}\index{sqlite3pp\-::database@{sqlite3pp\-::database}}
+}
+Inheritance diagram for sqlite3pp\-:\-:database\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsqlite3pp_1_1database}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classsqlite3pp_1_1database_a00e316167d2a96f2458372e12e7dc9ac}{typedef boost\-::function$<$ int(int)$>$ {\bfseries busy\-\_\-handler}}\label{classsqlite3pp_1_1database_a00e316167d2a96f2458372e12e7dc9ac}
+
+\item 
+\hypertarget{classsqlite3pp_1_1database_ab813e24d10edc9c24102b3f2459be6a2}{typedef boost\-::function$<$ int()$>$ {\bfseries commit\-\_\-handler}}\label{classsqlite3pp_1_1database_ab813e24d10edc9c24102b3f2459be6a2}
+
+\item 
+\hypertarget{classsqlite3pp_1_1database_a307b494852597cbe1baaef1197c1ecb4}{typedef boost\-::function$<$ void()$>$ {\bfseries rollback\-\_\-handler}}\label{classsqlite3pp_1_1database_a307b494852597cbe1baaef1197c1ecb4}
+
+\item 
+\hypertarget{classsqlite3pp_1_1database_a86dc0ab97b10669c75e7b35480e8666a}{typedef boost\-::function$<$ void(int, \\*
+char const $\ast$, char const \\*
+$\ast$, long long int)$>$ {\bfseries update\-\_\-handler}}\label{classsqlite3pp_1_1database_a86dc0ab97b10669c75e7b35480e8666a}
+
+\item 
+\hypertarget{classsqlite3pp_1_1database_a29502faa9cba0fd03cf08d8815fc714e}{typedef boost\-::function$<$ int(int, \\*
+char const $\ast$, char const \\*
+$\ast$, char const $\ast$, char const $\ast$)$>$ {\bfseries authorize\-\_\-handler}}\label{classsqlite3pp_1_1database_a29502faa9cba0fd03cf08d8815fc714e}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classsqlite3pp_1_1database_ad82d2544bdc21484b1ad5ba1744224ee}{{\bfseries database} (char const $\ast$dbname=0)}\label{classsqlite3pp_1_1database_ad82d2544bdc21484b1ad5ba1744224ee}
+
+\item 
+\hypertarget{classsqlite3pp_1_1database_a84b8252faa02ddd1f49b41b065ae8bcb}{int {\bfseries connect} (char const $\ast$dbname)}\label{classsqlite3pp_1_1database_a84b8252faa02ddd1f49b41b065ae8bcb}
+
+\item 
+\hypertarget{classsqlite3pp_1_1database_ac52e19d2ca06314cb027dccbf78f2f70}{int {\bfseries connect\-\_\-v2} (char const $\ast$dbname, int flags, char const $\ast$vfs=0)}\label{classsqlite3pp_1_1database_ac52e19d2ca06314cb027dccbf78f2f70}
+
+\item 
+\hypertarget{classsqlite3pp_1_1database_a51227d51ba00357d093588ce7a9387c8}{int {\bfseries disconnect} ()}\label{classsqlite3pp_1_1database_a51227d51ba00357d093588ce7a9387c8}
+
+\item 
+\hypertarget{classsqlite3pp_1_1database_a1997005540b310306af57ce11da52964}{int {\bfseries attach} (char const $\ast$dbname, char const $\ast$name)}\label{classsqlite3pp_1_1database_a1997005540b310306af57ce11da52964}
+
+\item 
+\hypertarget{classsqlite3pp_1_1database_a54c017665849c1441595a9a3eb337011}{int {\bfseries detach} (char const $\ast$name)}\label{classsqlite3pp_1_1database_a54c017665849c1441595a9a3eb337011}
+
+\item 
+\hypertarget{classsqlite3pp_1_1database_af27c4fa34418d2af3735d195baa5b281}{long long int {\bfseries last\-\_\-insert\-\_\-rowid} () const }\label{classsqlite3pp_1_1database_af27c4fa34418d2af3735d195baa5b281}
+
+\item 
+\hypertarget{classsqlite3pp_1_1database_a8ba2facb29ad175924269b78a2970e6d}{int {\bfseries error\-\_\-code} () const }\label{classsqlite3pp_1_1database_a8ba2facb29ad175924269b78a2970e6d}
+
+\item 
+\hypertarget{classsqlite3pp_1_1database_a5b77f2e8faa87bd6512f1da3b1149b6a}{char const $\ast$ {\bfseries error\-\_\-msg} () const }\label{classsqlite3pp_1_1database_a5b77f2e8faa87bd6512f1da3b1149b6a}
+
+\item 
+\hypertarget{classsqlite3pp_1_1database_aef941b972df875ba2a5062d324c72a7a}{int {\bfseries execute} (char const $\ast$sql)}\label{classsqlite3pp_1_1database_aef941b972df875ba2a5062d324c72a7a}
+
+\item 
+\hypertarget{classsqlite3pp_1_1database_a19fbbc61f8fd5b398f904d343c1c27a9}{int {\bfseries executef} (char const $\ast$sql,...)}\label{classsqlite3pp_1_1database_a19fbbc61f8fd5b398f904d343c1c27a9}
+
+\item 
+\hypertarget{classsqlite3pp_1_1database_aeace5855fa4540a6716321c2af0499bd}{int {\bfseries set\-\_\-busy\-\_\-timeout} (int ms)}\label{classsqlite3pp_1_1database_aeace5855fa4540a6716321c2af0499bd}
+
+\item 
+\hypertarget{classsqlite3pp_1_1database_adf5482aa554f0e4612d3ba83cbde6d7c}{void {\bfseries set\-\_\-busy\-\_\-handler} (busy\-\_\-handler h)}\label{classsqlite3pp_1_1database_adf5482aa554f0e4612d3ba83cbde6d7c}
+
+\item 
+\hypertarget{classsqlite3pp_1_1database_aec8828634ab248e318d9605cbafaac2a}{void {\bfseries set\-\_\-commit\-\_\-handler} (commit\-\_\-handler h)}\label{classsqlite3pp_1_1database_aec8828634ab248e318d9605cbafaac2a}
+
+\item 
+\hypertarget{classsqlite3pp_1_1database_a02558b73420568fa8f0199da031b13e6}{void {\bfseries set\-\_\-rollback\-\_\-handler} (rollback\-\_\-handler h)}\label{classsqlite3pp_1_1database_a02558b73420568fa8f0199da031b13e6}
+
+\item 
+\hypertarget{classsqlite3pp_1_1database_aa0ce424227761d27a4633375f8e309f4}{void {\bfseries set\-\_\-update\-\_\-handler} (update\-\_\-handler h)}\label{classsqlite3pp_1_1database_aa0ce424227761d27a4633375f8e309f4}
+
+\item 
+\hypertarget{classsqlite3pp_1_1database_ab5b1c02d58c555c5889d29c3ae8535b4}{void {\bfseries set\-\_\-authorize\-\_\-handler} (authorize\-\_\-handler h)}\label{classsqlite3pp_1_1database_ab5b1c02d58c555c5889d29c3ae8535b4}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classsqlite3pp_1_1database_a4682195a7dfc5da7346d8cfadcf0eb20}{class {\bfseries statement}}\label{classsqlite3pp_1_1database_a4682195a7dfc5da7346d8cfadcf0eb20}
+
+\item 
+\hypertarget{classsqlite3pp_1_1database_a76d8b698f6b190905b6c9f75fc581f93}{class {\bfseries database\-\_\-error}}\label{classsqlite3pp_1_1database_a76d8b698f6b190905b6c9f75fc581f93}
+
+\item 
+\hypertarget{classsqlite3pp_1_1database_a0af2b37d4b82567629796c72049d6e6e}{class {\bfseries ext\-::function}}\label{classsqlite3pp_1_1database_a0af2b37d4b82567629796c72049d6e6e}
+
+\item 
+\hypertarget{classsqlite3pp_1_1database_a3daeb4aba0850368a48e8024f05d4863}{class {\bfseries ext\-::aggregate}}\label{classsqlite3pp_1_1database_a3daeb4aba0850368a48e8024f05d4863}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+sqlite3pp.\-h\item 
+sqlite3pp.\-cpp\end{DoxyCompactItemize}

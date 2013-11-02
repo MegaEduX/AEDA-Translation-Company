@@ -1,0 +1,273 @@
+\hypertarget{class_database_manager}{\section{Database\-Manager Class Reference}
+\label{class_database_manager}\index{Database\-Manager@{Database\-Manager}}
+}
+
+
+Database Manager class.  
+
+
+
+
+{\ttfamily \#include $<$Database\-Manager.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_database_manager_a24e3c3701ce01fdac96cc170b334aeba}{\hyperlink{class_database_manager_a24e3c3701ce01fdac96cc170b334aeba}{Database\-Manager} (std\-::string filepath)}\label{class_database_manager_a24e3c3701ce01fdac96cc170b334aeba}
+
+\begin{DoxyCompactList}\small\item\em Class Constructor The only constructor (and the one that should be used) \end{DoxyCompactList}\item 
+\hyperlink{class_database_manager_ae9b3a5da1e04fbb00faf8a034da1d063}{$\sim$\-Database\-Manager} ()
+\begin{DoxyCompactList}\small\item\em Class Destructor A... \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{class_texto}{Texto} $\ast$ $>$ \hyperlink{class_database_manager_a362dc9fb3beb6cd0ca9cb1d42703ec03}{get\-\_\-textos} ()
+\begin{DoxyCompactList}\small\item\em The getter for the texts. \end{DoxyCompactList}\item 
+void \hyperlink{class_database_manager_a3ea3390feb2069715c7af51ebb41a26c}{get\-\_\-textos\-\_\-by\-\_\-type} (std\-::vector$<$ \hyperlink{class_texto_tecnico}{Texto\-Tecnico} $\ast$ $>$ \&textos\-\_\-tecnicos, std\-::vector$<$ \hyperlink{class_texto_literario}{Texto\-Literario} $\ast$ $>$ \&textos\-\_\-literarios, std\-::vector$<$ \hyperlink{class_texto_noticioso}{Texto\-Noticioso} $\ast$ $>$ \&textos\-\_\-noticiosos)
+\begin{DoxyCompactList}\small\item\em A getter for the texts, separated by type vectors. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{class_tradutor}{Tradutor} $\ast$ $>$ \hyperlink{class_database_manager_ad0f509067821ad15a9b25d86d2b515a4}{get\-\_\-tradutores} ()
+\begin{DoxyCompactList}\small\item\em The getter for the translators. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{class_encomenda}{Encomenda} $\ast$ $>$ \hyperlink{class_database_manager_a5c2b2ad77ee83de5b1fb2f07cdfc6736}{get\-\_\-encomendas} ()
+\begin{DoxyCompactList}\small\item\em The getter for the orders. \end{DoxyCompactList}\item 
+bool \hyperlink{class_database_manager_a10e0b6e056bcc0b669e272b839ae92fe}{create\-\_\-update\-\_\-record} (\hyperlink{class_texto}{Texto} $\ast$texto)
+\begin{DoxyCompactList}\small\item\em Creates a new record or updates an existing one. \end{DoxyCompactList}\item 
+bool \hyperlink{class_database_manager_aedc255310da21463f3297f3333898605}{delete\-\_\-record} (\hyperlink{class_texto}{Texto} $\ast$texto)
+\begin{DoxyCompactList}\small\item\em Deletes an existing record. \end{DoxyCompactList}\item 
+bool \hyperlink{class_database_manager_a587389f45912fee630df72658a4d09b0}{create\-\_\-update\-\_\-record} (\hyperlink{class_tradutor}{Tradutor} $\ast$tradutor)
+\begin{DoxyCompactList}\small\item\em Creates a new record or updates an existing one. \end{DoxyCompactList}\item 
+bool \hyperlink{class_database_manager_a861c8ab275b7d9e100ebb71889578c40}{delete\-\_\-record} (\hyperlink{class_tradutor}{Tradutor} $\ast$tradutor)
+\begin{DoxyCompactList}\small\item\em Deletes an existing record. \end{DoxyCompactList}\item 
+bool \hyperlink{class_database_manager_a10fd54af873e6902a3a6ee45f71eb42c}{create\-\_\-update\-\_\-record} (\hyperlink{class_encomenda}{Encomenda} $\ast$encomenda)
+\begin{DoxyCompactList}\small\item\em Creates a new record or updates an existing one. \end{DoxyCompactList}\item 
+bool \hyperlink{class_database_manager_aa78e5396d0be88098a97703f31fb72ec}{delete\-\_\-record} (\hyperlink{class_encomenda}{Encomenda} $\ast$encomenda)
+\begin{DoxyCompactList}\small\item\em Deletes an existing record. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{class_database_manager_a5af3db3952fc2af64a43fd0403138c04}{get\-\_\-maior\-\_\-id} (k\-Class asker)
+\begin{DoxyCompactList}\small\item\em Returns the biggest I\-D record for a class type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Database Manager class. 
+
+This class handles all the I\-O to the database (with some helper functions). 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_database_manager_ae9b3a5da1e04fbb00faf8a034da1d063}{\index{Database\-Manager@{Database\-Manager}!$\sim$\-Database\-Manager@{$\sim$\-Database\-Manager}}
+\index{$\sim$\-Database\-Manager@{$\sim$\-Database\-Manager}!DatabaseManager@{Database\-Manager}}
+\subsubsection[{$\sim$\-Database\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}Database\-Manager\-::$\sim$\-Database\-Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_database_manager_ae9b3a5da1e04fbb00faf8a034da1d063}
+
+
+Class Destructor A... 
+
+destructor. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_database_manager_a10e0b6e056bcc0b669e272b839ae92fe}{\index{Database\-Manager@{Database\-Manager}!create\-\_\-update\-\_\-record@{create\-\_\-update\-\_\-record}}
+\index{create\-\_\-update\-\_\-record@{create\-\_\-update\-\_\-record}!DatabaseManager@{Database\-Manager}}
+\subsubsection[{create\-\_\-update\-\_\-record}]{\setlength{\rightskip}{0pt plus 5cm}bool Database\-Manager\-::create\-\_\-update\-\_\-record (
+\begin{DoxyParamCaption}
+\item[{{\bf Texto} $\ast$}]{texto}
+\end{DoxyParamCaption}
+)}}\label{class_database_manager_a10e0b6e056bcc0b669e272b839ae92fe}
+
+
+Creates a new record or updates an existing one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Texto$\ast$} & The text to be saved. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false on error. 
+\end{DoxyReturn}
+\hypertarget{class_database_manager_a587389f45912fee630df72658a4d09b0}{\index{Database\-Manager@{Database\-Manager}!create\-\_\-update\-\_\-record@{create\-\_\-update\-\_\-record}}
+\index{create\-\_\-update\-\_\-record@{create\-\_\-update\-\_\-record}!DatabaseManager@{Database\-Manager}}
+\subsubsection[{create\-\_\-update\-\_\-record}]{\setlength{\rightskip}{0pt plus 5cm}bool Database\-Manager\-::create\-\_\-update\-\_\-record (
+\begin{DoxyParamCaption}
+\item[{{\bf Tradutor} $\ast$}]{tradutor}
+\end{DoxyParamCaption}
+)}}\label{class_database_manager_a587389f45912fee630df72658a4d09b0}
+
+
+Creates a new record or updates an existing one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Tradutor$\ast$} & The translator to be saved. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false on error. 
+\end{DoxyReturn}
+\hypertarget{class_database_manager_a10fd54af873e6902a3a6ee45f71eb42c}{\index{Database\-Manager@{Database\-Manager}!create\-\_\-update\-\_\-record@{create\-\_\-update\-\_\-record}}
+\index{create\-\_\-update\-\_\-record@{create\-\_\-update\-\_\-record}!DatabaseManager@{Database\-Manager}}
+\subsubsection[{create\-\_\-update\-\_\-record}]{\setlength{\rightskip}{0pt plus 5cm}bool Database\-Manager\-::create\-\_\-update\-\_\-record (
+\begin{DoxyParamCaption}
+\item[{{\bf Encomenda} $\ast$}]{encomenda}
+\end{DoxyParamCaption}
+)}}\label{class_database_manager_a10fd54af873e6902a3a6ee45f71eb42c}
+
+
+Creates a new record or updates an existing one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Encomenda$\ast$} & The order to be saved. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false on error. 
+\end{DoxyReturn}
+\hypertarget{class_database_manager_aedc255310da21463f3297f3333898605}{\index{Database\-Manager@{Database\-Manager}!delete\-\_\-record@{delete\-\_\-record}}
+\index{delete\-\_\-record@{delete\-\_\-record}!DatabaseManager@{Database\-Manager}}
+\subsubsection[{delete\-\_\-record}]{\setlength{\rightskip}{0pt plus 5cm}bool Database\-Manager\-::delete\-\_\-record (
+\begin{DoxyParamCaption}
+\item[{{\bf Texto} $\ast$}]{texto}
+\end{DoxyParamCaption}
+)}}\label{class_database_manager_aedc255310da21463f3297f3333898605}
+
+
+Deletes an existing record. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Texto$\ast$} & The text to be deleted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false on error. 
+\end{DoxyReturn}
+\hypertarget{class_database_manager_a861c8ab275b7d9e100ebb71889578c40}{\index{Database\-Manager@{Database\-Manager}!delete\-\_\-record@{delete\-\_\-record}}
+\index{delete\-\_\-record@{delete\-\_\-record}!DatabaseManager@{Database\-Manager}}
+\subsubsection[{delete\-\_\-record}]{\setlength{\rightskip}{0pt plus 5cm}bool Database\-Manager\-::delete\-\_\-record (
+\begin{DoxyParamCaption}
+\item[{{\bf Tradutor} $\ast$}]{tradutor}
+\end{DoxyParamCaption}
+)}}\label{class_database_manager_a861c8ab275b7d9e100ebb71889578c40}
+
+
+Deletes an existing record. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Texto$\ast$} & The translator to be deleted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false on error. 
+\end{DoxyReturn}
+\hypertarget{class_database_manager_aa78e5396d0be88098a97703f31fb72ec}{\index{Database\-Manager@{Database\-Manager}!delete\-\_\-record@{delete\-\_\-record}}
+\index{delete\-\_\-record@{delete\-\_\-record}!DatabaseManager@{Database\-Manager}}
+\subsubsection[{delete\-\_\-record}]{\setlength{\rightskip}{0pt plus 5cm}bool Database\-Manager\-::delete\-\_\-record (
+\begin{DoxyParamCaption}
+\item[{{\bf Encomenda} $\ast$}]{encomenda}
+\end{DoxyParamCaption}
+)}}\label{class_database_manager_aa78e5396d0be88098a97703f31fb72ec}
+
+
+Deletes an existing record. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Encomenda$\ast$} & The order to be deleted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false on error. 
+\end{DoxyReturn}
+\hypertarget{class_database_manager_a5c2b2ad77ee83de5b1fb2f07cdfc6736}{\index{Database\-Manager@{Database\-Manager}!get\-\_\-encomendas@{get\-\_\-encomendas}}
+\index{get\-\_\-encomendas@{get\-\_\-encomendas}!DatabaseManager@{Database\-Manager}}
+\subsubsection[{get\-\_\-encomendas}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf Encomenda} $\ast$ $>$ Database\-Manager\-::get\-\_\-encomendas (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_database_manager_a5c2b2ad77ee83de5b1fb2f07cdfc6736}
+
+
+The getter for the orders. 
+
+\begin{DoxyReturn}{Returns}
+A vector with all the orders (as \hyperlink{class_encomenda}{Encomenda} object pointers). 
+\end{DoxyReturn}
+\hypertarget{class_database_manager_a5af3db3952fc2af64a43fd0403138c04}{\index{Database\-Manager@{Database\-Manager}!get\-\_\-maior\-\_\-id@{get\-\_\-maior\-\_\-id}}
+\index{get\-\_\-maior\-\_\-id@{get\-\_\-maior\-\_\-id}!DatabaseManager@{Database\-Manager}}
+\subsubsection[{get\-\_\-maior\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Database\-Manager\-::get\-\_\-maior\-\_\-id (
+\begin{DoxyParamCaption}
+\item[{k\-Class}]{asker}
+\end{DoxyParamCaption}
+)}}\label{class_database_manager_a5af3db3952fc2af64a43fd0403138c04}
+
+
+Returns the biggest I\-D record for a class type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em k\-Class} & The class as defined on the Class enum. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+Class enum 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+The requested I\-D. 
+\end{DoxyReturn}
+\hypertarget{class_database_manager_a362dc9fb3beb6cd0ca9cb1d42703ec03}{\index{Database\-Manager@{Database\-Manager}!get\-\_\-textos@{get\-\_\-textos}}
+\index{get\-\_\-textos@{get\-\_\-textos}!DatabaseManager@{Database\-Manager}}
+\subsubsection[{get\-\_\-textos}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf Texto} $\ast$ $>$ Database\-Manager\-::get\-\_\-textos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_database_manager_a362dc9fb3beb6cd0ca9cb1d42703ec03}
+
+
+The getter for the texts. 
+
+\begin{DoxyReturn}{Returns}
+A vector with all the texts (as \hyperlink{class_texto}{Texto} object pointers). 
+\end{DoxyReturn}
+\hypertarget{class_database_manager_a3ea3390feb2069715c7af51ebb41a26c}{\index{Database\-Manager@{Database\-Manager}!get\-\_\-textos\-\_\-by\-\_\-type@{get\-\_\-textos\-\_\-by\-\_\-type}}
+\index{get\-\_\-textos\-\_\-by\-\_\-type@{get\-\_\-textos\-\_\-by\-\_\-type}!DatabaseManager@{Database\-Manager}}
+\subsubsection[{get\-\_\-textos\-\_\-by\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}void Database\-Manager\-::get\-\_\-textos\-\_\-by\-\_\-type (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Texto\-Tecnico} $\ast$ $>$ \&}]{textos\-\_\-tecnicos, }
+\item[{std\-::vector$<$ {\bf Texto\-Literario} $\ast$ $>$ \&}]{textos\-\_\-literarios, }
+\item[{std\-::vector$<$ {\bf Texto\-Noticioso} $\ast$ $>$ \&}]{textos\-\_\-noticiosos}
+\end{DoxyParamCaption}
+)}}\label{class_database_manager_a3ea3390feb2069715c7af51ebb41a26c}
+
+
+A getter for the texts, separated by type vectors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \&textos\-\_\-tecnicos} & The variable that will hold the technical texts. \\
+\hline
+{\em \&textos\-\_\-literarios} & The variable that will hold the literary texts. \\
+\hline
+{\em \&textos\-\_\-noticiosos} & The variable that will hold the news texts. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{class_database_manager_a362dc9fb3beb6cd0ca9cb1d42703ec03}{get\-\_\-textos()} 
+\end{DoxySeeAlso}
+\hypertarget{class_database_manager_ad0f509067821ad15a9b25d86d2b515a4}{\index{Database\-Manager@{Database\-Manager}!get\-\_\-tradutores@{get\-\_\-tradutores}}
+\index{get\-\_\-tradutores@{get\-\_\-tradutores}!DatabaseManager@{Database\-Manager}}
+\subsubsection[{get\-\_\-tradutores}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf Tradutor} $\ast$ $>$ Database\-Manager\-::get\-\_\-tradutores (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_database_manager_ad0f509067821ad15a9b25d86d2b515a4}
+
+
+The getter for the translators. 
+
+\begin{DoxyReturn}{Returns}
+A vector with all the translators. (as \hyperlink{class_tradutor}{Tradutor} object pointers). 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Database\-Manager.\-h\item 
+Database\-Manager.\-cpp\end{DoxyCompactItemize}

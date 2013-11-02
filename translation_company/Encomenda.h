@@ -29,26 +29,111 @@ class Encomenda {
     std::string _lingua_destino;
     
 public:
+    /**
+     *  Class Constructor.
+     *  @param id The object ID.
+     *  @param texto The text associated with the order.
+     *  @param lingua_destino The language "texto" should be translated to.
+     *  @param duracao_max_dias The maximum number of days the order should be fullfilled in.
+     */
+    
     Encomenda(unsigned int id, Texto *texto, std::string lingua_destino, unsigned int duracao_max_dias);
+    
+    /**
+     *  Class Constructor.
+     *  @param id The object ID.
+     *  @param texto The text associated with the order.
+     *  @param lingua_destino The language "texto" should be translated to.
+     *  @param duracao_max_dias The maximum number of days the order should be fullfilled in.
+     *  @param tradutor The translator associated with the order.
+     *  @param timestamp_entrega The date, refered to as a timestamp, when the order will be fullfilled.
+     */
+    
     Encomenda(unsigned int id, Texto *texto, std::string lingua_destino, unsigned int duracao_max_dias, Tradutor *tradutor, uint64_t timestamp_entrega);
+    
+    /**
+     *  Getter for the biggest order ID.
+     *  @return The biggest order ID.
+     */
     
     static unsigned int get_maior_id();
     
+    /**
+     *  Getter for the order ID
+     *  @return The order ID.
+     */
+    
     unsigned int get_id();
     
+    /**
+     *  Getter for the maximum order duration.
+     *  @return The maximum number of days the order should be fullfilled in.
+     */
+    
     unsigned int get_duracao_max_dias();
+    
+    /**
+     *  Setter for the maximum order duration.
+     *  @param dias The maximum number of days the order should be fullfilled in.
+     */
+    
     void set_duracao_max_dias(unsigned int dias);
     
+    /**
+     *  Getter for the text associated with the order.
+     *  @return The text associated with the order.
+     */
+    
     Texto *get_texto() const;
-    void set_texto(Texto *);
+    
+    /**
+     *  Setter for the text associated with the order.
+     *  @param texto The text to be associated with the order.
+     */
+    
+    void set_texto(Texto *texto);
+    
+    /**
+     *  Getter for the translator assigned with the order.
+     *  @return The translator assigned with the order.
+     */
     
     Tradutor *get_tradutor() const;
-    void set_tradutor(Tradutor *);
+    
+    /**
+     *  Setter for the translator assigned with the order.
+     *  @param tradutor The translator to be assigned with the order.
+     */
+    
+    void set_tradutor(Tradutor *tradutor);
+    
+    /**
+     *  Getter for the language the order text should be translated to.
+     *  @return The language the order text should be translated to.
+     */
     
     std::string get_lingua_destino();
+    
+    /**
+     *  Setter for the language the order text should be translated to.
+     *  @param lingua The language the order text should be translated to.
+     */
+    
     void set_lingua_destino(std::string lingua);
     
+    /**
+     *  Getter for the date, refered to as a timestamp, when the order will be fullfilled.
+     *  @return The date, refered to as a timestamp, when the order will be fullfilled.
+     */
+    
     uint64_t get_timestamp_entrega();
+    
+    /**
+     *  Setter for the date, refered to as a timestamp, when the order will be fullfilled.
+     *  This is only a setter, so no calculations are done. Please do the calculations before passing this value to avoid unexpected results.
+     *  @param timestamp_entrega The date, refered to as a timestamp, when the order will be fullfilled.
+     */
+    
     void set_timestamp_entrega(uint64_t timestamp_entrega);
 };
 

@@ -60,15 +60,14 @@ class DatabaseManager {
     
 public:
     /**
-     *  Class Constructor
-     *  The only constructor (and the one that should be used)
+     *  Class Constructor.
+     *  @param filepath The path for the sqlite3 database file. If a file doesn't exist at target, a new one will be created and initialized.
      */
     
     DatabaseManager(std::string filepath);
     
     /**
-     *  Class Destructor
-     *  A... destructor.
+     *  Class Destructor.
      */
     
     ~DatabaseManager();
@@ -82,9 +81,9 @@ public:
     
     /**
      *  A getter for the texts, separated by type vectors.
-     *  @param &textos_tecnicos The variable that will hold the technical texts.
-     *  @param &textos_literarios The variable that will hold the literary texts.
-     *  @param &textos_noticiosos The variable that will hold the news texts.
+     *  @param textos_tecnicos The variable that will hold the technical texts.
+     *  @param textos_literarios The variable that will hold the literary texts.
+     *  @param textos_noticiosos The variable that will hold the news texts.
      *  @see get_textos()
      */
     
@@ -106,7 +105,7 @@ public:
     
     /**
      *  Creates a new record or updates an existing one.
-     *  @param Texto* The text to be saved.
+     *  @param texto The text to be saved.
      *  @return true on success, false on error.
      */
     
@@ -114,7 +113,7 @@ public:
     
     /**
      *  Deletes an existing record.
-     *  @param Texto* The text to be deleted.
+     *  @param texto The text to be deleted.
      *  @return true on success, false on error.
      */
     
@@ -122,7 +121,7 @@ public:
     
     /**
      *  Creates a new record or updates an existing one.
-     *  @param Tradutor* The translator to be saved.
+     *  @param tradutor The translator to be saved.
      *  @return true on success, false on error.
      */
     
@@ -130,7 +129,7 @@ public:
     
     /**
      *  Deletes an existing record.
-     *  @param Texto* The translator to be deleted.
+     *  @param tradutor The translator to be deleted.
      *  @return true on success, false on error.
      */
     
@@ -138,7 +137,7 @@ public:
     
     /**
      *  Creates a new record or updates an existing one.
-     *  @param Encomenda* The order to be saved.
+     *  @param encomenda The order to be saved.
      *  @return true on success, false on error.
      */
     
@@ -146,7 +145,7 @@ public:
     
     /**
      *  Deletes an existing record.
-     *  @param Encomenda* The order to be deleted.
+     *  @param encomenda The order to be deleted.
      *  @return true on success, false on error.
      */
     
