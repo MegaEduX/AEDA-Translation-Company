@@ -291,12 +291,16 @@ bool DatabaseManager::create_update_record(Texto *texto) {
                                 "," +
                                 boost::lexical_cast<std::string>(((TextoNoticioso *) texto)->get_tipo_jornal())).c_str());
     } else
-        throw "Unrecognized text type.";
+        return false;
     
-    if (!cmd.execute())
-        return true;
+    try {
+        if (!cmd.execute())
+            return false;
+    } catch (...) {
+        return false;
+    }
     
-    return false;
+    return true;
 }
 
 bool DatabaseManager::create_update_record(Tradutor *tradutor) {
@@ -330,10 +334,14 @@ bool DatabaseManager::create_update_record(Tradutor *tradutor) {
     cmd.bind(":anos_experiencia", boost::lexical_cast<std::string>(tradutor->get_anos_experiencia()).c_str());
     cmd.bind(":linguas", ss.str().c_str());
     
-    if (!cmd.execute())
-        return true;
+    try {
+        if (!cmd.execute())
+            return false;
+    } catch (...) {
+        return false;
+    }
     
-    return false;
+    return true;
 }
 
 bool DatabaseManager::create_update_record(Encomenda *encomenda) {
@@ -361,10 +369,14 @@ bool DatabaseManager::create_update_record(Encomenda *encomenda) {
     cmd.bind(":tradutor_id", boost::lexical_cast<std::string>(encomenda->get_tradutor()->get_id()).c_str());
     cmd.bind(":completion_date", boost::lexical_cast<std::string>(encomenda->get_timestamp_entrega()).c_str());
     
-    if (!cmd.execute())
-        return true;
+    try {
+        if (!cmd.execute())
+            return false;
+    } catch (...) {
+        return false;
+    }
     
-    return false;
+    return true;
 }
 
 bool DatabaseManager::delete_record(Texto *texto) {
