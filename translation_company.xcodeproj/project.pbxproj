@@ -19,6 +19,7 @@
 		6F0F1E29180C0F3300504956 /* sqlite3pp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F0F1E25180C0F3300504956 /* sqlite3pp.cpp */; settings = {COMPILER_FLAGS = "-Wno-deprecated"; }; };
 		6F0F1E2A180C0F3300504956 /* sqlite3ppext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F0F1E27180C0F3300504956 /* sqlite3ppext.cpp */; };
 		6F0F1E2D180C14BE00504956 /* Encomenda.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F0F1E2B180C14BE00504956 /* Encomenda.cpp */; };
+		6F1703C7182884AC0065CE6C /* Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F1703C5182884AC0065CE6C /* Test.cpp */; };
 		6F35193518199641008CB18F /* Additions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F35193318199641008CB18F /* Additions.cpp */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		6F0F1E28180C0F3300504956 /* sqlite3ppext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3ppext.h; sourceTree = "<group>"; };
 		6F0F1E2B180C14BE00504956 /* Encomenda.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Encomenda.cpp; sourceTree = "<group>"; };
 		6F0F1E2C180C14BE00504956 /* Encomenda.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Encomenda.h; sourceTree = "<group>"; };
+		6F1703C5182884AC0065CE6C /* Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Test.cpp; sourceTree = "<group>"; };
 		6F35193318199641008CB18F /* Additions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Additions.cpp; sourceTree = "<group>"; };
 		6F35193418199641008CB18F /* Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Additions.h; sourceTree = "<group>"; };
 		6FC41FF7181E872400E8E5AC /* Globals.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Globals.pch; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				6F05E8C0180C27F000695A9B /* DatabaseManager.h */,
 				6F05E8BF180C27F000695A9B /* DatabaseManager.cpp */,
 				6F05E89F180BFADA00695A9B /* main.cpp */,
+				6F1703C5182884AC0065CE6C /* Test.cpp */,
 				6F05E8BE180C21C100695A9B /* Resources */,
 			);
 			path = translation_company;
@@ -206,6 +209,7 @@
 				6F05E8B6180C092900695A9B /* TextoNoticioso.cpp in Sources */,
 				6F0F1E29180C0F3300504956 /* sqlite3pp.cpp in Sources */,
 				6F05E8B0180C080700695A9B /* TextoTecnico.cpp in Sources */,
+				6F1703C7182884AC0065CE6C /* Test.cpp in Sources */,
 				6F05E8B3180C08F300695A9B /* TextoLiterario.cpp in Sources */,
 				6F05E8A0180BFADA00695A9B /* main.cpp in Sources */,
 			);
