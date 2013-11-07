@@ -72,20 +72,17 @@ void delete_record_step3(T *obj);
 
 //  #define RUN_TEST_CODE
 
+#ifdef RUN_TEST_CODE
+
+#import "Test.h"
+
+#endif
+
 int main(int argc, const char * argv[]) {
     
 #ifdef RUN_TEST_CODE
     
-    std::vector<std::string> linguas;
-    
-    linguas.push_back("Portugues");
-    linguas.push_back("Ingles");
-    
-    Tradutor *trad = new Tradutor(0, "Eduardo Almeida", 10, linguas);
-    Tradutor *trad2 = new Tradutor(1, "Pedro Santiago", 2, linguas);
-
-    dbman.create_update_record(trad);
-    dbman.create_update_record(trad2);
+    run_test_suite();
     
 #else
     
