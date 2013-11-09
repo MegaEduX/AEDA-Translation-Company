@@ -270,7 +270,17 @@ bool DatabaseManager::create_update_record(Texto *texto) {
      *  I can't just blindly do a .c_str() conversion here as it will break the text if it is too long.
      */
     
-    std::vector<char> contents_char(texto->get_conteudo().begin(), texto->get_conteudo().end());
+    std::vector<char> contents_char;
+    
+    try {
+        std::vector<char> tmp_char(texto->get_conteudo().begin(), texto->get_conteudo().end());
+        
+        contents_char = tmp_char;
+    } catch (std::exception exc) {
+        std::cout << "Impossible to parse contents. (" << exc.what() << ")" << std::endl;
+        
+        return false;
+    }
     
     cmd.bind(":conteudo", &contents_char[0]);
     
@@ -296,7 +306,8 @@ bool DatabaseManager::create_update_record(Texto *texto) {
     try {
         if (!cmd.execute())
             return false;
-    } catch (...) {
+    } catch (std::exception exc) {
+        std::cout << "Error while executing command: " << exc.what() << std::endl;
         return false;
     }
     

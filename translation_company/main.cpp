@@ -70,7 +70,7 @@ void delete_record_step3(T *obj);
 
 //  Comment the following line of code to run the app.
 
-//  #define RUN_TEST_CODE
+#define RUN_TEST_CODE
 
 #ifdef RUN_TEST_CODE
 
@@ -305,7 +305,7 @@ void order_translation() {
     
     string deadline_str = Additions::getline();
     
-    while (!Additions::checkForOnlyNumeric(deadline_str) || boost::lexical_cast<int>(deadline_str)) {
+    while (!Additions::checkForOnlyNumeric(deadline_str) || !(boost::lexical_cast<int>(deadline_str))) {
         if (Additions::gotESC(deadline_str)) {
             Additions::clearConsole();
             
@@ -329,7 +329,7 @@ void order_translation() {
     
     switch (text_type) {
         case kTextoTecnico: {
-            cout << "Dominio de Especialidade: ";
+            cout << "Domain: ";
             
             arg1 = Additions::getline();
             
@@ -337,7 +337,7 @@ void order_translation() {
         }
             
         case kTextoLiterario: {
-            cout << "Titulo: ";
+            cout << "Title: ";
             
             arg1 = Additions::getline();
             
@@ -347,7 +347,7 @@ void order_translation() {
                 main_menu();
             }
             
-            cout << endl << "Autor: ";
+            cout << endl << "Author: ";
             
             arg2 = Additions::getline();
             
@@ -361,7 +361,7 @@ void order_translation() {
         }
             
         case kTextoNoticioso: {
-            cout << "Assunto: ";
+            cout << "Title: ";
             
             arg1 = Additions::getline();
             
@@ -373,9 +373,9 @@ void order_translation() {
             
             cout << endl;
             
-            cout << endl << "Tipos de Jornal: (1) - Diario, (2) - Semanario" << endl;
+            cout << endl << "Publication Type: (1) - Diary, (2) - Weekly" << endl;
             
-            cout << endl << "Tipo de Jornal: ";
+            cout << endl << "Publication Type: ";
             
             while (true) {
                 bool can_break = false;
@@ -1184,6 +1184,16 @@ void display_info(Texto *txt) {
     cout << "Word Count: " << txt->get_palavras() << endl;
     cout << endl;
     cout << "Contents: " << txt->get_conteudo() << endl;
+    
+    if (dynamic_cast<TextoTecnico *>(txt))
+        cout << "Domain: " << ((TextoTecnico *)txt)->get_dominio_especialidade() << endl;
+    else if (dynamic_cast<TextoLiterario *>(txt)) {
+        cout << "Title: " << ((TextoLiterario *)txt)->get_titulo() << endl;
+        cout << "Author: " << ((TextoLiterario *)txt)->get_autor() << endl;
+    } else if (dynamic_cast<TextoNoticioso *>(txt)) {
+        cout << "Subject: " << ((TextoNoticioso *)txt)->get_assunto() << endl;
+        cout << "Journal Type: " << (((TextoNoticioso *)txt)->get_tipo_jornal() ? "Weekly" : "Diary") << endl;
+    }
     
     cout << endl;
 }

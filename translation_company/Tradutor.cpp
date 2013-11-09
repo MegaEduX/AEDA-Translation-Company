@@ -91,7 +91,7 @@ unsigned int Tradutor::tempoEstimado(Texto *texto) {
     //  tempo retornado em segundos
     
     if (texto && texto != nullptr)
-        return (int)(texto->complexidade() * 20 / _anos_experiencia);
+        return (int)(texto->complexidade() * 20 / (_anos_experiencia ? _anos_experiencia : 0.5f)); //   Can't /0!
     
     return 0;
 }
@@ -99,7 +99,7 @@ unsigned int Tradutor::tempoEstimado(Texto *texto) {
 unsigned int Tradutor::tempoEstimado(Encomenda *encomenda) {
     Texto *enc_text = encomenda->get_texto();
     
-    return (_get_tempo_ocupado() + tempoEstimado(enc_text)); /* (texto->complexidade() * 20 / _anos_experiencia) */
+    return (_get_tempo_ocupado() + tempoEstimado(enc_text));
 }
 
 bool Tradutor::podeSatisfazerEncomenda(Encomenda *encomenda) {
