@@ -258,7 +258,7 @@ bool DatabaseManager::create_update_record(Texto *texto) {
     std::string query = "INSERT INTO `textos` (id, lingua, palavras, conteudo, tipo_obj, tipo_args) VALUES (:id, :lingua, :palavras, :conteudo, :tipo_obj, :tipo_args)";
     
     for (query::iterator i = qry.begin(); i != qry.end(); ++i)
-        query = "UPDATE `textos` SET lingua=:lingua, palavras=:palavras, conteudo=:conteudo WHERE id=:id";
+        query = "UPDATE `textos` SET lingua=:lingua, palavras=:palavras, conteudo=:conteudo, tipo_obj=:tipo_obj, tipo_args=:tipo_args WHERE id=:id";
     
     command cmd(db, query.c_str());
     

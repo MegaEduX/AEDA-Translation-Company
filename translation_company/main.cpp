@@ -70,7 +70,7 @@ void delete_record_step3(T *obj);
 
 //  Comment the following line of code to run the app.
 
-#define RUN_TEST_CODE
+//  #define RUN_TEST_CODE
 
 #ifdef RUN_TEST_CODE
 

@@ -24,7 +24,7 @@ void test_0_wordcount() {
     ASSERT_EQUAL(69, txt->get_palavras());
 }
 
-void test_1_save() {
+void test_1_create() {
     DatabaseManager dbman = DatabaseManager(db_path);
     
     unsigned int texts = (unsigned int)dbman.get_textos().size();
@@ -64,12 +64,67 @@ void test_2_load() {
         ASSERT_EQUAL(loaded_txt->get_conteudo(), "Lorem ipsum dolor sit amet. Ha!");
 }
 
+void test_3_update() {
+    DatabaseManager dbman = DatabaseManager(db_path);
+    
+    unsigned int id = Texto::get_maior_id() + 1;
+    
+    TextoLiterario *txt = new TextoLiterario(id, "Latin", "Lorem ipsum dolor sit amet, for test 3!", "Lorem Ipsum", "Cicero");
+    
+    std::string curr_auth = txt->get_autor();
+    
+    dbman.create_update_record(txt);
+    
+    std::vector<Texto *> txtvec = dbman.get_textos();
+    
+    bool got_txt = false;
+    
+    for (int i = 0; i < txtvec.size(); i++)
+        if (txtvec[i]->get_id() == id) {
+            txt = (TextoLiterario *)txtvec[i];
+            
+            got_txt = true;
+            
+            break;
+        }
+    
+    ASSERT(got_txt);
+    
+    txt->set_autor("Foo!");
+    
+    dbman.create_update_record(txt);
+    
+    txtvec = dbman.get_textos();
+    
+    got_txt = false;
+    
+    for (int i = 0; i < txtvec.size(); i++)
+        if (txtvec[i]->get_id() == id) {
+            txt = (TextoLiterario *)txtvec[i];
+            
+            got_txt = true;
+            
+            break;
+        }
+    
+    ASSERT(got_txt);
+    
+    ASSERT_EQUAL("Foo!", txt->get_autor());
+}
+
 void run_test_suite(){
 	cute::suite s;
     
+    /*
+     *  Clean Test Environment. :)
+     */
+    
+    std::remove(db_path);
+    
 	s.push_back(CUTE(test_0_wordcount));
-    s.push_back(CUTE(test_1_save));
+    s.push_back(CUTE(test_1_create));
     s.push_back(CUTE(test_2_load));
+    s.push_back(CUTE(test_3_update));
     
 	cute::ide_listener lis;
 	cute::makeRunner(lis)(s, "Translation Company (AEDA Project #1) -> Test Suite");
