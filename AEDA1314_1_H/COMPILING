@@ -1,0 +1,4 @@
+Requirements:
+
+ - Boost C++ Libraries (http://www.boost.org/)
+ - SQLite3 (http://www.sqlite.org/)

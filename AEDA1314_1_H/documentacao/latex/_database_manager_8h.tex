@@ -1,0 +1,88 @@
+\hypertarget{_database_manager_8h}{\section{Database\-Manager.\-h File Reference}
+\label{_database_manager_8h}\index{Database\-Manager.\-h@{Database\-Manager.\-h}}
+}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include \char`\"{}sqlite3pp.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Texto.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Texto\-Tecnico.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Texto\-Literario.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Texto\-Noticioso.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Tradutor.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Encomenda.\-h\char`\"{}}\\*
+Include dependency graph for Database\-Manager.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_database_manager_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_database_manager_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_database_manager}{Database\-Manager}
+\begin{DoxyCompactList}\small\item\em Database Manager class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_database_manager_8h_afe6eaf25f136cff817dad4241aeadedb}{k\-Texto} \{ \hyperlink{_database_manager_8h_afe6eaf25f136cff817dad4241aeadedba601b6ebeb21416c7aa7e43fcd0c91564}{k\-Texto\-Base}, 
+\hyperlink{_database_manager_8h_afe6eaf25f136cff817dad4241aeadedba61858b836751767e8dfd6a03b44352a9}{k\-Texto\-Tecnico}, 
+\hyperlink{_database_manager_8h_afe6eaf25f136cff817dad4241aeadedbaa7596c6b206565d6f01ab2a2c60ba459}{k\-Texto\-Literario}, 
+\hyperlink{_database_manager_8h_afe6eaf25f136cff817dad4241aeadedbad4c8b73ba2c61ae4e7480a3add76ecc2}{k\-Texto\-Noticioso}
+ \}
+\begin{DoxyCompactList}\small\item\em Text Types enum. \end{DoxyCompactList}\item 
+enum \hyperlink{_database_manager_8h_ad36b2b2507c9846942e0b412d07e5438}{k\-Class} \{ \hyperlink{_database_manager_8h_ad36b2b2507c9846942e0b412d07e5438ad70eda5f7c0bfe5f9b94dcd06bc70ba1}{k\-Class\-Texto}, 
+\hyperlink{_database_manager_8h_ad36b2b2507c9846942e0b412d07e5438a905951f6b0f883358810ecbd81358fae}{k\-Class\-Tradutor}, 
+\hyperlink{_database_manager_8h_ad36b2b2507c9846942e0b412d07e5438a491a7f9f48558dbd59b5ee204c920bec}{k\-Class\-Encomenda}
+ \}
+\begin{DoxyCompactList}\small\item\em Class enum. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_database_manager_8h_ad36b2b2507c9846942e0b412d07e5438}{\index{Database\-Manager.\-h@{Database\-Manager.\-h}!k\-Class@{k\-Class}}
+\index{k\-Class@{k\-Class}!DatabaseManager.h@{Database\-Manager.\-h}}
+\subsubsection[{k\-Class}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf k\-Class}}}\label{_database_manager_8h_ad36b2b2507c9846942e0b412d07e5438}
+
+
+Class enum. 
+
+Defines the classes as a typedef (to avoid dirty workarounds). \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{k\-Class\-Texto@{k\-Class\-Texto}!Database\-Manager.\-h@{Database\-Manager.\-h}}\index{Database\-Manager.\-h@{Database\-Manager.\-h}!k\-Class\-Texto@{k\-Class\-Texto}}\item[{\em 
+\hypertarget{_database_manager_8h_ad36b2b2507c9846942e0b412d07e5438ad70eda5f7c0bfe5f9b94dcd06bc70ba1}{k\-Class\-Texto}\label{_database_manager_8h_ad36b2b2507c9846942e0b412d07e5438ad70eda5f7c0bfe5f9b94dcd06bc70ba1}
+}]Class \hyperlink{class_texto}{Texto}. \index{k\-Class\-Tradutor@{k\-Class\-Tradutor}!Database\-Manager.\-h@{Database\-Manager.\-h}}\index{Database\-Manager.\-h@{Database\-Manager.\-h}!k\-Class\-Tradutor@{k\-Class\-Tradutor}}\item[{\em 
+\hypertarget{_database_manager_8h_ad36b2b2507c9846942e0b412d07e5438a905951f6b0f883358810ecbd81358fae}{k\-Class\-Tradutor}\label{_database_manager_8h_ad36b2b2507c9846942e0b412d07e5438a905951f6b0f883358810ecbd81358fae}
+}]Class Translator. \index{k\-Class\-Encomenda@{k\-Class\-Encomenda}!Database\-Manager.\-h@{Database\-Manager.\-h}}\index{Database\-Manager.\-h@{Database\-Manager.\-h}!k\-Class\-Encomenda@{k\-Class\-Encomenda}}\item[{\em 
+\hypertarget{_database_manager_8h_ad36b2b2507c9846942e0b412d07e5438a491a7f9f48558dbd59b5ee204c920bec}{k\-Class\-Encomenda}\label{_database_manager_8h_ad36b2b2507c9846942e0b412d07e5438a491a7f9f48558dbd59b5ee204c920bec}
+}]Class Order. \end{description}
+\end{Desc}
+\hypertarget{_database_manager_8h_afe6eaf25f136cff817dad4241aeadedb}{\index{Database\-Manager.\-h@{Database\-Manager.\-h}!k\-Texto@{k\-Texto}}
+\index{k\-Texto@{k\-Texto}!DatabaseManager.h@{Database\-Manager.\-h}}
+\subsubsection[{k\-Texto}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf k\-Texto}}}\label{_database_manager_8h_afe6eaf25f136cff817dad4241aeadedb}
+
+
+Text Types enum. 
+
+Defines the types of the text class as a typedef. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{k\-Texto\-Base@{k\-Texto\-Base}!Database\-Manager.\-h@{Database\-Manager.\-h}}\index{Database\-Manager.\-h@{Database\-Manager.\-h}!k\-Texto\-Base@{k\-Texto\-Base}}\item[{\em 
+\hypertarget{_database_manager_8h_afe6eaf25f136cff817dad4241aeadedba601b6ebeb21416c7aa7e43fcd0c91564}{k\-Texto\-Base}\label{_database_manager_8h_afe6eaf25f136cff817dad4241aeadedba601b6ebeb21416c7aa7e43fcd0c91564}
+}]Base Text. \index{k\-Texto\-Tecnico@{k\-Texto\-Tecnico}!Database\-Manager.\-h@{Database\-Manager.\-h}}\index{Database\-Manager.\-h@{Database\-Manager.\-h}!k\-Texto\-Tecnico@{k\-Texto\-Tecnico}}\item[{\em 
+\hypertarget{_database_manager_8h_afe6eaf25f136cff817dad4241aeadedba61858b836751767e8dfd6a03b44352a9}{k\-Texto\-Tecnico}\label{_database_manager_8h_afe6eaf25f136cff817dad4241aeadedba61858b836751767e8dfd6a03b44352a9}
+}]Technical Text. \index{k\-Texto\-Literario@{k\-Texto\-Literario}!Database\-Manager.\-h@{Database\-Manager.\-h}}\index{Database\-Manager.\-h@{Database\-Manager.\-h}!k\-Texto\-Literario@{k\-Texto\-Literario}}\item[{\em 
+\hypertarget{_database_manager_8h_afe6eaf25f136cff817dad4241aeadedbaa7596c6b206565d6f01ab2a2c60ba459}{k\-Texto\-Literario}\label{_database_manager_8h_afe6eaf25f136cff817dad4241aeadedbaa7596c6b206565d6f01ab2a2c60ba459}
+}]Literary Text. \index{k\-Texto\-Noticioso@{k\-Texto\-Noticioso}!Database\-Manager.\-h@{Database\-Manager.\-h}}\index{Database\-Manager.\-h@{Database\-Manager.\-h}!k\-Texto\-Noticioso@{k\-Texto\-Noticioso}}\item[{\em 
+\hypertarget{_database_manager_8h_afe6eaf25f136cff817dad4241aeadedbad4c8b73ba2c61ae4e7480a3add76ecc2}{k\-Texto\-Noticioso}\label{_database_manager_8h_afe6eaf25f136cff817dad4241aeadedbad4c8b73ba2c61ae4e7480a3add76ecc2}
+}]News Text. \end{description}
+\end{Desc}

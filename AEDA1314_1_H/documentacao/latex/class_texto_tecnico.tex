@@ -1,0 +1,164 @@
+\hypertarget{class_texto_tecnico}{\section{Texto\-Tecnico Class Reference}
+\label{class_texto_tecnico}\index{Texto\-Tecnico@{Texto\-Tecnico}}
+}
+
+
+\hyperlink{class_texto}{Texto} Tecnico class.  
+
+
+
+
+{\ttfamily \#include $<$Texto\-Tecnico.\-h$>$}
+
+
+
+Inheritance diagram for Texto\-Tecnico\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{class_texto_tecnico__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Texto\-Tecnico\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{class_texto_tecnico__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_texto_tecnico_a4c770469d3a65f750b4551bef18629a9}{Texto\-Tecnico} (unsigned int id, std\-::string lingua, std\-::string conteudo, std\-::string dominio\-\_\-especialidade)
+\begin{DoxyCompactList}\small\item\em Class Constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_texto_tecnico_adc11a5c4366f90c1f22fc986c4bc2131}{Texto\-Tecnico} (unsigned int id, std\-::string lingua, unsigned long palavras, std\-::string conteudo, std\-::string dominio\-\_\-especialidade)
+\begin{DoxyCompactList}\small\item\em Class Constructor. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{class_texto_tecnico_af0541bfc3a8fc861eb13abba28a6768d}{get\-\_\-dominio\-\_\-especialidade} ()
+\begin{DoxyCompactList}\small\item\em Getter for the text domain. \end{DoxyCompactList}\item 
+void \hyperlink{class_texto_tecnico_af66d0b574c0e3316870fb8fdc3223c74}{set\-\_\-dominio\-\_\-especialidade} (std\-::string dominio)
+\begin{DoxyCompactList}\small\item\em Setter for the text domain. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{class_texto_tecnico_aeeeff7367e226e4fc0f0d4cdb692e85d}{complexidade} ()
+\begin{DoxyCompactList}\small\item\em Calculates the complexity of the text. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_texto}{Texto} Tecnico class. 
+
+Subclass of \hyperlink{class_texto}{Texto}, this handles a specific type of Text (Technical Text). 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_texto_tecnico_a4c770469d3a65f750b4551bef18629a9}{\index{Texto\-Tecnico@{Texto\-Tecnico}!Texto\-Tecnico@{Texto\-Tecnico}}
+\index{Texto\-Tecnico@{Texto\-Tecnico}!TextoTecnico@{Texto\-Tecnico}}
+\subsubsection[{Texto\-Tecnico}]{\setlength{\rightskip}{0pt plus 5cm}Texto\-Tecnico\-::\-Texto\-Tecnico (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{id, }
+\item[{std\-::string}]{lingua, }
+\item[{std\-::string}]{conteudo, }
+\item[{std\-::string}]{dominio\-\_\-especialidade}
+\end{DoxyParamCaption}
+)}}\label{class_texto_tecnico_a4c770469d3a65f750b4551bef18629a9}
+
+
+Class Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The object I\-D. \\
+\hline
+{\em lingua} & The language the text is written in. \\
+\hline
+{\em conteudo} & The plain text contents of the text. \\
+\hline
+{\em dominio\-\_\-especialidade} & The domain of the contents of the text. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_texto_tecnico_adc11a5c4366f90c1f22fc986c4bc2131}{\index{Texto\-Tecnico@{Texto\-Tecnico}!Texto\-Tecnico@{Texto\-Tecnico}}
+\index{Texto\-Tecnico@{Texto\-Tecnico}!TextoTecnico@{Texto\-Tecnico}}
+\subsubsection[{Texto\-Tecnico}]{\setlength{\rightskip}{0pt plus 5cm}Texto\-Tecnico\-::\-Texto\-Tecnico (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{id, }
+\item[{std\-::string}]{lingua, }
+\item[{unsigned long}]{palavras, }
+\item[{std\-::string}]{conteudo, }
+\item[{std\-::string}]{dominio\-\_\-especialidade}
+\end{DoxyParamCaption}
+)}}\label{class_texto_tecnico_adc11a5c4366f90c1f22fc986c4bc2131}
+
+
+Class Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The object I\-D. \\
+\hline
+{\em lingua} & The language the text is written in. \\
+\hline
+{\em palavras} & The word coint of conteudo. \\
+\hline
+{\em conteudo} & The plain text contents of the text. \\
+\hline
+{\em dominio\-\_\-especialidade} & The domain of the contents of the text. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_texto_tecnico_aeeeff7367e226e4fc0f0d4cdb692e85d}{\index{Texto\-Tecnico@{Texto\-Tecnico}!complexidade@{complexidade}}
+\index{complexidade@{complexidade}!TextoTecnico@{Texto\-Tecnico}}
+\subsubsection[{complexidade}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Texto\-Tecnico\-::complexidade (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_texto_tecnico_aeeeff7367e226e4fc0f0d4cdb692e85d}
+
+
+Calculates the complexity of the text. 
+
+\begin{DoxyReturn}{Returns}
+Complexity value. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_texto_a9b397139df00ed907e1e6a1c29e2429b}{Texto}.
+
+\hypertarget{class_texto_tecnico_af0541bfc3a8fc861eb13abba28a6768d}{\index{Texto\-Tecnico@{Texto\-Tecnico}!get\-\_\-dominio\-\_\-especialidade@{get\-\_\-dominio\-\_\-especialidade}}
+\index{get\-\_\-dominio\-\_\-especialidade@{get\-\_\-dominio\-\_\-especialidade}!TextoTecnico@{Texto\-Tecnico}}
+\subsubsection[{get\-\_\-dominio\-\_\-especialidade}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Texto\-Tecnico\-::get\-\_\-dominio\-\_\-especialidade (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_texto_tecnico_af0541bfc3a8fc861eb13abba28a6768d}
+
+
+Getter for the text domain. 
+
+\begin{DoxyReturn}{Returns}
+The domain of the text. 
+\end{DoxyReturn}
+\hypertarget{class_texto_tecnico_af66d0b574c0e3316870fb8fdc3223c74}{\index{Texto\-Tecnico@{Texto\-Tecnico}!set\-\_\-dominio\-\_\-especialidade@{set\-\_\-dominio\-\_\-especialidade}}
+\index{set\-\_\-dominio\-\_\-especialidade@{set\-\_\-dominio\-\_\-especialidade}!TextoTecnico@{Texto\-Tecnico}}
+\subsubsection[{set\-\_\-dominio\-\_\-especialidade}]{\setlength{\rightskip}{0pt plus 5cm}void Texto\-Tecnico\-::set\-\_\-dominio\-\_\-especialidade (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{dominio}
+\end{DoxyParamCaption}
+)}}\label{class_texto_tecnico_af66d0b574c0e3316870fb8fdc3223c74}
+
+
+Setter for the text domain. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dominio} & The domain of the text. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_texto_tecnico_8h}{Texto\-Tecnico.\-h}\item 
+\hyperlink{_texto_tecnico_8cpp}{Texto\-Tecnico.\-cpp}\end{DoxyCompactItemize}

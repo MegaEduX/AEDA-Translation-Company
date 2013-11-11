@@ -1,0 +1,240 @@
+\hypertarget{class_texto}{\section{Texto Class Reference}
+\label{class_texto}\index{Texto@{Texto}}
+}
+
+
+\hyperlink{class_texto}{Texto} class.  
+
+
+
+
+{\ttfamily \#include $<$Texto.\-h$>$}
+
+
+
+Inheritance diagram for Texto\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_texto__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Texto\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{class_texto__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_texto_a7034548c1e8e2007b0825ef3a01b1b88}{Texto} (unsigned int id, std\-::string lingua, std\-::string conteudo)
+\begin{DoxyCompactList}\small\item\em Class Constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_texto_a3ccc9eb8eb980eda5e5f6583cbb60425}{Texto} (unsigned int id, std\-::string lingua, unsigned long palavras, std\-::string conteudo)
+\begin{DoxyCompactList}\small\item\em Class Constructor. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{class_texto_a4e1b7a020c3b1cffe4518937cdd6f565}{get\-\_\-id} ()
+\begin{DoxyCompactList}\small\item\em Getter for the I\-D of the text. \end{DoxyCompactList}\item 
+unsigned long \hyperlink{class_texto_a249af46529ab15e98103f1ebe9c3cabb}{get\-\_\-palavras} ()
+\begin{DoxyCompactList}\small\item\em Getter for the word count of the text content. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{class_texto_adfaca963b37bef9a739def84e2c810b6}{get\-\_\-lingua} ()
+\begin{DoxyCompactList}\small\item\em Getter for the language of the text. \end{DoxyCompactList}\item 
+void \hyperlink{class_texto_a297021cc2780c0bf398119bf0e4977e0}{set\-\_\-lingua} (std\-::string lingua)
+\begin{DoxyCompactList}\small\item\em Setter for the language of the text. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{class_texto_a01a9590011195b1a258e2d3bd247ceb0}{get\-\_\-conteudo} ()
+\begin{DoxyCompactList}\small\item\em Getter for the text content. \end{DoxyCompactList}\item 
+void \hyperlink{class_texto_a94ae33fe47a0ef32a5761a12e097910d}{set\-\_\-conteudo} (std\-::string conteudo)
+\begin{DoxyCompactList}\small\item\em Setter for the text content. \end{DoxyCompactList}\item 
+virtual unsigned int \hyperlink{class_texto_a9b397139df00ed907e1e6a1c29e2429b}{complexidade} ()
+\begin{DoxyCompactList}\small\item\em Calculates the complexity of the text. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned int \hyperlink{class_texto_a674eed23fb437d4f07634f9d6559d325}{get\-\_\-maior\-\_\-id} ()
+\begin{DoxyCompactList}\small\item\em Getter for the biggest I\-D of the known text objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_texto}{Texto} class. 
+
+You should not use this class directly. Please use one of the subclasses (\hyperlink{class_texto_tecnico}{Texto\-Tecnico}, \hyperlink{class_texto_literario}{Texto\-Literario} or \hyperlink{class_texto_noticioso}{Texto\-Noticioso}). 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_texto_a7034548c1e8e2007b0825ef3a01b1b88}{\index{Texto@{Texto}!Texto@{Texto}}
+\index{Texto@{Texto}!Texto@{Texto}}
+\subsubsection[{Texto}]{\setlength{\rightskip}{0pt plus 5cm}Texto\-::\-Texto (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{id, }
+\item[{std\-::string}]{lingua, }
+\item[{std\-::string}]{conteudo}
+\end{DoxyParamCaption}
+)}}\label{class_texto_a7034548c1e8e2007b0825ef3a01b1b88}
+
+
+Class Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The object I\-D. \\
+\hline
+{\em lingua} & The language the text is written in. \\
+\hline
+{\em conteudo} & The plain text contents of the text. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_texto_a3ccc9eb8eb980eda5e5f6583cbb60425}{\index{Texto@{Texto}!Texto@{Texto}}
+\index{Texto@{Texto}!Texto@{Texto}}
+\subsubsection[{Texto}]{\setlength{\rightskip}{0pt plus 5cm}Texto\-::\-Texto (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{id, }
+\item[{std\-::string}]{lingua, }
+\item[{unsigned long}]{palavras, }
+\item[{std\-::string}]{conteudo}
+\end{DoxyParamCaption}
+)}}\label{class_texto_a3ccc9eb8eb980eda5e5f6583cbb60425}
+
+
+Class Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The object I\-D. \\
+\hline
+{\em lingua} & The language the text is written in. \\
+\hline
+{\em palavras} & The word count of conteudo. \\
+\hline
+{\em conteudo} & The plain text contents of the text. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_texto_a9b397139df00ed907e1e6a1c29e2429b}{\index{Texto@{Texto}!complexidade@{complexidade}}
+\index{complexidade@{complexidade}!Texto@{Texto}}
+\subsubsection[{complexidade}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Texto\-::complexidade (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_texto_a9b397139df00ed907e1e6a1c29e2429b}
+
+
+Calculates the complexity of the text. 
+
+\begin{DoxyReturn}{Returns}
+Complexity value. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{class_texto_literario_a286c1693b71a45d4d577dcd15871892c}{Texto\-Literario}, \hyperlink{class_texto_noticioso_a1db491d92e2a467d258f0f470f994981}{Texto\-Noticioso}, and \hyperlink{class_texto_tecnico_aeeeff7367e226e4fc0f0d4cdb692e85d}{Texto\-Tecnico}.
+
+\hypertarget{class_texto_a01a9590011195b1a258e2d3bd247ceb0}{\index{Texto@{Texto}!get\-\_\-conteudo@{get\-\_\-conteudo}}
+\index{get\-\_\-conteudo@{get\-\_\-conteudo}!Texto@{Texto}}
+\subsubsection[{get\-\_\-conteudo}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Texto\-::get\-\_\-conteudo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_texto_a01a9590011195b1a258e2d3bd247ceb0}
+
+
+Getter for the text content. 
+
+\begin{DoxyReturn}{Returns}
+Text Content (in plain text). 
+\end{DoxyReturn}
+\hypertarget{class_texto_a4e1b7a020c3b1cffe4518937cdd6f565}{\index{Texto@{Texto}!get\-\_\-id@{get\-\_\-id}}
+\index{get\-\_\-id@{get\-\_\-id}!Texto@{Texto}}
+\subsubsection[{get\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Texto\-::get\-\_\-id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_texto_a4e1b7a020c3b1cffe4518937cdd6f565}
+
+
+Getter for the I\-D of the text. 
+
+\begin{DoxyReturn}{Returns}
+The I\-D. 
+\end{DoxyReturn}
+\hypertarget{class_texto_adfaca963b37bef9a739def84e2c810b6}{\index{Texto@{Texto}!get\-\_\-lingua@{get\-\_\-lingua}}
+\index{get\-\_\-lingua@{get\-\_\-lingua}!Texto@{Texto}}
+\subsubsection[{get\-\_\-lingua}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Texto\-::get\-\_\-lingua (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_texto_adfaca963b37bef9a739def84e2c810b6}
+
+
+Getter for the language of the text. 
+
+\begin{DoxyReturn}{Returns}
+Language of the text. 
+\end{DoxyReturn}
+\hypertarget{class_texto_a674eed23fb437d4f07634f9d6559d325}{\index{Texto@{Texto}!get\-\_\-maior\-\_\-id@{get\-\_\-maior\-\_\-id}}
+\index{get\-\_\-maior\-\_\-id@{get\-\_\-maior\-\_\-id}!Texto@{Texto}}
+\subsubsection[{get\-\_\-maior\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Texto\-::get\-\_\-maior\-\_\-id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_texto_a674eed23fb437d4f07634f9d6559d325}
+
+
+Getter for the biggest I\-D of the known text objects. 
+
+\begin{DoxyReturn}{Returns}
+The biggest known I\-D. 
+\end{DoxyReturn}
+\hypertarget{class_texto_a249af46529ab15e98103f1ebe9c3cabb}{\index{Texto@{Texto}!get\-\_\-palavras@{get\-\_\-palavras}}
+\index{get\-\_\-palavras@{get\-\_\-palavras}!Texto@{Texto}}
+\subsubsection[{get\-\_\-palavras}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long Texto\-::get\-\_\-palavras (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_texto_a249af46529ab15e98103f1ebe9c3cabb}
+
+
+Getter for the word count of the text content. 
+
+\begin{DoxyReturn}{Returns}
+Word Count of the text content. 
+\end{DoxyReturn}
+\hypertarget{class_texto_a94ae33fe47a0ef32a5761a12e097910d}{\index{Texto@{Texto}!set\-\_\-conteudo@{set\-\_\-conteudo}}
+\index{set\-\_\-conteudo@{set\-\_\-conteudo}!Texto@{Texto}}
+\subsubsection[{set\-\_\-conteudo}]{\setlength{\rightskip}{0pt plus 5cm}void Texto\-::set\-\_\-conteudo (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{conteudo}
+\end{DoxyParamCaption}
+)}}\label{class_texto_a94ae33fe47a0ef32a5761a12e097910d}
+
+
+Setter for the text content. 
+
+\begin{DoxyReturn}{Returns}
+Text Content (in plain text). 
+\end{DoxyReturn}
+\hypertarget{class_texto_a297021cc2780c0bf398119bf0e4977e0}{\index{Texto@{Texto}!set\-\_\-lingua@{set\-\_\-lingua}}
+\index{set\-\_\-lingua@{set\-\_\-lingua}!Texto@{Texto}}
+\subsubsection[{set\-\_\-lingua}]{\setlength{\rightskip}{0pt plus 5cm}void Texto\-::set\-\_\-lingua (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{lingua}
+\end{DoxyParamCaption}
+)}}\label{class_texto_a297021cc2780c0bf398119bf0e4977e0}
+
+
+Setter for the language of the text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lingua} & Language of the text. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_texto_8h}{Texto.\-h}\item 
+\hyperlink{_texto_8cpp}{Texto.\-cpp}\end{DoxyCompactItemize}

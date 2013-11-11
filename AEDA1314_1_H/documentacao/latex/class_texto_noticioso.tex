@@ -1,0 +1,166 @@
+\hypertarget{class_texto_noticioso}{\section{Texto\-Noticioso Class Reference}
+\label{class_texto_noticioso}\index{Texto\-Noticioso@{Texto\-Noticioso}}
+}
+
+
+\hyperlink{class_texto}{Texto} Noticioso class.  
+
+
+
+
+{\ttfamily \#include $<$Texto\-Noticioso.\-h$>$}
+
+
+
+Inheritance diagram for Texto\-Noticioso\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{class_texto_noticioso__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Texto\-Noticioso\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{class_texto_noticioso__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_texto_noticioso_a74a984b14609c5ad38a32cefcc5c9da7}{Texto\-Noticioso} (unsigned int id, std\-::string lingua, std\-::string conteudo, std\-::string assunto, \hyperlink{_texto_noticioso_8h_adbee2daefeb8a5b2ec0e0c0b353390d5}{tipo\-\_\-jornal} tipo)
+\begin{DoxyCompactList}\small\item\em Class Constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_texto_noticioso_a9b82b7cd28537c9aa6c214d3439ab6f5}{Texto\-Noticioso} (unsigned int id, std\-::string lingua, unsigned long palavras, std\-::string conteudo, std\-::string assunto, \hyperlink{_texto_noticioso_8h_adbee2daefeb8a5b2ec0e0c0b353390d5}{tipo\-\_\-jornal} tipo)
+\begin{DoxyCompactList}\small\item\em Class Constructor. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{class_texto_noticioso_afd686397a10b9e6afa8eb9f1aaf5d21e}{get\-\_\-assunto} ()
+\begin{DoxyCompactList}\small\item\em Getter for the title of the news. \end{DoxyCompactList}\item 
+\hyperlink{_texto_noticioso_8h_adbee2daefeb8a5b2ec0e0c0b353390d5}{tipo\-\_\-jornal} \hyperlink{class_texto_noticioso_ac0edd9121ef61cb4adc360faabecd62b}{get\-\_\-tipo\-\_\-jornal} ()
+\begin{DoxyCompactList}\small\item\em Getter for the type of the publication the text was posted in. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{class_texto_noticioso_a1db491d92e2a467d258f0f470f994981}{complexidade} ()
+\begin{DoxyCompactList}\small\item\em Calculates the complexity of the text. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_texto}{Texto} Noticioso class. 
+
+Subclass of \hyperlink{class_texto}{Texto}, this handles a specific type of Text (News Text). 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_texto_noticioso_a74a984b14609c5ad38a32cefcc5c9da7}{\index{Texto\-Noticioso@{Texto\-Noticioso}!Texto\-Noticioso@{Texto\-Noticioso}}
+\index{Texto\-Noticioso@{Texto\-Noticioso}!TextoNoticioso@{Texto\-Noticioso}}
+\subsubsection[{Texto\-Noticioso}]{\setlength{\rightskip}{0pt plus 5cm}Texto\-Noticioso\-::\-Texto\-Noticioso (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{id, }
+\item[{std\-::string}]{lingua, }
+\item[{std\-::string}]{conteudo, }
+\item[{std\-::string}]{assunto, }
+\item[{{\bf tipo\-\_\-jornal}}]{tipo}
+\end{DoxyParamCaption}
+)}}\label{class_texto_noticioso_a74a984b14609c5ad38a32cefcc5c9da7}
+
+
+Class Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The object I\-D. \\
+\hline
+{\em lingua} & The language the text is written in. \\
+\hline
+{\em conteudo} & The plain text contents of the text. \\
+\hline
+{\em tipo} & The type of news text, as defined in the tipo\-\_\-jornal struct. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_texto_noticioso_a9b82b7cd28537c9aa6c214d3439ab6f5}{\index{Texto\-Noticioso@{Texto\-Noticioso}!Texto\-Noticioso@{Texto\-Noticioso}}
+\index{Texto\-Noticioso@{Texto\-Noticioso}!TextoNoticioso@{Texto\-Noticioso}}
+\subsubsection[{Texto\-Noticioso}]{\setlength{\rightskip}{0pt plus 5cm}Texto\-Noticioso\-::\-Texto\-Noticioso (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{id, }
+\item[{std\-::string}]{lingua, }
+\item[{unsigned long}]{palavras, }
+\item[{std\-::string}]{conteudo, }
+\item[{std\-::string}]{assunto, }
+\item[{{\bf tipo\-\_\-jornal}}]{tipo}
+\end{DoxyParamCaption}
+)}}\label{class_texto_noticioso_a9b82b7cd28537c9aa6c214d3439ab6f5}
+
+
+Class Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The object I\-D. \\
+\hline
+{\em lingua} & The language the text is written in. \\
+\hline
+{\em palavras} & The word coint of conteudo. \\
+\hline
+{\em conteudo} & The plain text contents of the text. \\
+\hline
+{\em assunto} & The title of the news text. \\
+\hline
+{\em tipo} & The type of the publication the text was posted in. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_texto_noticioso_a1db491d92e2a467d258f0f470f994981}{\index{Texto\-Noticioso@{Texto\-Noticioso}!complexidade@{complexidade}}
+\index{complexidade@{complexidade}!TextoNoticioso@{Texto\-Noticioso}}
+\subsubsection[{complexidade}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Texto\-Noticioso\-::complexidade (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_texto_noticioso_a1db491d92e2a467d258f0f470f994981}
+
+
+Calculates the complexity of the text. 
+
+\begin{DoxyReturn}{Returns}
+Complexity value. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_texto_a9b397139df00ed907e1e6a1c29e2429b}{Texto}.
+
+\hypertarget{class_texto_noticioso_afd686397a10b9e6afa8eb9f1aaf5d21e}{\index{Texto\-Noticioso@{Texto\-Noticioso}!get\-\_\-assunto@{get\-\_\-assunto}}
+\index{get\-\_\-assunto@{get\-\_\-assunto}!TextoNoticioso@{Texto\-Noticioso}}
+\subsubsection[{get\-\_\-assunto}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Texto\-Noticioso\-::get\-\_\-assunto (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_texto_noticioso_afd686397a10b9e6afa8eb9f1aaf5d21e}
+
+
+Getter for the title of the news. 
+
+\begin{DoxyReturn}{Returns}
+Title of the news. 
+\end{DoxyReturn}
+\hypertarget{class_texto_noticioso_ac0edd9121ef61cb4adc360faabecd62b}{\index{Texto\-Noticioso@{Texto\-Noticioso}!get\-\_\-tipo\-\_\-jornal@{get\-\_\-tipo\-\_\-jornal}}
+\index{get\-\_\-tipo\-\_\-jornal@{get\-\_\-tipo\-\_\-jornal}!TextoNoticioso@{Texto\-Noticioso}}
+\subsubsection[{get\-\_\-tipo\-\_\-jornal}]{\setlength{\rightskip}{0pt plus 5cm}{\bf tipo\-\_\-jornal} Texto\-Noticioso\-::get\-\_\-tipo\-\_\-jornal (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_texto_noticioso_ac0edd9121ef61cb4adc360faabecd62b}
+
+
+Getter for the type of the publication the text was posted in. 
+
+\begin{DoxyReturn}{Returns}
+Type of publication. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_texto_noticioso_8h}{Texto\-Noticioso.\-h}\item 
+\hyperlink{_texto_noticioso_8cpp}{Texto\-Noticioso.\-cpp}\end{DoxyCompactItemize}

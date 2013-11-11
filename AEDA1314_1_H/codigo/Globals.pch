@@ -1,0 +1,14 @@
+//
+//  Globals.pch
+//  translation_company
+//
+//  Created by Eduardo Almeida and Pedro Santiago on 28/10/13.
+//  AEDA (EIC0013) 2013/2014 - T1G04 - First Project
+//
+
+#ifndef translation_company_Globals_pch
+#define translation_company_Globals_pch
+
+#define db_path "translation_company_data.db"
+
+#endif

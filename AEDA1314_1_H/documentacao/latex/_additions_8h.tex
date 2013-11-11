@@ -1,0 +1,69 @@
+\hypertarget{_additions_8h}{\section{Additions.\-h File Reference}
+\label{_additions_8h}\index{Additions.\-h@{Additions.\-h}}
+}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$cerrno$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+Include dependency graph for Additions.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_additions_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{_additions_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespace_additions}{Additions}
+\begin{DoxyCompactList}\small\item\em \hyperlink{namespace_additions}{Additions} namespace. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{_additions_8h_a27d6eaddec69251ee448adf3d7260055}{\-\_\-getch} ()
+\begin{DoxyCompactList}\small\item\em Replacement \hyperlink{_additions_8cpp_a27d6eaddec69251ee448adf3d7260055}{\-\_\-getch()} for P\-O\-S\-I\-X systems. \end{DoxyCompactList}\item 
+std\-::vector$<$ std\-::string $>$ \hyperlink{namespace_additions_a1abf6964ffd9abf97c743c514c2f401a}{Additions\-::explode} (const std\-::string \&delimiter, const std\-::string \&str)
+\begin{DoxyCompactList}\small\item\em Converts a demlimiter-\/separated string into a vector. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{namespace_additions_aa81067806f9cd7e83231a302d0e4ab08}{Additions\-::get\-\_\-file\-\_\-contents} (const char $\ast$filename)
+\begin{DoxyCompactList}\small\item\em Reads the content of a given file. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{namespace_additions_a9adf5327d4aa6631c5395cd58ab88237}{Additions\-::getline} ()
+\begin{DoxyCompactList}\small\item\em Reads the input from the standard input. \end{DoxyCompactList}\item 
+bool \hyperlink{namespace_additions_a5b3d2c5561dcb114fbd92abc7acadc4d}{Additions\-::check\-For\-Only\-Numeric} (std\-::string str)
+\begin{DoxyCompactList}\small\item\em Checks if a given string consists of numeric characters only. \end{DoxyCompactList}\item 
+bool \hyperlink{namespace_additions_a5dfbe44598a91e2e617b6afc56dbf6fa}{Additions\-::got\-E\-S\-C} (std\-::string str)
+\begin{DoxyCompactList}\small\item\em Checks if the E\-S\-C key was pressed during a \hyperlink{namespace_additions_a9adf5327d4aa6631c5395cd58ab88237}{getline()} input. \end{DoxyCompactList}\item 
+void \hyperlink{namespace_additions_af13c3c94d99ca27753ac564159b625d3}{Additions\-::clear\-Console} ()
+\begin{DoxyCompactList}\small\item\em Clears the console. \end{DoxyCompactList}\item 
+void \hyperlink{namespace_additions_a05946b8c576a8237b5b447f70e55a79d}{Additions\-::wait\-For\-Return} ()
+\begin{DoxyCompactList}\small\item\em Waits until the return key is pressed. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{namespace_additions_a58d17107bba40cd0b819f7e595a4dd4e}{Additions\-::current\-Timestamp} ()
+\begin{DoxyCompactList}\small\item\em Returns the current U\-N\-I\-X timestamp. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{namespace_additions_a902a81e9c6d0e2ffdd28a1f6a9d9304a}{Additions\-::timestamp\-To\-String} (const long timestamp)
+\begin{DoxyCompactList}\small\item\em Converts an U\-N\-I\-X timestamp to an user-\/readable string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{_additions_8h_a27d6eaddec69251ee448adf3d7260055}{\index{Additions.\-h@{Additions.\-h}!\-\_\-getch@{\-\_\-getch}}
+\index{\-\_\-getch@{\-\_\-getch}!Additions.h@{Additions.\-h}}
+\subsubsection[{\-\_\-getch}]{\setlength{\rightskip}{0pt plus 5cm}int \-\_\-getch (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_additions_8h_a27d6eaddec69251ee448adf3d7260055}
+
+
+Replacement \hyperlink{_additions_8cpp_a27d6eaddec69251ee448adf3d7260055}{\-\_\-getch()} for P\-O\-S\-I\-X systems. 
+
+\begin{DoxyReturn}{Returns}
+The pressed key. 
+\end{DoxyReturn}
