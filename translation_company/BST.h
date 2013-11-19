@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <cstdio>
+
 using namespace std;
 
 template <class T> class Node {
@@ -33,7 +34,7 @@ public:
 template <class T> class Tree{
 	Node<T> *root;
     
-	Node<T>* search(Node<T> *q, int obj) {
+	Node<T>* search(Node<T> *q, T obj) {
         while (q->item != obj && q!=0) {
             if (obj < q->item)
                 q = q->left;
@@ -44,19 +45,21 @@ template <class T> class Tree{
         return q;
     }
     
-	void insert(Node<T> *&q, int obj) {
+	void insert(Node<T> *&q, T obj) {
         Node<T> *temp = q, *prev = q;
-        while(temp != 0) {
+        
+        while (temp != 0) {
             prev = temp;
+            
             if(obj < temp->item)
                 temp = temp->left;
             else
                 temp = temp->right;
         }
         
-        if (!q) {
+        if (!q)
             q = new Node<T>(obj);
-        } else {
+        else {
             if (obj < prev->item)
                 prev->left = new Node<T>(obj);
             else
@@ -65,15 +68,17 @@ template <class T> class Tree{
     }
     
 	void inorder(Node<T> *q) const {
-        if (q!=0) {
+        if (q != 0) {
             inorder(q->left);
-            printf("%d  ", q->item);
+            
+            cout << q->item << endl;
+            
             inorder(q->right);
         }
     }
     
-	void visit(Node<T> *p) const {
-		printf("%d\t", p->item);
+    void visit(Node<T> *p) const {
+        cout << "Node Description: " << p->item << endl;
 	}
     
 	void transplant(Node<T> *u, Node<T> *v) {
@@ -86,7 +91,7 @@ template <class T> class Tree{
             pa->right = v;
 	}
     
-	int minimum(Node<T> *node) {
+	T minimum(Node<T> *node) {
         Node<T> *temp = node;
         
         while(temp->left != 0) {
@@ -96,7 +101,7 @@ template <class T> class Tree{
         return temp->item;
     }
     
-	int maximum(Node<T> *node) {
+	T maximum(Node<T> *node) {
         Node<T> *temp = node;
         
         while(temp->right != 0) {
@@ -148,7 +153,7 @@ public:
 	Node<T>* parent(Node<T>* node) const{
 		Node<T> *temp = root;
         
-		while(temp->left!=node && temp->right!=node) {
+		while (temp->left!=node && temp->right!=node) {
 			if(node->item < temp->item)
 				temp = temp->left;
 			else
@@ -169,12 +174,12 @@ public:
 	T successor(T obj) {
         Node<T> *temp = search(obj);
         
-        if(temp->right) {
+        if (temp->right) {
             return minimum(temp->right);
         } else {
             Node<T> *y = parent(temp);
             
-            while (y!=0  &&  temp == y->right) {
+            while (y!=0 && temp == y->right) {
                 temp = y;
                 y = parent(temp);
             }
