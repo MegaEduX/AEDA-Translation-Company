@@ -272,7 +272,11 @@ bool DatabaseManager::create_update_record(Texto *texto) {
     
     std::vector<char> contents_char;
     
-    try {
+    char *a = new char[texto->get_conteudo().size()+1];
+    a[texto->get_conteudo().size()]=0;
+    memcpy(a,texto->get_conteudo().c_str(),texto->get_conteudo().size());
+    
+    /*try {
         std::vector<char> tmp_char(texto->get_conteudo().begin(), texto->get_conteudo().end());
         
         contents_char = tmp_char;
@@ -280,9 +284,9 @@ bool DatabaseManager::create_update_record(Texto *texto) {
         std::cout << "Impossible to parse contents. (" << exc.what() << ")" << std::endl;
         
         return false;
-    }
+    }*/
     
-    cmd.bind(":conteudo", &contents_char[0]);
+    cmd.bind(":conteudo", /*&contents_char[0]*/a);
     
     if (dynamic_cast<TextoTecnico *>(texto)) {
         cmd.bind(":tipo_obj", boost::lexical_cast<std::string>(kTextoTecnico).c_str());
