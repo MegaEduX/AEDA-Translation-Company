@@ -487,5 +487,4 @@ void BSTItrLevel<Comparable>::advance()
         itrQueue.push(seguinte);
 }
 
-
 #endif

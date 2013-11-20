@@ -245,7 +245,7 @@ std::vector<Tradutor *> DatabaseManager::get_tradutores() {
     return return_vec;
 }
 
-BST<Tradutor *>* DatabaseManager::get_tradutores_nao_contratados() {
+BST<Tradutor* > *DatabaseManager::get_tradutores_nao_contratados() {
     BST<Tradutor *> *bst = nullptr;
     
     init_db(db);

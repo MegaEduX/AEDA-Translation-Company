@@ -1295,10 +1295,6 @@ void manage_database() {
     }
 }
 
-bool strcmp_rev(string str1, string str2) {
-    return !str1.compare(str2);
-}
-
 void add_record() {
     Additions::clearConsole();
     
@@ -1467,6 +1463,10 @@ void edit_record() {
     
     cout << endl;
     
+    cout << "4. Edit an Unemployed Translator" << endl;
+    
+    cout << endl;
+    
     cout << "ESC. Go Back" << endl;
     
     cout << endl << "Please press the key corresponding to your choice. ";
@@ -1486,6 +1486,7 @@ void edit_record() {
             case baseASCIINumber + 1:
             case baseASCIINumber + 2:
             case baseASCIINumber + 3:
+            case baseASCIINumber + 4:
                 
                 edit_record_step2(ch - baseASCIINumber);
                 
@@ -1502,6 +1503,10 @@ void edit_record() {
                 cout << "1. Edit a Translator" << endl;
                 cout << "2. Edit an Order" << endl;
                 cout << "3. Edit a Text" << endl;
+                
+                cout << endl;
+                
+                cout << "4. Edit an Unemployed Translator" << endl;
                 
                 cout << endl;
                 
@@ -1578,6 +1583,20 @@ void edit_record_step2(unsigned int obj_type) {
                 }
             
             break;
+        }
+            
+        case 4: {
+            BST<Tradutor *> *trad = dbman.get_tradutores_nao_contratados();
+            
+            BSTItrIn<Tradutor *> iterator = BSTItrIn<Tradutor *>(*trad);
+            
+            for (BSTItrIn<Tradutor *> iterator = BSTItrIn<Tradutor *>(*trad); !iterator.isAtEnd(); iterator.advance()) {
+                if (iterator.retrieve()->get_id() == in_intval) {
+                    edit_record_step3(iterator.retrieve());
+                    
+                    return;
+                }
+            }
         }
             
         default:

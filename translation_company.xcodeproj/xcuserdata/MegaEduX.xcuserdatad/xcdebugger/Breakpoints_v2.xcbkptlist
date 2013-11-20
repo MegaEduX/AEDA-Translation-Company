@@ -159,6 +159,36 @@
             endingLineNumber = "340"
             landmarkName = "DatabaseManager::create_update_record(Texto *texto)"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DatabaseManager::create_update_record(Texto*)"
+                  moduleName = "translation_company"
+                  urlString = "file:///Users/MegaEduX/Dropbox/Coding/Miscellaneous/translation_company/translation_company/DatabaseManager.cpp"
+                  timestampString = "406672694.240548"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "345"
+                  endingLineNumber = "345"
+                  offsetFromSymbolStart = "3430">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DatabaseManager::create_update_record(Texto*)"
+                  moduleName = "translation_company"
+                  urlString = "file:///Users/MegaEduX/Dropbox/Coding/Miscellaneous/translation_company/translation_company/DatabaseManager.cpp"
+                  timestampString = "406672694.241909"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "345"
+                  endingLineNumber = "345"
+                  offsetFromSymbolStart = "3682">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -175,6 +205,36 @@
             endingLineNumber = "338"
             landmarkName = "DatabaseManager::create_update_record(Texto *texto)"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DatabaseManager::create_update_record(Texto*)"
+                  moduleName = "translation_company"
+                  urlString = "file:///Users/MegaEduX/Dropbox/Coding/Miscellaneous/translation_company/translation_company/DatabaseManager.cpp"
+                  timestampString = "406672694.242431"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "345"
+                  endingLineNumber = "345"
+                  offsetFromSymbolStart = "3430">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DatabaseManager::create_update_record(Texto*)"
+                  moduleName = "translation_company"
+                  urlString = "file:///Users/MegaEduX/Dropbox/Coding/Miscellaneous/translation_company/translation_company/DatabaseManager.cpp"
+                  timestampString = "406672694.242825"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "345"
+                  endingLineNumber = "345"
+                  offsetFromSymbolStart = "3682">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -191,6 +251,36 @@
             endingLineNumber = "345"
             landmarkName = "DatabaseManager::create_update_record(Texto *texto)"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DatabaseManager::create_update_record(Texto*)"
+                  moduleName = "translation_company"
+                  urlString = "file:///Users/MegaEduX/Dropbox/Coding/Miscellaneous/translation_company/translation_company/DatabaseManager.cpp"
+                  timestampString = "406672694.243245"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "345"
+                  endingLineNumber = "345"
+                  offsetFromSymbolStart = "3430">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DatabaseManager::create_update_record(Texto*)"
+                  moduleName = "translation_company"
+                  urlString = "file:///Users/MegaEduX/Dropbox/Coding/Miscellaneous/translation_company/translation_company/DatabaseManager.cpp"
+                  timestampString = "406672694.243555"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "345"
+                  endingLineNumber = "345"
+                  offsetFromSymbolStart = "3682">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -223,6 +313,36 @@
             endingLineNumber = "319"
             landmarkName = "DatabaseManager::create_update_record(Texto *texto)"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DatabaseManager::create_update_record(Texto*)"
+                  moduleName = "translation_company"
+                  urlString = "file:///Users/MegaEduX/Dropbox/Coding/Miscellaneous/translation_company/translation_company/DatabaseManager.cpp"
+                  timestampString = "406672694.244456"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "324"
+                  endingLineNumber = "324"
+                  offsetFromSymbolStart = "292">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DatabaseManager::create_update_record(Texto*)"
+                  moduleName = "translation_company"
+                  urlString = "file:///Users/MegaEduX/Dropbox/Coding/Miscellaneous/translation_company/translation_company/DatabaseManager.cpp"
+                  timestampString = "406672694.244866"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "324"
+                  endingLineNumber = "324"
+                  offsetFromSymbolStart = "972">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -239,50 +359,6 @@
             endingLineNumber = "310"
             landmarkName = "DatabaseManager::get_encomendas()"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DatabaseManager::create_update_record(Texto*)"
-                  moduleName = "translation_company"
-                  urlString = "file:///Users/MegaEduX/Dropbox/Coding/Miscellaneous/translation_company/translation_company/DatabaseManager.cpp"
-                  timestampString = "405712685.45426"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "276"
-                  endingLineNumber = "276"
-                  offsetFromSymbolStart = "3430">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DatabaseManager::create_update_record(Texto*)"
-                  moduleName = "translation_company"
-                  urlString = "file:///Users/MegaEduX/Dropbox/Coding/Miscellaneous/translation_company/translation_company/DatabaseManager.cpp"
-                  timestampString = "405712685.454606"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "276"
-                  endingLineNumber = "276"
-                  offsetFromSymbolStart = "3753">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DatabaseManager::create_update_record(Texto*)"
-                  moduleName = "translation_company"
-                  urlString = "file:///Users/MegaEduX/Dropbox/Coding/Miscellaneous/translation_company/translation_company/DatabaseManager.cpp"
-                  timestampString = "405712685.455114"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "276"
-                  endingLineNumber = "276"
-                  offsetFromSymbolStart = "4335">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -315,6 +391,36 @@
             endingLineNumber = "321"
             landmarkName = "DatabaseManager::create_update_record(Texto *texto)"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DatabaseManager::create_update_record(Texto*)"
+                  moduleName = "translation_company"
+                  urlString = "file:///Users/MegaEduX/Dropbox/Coding/Miscellaneous/translation_company/translation_company/DatabaseManager.cpp"
+                  timestampString = "406672694.246"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "324"
+                  endingLineNumber = "324"
+                  offsetFromSymbolStart = "292">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DatabaseManager::create_update_record(Texto*)"
+                  moduleName = "translation_company"
+                  urlString = "file:///Users/MegaEduX/Dropbox/Coding/Miscellaneous/translation_company/translation_company/DatabaseManager.cpp"
+                  timestampString = "406672694.246399"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "324"
+                  endingLineNumber = "324"
+                  offsetFromSymbolStart = "972">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -331,36 +437,6 @@
             endingLineNumber = "325"
             landmarkName = "DatabaseManager::create_update_record(Texto *texto)"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DatabaseManager::create_update_record(Texto*)"
-                  moduleName = "translation_company"
-                  urlString = "file:///Users/MegaEduX/Dropbox/Coding/Miscellaneous/translation_company/translation_company/DatabaseManager.cpp"
-                  timestampString = "405712685.456301"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "291"
-                  endingLineNumber = "291"
-                  offsetFromSymbolStart = "6098">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DatabaseManager::create_update_record(Texto*)"
-                  moduleName = "translation_company"
-                  urlString = "file:///Users/MegaEduX/Dropbox/Coding/Miscellaneous/translation_company/translation_company/DatabaseManager.cpp"
-                  timestampString = "405712685.457186"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "291"
-                  endingLineNumber = "291"
-                  offsetFromSymbolStart = "6199">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -385,26 +461,68 @@
                   symbolName = "DatabaseManager::create_update_record(Texto*)"
                   moduleName = "translation_company"
                   urlString = "file:///Users/MegaEduX/Dropbox/Coding/Miscellaneous/translation_company/translation_company/DatabaseManager.cpp"
-                  timestampString = "405712685.45818"
+                  timestampString = "406672694.247423"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "297"
-                  endingLineNumber = "297"
-                  offsetFromSymbolStart = "8233">
+                  startingLineNumber = "331"
+                  endingLineNumber = "331"
+                  offsetFromSymbolStart = "1676">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "DatabaseManager::create_update_record(Texto*)"
+                  symbolName = "non-virtual thunk to boost::exception_detail::error_info_injector&lt;boost::bad_lexical_cast&gt;::~error_info_injector()"
                   moduleName = "translation_company"
                   urlString = "file:///Users/MegaEduX/Dropbox/Coding/Miscellaneous/translation_company/translation_company/DatabaseManager.cpp"
-                  timestampString = "405712685.458586"
+                  timestampString = "406672694.247975"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "297"
-                  endingLineNumber = "297"
-                  offsetFromSymbolStart = "8398">
+                  startingLineNumber = "331"
+                  endingLineNumber = "331"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "non-virtual thunk to boost::exception_detail::error_info_injector&lt;boost::bad_lexical_cast&gt;::~error_info_injector()"
+                  moduleName = "translation_company"
+                  urlString = "file:///Users/MegaEduX/Dropbox/Coding/Miscellaneous/translation_company/translation_company/DatabaseManager.cpp"
+                  timestampString = "406672694.248315"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "331"
+                  endingLineNumber = "331"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "non-virtual thunk to boost::exception_detail::error_info_injector&lt;boost::bad_function_call&gt;::~error_info_injector()"
+                  moduleName = "translation_company"
+                  urlString = "file:///Users/MegaEduX/Dropbox/Coding/Miscellaneous/translation_company/translation_company/DatabaseManager.cpp"
+                  timestampString = "406672694.248641"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "331"
+                  endingLineNumber = "331"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "non-virtual thunk to boost::exception_detail::error_info_injector&lt;boost::bad_function_call&gt;::~error_info_injector()"
+                  moduleName = "translation_company"
+                  urlString = "file:///Users/MegaEduX/Dropbox/Coding/Miscellaneous/translation_company/translation_company/DatabaseManager.cpp"
+                  timestampString = "406672694.248981"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "331"
+                  endingLineNumber = "331"
+                  offsetFromSymbolStart = "12">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -431,7 +549,7 @@
                   symbolName = "test_2_load()"
                   moduleName = "translation_company"
                   urlString = "file:///Users/MegaEduX/Dropbox/Coding/Miscellaneous/translation_company/translation_company/Test.cpp"
-                  timestampString = "405712685.459004"
+                  timestampString = "406672694.249427"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "54"
@@ -445,7 +563,7 @@
                   symbolName = "test_2_load()"
                   moduleName = "translation_company"
                   urlString = "file:///Users/MegaEduX/Dropbox/Coding/Miscellaneous/translation_company/translation_company/Test.cpp"
-                  timestampString = "405712685.459383"
+                  timestampString = "406672694.249749"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "54"
@@ -453,6 +571,84 @@
                   offsetFromSymbolStart = "1358">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "translation_company/main.cpp"
+            timestampString = "406672139.41325"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1593"
+            endingLineNumber = "1593"
+            landmarkName = "edit_record_step2(unsigned int obj_type)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "edit_record_step2(unsigned int)"
+                  moduleName = "translation_company"
+                  urlString = "file:///Users/MegaEduX/Dropbox/Coding/Miscellaneous/translation_company/translation_company/main.cpp"
+                  timestampString = "406672694.250163"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1593"
+                  endingLineNumber = "1593"
+                  offsetFromSymbolStart = "2927">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "edit_record_step2(unsigned int)"
+                  moduleName = "translation_company"
+                  urlString = "file:///Users/MegaEduX/Dropbox/Coding/Miscellaneous/translation_company/translation_company/main.cpp"
+                  timestampString = "406672694.250567"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1593"
+                  endingLineNumber = "1593"
+                  offsetFromSymbolStart = "3208">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "translation_company/main.cpp"
+            timestampString = "406672180.135713"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1599"
+            endingLineNumber = "1599"
+            landmarkName = "edit_record_step2(unsigned int obj_type)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "translation_company/main.cpp"
+            timestampString = "406672180.905076"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1594"
+            endingLineNumber = "1594"
+            landmarkName = "edit_record_step2(unsigned int obj_type)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
