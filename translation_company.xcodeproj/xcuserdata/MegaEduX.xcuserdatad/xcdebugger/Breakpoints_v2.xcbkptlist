@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "translation_company/main.cpp"
-            timestampString = "405522670.107639"
+            timestampString = "406642256.309625"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "412"
-            endingLineNumber = "412"
+            startingLineNumber = "414"
+            endingLineNumber = "414"
             landmarkName = "order_translation()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "translation_company/main.cpp"
-            timestampString = "405522670.107639"
+            timestampString = "406642256.309625"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "418"
-            endingLineNumber = "418"
+            startingLineNumber = "420"
+            endingLineNumber = "420"
             landmarkName = "order_translation()"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "translation_company/main.cpp"
-            timestampString = "405522670.107639"
+            timestampString = "406642256.309625"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "424"
-            endingLineNumber = "424"
+            startingLineNumber = "426"
+            endingLineNumber = "426"
             landmarkName = "order_translation()"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,27 +58,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "translation_company/main.cpp"
-            timestampString = "405522670.107639"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "432"
-            endingLineNumber = "432"
-            landmarkName = "order_translation()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "translation_company/main.cpp"
-            timestampString = "405522670.107639"
+            timestampString = "406642256.309625"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "434"
             endingLineNumber = "434"
+            landmarkName = "order_translation()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "translation_company/main.cpp"
+            timestampString = "406642256.309625"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "436"
+            endingLineNumber = "436"
             landmarkName = "order_translation()"
             landmarkType = "7">
          </BreakpointContent>
@@ -152,11 +152,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "translation_company/DatabaseManager.cpp"
-            timestampString = "405710114.302239"
+            timestampString = "406644258.465886"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "306"
-            endingLineNumber = "306"
+            startingLineNumber = "340"
+            endingLineNumber = "340"
             landmarkName = "DatabaseManager::create_update_record(Texto *texto)"
             landmarkType = "5">
          </BreakpointContent>
@@ -168,11 +168,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "translation_company/DatabaseManager.cpp"
-            timestampString = "405710114.302239"
+            timestampString = "406644258.465886"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "304"
-            endingLineNumber = "304"
+            startingLineNumber = "338"
+            endingLineNumber = "338"
             landmarkName = "DatabaseManager::create_update_record(Texto *texto)"
             landmarkType = "5">
          </BreakpointContent>
@@ -184,11 +184,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "translation_company/DatabaseManager.cpp"
-            timestampString = "405710751.047917"
+            timestampString = "406644258.465886"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "311"
-            endingLineNumber = "311"
+            startingLineNumber = "345"
+            endingLineNumber = "345"
             landmarkName = "DatabaseManager::create_update_record(Texto *texto)"
             landmarkType = "5">
          </BreakpointContent>
@@ -200,11 +200,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "translation_company/DatabaseManager.cpp"
-            timestampString = "405710751.047917"
+            timestampString = "406644258.465886"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "314"
-            endingLineNumber = "314"
+            startingLineNumber = "348"
+            endingLineNumber = "348"
             landmarkName = "DatabaseManager::create_update_record(Texto *texto)"
             landmarkType = "5">
          </BreakpointContent>
@@ -216,11 +216,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "translation_company/DatabaseManager.cpp"
-            timestampString = "405710114.302239"
+            timestampString = "406644258.465886"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "285"
-            endingLineNumber = "285"
+            startingLineNumber = "319"
+            endingLineNumber = "319"
             landmarkName = "DatabaseManager::create_update_record(Texto *texto)"
             landmarkType = "5">
          </BreakpointContent>
@@ -232,12 +232,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "translation_company/DatabaseManager.cpp"
-            timestampString = "405710017.445066"
+            timestampString = "406644258.465886"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "276"
-            endingLineNumber = "276"
-            landmarkName = "DatabaseManager::create_update_record(Texto *texto)"
+            startingLineNumber = "310"
+            endingLineNumber = "310"
+            landmarkName = "DatabaseManager::get_encomendas()"
             landmarkType = "5">
             <Locations>
                <Location
@@ -292,11 +292,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "translation_company/DatabaseManager.cpp"
-            timestampString = "405710013.422422"
+            timestampString = "406644258.465886"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "278"
-            endingLineNumber = "278"
+            startingLineNumber = "312"
+            endingLineNumber = "312"
+            landmarkName = "DatabaseManager::get_encomendas()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "translation_company/DatabaseManager.cpp"
+            timestampString = "406644258.465886"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "321"
+            endingLineNumber = "321"
             landmarkName = "DatabaseManager::create_update_record(Texto *texto)"
             landmarkType = "5">
          </BreakpointContent>
@@ -308,27 +324,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "translation_company/DatabaseManager.cpp"
-            timestampString = "405710505.822529"
+            timestampString = "406644258.465886"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "287"
-            endingLineNumber = "287"
-            landmarkName = "DatabaseManager::create_update_record(Texto *texto)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "translation_company/DatabaseManager.cpp"
-            timestampString = "405710517.919219"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "291"
-            endingLineNumber = "291"
+            startingLineNumber = "325"
+            endingLineNumber = "325"
             landmarkName = "DatabaseManager::create_update_record(Texto *texto)"
             landmarkType = "5">
             <Locations>
@@ -370,11 +370,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "translation_company/DatabaseManager.cpp"
-            timestampString = "405710519.74182"
+            timestampString = "406644258.465886"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "297"
-            endingLineNumber = "297"
+            startingLineNumber = "331"
+            endingLineNumber = "331"
             landmarkName = "DatabaseManager::create_update_record(Texto *texto)"
             landmarkType = "5">
             <Locations>

@@ -3,7 +3,7 @@
 //  translation_company
 //
 //  Created by Eduardo Almeida and Pedro Santiago on 14/10/13.
-//  AEDA (EIC0013) 2013/2014 - T1G04 - First Project
+//  AEDA (EIC0013) 2013/2014 - T1G04 - Second Project
 //
 
 #ifndef __translation_company__DatabaseManager__
@@ -22,6 +22,8 @@
 
 #include "Tradutor.h"
 #include "Encomenda.h"
+
+#include "BST.h"
 
 /**
  *  Text Types enum.
@@ -95,6 +97,13 @@ public:
      */
     
     std::vector<Tradutor *> get_tradutores();
+    
+    /**
+     * The getter for the non-hired translators.
+     * @return A binary search tree with all the non-hired translators. (as Tradutor object pointers).
+     */
+    
+    BST <Tradutor *>* get_tradutores_nao_contratados();
     
     /**
      * The getter for the orders.

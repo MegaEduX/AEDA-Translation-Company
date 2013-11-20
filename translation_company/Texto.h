@@ -3,7 +3,7 @@
 //  translation_company
 //
 //  Created by Eduardo Almeida and Pedro Santiago on 14/10/13.
-//  AEDA (EIC0013) 2013/2014 - T1G04 - First Project
+//  AEDA (EIC0013) 2013/2014 - T1G04 - Second Project
 //
 
 #ifndef __translation_company__Texto__
@@ -12,8 +12,8 @@
 #include <iostream>
 
 /**
- *  Texto class.
- *  You should not use this class directly. 
+ *  Texto /abstract/ class.
+ *  You should not (alas, can not, most compilers won't even allow it) use this class directly.
  *  Please use one of the subclasses (TextoTecnico, TextoLiterario or TextoNoticioso).
  */
 
@@ -100,7 +100,7 @@ public:
      *  @return Complexity value.
      */
     
-    virtual unsigned int complexidade();
+    virtual unsigned int complexidade() = 0;
 };
 
 #endif /* defined(__translation_company__Texto__) */

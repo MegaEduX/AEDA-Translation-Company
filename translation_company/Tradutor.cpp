@@ -3,7 +3,7 @@
 //  translation_company
 //
 //  Created by Eduardo Almeida and Pedro Santiago on 14/10/13.
-//  AEDA (EIC0013) 2013/2014 - T1G04 - First Project
+//  AEDA (EIC0013) 2013/2014 - T1G04 - Second Project
 //
 
 #include "Tradutor.h"
@@ -26,6 +26,13 @@ Tradutor::Tradutor(unsigned int id, std::string nome, unsigned int anos_experien
         _maior_id_tradutor = id;
 }
 
+Tradutor::Tradutor(unsigned int id, std::string nome, unsigned int anos_experiencia, std::vector<std::string> linguas, bool contratado) : _id(id), _nome(nome), _anos_experiencia(anos_experiencia), _linguas(linguas) {
+    _contratado = contratado;
+    
+    if (id > _maior_id_tradutor)
+        _maior_id_tradutor = id;
+}
+
 unsigned int Tradutor::get_maior_id() {
     return _maior_id_tradutor;
 }
@@ -34,7 +41,7 @@ unsigned int Tradutor::get_id() {
     return _id;
 }
 
-std::string Tradutor::get_nome() {
+std::string Tradutor::get_nome() const {
     return _nome;
 }
 
@@ -79,16 +86,17 @@ unsigned int Tradutor::_get_tempo_ocupado() {
  */
 
 double Tradutor::custoTraducao(Texto *texto) {
-    //  complexidade * anos de experiencia / 10
+    //  Formula: (complexidade * anos de experiencia / 10)
     
-    //  flat rate: € 1
+    //  Flat rate: € 1
     
     return (1.00f + (double)texto->complexidade() * (double)_anos_experiencia / 1000.0f);
 }
 
 unsigned int Tradutor::tempoEstimado(Texto *texto) {
-    //  complexidade * 20 / anos experiencia
-    //  tempo retornado em segundos
+    //  Formula: (complexidade * 20 / anos experiencia)
+    
+    //  Time returned in seconds
     
     if (texto && texto != nullptr)
         return (int)(texto->complexidade() * 20 / (_anos_experiencia ? _anos_experiencia : 0.5f)); //   Can't /0!
@@ -106,4 +114,16 @@ bool Tradutor::podeSatisfazerEncomenda(Encomenda *encomenda) {
     unsigned int te_est = tempoEstimado(encomenda);
     
     return (days_to_seconds(encomenda->get_duracao_max_dias()) > te_est);
+}
+
+bool Tradutor::get_contratado() {
+    return _contratado;
+}
+
+void Tradutor::set_contratado(bool cont) {
+    _contratado = cont;
+}
+
+bool Tradutor::operator<(const Tradutor &trad) const {
+    return _nome.compare(trad.get_nome());
 }

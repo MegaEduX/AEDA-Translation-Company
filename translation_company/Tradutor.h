@@ -3,7 +3,7 @@
 //  translation_company
 //
 //  Created by Eduardo Almeida and Pedro Santiago on 14/10/13.
-//  AEDA (EIC0013) 2013/2014 - T1G04 - First Project
+//  AEDA (EIC0013) 2013/2014 - T1G04 - Second Project
 //
 
 #ifndef __translation_company__Tradutor__
@@ -16,6 +16,10 @@
 
 class Encomenda;
 
+typedef enum {
+    kOperatorOpNameComparision
+} kOperatorOp;
+
 /**
  *  Tradutor class.
  *  This class packages the details about a translator and provides some functionality on them.
@@ -23,6 +27,10 @@ class Encomenda;
 
 class Tradutor {
     static unsigned int _maior_id_tradutor;
+    
+    static kOperatorOp _less_than_operation;
+    
+    bool _contratado;
     
     unsigned int _id;
     unsigned int _anos_experiencia;
@@ -43,6 +51,17 @@ public:
      */
     
     Tradutor(unsigned int id, std::string nome, unsigned int anos_experiencia, std::vector<std::string> linguas);
+    
+    /**
+     *  Class Constructor.
+     *  @param id The object ID.
+     *  @param nome The name of the translator.
+     *  @param anos_experiencia The experience of the translator, in years. Should be at least 1.
+     *  @param linguas The maximum number of days the order should be fullfilled in.
+     *  @param contratado true if the translator is currently hired, false if not.
+     */
+    
+    Tradutor(unsigned int id, std::string nome, unsigned int anos_experiencia, std::vector<std::string> linguas, bool contratado);
     
     /**
      *  Calculates the cost of a given translation.
@@ -110,7 +129,7 @@ public:
      *  @return The name of the translator.
      */
     
-    std::string get_nome();
+    std::string get_nome() const;
     
     /**
      *  Setter for name of the translator.
@@ -128,10 +147,40 @@ public:
     
     /**
      *  Setter for the languages known to the translator.
-     *  @return A vector containing the languages known to the translator.
+     *  @param linguas A vector containing the languages known to the translator.
      */
     
     void set_linguas(std::vector<std::string> linguas);
+    
+    /**
+     *  Getter for employment status of the translator.
+     *  @return true if employed, false if not.
+     */
+    
+    bool get_contratado();
+    
+    /**
+     *  Setter for employment status of the translator.
+     *  @param cont true if employed, false if not.
+     */
+    
+    void set_contratado(bool cont);
+    
+    /**
+     *  Overloaded comparision < operator.
+     *  Can be changed with changeOperatorAction(kOperatorOp op).
+     *  @see changeOperatorAction(kOperatorOp op)
+     *  @param trad The translator to compare to.
+     *  @result The comparision result.
+     */
+    
+    bool operator<(const Tradutor &trad) const;
+    
+    /*
+     *  TBD
+     */
+    
+    void changeOperatorAction(kOperatorOp op);
 };
 
 #endif /* defined(__translation_company__Tradutor__) */

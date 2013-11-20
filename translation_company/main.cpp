@@ -3,7 +3,7 @@
 //  translation_company
 //
 //  Created by Eduardo Almeida and Pedro Santiago on 14/10/13.
-//  AEDA (EIC0013) 2013/2014 - T1G04 - First Project
+//  AEDA (EIC0013) 2013/2014 - T1G04 - Second Project
 //
 
 #include <iostream>
@@ -18,6 +18,8 @@
 #endif
 
 #include "DatabaseManager.h"
+
+#include "BST.h"
 
 #include "Additions.h"
 
@@ -83,6 +85,14 @@ int main(int argc, const char * argv[]) {
 #ifdef RUN_TEST_CODE
     
     run_test_suite();
+    
+    TextoLiterario *txt = new TextoLiterario(Texto::get_maior_id() + 1, "Source Language", "Text", "argv1", "argv2");
+    
+    BST<Texto *> *test_bst = new BST<Texto *>(txt);
+    
+    Texto *test = test_bst->findMax();
+    
+    cout << test->get_lingua();
     
 #else
     
@@ -611,7 +621,7 @@ void search_translators() {
     
     cout << endl;
     
-    cout << "Search by..." << endl;
+    cout << "Search Employed Translators by..." << endl;
     
     cout << "1. ID" << endl;
     cout << "2. Name" << endl;
@@ -620,7 +630,12 @@ void search_translators() {
     
     cout << endl;
     
-    cout << "5. List All Translators" << endl;
+    cout << "5. List All Employed Translators" << endl;
+    cout << "6. List All Unemployed Translators" << endl;
+    
+    cout << endl;
+    
+    cout << "7. List All Translators (Employed + Unemployed)" << endl;
     
     cout << endl;
     
@@ -632,7 +647,7 @@ void search_translators() {
     
     int ch = _getch();
     
-    while (ch != escKey && (ch < baseASCIINumber + 1 || ch > baseASCIINumber + 5)) {
+    while (ch != escKey && (ch < baseASCIINumber + 1 || ch > baseASCIINumber + 7)) {
         cout << endl << "Invalid choice." << endl;
         
         cout << endl;
@@ -644,7 +659,12 @@ void search_translators() {
         
         cout << endl;
         
-        cout << "5. List All Translators" << endl;
+        cout << "5. List All Employed Translators" << endl;
+        cout << "6. List All Unemployed Translators" << endl;
+        
+        cout << endl;
+        
+        cout << "7. List All Translators (Employed + Unemployed)" << endl;
         
         cout << endl;
         
@@ -673,7 +693,7 @@ void search_translators_step2(unsigned int search_type) {
     
     string str_in;
     
-    if (search_type != 5) {
+    if (search_type < 5) {
         cout << "Query: ";
         
         str_in = Additions::getline();
@@ -750,6 +770,20 @@ void search_translators_step2(unsigned int search_type) {
             }
                 
             case 5: {
+                if (ct->get_contratado())
+                    display_info(ct);
+                
+                break;
+            }
+                
+            case 6: {
+                if (!(ct->get_contratado()))
+                    display_info(ct);
+                
+                break;
+            }
+                
+            case 7: {
                 display_info(ct);
                 
                 found = true;
@@ -791,6 +825,7 @@ void display_info(Tradutor *trad) {
     }
     
     cout << "Languages: " << ss.str() << endl;
+    cout << "Employed? " << (trad->get_contratado() ? "Yes" : "False") << endl;
     
     cout << endl;
 }
@@ -1260,6 +1295,10 @@ void manage_database() {
     }
 }
 
+bool strcmp_rev(string str1, string str2) {
+    return !str1.compare(str2);
+}
+
 void add_record() {
     Additions::clearConsole();
     
@@ -1286,12 +1325,16 @@ void add_record() {
     
     cout << "Name: ";
     
-    string tr_name = Additions::getline();
+    string tr_name;
     
-    if (Additions::gotESC(tr_name)) {
-        Additions::clearConsole();
+    while (!tr_name.size()) {
+        tr_name = Additions::getline();
         
-        manage_database();
+        if (Additions::gotESC(tr_name)) {
+            Additions::clearConsole();
+            
+            manage_database();
+        }
     }
     
     cout << endl << "Years of Experience: ";
@@ -1304,7 +1347,7 @@ void add_record() {
         manage_database();
     }
     
-    while (!Additions::checkForOnlyNumeric(tr_expy_str) || boost::lexical_cast<int>(tr_expy_str) == 0) {
+    while (!tr_expy_str.size() || !Additions::checkForOnlyNumeric(tr_expy_str) || (Additions::checkForOnlyNumeric(tr_expy_str) && boost::lexical_cast<int>(tr_expy_str) == 0)) {
         cout << endl << endl << "This field requires a numeric-only value, which needs to be bigger than zero. Please try again." << endl << endl;
         
         cout << "Years of Experience: ";
@@ -1333,7 +1376,14 @@ void add_record() {
     }
     
     while (lang.size() && lang != "") {
-        languages.push_back(lang);
+        bool found = false;
+        
+        for (unsigned int i = 0; i < languages.size(); i++)
+            if (!(languages[i].compare(lang)))
+                found = true;
+        
+        if (!found)
+            languages.push_back(lang);
         
         cout << endl;
         
@@ -1342,7 +1392,58 @@ void add_record() {
     
     cout << endl << "Language Count: " << languages.size() << endl;
     
-    Tradutor *trad = new Tradutor(Tradutor::get_maior_id() + 1, tr_name, tr_expy, languages);
+    cout << endl << "Hired? (1 for Yes, 0 for No) ";
+    
+    bool hired_stat = false;
+    
+    while (true) {
+        int ch = _getch();
+        
+        bool can_break = false;
+        
+        switch (ch) {
+            case escKey:
+                
+                Additions::clearConsole();
+                
+                manage_database();
+                
+                break;
+                
+            case baseASCIINumber:
+                
+                hired_stat = false;
+                
+                can_break = true;
+                
+                break;
+                
+            case baseASCIINumber + 1:
+                
+                hired_stat = true;
+                
+                can_break = true;
+                
+                break;
+                
+            default:
+                
+                cout << endl;
+                
+                cout << endl << "Invalid choice." << endl;
+                
+                cout << endl;
+                
+                cout << "Hired? (1 for Yes, 0 for No) ";
+                
+                break;
+        }
+        
+        if (can_break)
+            break;
+    }
+    
+    Tradutor *trad = new Tradutor(Tradutor::get_maior_id() + 1, tr_name, tr_expy, languages, hired_stat);
     
     dbman.create_update_record(trad);
     

@@ -3,7 +3,7 @@
 //  translation_company
 //
 //  Created by Eduardo Almeida and Pedro Santiago on 14/10/13.
-//  AEDA (EIC0013) 2013/2014 - T1G04 - First Project
+//  AEDA (EIC0013) 2013/2014 - T1G04 - Second Project
 //
 
 #include <fstream>
@@ -66,7 +66,8 @@ bool DatabaseManager::_prepare_database() {
                      id                 INT PRIMARY KEY         NOT NULL,   \
                      nome               VARCHAR(128)            NOT NULL,   \
                      anos_experiencia   INT                     NOT NULL,   \
-                     linguas            VARCHAR(256)            NOT NULL)");
+                     linguas            VARCHAR(256)            NOT NULL,   \
+                     contratado         TINYINT(2)              NOT NULL)");
     
     if (res)
         return false;
@@ -93,15 +94,51 @@ Texto *DatabaseManager::_get_texto_with_id(unsigned int id) {
     query qry(db, query_str.c_str());
     
     for (query::iterator i = qry.begin(); i != qry.end(); ++i) {
-        unsigned int id;
+        unsigned int id, tipo_obj;
         unsigned long palavras;
-        std::string lingua, conteudo;
+        std::string lingua, conteudo, tipo_args;
         
-        boost::tie(id, lingua, palavras, conteudo) = (*i).get_columns<int, std::string, double, std::string>(0, 1, 2, 3);
+        boost::tie(id, lingua, palavras, conteudo, tipo_obj, tipo_args) = (*i).get_columns<int, std::string, double, std::string, int, std::string>(0, 1, 2, 3, 4, 5);
         
-        Texto *texto = new Texto(id, lingua, palavras, conteudo);
-        
-        return texto;
+        switch (tipo_obj) {
+            case kTextoTecnico: {
+                TextoTecnico *texto = new TextoTecnico(id, lingua, palavras, conteudo, tipo_args);
+                
+                return texto;
+                
+                break;
+            }
+                
+            case kTextoLiterario: {
+                std::vector<std::string> args;
+                
+                boost::split(args, tipo_args, boost::is_any_of(","));
+                
+                TextoLiterario *texto = new TextoLiterario(id, lingua, palavras, conteudo, args[0], args[1]);
+                
+                return texto;
+                
+                break;
+            }
+                
+            case kTextoNoticioso: {
+                std::vector<std::string> args;
+                
+                boost::split(args, tipo_args, boost::is_any_of(","));
+                
+                TextoNoticioso *texto = new TextoNoticioso(id, lingua, palavras, conteudo, args[0], (tipo_jornal)boost::lexical_cast<int>(args[1]));
+                
+                return texto;
+                
+                break;
+            }
+                
+            default: {
+                throw "Unrecognized text type.";
+                
+                break;
+            }
+        }
     }
     
     return NULL;
@@ -188,22 +225,55 @@ std::vector<Tradutor *> DatabaseManager::get_tradutores() {
     query qry(db, "SELECT * FROM `tradutores`");
     
     for (query::iterator i = qry.begin(); i != qry.end(); ++i) {
-        unsigned int id, anos_experiencia;
+        unsigned int id, anos_experiencia, contratado;
         
         std::string nome, linguas;
         
-        boost::tie(id, nome, anos_experiencia, linguas) = (*i).get_columns<int, std::string, int, std::string>(0, 1, 2, 3);
+        boost::tie(id, nome, anos_experiencia, linguas, contratado) = (*i).get_columns<int, std::string, int, std::string, int>(0, 1, 2, 3, 4);
         
         std::vector<std::string> linguas_vec;
         
         boost::split(linguas_vec, linguas, boost::is_any_of(","));
         
-        Tradutor *tradutor = new Tradutor(id, nome, anos_experiencia, linguas_vec);
+        bool cont_bool = !!contratado;
+        
+        Tradutor *tradutor = new Tradutor(id, nome, anos_experiencia, linguas_vec, cont_bool);
         
         return_vec.push_back(tradutor);
     }
     
     return return_vec;
+}
+
+BST<Tradutor *>* DatabaseManager::get_tradutores_nao_contratados() {
+    BST<Tradutor *> *bst = nullptr;
+    
+    init_db(db);
+    
+    query qry(db, "SELECT * FROM `tradutores` WHERE contratado=0");
+    
+    for (query::iterator i = qry.begin(); i != qry.end(); ++i) {
+        unsigned int id, anos_experiencia, contratado;
+        
+        std::string nome, linguas;
+        
+        boost::tie(id, nome, anos_experiencia, linguas, contratado) = (*i).get_columns<int, std::string, int, std::string, int>(0, 1, 2, 3, 4);
+        
+        std::vector<std::string> linguas_vec;
+        
+        boost::split(linguas_vec, linguas, boost::is_any_of(","));
+        
+        bool cont_bool = !!contratado;
+        
+        Tradutor *tradutor = new Tradutor(id, nome, anos_experiencia, linguas_vec, cont_bool);
+        
+        if (bst == nullptr)
+            bst = new BST<Tradutor *>(tradutor);
+        else
+            bst->insert(tradutor);
+    }
+    
+    return bst;
 }
 
 std::vector<Encomenda *> DatabaseManager::get_encomendas() {
@@ -329,10 +399,10 @@ bool DatabaseManager::create_update_record(Tradutor *tradutor) {
     
     query qry(db, query_str.c_str());
     
-    std::string query = "INSERT INTO `tradutores` (id, nome, anos_experiencia, linguas) VALUES (:id, :nome, :anos_experiencia, :linguas)";
+    std::string query = "INSERT INTO `tradutores` (id, nome, anos_experiencia, linguas, contratado) VALUES (:id, :nome, :anos_experiencia, :linguas, :contratado)";
     
     for (query::iterator i = qry.begin(); i != qry.end(); ++i)
-        query = "UPDATE `tradutores` SET nome=:nome, anos_experiencia=:anos_experiencia, linguas=:linguas WHERE id=:id";
+        query = "UPDATE `tradutores` SET nome=:nome, anos_experiencia=:anos_experiencia, linguas=:linguas, contratado=:contratado WHERE id=:id";
     
     std::stringstream ss;
     
@@ -348,6 +418,7 @@ bool DatabaseManager::create_update_record(Tradutor *tradutor) {
     cmd.bind(":nome", tradutor->get_nome().c_str());
     cmd.bind(":anos_experiencia", boost::lexical_cast<std::string>(tradutor->get_anos_experiencia()).c_str());
     cmd.bind(":linguas", ss.str().c_str());
+    cmd.bind(":contratado", (tradutor->get_contratado() ? "1" : "0"));
     
     try {
         if (!cmd.execute())
@@ -393,6 +464,11 @@ bool DatabaseManager::create_update_record(Encomenda *encomenda) {
     
     return true;
 }
+
+/*
+ *  Using a template here would be much more of a mess than
+ *  just dealing with macros.
+ */
 
 bool DatabaseManager::delete_record(Texto *texto) {
     delete_record_wild("textos", texto);
