@@ -245,8 +245,8 @@ std::vector<Tradutor *> DatabaseManager::get_tradutores() {
     return return_vec;
 }
 
-BST<Tradutor* > *DatabaseManager::get_tradutores_nao_contratados() {
-    BST<Tradutor *> *bst = nullptr;
+BST<Tradutor> DatabaseManager::get_tradutores_nao_contratados() {
+    BST<Tradutor> bst = BST<Tradutor>(Tradutor(0, "", 0, std::vector<std::string>(), false));
     
     init_db(db);
     
@@ -265,12 +265,9 @@ BST<Tradutor* > *DatabaseManager::get_tradutores_nao_contratados() {
         
         bool cont_bool = !!contratado;
         
-        Tradutor *tradutor = new Tradutor(id, nome, anos_experiencia, linguas_vec, cont_bool);
+        Tradutor tradutor = Tradutor(id, nome, anos_experiencia, linguas_vec, cont_bool);
         
-        if (bst == nullptr)
-            bst = new BST<Tradutor *>(tradutor);
-        else
-            bst->insert(tradutor);
+        bst.insert(tradutor);
     }
     
     return bst;

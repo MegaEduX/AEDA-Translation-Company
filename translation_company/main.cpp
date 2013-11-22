@@ -1586,13 +1586,13 @@ void edit_record_step2(unsigned int obj_type) {
         }
             
         case 4: {
-            BST<Tradutor *> *trad = dbman.get_tradutores_nao_contratados();
+            BST<Tradutor> trad = dbman.get_tradutores_nao_contratados();
             
-            BSTItrIn<Tradutor *> iterator = BSTItrIn<Tradutor *>(*trad);
+            BSTItrIn<Tradutor> iterator = BSTItrIn<Tradutor>(trad);
             
-            for (BSTItrIn<Tradutor *> iterator = BSTItrIn<Tradutor *>(*trad); !iterator.isAtEnd(); iterator.advance()) {
-                if (iterator.retrieve()->get_id() == in_intval) {
-                    edit_record_step3(iterator.retrieve());
+            for (BSTItrIn<Tradutor> iterator = BSTItrIn<Tradutor>(trad); !iterator.isAtEnd(); iterator.advance()) {
+                if (iterator.retrieve().get_id() == in_intval) {
+                    edit_record_step3(&iterator.retrieve());
                     
                     return;
                 }

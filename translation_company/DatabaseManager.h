@@ -103,7 +103,7 @@ public:
      * @return A binary search tree with all the non-hired translators. (as Tradutor object pointers).
      */
     
-    BST <Tradutor *> *get_tradutores_nao_contratados();
+    BST <Tradutor> get_tradutores_nao_contratados();
     
     /**
      * The getter for the orders.
