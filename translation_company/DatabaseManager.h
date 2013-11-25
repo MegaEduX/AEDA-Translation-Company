@@ -12,6 +12,8 @@
 #include <iostream>
 #include <vector>
 
+#include <boost/tr1/unordered_set.hpp>
+
 #include "sqlite3pp.h"
 
 #include "Texto.h"
@@ -52,6 +54,10 @@ typedef enum {
  *  Database Manager class.
  *  This class handles all the IO to the database (with some helper functions).
  */
+
+namespace boost {
+    class unordered_set;
+}
 
 class DatabaseManager {
     std::string _dbfp;
@@ -111,6 +117,13 @@ public:
      */
     
     std::vector<Encomenda *> get_encomendas();
+    
+    /**
+     * The getter for the fulfilled orders.
+     * @return An unordered set with the orders (as Encomenda object pointers).
+     */
+    
+    boost::unordered_set<Encomenda *> get_encomendas_concluidas();
     
     /**
      *  Creates a new record or updates an existing one.

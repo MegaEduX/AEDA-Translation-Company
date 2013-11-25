@@ -1079,7 +1079,7 @@ void search_texts() {
         ch = _getch();
     }
     
-    if (ch == baseASCIINumber) {
+    if (ch == escKey) {
         Additions::clearConsole();
         
         main_menu();
@@ -1657,7 +1657,7 @@ void edit_record_step3(Tradutor *obj) {
                 
                 string new_yexp_str = Additions::getline();
                 
-                if (new_name.size() || new_name != "") {
+                if (new_yexp_str.size() || new_yexp_str != "") {
                     if (Additions::checkForOnlyNumeric(new_yexp_str)) {
                         int new_yexp = boost::lexical_cast<int>(new_yexp_str);
                         
@@ -1693,6 +1693,58 @@ void edit_record_step3(Tradutor *obj) {
             
             if (new_langs.size())
                 obj->set_linguas(new_langs);
+            
+            cout << endl << "Hired? [" << (obj->get_contratado() ? "1" : "0") << "] : ";
+            
+            bool hired_stat = false;
+            
+            while (true) {
+                int ch = _getch();
+                
+                bool can_break = false;
+                
+                switch (ch) {
+                    case escKey:
+                    case returnKey:
+                        
+                        hired_stat = obj->get_contratado();
+                        
+                        can_break = true;
+                        
+                        break;
+                        
+                    case baseASCIINumber:
+                        
+                        hired_stat = false;
+                        
+                        can_break = true;
+                        
+                        break;
+                        
+                    case baseASCIINumber + 1:
+                        
+                        hired_stat = true;
+                        
+                        can_break = true;
+                        
+                        break;
+                        
+                    default:
+                        
+                        cout << endl;
+                        
+                        cout << endl << "Invalid choice." << endl;
+                        
+                        cout << endl;
+                        
+                        cout << endl << "Hired? [" << (obj->get_contratado() ? "1" : "0") << "] : ";
+                        
+                        break;
+                }
+                
+                if (can_break)
+                    break;
+            }
             
             dbman.create_update_record(obj);
             

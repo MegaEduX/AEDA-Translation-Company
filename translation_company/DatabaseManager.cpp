@@ -11,6 +11,8 @@
 #include <boost/lexical_cast.hpp>
 #include <boost/algorithm/string.hpp>
 
+#include <boost/tr1/unordered_map.hpp>
+
 #include "DatabaseManager.h"
 
 #define init_db(var) database var(_dbfp.c_str())
@@ -222,7 +224,7 @@ std::vector<Tradutor *> DatabaseManager::get_tradutores() {
     
     init_db(db);
     
-    query qry(db, "SELECT * FROM `tradutores`");
+    query qry(db, "SELECT * FROM `tradutores` WHERE contratado=1");
     
     for (query::iterator i = qry.begin(); i != qry.end(); ++i) {
         unsigned int id, anos_experiencia, contratado;
@@ -309,6 +311,44 @@ std::vector<Encomenda *> DatabaseManager::get_encomendas() {
     }
     
     return return_vec;
+}
+
+boost::unordered_set<Encomenda *> DatabaseManager::get_encomendas_concluidas() {
+    boost::unordered_set<Encomenda *> return_set;
+    
+    init_db(db);
+    
+    query qry(db, "SELECT * FROM `encomendas`");
+    
+    for (query::iterator i = qry.begin(); i != qry.end(); ++i) {
+        unsigned int id, texto_id, duracao_max_dias, trad_id;
+        
+        uint64_t timestamp_entrega;
+        
+        std::string lingua_destino;
+        
+        boost::tie(id, texto_id, lingua_destino, duracao_max_dias, trad_id, timestamp_entrega) = (*i).get_columns<int, int, std::string, int, int, long long>(0, 1, 2, 3, 4, 5);
+        
+        Texto *texto = _get_texto_with_id(texto_id);
+        
+        Tradutor *tradutor = nullptr;
+        
+        std::vector<Tradutor *> tradutores = get_tradutores();
+        
+        for (int i = 0; i < tradutores.size(); i++) {
+            if (tradutores[i]->get_id() == trad_id) {
+                tradutor = tradutores[i];
+                
+                break;
+            }
+        }
+        
+        Encomenda *encomenda = new Encomenda(id, texto, lingua_destino, duracao_max_dias, tradutor, timestamp_entrega);
+        
+        //  return_vec.push_back(encomenda);
+    }
+    
+    return return_set;
 }
 
 bool DatabaseManager::create_update_record(Texto *texto) {
