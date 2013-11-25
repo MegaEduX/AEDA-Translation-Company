@@ -65,7 +65,7 @@ public:
      *  @return Word Count of the text content.
      */
     
-    unsigned long get_palavras();
+    unsigned long get_palavras() const;
     
     /**
      *  Getter for the language of the text.

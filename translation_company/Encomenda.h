@@ -68,7 +68,7 @@ public:
      *  @return The order ID.
      */
     
-    unsigned int get_id();
+    unsigned int get_id() const;
     
     /**
      *  Getter for the maximum order duration.
@@ -140,6 +140,13 @@ public:
      */
     
     void set_timestamp_entrega(uint64_t timestamp_entrega);
+    
+    /**
+     *  Helper function, returns whether the order is fulfilled or not.
+     *  @return true or false, depending if the order is, or not, fulfilled.
+     */
+    
+    bool is_fulfilled();
 };
 
 #endif /* defined(__translation_company__Encomenda__) */

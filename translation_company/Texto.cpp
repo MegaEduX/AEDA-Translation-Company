@@ -63,7 +63,7 @@ unsigned int Texto::get_id() {
     return _id;
 }
 
-unsigned long Texto::get_palavras() {
+unsigned long Texto::get_palavras() const {
     return _palavras;
 }
 

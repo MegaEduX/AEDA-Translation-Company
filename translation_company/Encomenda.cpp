@@ -12,6 +12,8 @@
 
 #include "DatabaseManager.h"
 
+#include "Additions.h"
+
 unsigned int Encomenda::_maior_id_encomenda = DatabaseManager(db_path).get_maior_id(kClassEncomenda);
 
 Encomenda::Encomenda(unsigned int id, Texto *texto, std::string lingua_destino, unsigned int duracao_max_dias) {
@@ -41,7 +43,7 @@ unsigned int Encomenda::get_maior_id() {
     return _maior_id_encomenda;
 }
 
-unsigned int Encomenda::get_id() {
+unsigned int Encomenda::get_id() const {
     return _id;
 }
 
@@ -79,4 +81,8 @@ uint64_t Encomenda::get_timestamp_entrega() {
 
 void Encomenda::set_timestamp_entrega(uint64_t timestamp_entrega) {
     _timestamp_entrega = timestamp_entrega;
+}
+
+bool Encomenda::is_fulfilled() {
+    return (Additions::currentTimestamp() > _timestamp_entrega);
 }

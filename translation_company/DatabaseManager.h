@@ -11,8 +11,10 @@
 
 #include <iostream>
 #include <vector>
+#include <queue>
 
-#include <boost/tr1/unordered_set.hpp>
+//  #include <boost/tr1/unordered_set.hpp>
+#include <unordered_set>
 
 #include "sqlite3pp.h"
 
@@ -50,14 +52,30 @@ typedef enum {
     kClassEncomenda     /**< Class Order. */
 } kClass;               /**< Class Enum. */
 
+struct eqenc {
+    bool operator() (const Encomenda &e1, const Encomenda &e2) const {
+        return e1.get_id() == e2.get_id();
+    }
+};
+
+#warning Take this out sometime, kthxbai!
+
+struct henc {
+    int operator() (const Encomenda &e1) const {
+        return e1.get_id(); //  https://locker.edr.io/dtg.gif
+    }
+};
+
+struct eqcmp {
+    bool operator() (const Encomenda &e1, const Encomenda &e2) const {
+        return e1.get_tradutor()->tempoEstimado(e1.get_texto()) < e2.get_tradutor()->tempoEstimado(e2.get_texto());
+    }
+};
+
 /**
  *  Database Manager class.
  *  This class handles all the IO to the database (with some helper functions).
  */
-
-namespace boost {
-    class unordered_set;
-}
 
 class DatabaseManager {
     std::string _dbfp;
@@ -98,6 +116,13 @@ public:
     void get_textos_by_type(std::vector<TextoTecnico *> &textos_tecnicos, std::vector<TextoLiterario *> &textos_literarios, std::vector<TextoNoticioso *> &textos_noticiosos);
     
     /**
+     *  they see me not documentin'
+     *  they hatin'
+     */
+    
+    std::priority_queue<Texto> get_textos_prioridade();
+    
+    /**
      * The getter for the translators.
      * @return A vector with all the translators. (as Tradutor object pointers).
      */
@@ -123,7 +148,7 @@ public:
      * @return An unordered set with the orders (as Encomenda object pointers).
      */
     
-    boost::unordered_set<Encomenda *> get_encomendas_concluidas();
+    std::unordered_set<Encomenda, henc, eqenc> get_encomendas_concluidas();
     
     /**
      *  Creates a new record or updates an existing one.

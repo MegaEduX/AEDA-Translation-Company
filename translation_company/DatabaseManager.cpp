@@ -11,9 +11,9 @@
 #include <boost/lexical_cast.hpp>
 #include <boost/algorithm/string.hpp>
 
-#include <boost/tr1/unordered_map.hpp>
-
 #include "DatabaseManager.h"
+
+#include "Additions.h"
 
 #define init_db(var) database var(_dbfp.c_str())
 
@@ -219,6 +219,10 @@ void DatabaseManager::get_textos_by_type(std::vector<TextoTecnico *> &textos_tec
     }
 }
 
+/*  std::priority_queue<Texto> DatabaseManager::get_textos_prioridade() {
+    // i need to heapsort and shit
+}   */
+
 std::vector<Tradutor *> DatabaseManager::get_tradutores() {
     std::vector<Tradutor *> return_vec;
     
@@ -313,12 +317,12 @@ std::vector<Encomenda *> DatabaseManager::get_encomendas() {
     return return_vec;
 }
 
-boost::unordered_set<Encomenda *> DatabaseManager::get_encomendas_concluidas() {
-    boost::unordered_set<Encomenda *> return_set;
+std::unordered_set<Encomenda, henc, eqenc> DatabaseManager::get_encomendas_concluidas() {
+    std::unordered_set<Encomenda, henc, eqenc> return_set;
     
     init_db(db);
     
-    query qry(db, "SELECT * FROM `encomendas`");
+    query qry(db, string("SELECT * FROM `encomendas` WHERE `completion_date` < " + boost::lexical_cast<string>(Additions::currentTimestamp())).c_str());
     
     for (query::iterator i = qry.begin(); i != qry.end(); ++i) {
         unsigned int id, texto_id, duracao_max_dias, trad_id;
@@ -343,9 +347,9 @@ boost::unordered_set<Encomenda *> DatabaseManager::get_encomendas_concluidas() {
             }
         }
         
-        Encomenda *encomenda = new Encomenda(id, texto, lingua_destino, duracao_max_dias, tradutor, timestamp_entrega);
+        Encomenda encomenda = Encomenda(id, texto, lingua_destino, duracao_max_dias, tradutor, timestamp_entrega);
         
-        //  return_vec.push_back(encomenda);
+        return_set.insert(encomenda);
     }
     
     return return_set;
