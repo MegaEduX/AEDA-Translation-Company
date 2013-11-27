@@ -54,9 +54,9 @@ void search_translators_step2(unsigned int search_type);
 void search_orders_step2(unsigned int search_type);
 void search_texts_step2(unsigned int search_type);
 
-void display_info(Tradutor *trad);
-void display_info(Encomenda *enc);
-void display_info(Texto *txt);
+void display_info(Tradutor *trad);  /* Set as const later? */
+void display_info(const Encomenda *enc);
+void display_info(Texto *txt);  /* Set as const later? */
 
 void manage_database();
 
@@ -982,7 +982,7 @@ void search_orders() {
     
     int ch = _getch();
     
-    while (ch != escKey && (ch < baseASCIINumber + 1 || ch > baseASCIINumber + 5)) {
+    while (ch != escKey && (ch < baseASCIINumber + 1 || ch > baseASCIINumber + 7)) {
         cout << endl;
         
         cout << endl << "Invalid choice." << endl;
@@ -1028,13 +1028,11 @@ void search_orders() {
 }
 
 void search_orders_step2(unsigned int search_type) {
-#warning Reimplement 5 and implement 6/7
-    
     cout << endl;
     
     string str_in;
     
-    if (search_type != 5) {
+    if (search_type < 5) {
         cout << "Query: ";
         
         str_in = Additions::getline();
@@ -1118,11 +1116,32 @@ void search_orders_step2(unsigned int search_type) {
                 
             case 5:
                 
+                if (!(enc->is_fulfilled()))
+                    display_info(enc);
+                
+                found = true;
+                
+                break;
+                
+            case 6: {
+                
+                std::unordered_set<Encomenda, henc, eqenc> unful = dbman.get_encomendas_concluidas();
+                
+                for (auto &elem: unful) {
+                    display_info(&elem);
+                }
+                
+                break;
+            }
+                
+            case 7: {
+                
                 display_info(enc);
                 
                 found = true;
                 
                 break;
+            }
                 
             default:
                 
@@ -1141,7 +1160,7 @@ void search_orders_step2(unsigned int search_type) {
     search_orders();
 }
 
-void display_info(Encomenda *enc) {
+void display_info(const Encomenda *enc) {
     cout << "Order Information (ID: " << enc->get_id() << ")" << endl;
     
     cout << endl;

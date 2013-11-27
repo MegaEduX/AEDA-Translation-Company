@@ -63,11 +63,11 @@ void Encomenda::set_tradutor(Tradutor *trad) {
     _tradutor = trad;
 }
 
-std::string Encomenda::get_lingua_destino() {
+std::string Encomenda::get_lingua_destino() const {
     return _lingua_destino;
 }
 
-unsigned int Encomenda::get_duracao_max_dias() {
+unsigned int Encomenda::get_duracao_max_dias() const {
     return _duracao_max_dias;
 }
 
@@ -75,7 +75,7 @@ void Encomenda::set_duracao_max_dias(unsigned int dias) {
     _duracao_max_dias = dias;
 }
 
-uint64_t Encomenda::get_timestamp_entrega() {
+uint64_t Encomenda::get_timestamp_entrega() const {
     return _timestamp_entrega;
 }
 
@@ -83,6 +83,6 @@ void Encomenda::set_timestamp_entrega(uint64_t timestamp_entrega) {
     _timestamp_entrega = timestamp_entrega;
 }
 
-bool Encomenda::is_fulfilled() {
+bool Encomenda::is_fulfilled() const {
     return (Additions::currentTimestamp() > _timestamp_entrega);
 }

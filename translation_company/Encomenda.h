@@ -75,7 +75,7 @@ public:
      *  @return The maximum number of days the order should be fullfilled in.
      */
     
-    unsigned int get_duracao_max_dias();
+    unsigned int get_duracao_max_dias() const;
     
     /**
      *  Setter for the maximum order duration.
@@ -117,7 +117,7 @@ public:
      *  @return The language the order text should be translated to.
      */
     
-    std::string get_lingua_destino();
+    std::string get_lingua_destino() const;
     
     /**
      *  Setter for the language the order text should be translated to.
@@ -131,7 +131,7 @@ public:
      *  @return The date, refered to as a timestamp, when the order will be fullfilled.
      */
     
-    uint64_t get_timestamp_entrega();
+    uint64_t get_timestamp_entrega() const;
     
     /**
      *  Setter for the date, refered to as a timestamp, when the order will be fullfilled.
@@ -146,7 +146,7 @@ public:
      *  @return true or false, depending if the order is, or not, fulfilled.
      */
     
-    bool is_fulfilled();
+    bool is_fulfilled() const;
 };
 
 #endif /* defined(__translation_company__Encomenda__) */
