@@ -211,6 +211,8 @@ public:
     
     bool delete_record(Encomenda *encomenda);
     
+    bool delete_orders_before(int timestamp);
+    
     /**
      *  Returns the biggest ID record for a class type.
      *  @param kClass The class as defined on the Class enum.

@@ -965,7 +965,12 @@ void search_orders() {
     
     cout << endl;
     
-    cout << "5. List All Orders" << endl;
+    cout << "5. List All Unfinished Orders" << endl;
+    cout << "6. List All Finished Orders" << endl;
+    
+    cout << endl;
+    
+    cout << "7. List All Orders" << endl;
     
     cout << endl;
     
@@ -991,7 +996,12 @@ void search_orders() {
         
         cout << endl;
         
-        cout << "5. List All Orders" << endl;
+        cout << "5. List All Unfinished Orders" << endl;
+        cout << "6. List All Finished Orders" << endl;
+        
+        cout << endl;
+        
+        cout << "7. List All Orders" << endl;
         
         cout << endl;
         
@@ -1018,6 +1028,8 @@ void search_orders() {
 }
 
 void search_orders_step2(unsigned int search_type) {
+#warning Reimplement 5 and implement 6/7
+    
     cout << endl;
     
     string str_in;
