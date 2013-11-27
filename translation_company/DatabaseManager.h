@@ -13,7 +13,6 @@
 #include <vector>
 #include <queue>
 
-//  #include <boost/tr1/unordered_set.hpp>
 #include <unordered_set>
 
 #include "sqlite3pp.h"
@@ -58,17 +57,31 @@ struct eqenc {
     }
 };
 
-#warning Take this out sometime, kthxbai!
-
 struct henc {
     int operator() (const Encomenda &e1) const {
-        return e1.get_id(); //  https://locker.edr.io/dtg.gif
+        return e1.get_id();
     }
 };
 
 struct eqcmp {
     bool operator() (const Encomenda &e1, const Encomenda &e2) const {
         return e1.get_tradutor()->tempoEstimado(e1.get_texto()) < e2.get_tradutor()->tempoEstimado(e2.get_texto());
+    }
+};
+
+/**
+ *  Empty Query class.
+ *  This class defines the Empty Query exception.
+ */
+
+class EmptyQuery {
+    std::string _query;
+    
+    EmptyQuery(); //    Disallowing the calling of this constructor by making it private.
+    
+public:
+    EmptyQuery(std::string query) {
+        _query = query;
     }
 };
 

@@ -718,6 +718,8 @@ void search_translators_step2(unsigned int search_type) {
     for (int i = 0; i < translators.size(); i++) {
         Tradutor *ct = translators[i];
         
+        bool get_out = false;
+        
         switch (search_type) {
             case 1: {
                 int in_intval = boost::lexical_cast<int>(str_in);
@@ -777,8 +779,122 @@ void search_translators_step2(unsigned int search_type) {
             }
                 
             case 6: {
-                if (!(ct->get_contratado()))
-                    display_info(ct);
+                BST<Tradutor> unhired_as_bst = dbman.get_tradutores_nao_contratados();
+                
+                Additions::clearConsole();
+                
+                cout << "Choose the type of iterator listing:" << endl;
+                
+                cout << endl;
+                
+                cout << "1. Post-Order Iterator" << endl;
+                cout << "2. Pre-Order Iterator" << endl;
+                cout << "3. In-Order Iterator" << endl;
+                cout << "4. Level Iterator" << endl;
+                
+                cout << endl;
+                
+                cout << "Please press the key corresponding to your choice. ";
+                
+                while (true) {
+                    int ch = _getch();
+                    
+                    bool done = false;
+                    
+                    switch (ch) {
+                        case escKey:
+                            
+                            Additions::clearConsole();
+                            
+                            search_translators_step2(search_type);
+                            
+                            done = true;
+                            
+                            break;
+                            
+                        case baseASCIINumber + 1:
+                            
+                            cout << endl;
+                            
+                            cout << endl;
+                            
+                            for (BSTItrPost<Tradutor> it = BSTItrPost<Tradutor>(unhired_as_bst); !it.isAtEnd(); it.advance())
+                                display_info(&it.retrieve());
+                            
+                            done = true;
+                            
+                            break;
+                            
+                        case baseASCIINumber + 2:
+                            
+                            cout << endl;
+                            
+                            cout << endl;
+                            
+                            for (BSTItrPre<Tradutor> it = BSTItrPre<Tradutor>(unhired_as_bst); !it.isAtEnd(); it.advance())
+                                display_info(&it.retrieve());
+                            
+                            done = true;
+                            
+                            break;
+                            
+                        case baseASCIINumber + 3:
+                            
+                            cout << endl;
+                            
+                            cout << endl;
+                            
+                            for (BSTItrIn<Tradutor> it = BSTItrIn<Tradutor>(unhired_as_bst); !it.isAtEnd(); it.advance())
+                                display_info(&it.retrieve());
+                            
+                            done = true;
+                            
+                            break;
+                            
+                        case baseASCIINumber + 4:
+                            
+                            cout << endl;
+                            
+                            cout << endl;
+                            
+                            for (BSTItrLevel<Tradutor> it = BSTItrLevel<Tradutor>(unhired_as_bst); !it.isAtEnd(); it.advance())
+                                display_info(&it.retrieve());
+                            
+                            done = true;
+                            
+                            break;
+                            
+                        default:
+                            
+                            cout << endl;
+                            
+                            cout << endl << "Invalid choice." << endl;
+                            
+                            cout << endl;
+                            
+                            cout << "Choose the type of iterator listing:" << endl;
+                            
+                            cout << endl;
+                            
+                            cout << "1. Post-Order Iterator" << endl;
+                            cout << "2. Pre-Order Iterator" << endl;
+                            cout << "3. In-Order Iterator" << endl;
+                            cout << "4. Level Iterator" << endl;
+                            
+                            cout << endl;
+                            
+                            cout << "ESC. Go Back" << endl;
+                            
+                            cout << endl << "Please press the key corresponding to your new choice. ";
+                            
+                            break;
+                    }
+                    
+                    if (done)
+                        break;
+                }
+                
+                get_out = true;
                 
                 break;
             }
@@ -795,6 +911,9 @@ void search_translators_step2(unsigned int search_type) {
                 
                 break;
         }
+        
+        if (get_out)
+            break;
     }
     
     cout << "End of listing." << endl;
@@ -1587,8 +1706,6 @@ void edit_record_step2(unsigned int obj_type) {
             
         case 4: {
             BST<Tradutor> trad = dbman.get_tradutores_nao_contratados();
-            
-            BSTItrIn<Tradutor> iterator = BSTItrIn<Tradutor>(trad);
             
             for (BSTItrIn<Tradutor> iterator = BSTItrIn<Tradutor>(trad); !iterator.isAtEnd(); iterator.advance()) {
                 if (iterator.retrieve().get_id() == in_intval) {

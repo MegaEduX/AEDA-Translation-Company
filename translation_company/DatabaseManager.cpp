@@ -252,7 +252,7 @@ std::vector<Tradutor *> DatabaseManager::get_tradutores() {
 }
 
 BST<Tradutor> DatabaseManager::get_tradutores_nao_contratados() {
-    BST<Tradutor> bst = BST<Tradutor>(Tradutor(0, "", 0, std::vector<std::string>(), false));
+    std::vector<Tradutor> toInsert;
     
     init_db(db);
     
@@ -273,8 +273,18 @@ BST<Tradutor> DatabaseManager::get_tradutores_nao_contratados() {
         
         Tradutor tradutor = Tradutor(id, nome, anos_experiencia, linguas_vec, cont_bool);
         
-        bst.insert(tradutor);
+        toInsert.push_back(tradutor);
     }
+    
+    if (!toInsert.size())
+        throw EmptyQuery("SELECT * FROM `tradutores` WHERE contratado=0");
+    
+    BST<Tradutor> bst = BST<Tradutor>(Tradutor(0, "", 0, std::vector<std::string>()));
+    
+    //  toInsert.erase(toInsert.begin());
+    
+    for (std::vector<Tradutor>::iterator it = toInsert.begin(); it != toInsert.end(); ++it)
+        bst.insert(*it);
     
     return bst;
 }
