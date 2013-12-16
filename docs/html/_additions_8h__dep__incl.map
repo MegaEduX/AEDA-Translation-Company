@@ -1,4 +1,6 @@
 <map id="Additions.h" name="Additions.h">
 <area shape="rect" id="node2" href="$_additions_8cpp.html" title="Additions.cpp" alt="" coords="5,83,107,111"/>
-<area shape="rect" id="node3" href="$main_8cpp.html" title="main.cpp" alt="" coords="130,83,205,111"/>
+<area shape="rect" id="node3" href="$_database_manager_8cpp.html" title="DatabaseManager.cpp" alt="" coords="130,83,285,111"/>
+<area shape="rect" id="node4" href="$_encomenda_8cpp.html" title="Encomenda.cpp" alt="" coords="309,83,427,111"/>
+<area shape="rect" id="node5" href="$main_8cpp.html" title="main.cpp" alt="" coords="450,83,525,111"/>
 </map>

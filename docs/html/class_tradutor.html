@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -108,6 +108,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a856f362e6c97ea42d04875e6c9d012e3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tradutor.html#a856f362e6c97ea42d04875e6c9d012e3">Tradutor</a> (unsigned int id, std::string nome, unsigned int anos_experiencia, std::vector&lt; std::string &gt; linguas)</td></tr>
 <tr class="memdesc:a856f362e6c97ea42d04875e6c9d012e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class Constructor.  <a href="#a856f362e6c97ea42d04875e6c9d012e3">More...</a><br/></td></tr>
 <tr class="separator:a856f362e6c97ea42d04875e6c9d012e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b918326e5d4ad49250a87dcab4de424"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tradutor.html#a8b918326e5d4ad49250a87dcab4de424">Tradutor</a> (unsigned int id, std::string nome, unsigned int anos_experiencia, std::vector&lt; std::string &gt; linguas, bool contratado)</td></tr>
+<tr class="memdesc:a8b918326e5d4ad49250a87dcab4de424"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class Constructor.  <a href="#a8b918326e5d4ad49250a87dcab4de424">More...</a><br/></td></tr>
+<tr class="separator:a8b918326e5d4ad49250a87dcab4de424"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab55718903fb3e7cc5c1b21b87d64393a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tradutor.html#ab55718903fb3e7cc5c1b21b87d64393a">custoTraducao</a> (<a class="el" href="class_texto.html">Texto</a> *texto)</td></tr>
 <tr class="memdesc:ab55718903fb3e7cc5c1b21b87d64393a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the cost of a given translation.  <a href="#ab55718903fb3e7cc5c1b21b87d64393a">More...</a><br/></td></tr>
 <tr class="separator:ab55718903fb3e7cc5c1b21b87d64393a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -129,9 +132,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1d22a38c8eaa3753d44b521bb3aab2af"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tradutor.html#a1d22a38c8eaa3753d44b521bb3aab2af">podeSatisfazerEncomenda</a> (<a class="el" href="class_encomenda.html">Encomenda</a> *encomenda)</td></tr>
 <tr class="memdesc:a1d22a38c8eaa3753d44b521bb3aab2af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the translator is able to fullfill a given translation.  <a href="#a1d22a38c8eaa3753d44b521bb3aab2af">More...</a><br/></td></tr>
 <tr class="separator:a1d22a38c8eaa3753d44b521bb3aab2af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3547a7d337cd421be409e5bf63418964"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tradutor.html#a3547a7d337cd421be409e5bf63418964">get_nome</a> ()</td></tr>
-<tr class="memdesc:a3547a7d337cd421be409e5bf63418964"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for name of the translator.  <a href="#a3547a7d337cd421be409e5bf63418964">More...</a><br/></td></tr>
-<tr class="separator:a3547a7d337cd421be409e5bf63418964"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aada5c883969bb7903924f2f2ae376026"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tradutor.html#aada5c883969bb7903924f2f2ae376026">get_nome</a> () const </td></tr>
+<tr class="memdesc:aada5c883969bb7903924f2f2ae376026"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for name of the translator.  <a href="#aada5c883969bb7903924f2f2ae376026">More...</a><br/></td></tr>
+<tr class="separator:aada5c883969bb7903924f2f2ae376026"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa50fdceab0ca03dfe5c2a1639bc5869e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tradutor.html#aa50fdceab0ca03dfe5c2a1639bc5869e">set_nome</a> (std::string nome)</td></tr>
 <tr class="memdesc:aa50fdceab0ca03dfe5c2a1639bc5869e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for name of the translator.  <a href="#aa50fdceab0ca03dfe5c2a1639bc5869e">More...</a><br/></td></tr>
 <tr class="separator:aa50fdceab0ca03dfe5c2a1639bc5869e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -141,6 +144,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a83ed5b48e00f3a15c579e209bb01d53f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tradutor.html#a83ed5b48e00f3a15c579e209bb01d53f">set_linguas</a> (std::vector&lt; std::string &gt; linguas)</td></tr>
 <tr class="memdesc:a83ed5b48e00f3a15c579e209bb01d53f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the languages known to the translator.  <a href="#a83ed5b48e00f3a15c579e209bb01d53f">More...</a><br/></td></tr>
 <tr class="separator:a83ed5b48e00f3a15c579e209bb01d53f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfd51adb78973d8bbc3bbd35eb5d5b94"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tradutor.html#abfd51adb78973d8bbc3bbd35eb5d5b94">get_contratado</a> ()</td></tr>
+<tr class="memdesc:abfd51adb78973d8bbc3bbd35eb5d5b94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for employment status of the translator.  <a href="#abfd51adb78973d8bbc3bbd35eb5d5b94">More...</a><br/></td></tr>
+<tr class="separator:abfd51adb78973d8bbc3bbd35eb5d5b94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00b1ffa1dc1a0eb9fabf6e240a61b94b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tradutor.html#a00b1ffa1dc1a0eb9fabf6e240a61b94b">set_contratado</a> (bool cont)</td></tr>
+<tr class="memdesc:a00b1ffa1dc1a0eb9fabf6e240a61b94b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for employment status of the translator.  <a href="#a00b1ffa1dc1a0eb9fabf6e240a61b94b">More...</a><br/></td></tr>
+<tr class="separator:a00b1ffa1dc1a0eb9fabf6e240a61b94b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33f43a54dbef52d8a25796c5ecd6c00a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tradutor.html#a33f43a54dbef52d8a25796c5ecd6c00a">operator&lt;</a> (const <a class="el" href="class_tradutor.html">Tradutor</a> &amp;trad) const </td></tr>
+<tr class="memdesc:a33f43a54dbef52d8a25796c5ecd6c00a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded comparision &lt; operator.  <a href="#a33f43a54dbef52d8a25796c5ecd6c00a">More...</a><br/></td></tr>
+<tr class="separator:a33f43a54dbef52d8a25796c5ecd6c00a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0478428426465ec21880ad0066501123"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tradutor.html#a0478428426465ec21880ad0066501123">changeOperatorAction</a> (<a class="el" href="_tradutor_8h.html#a5f121f8f8a3004c289fc2f33c3baa5d0">kOperatorOp</a> op)</td></tr>
+<tr class="separator:a0478428426465ec21880ad0066501123"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -201,7 +215,79 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a8b918326e5d4ad49250a87dcab4de424"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Tradutor::Tradutor </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>nome</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>anos_experiencia</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::string &gt;&#160;</td>
+          <td class="paramname"><em>linguas</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>contratado</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Class Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>The object ID. </td></tr>
+    <tr><td class="paramname">nome</td><td>The name of the translator. </td></tr>
+    <tr><td class="paramname">anos_experiencia</td><td>The experience of the translator, in years. Should be at least 1. </td></tr>
+    <tr><td class="paramname">linguas</td><td>The maximum number of days the order should be fullfilled in. </td></tr>
+    <tr><td class="paramname">contratado</td><td>true if the translator is currently hired, false if not. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a0478428426465ec21880ad0066501123"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tradutor::changeOperatorAction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_tradutor_8h.html#a5f121f8f8a3004c289fc2f33c3baa5d0">kOperatorOp</a>&#160;</td>
+          <td class="paramname"><em>op</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="ab55718903fb3e7cc5c1b21b87d64393a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -242,6 +328,24 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Getter for the years of experience of the translator. </p>
 <dl class="section return"><dt>Returns</dt><dd>The experience of the translator, in years. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="abfd51adb78973d8bbc3bbd35eb5d5b94"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Tradutor::get_contratado </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter for employment status of the translator. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if employed, false if not. </dd></dl>
 
 </div>
 </div>
@@ -307,7 +411,7 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a3547a7d337cd421be409e5bf63418964"></a>
+<a class="anchor" id="aada5c883969bb7903924f2f2ae376026"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -315,13 +419,40 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">std::string Tradutor::get_nome </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Getter for name of the translator. </p>
 <dl class="section return"><dt>Returns</dt><dd>The name of the translator. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a33f43a54dbef52d8a25796c5ecd6c00a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Tradutor::operator&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_tradutor.html">Tradutor</a> &amp;&#160;</td>
+          <td class="paramname"><em>trad</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Overloaded comparision &lt; operator. </p>
+<p>Can be changed with <a class="el" href="class_tradutor.html#a0478428426465ec21880ad0066501123">changeOperatorAction(kOperatorOp op)</a>. </p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_tradutor.html#a0478428426465ec21880ad0066501123">changeOperatorAction(kOperatorOp op)</a> </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">trad</td><td>The translator to compare to. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The comparision result. </dd></dl>
 
 </div>
 </div>
@@ -374,6 +505,30 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a00b1ffa1dc1a0eb9fabf6e240a61b94b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tradutor::set_contratado </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>cont</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Setter for employment status of the translator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cont</td><td>true if employed, false if not. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a83ed5b48e00f3a15c579e209bb01d53f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -389,7 +544,12 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Setter for the languages known to the translator. </p>
-<dl class="section return"><dt>Returns</dt><dd>A vector containing the languages known to the translator. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">linguas</td><td>A vector containing the languages known to the translator. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -475,7 +635,7 @@ Static Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 3 2013 12:56:17 for Translation Company (AEDA) by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 16 2013 19:26:25 for Translation Company (AEDA) by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

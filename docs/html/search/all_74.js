@@ -1,6 +1,12 @@
 var searchData=
 [
   ['tempoestimado',['tempoEstimado',['../class_tradutor.html#a1ca7c608db7e9145e8b9105e19e5900a',1,'Tradutor::tempoEstimado(Texto *text)'],['../class_tradutor.html#acd53cf00b851be61350100c9aa6ef3c0',1,'Tradutor::tempoEstimado(Encomenda *encomenda)']]],
+  ['test_2ecpp',['Test.cpp',['../_test_8cpp.html',1,'']]],
+  ['test_2eh',['Test.h',['../_test_8h.html',1,'']]],
+  ['test_5f0_5fwordcount',['test_0_wordcount',['../_test_8cpp.html#aafa15dfcaa7cb1f01f1cf4ed3fa0bb57',1,'Test.cpp']]],
+  ['test_5f1_5fcreate',['test_1_create',['../_test_8cpp.html#ab64d91fc243933014fe89d33cbae297d',1,'Test.cpp']]],
+  ['test_5f2_5fload',['test_2_load',['../_test_8cpp.html#a054d5b63cc8bc739206e9df16c3f771b',1,'Test.cpp']]],
+  ['test_5f3_5fupdate',['test_3_update',['../_test_8cpp.html#a2e810ad64864ec3baa715234093f3e8b',1,'Test.cpp']]],
   ['texto',['Texto',['../class_texto.html',1,'Texto'],['../class_texto.html#a7034548c1e8e2007b0825ef3a01b1b88',1,'Texto::Texto(unsigned int id, std::string lingua, std::string conteudo)'],['../class_texto.html#a3ccc9eb8eb980eda5e5f6583cbb60425',1,'Texto::Texto(unsigned int id, std::string lingua, unsigned long palavras, std::string conteudo)']]],
   ['texto_2ecpp',['Texto.cpp',['../_texto_8cpp.html',1,'']]],
   ['texto_2eh',['Texto.h',['../_texto_8h.html',1,'']]],
@@ -17,7 +23,7 @@ var searchData=
   ['tipo_5fjornal',['tipo_jornal',['../_texto_noticioso_8h.html#adbee2daefeb8a5b2ec0e0c0b353390d5',1,'TextoNoticioso.h']]],
   ['tipo_5fjornal_5fdiario',['tipo_jornal_diario',['../_texto_noticioso_8h.html#adbee2daefeb8a5b2ec0e0c0b353390d5ac24612edaf40d3e32051ffd6b9d5e66f',1,'TextoNoticioso.h']]],
   ['tipo_5fjornal_5fsemanario',['tipo_jornal_semanario',['../_texto_noticioso_8h.html#adbee2daefeb8a5b2ec0e0c0b353390d5af48430c9000475e4d945b3e7e6dba661',1,'TextoNoticioso.h']]],
-  ['tradutor',['Tradutor',['../class_tradutor.html',1,'Tradutor'],['../class_tradutor.html#a856f362e6c97ea42d04875e6c9d012e3',1,'Tradutor::Tradutor()']]],
+  ['tradutor',['Tradutor',['../class_tradutor.html',1,'Tradutor'],['../class_tradutor.html#a856f362e6c97ea42d04875e6c9d012e3',1,'Tradutor::Tradutor(unsigned int id, std::string nome, unsigned int anos_experiencia, std::vector&lt; std::string &gt; linguas)'],['../class_tradutor.html#a8b918326e5d4ad49250a87dcab4de424',1,'Tradutor::Tradutor(unsigned int id, std::string nome, unsigned int anos_experiencia, std::vector&lt; std::string &gt; linguas, bool contratado)']]],
   ['tradutor_2ecpp',['Tradutor.cpp',['../_tradutor_8cpp.html',1,'']]],
   ['tradutor_2eh',['Tradutor.h',['../_tradutor_8h.html',1,'']]]
 ];

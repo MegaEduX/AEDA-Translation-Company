@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -87,11 +87,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="class_texto-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Texto Class Reference</div>  </div>
+<div class="title">Texto Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="class_texto.html" title="Texto class. ">Texto</a> class.  
+<p><a class="el" href="class_texto.html" title="Texto /abstract/ class. ">Texto</a> /abstract/ class.  
  <a href="class_texto.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_texto_8h_source.html">Texto.h</a>&gt;</code></p>
@@ -121,9 +121,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4e1b7a020c3b1cffe4518937cdd6f565"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_texto.html#a4e1b7a020c3b1cffe4518937cdd6f565">get_id</a> ()</td></tr>
 <tr class="memdesc:a4e1b7a020c3b1cffe4518937cdd6f565"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the ID of the text.  <a href="#a4e1b7a020c3b1cffe4518937cdd6f565">More...</a><br/></td></tr>
 <tr class="separator:a4e1b7a020c3b1cffe4518937cdd6f565"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a249af46529ab15e98103f1ebe9c3cabb"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_texto.html#a249af46529ab15e98103f1ebe9c3cabb">get_palavras</a> ()</td></tr>
-<tr class="memdesc:a249af46529ab15e98103f1ebe9c3cabb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the word count of the text content.  <a href="#a249af46529ab15e98103f1ebe9c3cabb">More...</a><br/></td></tr>
-<tr class="separator:a249af46529ab15e98103f1ebe9c3cabb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35e3a0a47350f735a2e46380eafde1e0"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_texto.html#a35e3a0a47350f735a2e46380eafde1e0">get_palavras</a> () const </td></tr>
+<tr class="memdesc:a35e3a0a47350f735a2e46380eafde1e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the word count of the text content.  <a href="#a35e3a0a47350f735a2e46380eafde1e0">More...</a><br/></td></tr>
+<tr class="separator:a35e3a0a47350f735a2e46380eafde1e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfaca963b37bef9a739def84e2c810b6"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_texto.html#adfaca963b37bef9a739def84e2c810b6">get_lingua</a> ()</td></tr>
 <tr class="memdesc:adfaca963b37bef9a739def84e2c810b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the language of the text.  <a href="#adfaca963b37bef9a739def84e2c810b6">More...</a><br/></td></tr>
 <tr class="separator:adfaca963b37bef9a739def84e2c810b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,9 +136,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a94ae33fe47a0ef32a5761a12e097910d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_texto.html#a94ae33fe47a0ef32a5761a12e097910d">set_conteudo</a> (std::string conteudo)</td></tr>
 <tr class="memdesc:a94ae33fe47a0ef32a5761a12e097910d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the text content.  <a href="#a94ae33fe47a0ef32a5761a12e097910d">More...</a><br/></td></tr>
 <tr class="separator:a94ae33fe47a0ef32a5761a12e097910d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b397139df00ed907e1e6a1c29e2429b"><td class="memItemLeft" align="right" valign="top">virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_texto.html#a9b397139df00ed907e1e6a1c29e2429b">complexidade</a> ()</td></tr>
-<tr class="memdesc:a9b397139df00ed907e1e6a1c29e2429b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the complexity of the text.  <a href="#a9b397139df00ed907e1e6a1c29e2429b">More...</a><br/></td></tr>
-<tr class="separator:a9b397139df00ed907e1e6a1c29e2429b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92e0fb258179999bc6df2a9da1713a1d"><td class="memItemLeft" align="right" valign="top">virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_texto.html#a92e0fb258179999bc6df2a9da1713a1d">complexidade</a> ()=0</td></tr>
+<tr class="memdesc:a92e0fb258179999bc6df2a9da1713a1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the complexity of the text.  <a href="#a92e0fb258179999bc6df2a9da1713a1d">More...</a><br/></td></tr>
+<tr class="separator:a92e0fb258179999bc6df2a9da1713a1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -147,8 +147,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a674eed23fb437d4f07634f9d6559d325"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="class_texto.html" title="Texto class. ">Texto</a> class. </p>
-<p>You should not use this class directly. Please use one of the subclasses (<a class="el" href="class_texto_tecnico.html" title="Texto Tecnico class. ">TextoTecnico</a>, <a class="el" href="class_texto_literario.html" title="Texto Literario class. ">TextoLiterario</a> or <a class="el" href="class_texto_noticioso.html" title="Texto Noticioso class. ">TextoNoticioso</a>). </p>
+<div class="textblock"><p><a class="el" href="class_texto.html" title="Texto /abstract/ class. ">Texto</a> /abstract/ class. </p>
+<p>You should not (alas, can not, most compilers won't even allow it) use this class directly. Please use one of the subclasses (<a class="el" href="class_texto_tecnico.html" title="Texto Tecnico class. ">TextoTecnico</a>, <a class="el" href="class_texto_literario.html" title="Texto Literario class. ">TextoLiterario</a> or <a class="el" href="class_texto_noticioso.html" title="Texto Noticioso class. ">TextoNoticioso</a>). </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a7034548c1e8e2007b0825ef3a01b1b88"></a>
 <div class="memitem">
@@ -242,7 +242,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a9b397139df00ed907e1e6a1c29e2429b"></a>
+<a class="anchor" id="a92e0fb258179999bc6df2a9da1713a1d"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -258,7 +258,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -266,7 +266,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Calculates the complexity of the text. </p>
 <dl class="section return"><dt>Returns</dt><dd>Complexity value. </dd></dl>
 
-<p>Reimplemented in <a class="el" href="class_texto_literario.html#a286c1693b71a45d4d577dcd15871892c">TextoLiterario</a>, <a class="el" href="class_texto_noticioso.html#a1db491d92e2a467d258f0f470f994981">TextoNoticioso</a>, and <a class="el" href="class_texto_tecnico.html#aeeeff7367e226e4fc0f0d4cdb692e85d">TextoTecnico</a>.</p>
+<p>Implemented in <a class="el" href="class_texto_literario.html#a286c1693b71a45d4d577dcd15871892c">TextoLiterario</a>, <a class="el" href="class_texto_noticioso.html#a1db491d92e2a467d258f0f470f994981">TextoNoticioso</a>, and <a class="el" href="class_texto_tecnico.html#aeeeff7367e226e4fc0f0d4cdb692e85d">TextoTecnico</a>.</p>
 
 </div>
 </div>
@@ -350,7 +350,7 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a249af46529ab15e98103f1ebe9c3cabb"></a>
+<a class="anchor" id="a35e3a0a47350f735a2e46380eafde1e0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -358,7 +358,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">unsigned long Texto::get_palavras </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -418,7 +418,7 @@ Static Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 3 2013 12:56:17 for Translation Company (AEDA) by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 16 2013 19:26:25 for Translation Company (AEDA) by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

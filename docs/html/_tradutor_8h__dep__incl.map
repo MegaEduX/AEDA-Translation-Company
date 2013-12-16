@@ -1,9 +1,10 @@
 <map id="Tradutor.h" name="Tradutor.h">
-<area shape="rect" id="node2" href="$_database_manager_8h.html" title="DatabaseManager.h" alt="" coords="271,161,412,189"/>
-<area shape="rect" id="node7" href="$_tradutor_8cpp.html" title="Tradutor.cpp" alt="" coords="528,238,623,266"/>
-<area shape="rect" id="node8" href="$_encomenda_8h.html" title="Encomenda.h" alt="" coords="398,83,500,111"/>
-<area shape="rect" id="node3" href="$_database_manager_8cpp.html" title="DatabaseManager.cpp" alt="" coords="108,238,263,266"/>
-<area shape="rect" id="node4" href="$_encomenda_8cpp.html" title="Encomenda.cpp" alt="" coords="386,238,504,266"/>
-<area shape="rect" id="node5" href="$main_8cpp.html" title="main.cpp" alt="" coords="288,238,363,266"/>
-<area shape="rect" id="node6" href="$_texto_8cpp.html" title="Texto.cpp" alt="" coords="5,238,83,266"/>
+<area shape="rect" id="node2" href="$_database_manager_8h.html" title="DatabaseManager.h" alt="" coords="387,161,528,189"/>
+<area shape="rect" id="node8" href="$_tradutor_8cpp.html" title="Tradutor.cpp" alt="" coords="624,238,719,266"/>
+<area shape="rect" id="node9" href="$_encomenda_8h.html" title="Encomenda.h" alt="" coords="508,83,611,111"/>
+<area shape="rect" id="node3" href="$_database_manager_8cpp.html" title="DatabaseManager.cpp" alt="" coords="146,238,301,266"/>
+<area shape="rect" id="node4" href="$_encomenda_8cpp.html" title="Encomenda.cpp" alt="" coords="5,238,123,266"/>
+<area shape="rect" id="node5" href="$main_8cpp.html" title="main.cpp" alt="" coords="326,238,401,266"/>
+<area shape="rect" id="node6" href="$_test_8cpp.html" title="Test.cpp" alt="" coords="529,238,599,266"/>
+<area shape="rect" id="node7" href="$_texto_8cpp.html" title="Texto.cpp" alt="" coords="426,238,504,266"/>
 </map>

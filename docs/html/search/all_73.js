@@ -9,6 +9,7 @@ var searchData=
   ['set_5fanos_5fexperiencia',['set_anos_experiencia',['../class_tradutor.html#a938cfc1c263b3504fc4d7fbdc939b087',1,'Tradutor']]],
   ['set_5fautor',['set_autor',['../class_texto_literario.html#a859bcc3c015ebcced7b4691990d3ec2a',1,'TextoLiterario']]],
   ['set_5fconteudo',['set_conteudo',['../class_texto.html#a94ae33fe47a0ef32a5761a12e097910d',1,'Texto']]],
+  ['set_5fcontratado',['set_contratado',['../class_tradutor.html#a00b1ffa1dc1a0eb9fabf6e240a61b94b',1,'Tradutor']]],
   ['set_5fdominio_5fespecialidade',['set_dominio_especialidade',['../class_texto_tecnico.html#af66d0b574c0e3316870fb8fdc3223c74',1,'TextoTecnico']]],
   ['set_5fduracao_5fmax_5fdias',['set_duracao_max_dias',['../class_encomenda.html#ab3b5fc8fdde834b5c80f42ff0a2bf88b',1,'Encomenda']]],
   ['set_5flingua',['set_lingua',['../class_texto.html#a297021cc2780c0bf398119bf0e4977e0',1,'Texto']]],

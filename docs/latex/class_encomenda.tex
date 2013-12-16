@@ -27,9 +27,9 @@ Collaboration diagram for Encomenda\-:
 \begin{DoxyCompactList}\small\item\em Class Constructor. \end{DoxyCompactList}\item 
 \hyperlink{class_encomenda_a5009ce207f856836a16e93a6454e93b8}{Encomenda} (unsigned int id, \hyperlink{class_texto}{Texto} $\ast$texto, std\-::string lingua\-\_\-destino, unsigned int duracao\-\_\-max\-\_\-dias, \hyperlink{class_tradutor}{Tradutor} $\ast$tradutor, uint64\-\_\-t timestamp\-\_\-entrega)
 \begin{DoxyCompactList}\small\item\em Class Constructor. \end{DoxyCompactList}\item 
-unsigned int \hyperlink{class_encomenda_a600345853bc2238c189de0afcd1c8d09}{get\-\_\-id} ()
+unsigned int \hyperlink{class_encomenda_ac63a69c65c4d6971ff43f219c2f4085a}{get\-\_\-id} () const 
 \begin{DoxyCompactList}\small\item\em Getter for the order I\-D. \end{DoxyCompactList}\item 
-unsigned int \hyperlink{class_encomenda_a179dcd8d6ccaa8de0bf87a922c5ce2f8}{get\-\_\-duracao\-\_\-max\-\_\-dias} ()
+unsigned int \hyperlink{class_encomenda_acc57c2a4dc9fd63c8e3fc8d7009983d2}{get\-\_\-duracao\-\_\-max\-\_\-dias} () const 
 \begin{DoxyCompactList}\small\item\em Getter for the maximum order duration. \end{DoxyCompactList}\item 
 void \hyperlink{class_encomenda_ab3b5fc8fdde834b5c80f42ff0a2bf88b}{set\-\_\-duracao\-\_\-max\-\_\-dias} (unsigned int dias)
 \begin{DoxyCompactList}\small\item\em Setter for the maximum order duration. \end{DoxyCompactList}\item 
@@ -41,14 +41,18 @@ void \hyperlink{class_encomenda_ab814e5f0fbbb1950393a376eb65f7c63}{set\-\_\-text
 \begin{DoxyCompactList}\small\item\em Getter for the translator assigned with the order. \end{DoxyCompactList}\item 
 void \hyperlink{class_encomenda_a05d46d1c4f6e83df419b2feb7cb9a082}{set\-\_\-tradutor} (\hyperlink{class_tradutor}{Tradutor} $\ast$tradutor)
 \begin{DoxyCompactList}\small\item\em Setter for the translator assigned with the order. \end{DoxyCompactList}\item 
-std\-::string \hyperlink{class_encomenda_a3b9689429c6ae78580421a96742f9687}{get\-\_\-lingua\-\_\-destino} ()
+std\-::string \hyperlink{class_encomenda_a19dd853a12a54e97a7fe8b6332c5d4d3}{get\-\_\-lingua\-\_\-destino} () const 
 \begin{DoxyCompactList}\small\item\em Getter for the language the order text should be translated to. \end{DoxyCompactList}\item 
 void \hyperlink{class_encomenda_af8b12f8fba9c65a937f60ed81f9e0770}{set\-\_\-lingua\-\_\-destino} (std\-::string lingua)
 \begin{DoxyCompactList}\small\item\em Setter for the language the order text should be translated to. \end{DoxyCompactList}\item 
-uint64\-\_\-t \hyperlink{class_encomenda_a14dd37345213a30a428457f9b5df874d}{get\-\_\-timestamp\-\_\-entrega} ()
+uint64\-\_\-t \hyperlink{class_encomenda_a6c50e6398959da813ab57bc1f81fc760}{get\-\_\-timestamp\-\_\-entrega} () const 
 \begin{DoxyCompactList}\small\item\em Getter for the date, refered to as a timestamp, when the order will be fullfilled. \end{DoxyCompactList}\item 
 void \hyperlink{class_encomenda_a894c2ddbe25e0fa49f19fe35134ce3ba}{set\-\_\-timestamp\-\_\-entrega} (uint64\-\_\-t timestamp\-\_\-entrega)
-\begin{DoxyCompactList}\small\item\em Setter for the date, refered to as a timestamp, when the order will be fullfilled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Setter for the date, refered to as a timestamp, when the order will be fullfilled. \end{DoxyCompactList}\item 
+bool \hyperlink{class_encomenda_a0cd2e50cb794f8a698e406f861ebb5dc}{is\-\_\-fulfilled} () const 
+\begin{DoxyCompactList}\small\item\em Helper function, returns whether the order is fulfilled or not. \end{DoxyCompactList}\item 
+bool \hyperlink{class_encomenda_ae7ba8edcf79d77cfb4d9a359097b5e16}{operator$<$} (const \hyperlink{class_encomenda}{Encomenda} \&cmp) const 
+\begin{DoxyCompactList}\small\item\em Compares two orders, using the complexity of their texts as the comparision method. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -121,13 +125,13 @@ Class Constructor.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_encomenda_a179dcd8d6ccaa8de0bf87a922c5ce2f8}{\index{Encomenda@{Encomenda}!get\-\_\-duracao\-\_\-max\-\_\-dias@{get\-\_\-duracao\-\_\-max\-\_\-dias}}
+\hypertarget{class_encomenda_acc57c2a4dc9fd63c8e3fc8d7009983d2}{\index{Encomenda@{Encomenda}!get\-\_\-duracao\-\_\-max\-\_\-dias@{get\-\_\-duracao\-\_\-max\-\_\-dias}}
 \index{get\-\_\-duracao\-\_\-max\-\_\-dias@{get\-\_\-duracao\-\_\-max\-\_\-dias}!Encomenda@{Encomenda}}
 \subsubsection[{get\-\_\-duracao\-\_\-max\-\_\-dias}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Encomenda\-::get\-\_\-duracao\-\_\-max\-\_\-dias (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_encomenda_a179dcd8d6ccaa8de0bf87a922c5ce2f8}
+) const}}\label{class_encomenda_acc57c2a4dc9fd63c8e3fc8d7009983d2}
 
 
 Getter for the maximum order duration. 
@@ -135,13 +139,13 @@ Getter for the maximum order duration.
 \begin{DoxyReturn}{Returns}
 The maximum number of days the order should be fullfilled in. 
 \end{DoxyReturn}
-\hypertarget{class_encomenda_a600345853bc2238c189de0afcd1c8d09}{\index{Encomenda@{Encomenda}!get\-\_\-id@{get\-\_\-id}}
+\hypertarget{class_encomenda_ac63a69c65c4d6971ff43f219c2f4085a}{\index{Encomenda@{Encomenda}!get\-\_\-id@{get\-\_\-id}}
 \index{get\-\_\-id@{get\-\_\-id}!Encomenda@{Encomenda}}
 \subsubsection[{get\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Encomenda\-::get\-\_\-id (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_encomenda_a600345853bc2238c189de0afcd1c8d09}
+) const}}\label{class_encomenda_ac63a69c65c4d6971ff43f219c2f4085a}
 
 
 Getter for the order I\-D. 
@@ -149,13 +153,13 @@ Getter for the order I\-D.
 \begin{DoxyReturn}{Returns}
 The order I\-D. 
 \end{DoxyReturn}
-\hypertarget{class_encomenda_a3b9689429c6ae78580421a96742f9687}{\index{Encomenda@{Encomenda}!get\-\_\-lingua\-\_\-destino@{get\-\_\-lingua\-\_\-destino}}
+\hypertarget{class_encomenda_a19dd853a12a54e97a7fe8b6332c5d4d3}{\index{Encomenda@{Encomenda}!get\-\_\-lingua\-\_\-destino@{get\-\_\-lingua\-\_\-destino}}
 \index{get\-\_\-lingua\-\_\-destino@{get\-\_\-lingua\-\_\-destino}!Encomenda@{Encomenda}}
 \subsubsection[{get\-\_\-lingua\-\_\-destino}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Encomenda\-::get\-\_\-lingua\-\_\-destino (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_encomenda_a3b9689429c6ae78580421a96742f9687}
+) const}}\label{class_encomenda_a19dd853a12a54e97a7fe8b6332c5d4d3}
 
 
 Getter for the language the order text should be translated to. 
@@ -191,13 +195,13 @@ Getter for the text associated with the order.
 \begin{DoxyReturn}{Returns}
 The text associated with the order. 
 \end{DoxyReturn}
-\hypertarget{class_encomenda_a14dd37345213a30a428457f9b5df874d}{\index{Encomenda@{Encomenda}!get\-\_\-timestamp\-\_\-entrega@{get\-\_\-timestamp\-\_\-entrega}}
+\hypertarget{class_encomenda_a6c50e6398959da813ab57bc1f81fc760}{\index{Encomenda@{Encomenda}!get\-\_\-timestamp\-\_\-entrega@{get\-\_\-timestamp\-\_\-entrega}}
 \index{get\-\_\-timestamp\-\_\-entrega@{get\-\_\-timestamp\-\_\-entrega}!Encomenda@{Encomenda}}
 \subsubsection[{get\-\_\-timestamp\-\_\-entrega}]{\setlength{\rightskip}{0pt plus 5cm}uint64\-\_\-t Encomenda\-::get\-\_\-timestamp\-\_\-entrega (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_encomenda_a14dd37345213a30a428457f9b5df874d}
+) const}}\label{class_encomenda_a6c50e6398959da813ab57bc1f81fc760}
 
 
 Getter for the date, refered to as a timestamp, when the order will be fullfilled. 
@@ -218,6 +222,39 @@ Getter for the translator assigned with the order.
 
 \begin{DoxyReturn}{Returns}
 The translator assigned with the order. 
+\end{DoxyReturn}
+\hypertarget{class_encomenda_a0cd2e50cb794f8a698e406f861ebb5dc}{\index{Encomenda@{Encomenda}!is\-\_\-fulfilled@{is\-\_\-fulfilled}}
+\index{is\-\_\-fulfilled@{is\-\_\-fulfilled}!Encomenda@{Encomenda}}
+\subsubsection[{is\-\_\-fulfilled}]{\setlength{\rightskip}{0pt plus 5cm}bool Encomenda\-::is\-\_\-fulfilled (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_encomenda_a0cd2e50cb794f8a698e406f861ebb5dc}
+
+
+Helper function, returns whether the order is fulfilled or not. 
+
+\begin{DoxyReturn}{Returns}
+true or false, depending if the order is, or not, fulfilled. 
+\end{DoxyReturn}
+\hypertarget{class_encomenda_ae7ba8edcf79d77cfb4d9a359097b5e16}{\index{Encomenda@{Encomenda}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Encomenda@{Encomenda}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool Encomenda\-::operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Encomenda} \&}]{cmp}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_encomenda_ae7ba8edcf79d77cfb4d9a359097b5e16}
+
+
+Compares two orders, using the complexity of their texts as the comparision method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmp} & The object to compare to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true or false, depending if the compared object is smaller than the current one or not. 
 \end{DoxyReturn}
 \hypertarget{class_encomenda_ab3b5fc8fdde834b5c80f42ff0a2bf88b}{\index{Encomenda@{Encomenda}!set\-\_\-duracao\-\_\-max\-\_\-dias@{set\-\_\-duracao\-\_\-max\-\_\-dias}}
 \index{set\-\_\-duracao\-\_\-max\-\_\-dias@{set\-\_\-duracao\-\_\-max\-\_\-dias}!Encomenda@{Encomenda}}

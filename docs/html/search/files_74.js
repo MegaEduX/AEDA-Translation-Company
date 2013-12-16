@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['test_2ecpp',['Test.cpp',['../_test_8cpp.html',1,'']]],
+  ['test_2eh',['Test.h',['../_test_8h.html',1,'']]],
   ['texto_2ecpp',['Texto.cpp',['../_texto_8cpp.html',1,'']]],
   ['texto_2eh',['Texto.h',['../_texto_8h.html',1,'']]],
   ['textoliterario_2ecpp',['TextoLiterario.cpp',['../_texto_literario_8cpp.html',1,'']]],

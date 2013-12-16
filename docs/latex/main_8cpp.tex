@@ -5,6 +5,7 @@
 {\ttfamily \#include $<$boost/lexical\-\_\-cast.\-hpp$>$}\\*
 {\ttfamily \#include $<$boost/algorithm/string.\-hpp$>$}\\*
 {\ttfamily \#include \char`\"{}Database\-Manager.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}B\-S\-T.\-h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}Additions.\-h\char`\"{}}\\*
 Include dependency graph for main.\-cpp\-:
 \nopagebreak
@@ -37,7 +38,7 @@ void \hyperlink{main_8cpp_a75f6be843294d005eccc4d2417148b40}{search\-\_\-texts\-
 \item 
 void \hyperlink{main_8cpp_a12813f39b7f720b1cd021aa125df655e}{display\-\_\-info} (\hyperlink{class_tradutor}{Tradutor} $\ast$trad)
 \item 
-void \hyperlink{main_8cpp_a6cbdcfe2366876365517a45b20671c84}{display\-\_\-info} (\hyperlink{class_encomenda}{Encomenda} $\ast$enc)
+void \hyperlink{main_8cpp_ad0829398eea114c55db3432ef860218a}{display\-\_\-info} (const \hyperlink{class_encomenda}{Encomenda} $\ast$enc)
 \item 
 void \hyperlink{main_8cpp_aa1cee08b518537a6206e2bef0150b627}{display\-\_\-info} (\hyperlink{class_texto}{Texto} $\ast$txt)
 \item 
@@ -50,6 +51,10 @@ void \hyperlink{main_8cpp_a246f7f8d4a33a1aed9e7030b5fb102c1}{edit\-\_\-record} (
 void \hyperlink{main_8cpp_a4791628b6e05e24fefc17e645eb6e42d}{edit\-\_\-record\-\_\-step2} (unsigned int obj\-\_\-type)
 \item 
 void \hyperlink{main_8cpp_a635942dacd803720a2b21b4ee18de727}{edit\-\_\-record\-\_\-step3} (\hyperlink{class_tradutor}{Tradutor} $\ast$obj)
+\item 
+void \hyperlink{main_8cpp_a72bcdaa49744ace2f8885fa8a5f0b46d}{edit\-\_\-record\-\_\-step3} (\hyperlink{class_encomenda}{Encomenda} $\ast$obj)
+\item 
+void \hyperlink{main_8cpp_ac98e90d90f4f160bce53dc6f68c22dea}{delete\-\_\-orders\-\_\-before} ()
 \item 
 {\footnotesize template$<$class T $>$ }\\void \hyperlink{main_8cpp_a900da0c894ff2093f906c69bc0445b31}{delete\-\_\-record\-\_\-step3} (T $\ast$obj)
 \item 
@@ -65,6 +70,13 @@ int \hyperlink{main_8cpp_ac0f2228420376f4db7e1274f2b41667c}{main} (int argc, con
 {}
 \end{DoxyParamCaption}
 )}}\label{main_8cpp_a43124ce79146d45230a5d96e6da92882}
+\hypertarget{main_8cpp_ac98e90d90f4f160bce53dc6f68c22dea}{\index{main.\-cpp@{main.\-cpp}!delete\-\_\-orders\-\_\-before@{delete\-\_\-orders\-\_\-before}}
+\index{delete\-\_\-orders\-\_\-before@{delete\-\_\-orders\-\_\-before}!main.cpp@{main.\-cpp}}
+\subsubsection[{delete\-\_\-orders\-\_\-before}]{\setlength{\rightskip}{0pt plus 5cm}void delete\-\_\-orders\-\_\-before (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{main_8cpp_ac98e90d90f4f160bce53dc6f68c22dea}
 \hypertarget{main_8cpp_a900da0c894ff2093f906c69bc0445b31}{\index{main.\-cpp@{main.\-cpp}!delete\-\_\-record\-\_\-step3@{delete\-\_\-record\-\_\-step3}}
 \index{delete\-\_\-record\-\_\-step3@{delete\-\_\-record\-\_\-step3}!main.cpp@{main.\-cpp}}
 \subsubsection[{delete\-\_\-record\-\_\-step3}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void delete\-\_\-record\-\_\-step3 (
@@ -79,13 +91,13 @@ int \hyperlink{main_8cpp_ac0f2228420376f4db7e1274f2b41667c}{main} (int argc, con
 \item[{{\bf Tradutor} $\ast$}]{trad}
 \end{DoxyParamCaption}
 )}}\label{main_8cpp_a12813f39b7f720b1cd021aa125df655e}
-\hypertarget{main_8cpp_a6cbdcfe2366876365517a45b20671c84}{\index{main.\-cpp@{main.\-cpp}!display\-\_\-info@{display\-\_\-info}}
+\hypertarget{main_8cpp_ad0829398eea114c55db3432ef860218a}{\index{main.\-cpp@{main.\-cpp}!display\-\_\-info@{display\-\_\-info}}
 \index{display\-\_\-info@{display\-\_\-info}!main.cpp@{main.\-cpp}}
 \subsubsection[{display\-\_\-info}]{\setlength{\rightskip}{0pt plus 5cm}void display\-\_\-info (
 \begin{DoxyParamCaption}
-\item[{{\bf Encomenda} $\ast$}]{enc}
+\item[{const {\bf Encomenda} $\ast$}]{enc}
 \end{DoxyParamCaption}
-)}}\label{main_8cpp_a6cbdcfe2366876365517a45b20671c84}
+)}}\label{main_8cpp_ad0829398eea114c55db3432ef860218a}
 \hypertarget{main_8cpp_aa1cee08b518537a6206e2bef0150b627}{\index{main.\-cpp@{main.\-cpp}!display\-\_\-info@{display\-\_\-info}}
 \index{display\-\_\-info@{display\-\_\-info}!main.cpp@{main.\-cpp}}
 \subsubsection[{display\-\_\-info}]{\setlength{\rightskip}{0pt plus 5cm}void display\-\_\-info (
@@ -114,6 +126,13 @@ int \hyperlink{main_8cpp_ac0f2228420376f4db7e1274f2b41667c}{main} (int argc, con
 \item[{{\bf Tradutor} $\ast$}]{obj}
 \end{DoxyParamCaption}
 )}}\label{main_8cpp_a635942dacd803720a2b21b4ee18de727}
+\hypertarget{main_8cpp_a72bcdaa49744ace2f8885fa8a5f0b46d}{\index{main.\-cpp@{main.\-cpp}!edit\-\_\-record\-\_\-step3@{edit\-\_\-record\-\_\-step3}}
+\index{edit\-\_\-record\-\_\-step3@{edit\-\_\-record\-\_\-step3}!main.cpp@{main.\-cpp}}
+\subsubsection[{edit\-\_\-record\-\_\-step3}]{\setlength{\rightskip}{0pt plus 5cm}void edit\-\_\-record\-\_\-step3 (
+\begin{DoxyParamCaption}
+\item[{{\bf Encomenda} $\ast$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{main_8cpp_a72bcdaa49744ace2f8885fa8a5f0b46d}
 \hypertarget{main_8cpp_ac0f2228420376f4db7e1274f2b41667c}{\index{main.\-cpp@{main.\-cpp}!main@{main}}
 \index{main@{main}!main.cpp@{main.\-cpp}}
 \subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (

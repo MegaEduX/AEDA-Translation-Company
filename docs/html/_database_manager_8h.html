@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -89,6 +89,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br/>
 <code>#include &lt;vector&gt;</code><br/>
+<code>#include &lt;queue&gt;</code><br/>
+<code>#include &lt;unordered_set&gt;</code><br/>
 <code>#include &quot;sqlite3pp.h&quot;</code><br/>
 <code>#include &quot;<a class="el" href="_texto_8h_source.html">Texto.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="_texto_tecnico_8h_source.html">TextoTecnico.h</a>&quot;</code><br/>
@@ -96,25 +98,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &quot;<a class="el" href="_texto_noticioso_8h_source.html">TextoNoticioso.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="_tradutor_8h_source.html">Tradutor.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="_encomenda_8h_source.html">Encomenda.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_b_s_t_8h_source.html">BST.h</a>&quot;</code><br/>
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for DatabaseManager.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="_database_manager_8h__incl.png" border="0" usemap="#_database_manager_8h" alt=""/></div>
 <map name="_database_manager_8h" id="_database_manager_8h">
-<area shape="rect" id="node5" href="_texto_8h.html" title="Texto.h" alt="" coords="271,238,335,266"/><area shape="rect" id="node6" href="_texto_tecnico_8h.html" title="TextoTecnico.h" alt="" coords="5,161,115,189"/><area shape="rect" id="node7" href="_texto_literario_8h.html" title="TextoLiterario.h" alt="" coords="138,161,251,189"/><area shape="rect" id="node8" href="_texto_noticioso_8h.html" title="TextoNoticioso.h" alt="" coords="326,161,444,189"/><area shape="rect" id="node9" href="_tradutor_8h.html" title="Tradutor.h" alt="" coords="469,161,549,189"/><area shape="rect" id="node10" href="_encomenda_8h.html" title="Encomenda.h" alt="" coords="567,83,669,111"/></map>
+<area shape="rect" id="node7" href="_texto_8h.html" title="Texto.h" alt="" coords="287,238,351,266"/><area shape="rect" id="node8" href="_texto_tecnico_8h.html" title="TextoTecnico.h" alt="" coords="5,161,115,189"/><area shape="rect" id="node9" href="_texto_literario_8h.html" title="TextoLiterario.h" alt="" coords="138,161,251,189"/><area shape="rect" id="node10" href="_texto_noticioso_8h.html" title="TextoNoticioso.h" alt="" coords="326,161,444,189"/><area shape="rect" id="node11" href="_tradutor_8h.html" title="Tradutor.h" alt="" coords="521,161,601,189"/><area shape="rect" id="node12" href="_encomenda_8h.html" title="Encomenda.h" alt="" coords="588,83,691,111"/><area shape="rect" id="node13" href="_b_s_t_8h.html" title="BST.h" alt="" coords="722,83,779,111"/></map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="_database_manager_8h__dep__incl.png" border="0" usemap="#_database_manager_8hdep" alt=""/></div>
 <map name="_database_manager_8hdep" id="_database_manager_8hdep">
-<area shape="rect" id="node2" href="_database_manager_8cpp.html" title="DatabaseManager.cpp" alt="" coords="5,83,160,111"/><area shape="rect" id="node3" href="_encomenda_8cpp.html" title="Encomenda.cpp" alt="" coords="184,83,301,111"/><area shape="rect" id="node4" href="main_8cpp.html" title="main.cpp" alt="" coords="325,83,400,111"/><area shape="rect" id="node5" href="_texto_8cpp.html" title="Texto.cpp" alt="" coords="425,83,503,111"/><area shape="rect" id="node6" href="_tradutor_8cpp.html" title="Tradutor.cpp" alt="" coords="527,83,621,111"/></map>
+<area shape="rect" id="node2" href="_database_manager_8cpp.html" title="DatabaseManager.cpp" alt="" coords="5,83,160,111"/><area shape="rect" id="node3" href="_encomenda_8cpp.html" title="Encomenda.cpp" alt="" coords="184,83,301,111"/><area shape="rect" id="node4" href="main_8cpp.html" title="main.cpp" alt="" coords="325,83,400,111"/><area shape="rect" id="node5" href="_test_8cpp.html" title="Test.cpp" alt="" coords="425,83,495,111"/><area shape="rect" id="node6" href="_texto_8cpp.html" title="Texto.cpp" alt="" coords="519,83,597,111"/><area shape="rect" id="node7" href="_tradutor_8cpp.html" title="Tradutor.cpp" alt="" coords="621,83,716,111"/></map>
 </div>
 </div>
 <p><a href="_database_manager_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeqenc.html">eqenc</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhenc.html">henc</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeqcmp.html">eqcmp</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_empty_query.html">EmptyQuery</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empty Query class.  <a href="class_empty_query.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_database_manager.html">DatabaseManager</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Database Manager class.  <a href="class_database_manager.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -150,7 +162,7 @@ Enumerations</h2></td></tr>
 <p>Defines the classes as a typedef (to avoid dirty workarounds). </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="ad36b2b2507c9846942e0b412d07e5438ad70eda5f7c0bfe5f9b94dcd06bc70ba1"></a>kClassTexto</em>&nbsp;</td><td class="fielddoc">
-<p>Class <a class="el" href="class_texto.html" title="Texto class. ">Texto</a>. </p>
+<p>Class <a class="el" href="class_texto.html" title="Texto /abstract/ class. ">Texto</a>. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ad36b2b2507c9846942e0b412d07e5438a905951f6b0f883358810ecbd81358fae"></a>kClassTradutor</em>&nbsp;</td><td class="fielddoc">
 <p>Class Translator. </p>
@@ -194,7 +206,7 @@ Enumerations</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 3 2013 12:56:17 for Translation Company (AEDA) by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 16 2013 19:26:25 for Translation Company (AEDA) by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

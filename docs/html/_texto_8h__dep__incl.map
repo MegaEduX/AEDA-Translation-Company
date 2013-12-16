@@ -1,16 +1,17 @@
 <map id="Texto.h" name="Texto.h">
-<area shape="rect" id="node2" href="$_database_manager_8h.html" title="DatabaseManager.h" alt="" coords="517,238,659,266"/>
-<area shape="rect" id="node4" href="$_encomenda_8cpp.html" title="Encomenda.cpp" alt="" coords="809,315,927,343"/>
-<area shape="rect" id="node6" href="$_texto_8cpp.html" title="Texto.cpp" alt="" coords="111,315,189,343"/>
-<area shape="rect" id="node8" href="$_texto_tecnico_8h.html" title="TextoTecnico.h" alt="" coords="48,83,157,111"/>
-<area shape="rect" id="node10" href="$_texto_literario_8h.html" title="TextoLiterario.h" alt="" coords="245,83,357,111"/>
-<area shape="rect" id="node12" href="$_texto_noticioso_8h.html" title="TextoNoticioso.h" alt="" coords="423,83,541,111"/>
-<area shape="rect" id="node14" href="$_tradutor_8h.html" title="Tradutor.h" alt="" coords="678,83,759,111"/>
-<area shape="rect" id="node3" href="$_database_manager_8cpp.html" title="DatabaseManager.cpp" alt="" coords="510,315,665,343"/>
-<area shape="rect" id="node5" href="$main_8cpp.html" title="main.cpp" alt="" coords="410,315,485,343"/>
-<area shape="rect" id="node7" href="$_tradutor_8cpp.html" title="Tradutor.cpp" alt="" coords="690,315,784,343"/>
-<area shape="rect" id="node9" href="$_texto_tecnico_8cpp.html" title="TextoTecnico.cpp" alt="" coords="41,161,164,189"/>
-<area shape="rect" id="node11" href="$_texto_literario_8cpp.html" title="TextoLiterario.cpp" alt="" coords="238,161,364,189"/>
-<area shape="rect" id="node13" href="$_texto_noticioso_8cpp.html" title="TextoNoticioso.cpp" alt="" coords="388,161,520,189"/>
-<area shape="rect" id="node15" href="$_encomenda_8h.html" title="Encomenda.h" alt="" coords="698,161,800,189"/>
+<area shape="rect" id="node2" href="$_database_manager_8h.html" title="DatabaseManager.h" alt="" coords="357,238,499,266"/>
+<area shape="rect" id="node4" href="$_encomenda_8cpp.html" title="Encomenda.cpp" alt="" coords="825,315,943,343"/>
+<area shape="rect" id="node6" href="$_test_8cpp.html" title="Test.cpp" alt="" coords="195,315,265,343"/>
+<area shape="rect" id="node7" href="$_texto_8cpp.html" title="Texto.cpp" alt="" coords="5,315,83,343"/>
+<area shape="rect" id="node9" href="$_texto_tecnico_8h.html" title="TextoTecnico.h" alt="" coords="248,83,357,111"/>
+<area shape="rect" id="node11" href="$_texto_literario_8h.html" title="TextoLiterario.h" alt="" coords="54,161,167,189"/>
+<area shape="rect" id="node13" href="$_texto_noticioso_8h.html" title="TextoNoticioso.h" alt="" coords="392,83,511,111"/>
+<area shape="rect" id="node15" href="$_tradutor_8h.html" title="Tradutor.h" alt="" coords="663,83,744,111"/>
+<area shape="rect" id="node3" href="$_database_manager_8cpp.html" title="DatabaseManager.cpp" alt="" coords="302,315,457,343"/>
+<area shape="rect" id="node5" href="$main_8cpp.html" title="main.cpp" alt="" coords="482,315,557,343"/>
+<area shape="rect" id="node8" href="$_tradutor_8cpp.html" title="Tradutor.cpp" alt="" coords="701,315,796,343"/>
+<area shape="rect" id="node10" href="$_texto_tecnico_8cpp.html" title="TextoTecnico.cpp" alt="" coords="241,161,364,189"/>
+<area shape="rect" id="node12" href="$_texto_literario_8cpp.html" title="TextoLiterario.cpp" alt="" coords="54,238,180,266"/>
+<area shape="rect" id="node14" href="$_texto_noticioso_8cpp.html" title="TextoNoticioso.cpp" alt="" coords="489,161,621,189"/>
+<area shape="rect" id="node16" href="$_encomenda_8h.html" title="Encomenda.h" alt="" coords="698,161,800,189"/>
 </map>

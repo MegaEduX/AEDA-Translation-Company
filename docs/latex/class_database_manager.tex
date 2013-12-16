@@ -17,7 +17,7 @@ Collaboration diagram for Database\-Manager\-:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=208pt]{class_database_manager__coll__graph}
+\includegraphics[width=240pt]{class_database_manager__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -33,8 +33,15 @@ void \hyperlink{class_database_manager_a3ea3390feb2069715c7af51ebb41a26c}{get\-\
 \begin{DoxyCompactList}\small\item\em A getter for the texts, separated by type vectors. \end{DoxyCompactList}\item 
 std\-::vector$<$ \hyperlink{class_tradutor}{Tradutor} $\ast$ $>$ \hyperlink{class_database_manager_ad0f509067821ad15a9b25d86d2b515a4}{get\-\_\-tradutores} ()
 \begin{DoxyCompactList}\small\item\em The getter for the translators. \end{DoxyCompactList}\item 
+\hyperlink{class_b_s_t}{B\-S\-T}$<$ \hyperlink{class_tradutor}{Tradutor} $>$ \hyperlink{class_database_manager_a86e4c763689ebc8e3c7b6ed3f01728aa}{get\-\_\-tradutores\-\_\-nao\-\_\-contratados} ()
+\begin{DoxyCompactList}\small\item\em The getter for the non-\/hired translators. \end{DoxyCompactList}\item 
 std\-::vector$<$ \hyperlink{class_encomenda}{Encomenda} $\ast$ $>$ \hyperlink{class_database_manager_a5c2b2ad77ee83de5b1fb2f07cdfc6736}{get\-\_\-encomendas} ()
 \begin{DoxyCompactList}\small\item\em The getter for the orders. \end{DoxyCompactList}\item 
+std\-::unordered\-\_\-set$<$ \hyperlink{class_encomenda}{Encomenda}, \\*
+\hyperlink{structhenc}{henc}, \hyperlink{structeqenc}{eqenc} $>$ \hyperlink{class_database_manager_a7f87b90b9507e3782458c7767f29e90e}{get\-\_\-encomendas\-\_\-concluidas} ()
+\begin{DoxyCompactList}\small\item\em The getter for the fulfilled orders. \end{DoxyCompactList}\item 
+std\-::priority\-\_\-queue$<$ \hyperlink{class_encomenda}{Encomenda} $>$ \hyperlink{class_database_manager_a831d3c7ee70fe6a8ef4442409fa282ec}{get\-\_\-encomendas\-\_\-nao\-\_\-concluidas} ()
+\begin{DoxyCompactList}\small\item\em The getter for the not fulfilled orders. \end{DoxyCompactList}\item 
 bool \hyperlink{class_database_manager_a10e0b6e056bcc0b669e272b839ae92fe}{create\-\_\-update\-\_\-record} (\hyperlink{class_texto}{Texto} $\ast$texto)
 \begin{DoxyCompactList}\small\item\em Creates a new record or updates an existing one. \end{DoxyCompactList}\item 
 bool \hyperlink{class_database_manager_aedc255310da21463f3297f3333898605}{delete\-\_\-record} (\hyperlink{class_texto}{Texto} $\ast$texto)
@@ -47,6 +54,8 @@ bool \hyperlink{class_database_manager_a10fd54af873e6902a3a6ee45f71eb42c}{create
 \begin{DoxyCompactList}\small\item\em Creates a new record or updates an existing one. \end{DoxyCompactList}\item 
 bool \hyperlink{class_database_manager_aa78e5396d0be88098a97703f31fb72ec}{delete\-\_\-record} (\hyperlink{class_encomenda}{Encomenda} $\ast$encomenda)
 \begin{DoxyCompactList}\small\item\em Deletes an existing record. \end{DoxyCompactList}\item 
+bool \hyperlink{class_database_manager_ab1c3330c1db922baf135103db0527fa8}{delete\-\_\-orders\-\_\-before} (int timestamp)
+\item 
 unsigned int \hyperlink{class_database_manager_a5af3db3952fc2af64a43fd0403138c04}{get\-\_\-maior\-\_\-id} (\hyperlink{_database_manager_8h_ad36b2b2507c9846942e0b412d07e5438}{k\-Class} asker)
 \begin{DoxyCompactList}\small\item\em Returns the biggest I\-D record for a class type. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -144,6 +153,13 @@ Creates a new record or updates an existing one.
 \begin{DoxyReturn}{Returns}
 true on success, false on error. 
 \end{DoxyReturn}
+\hypertarget{class_database_manager_ab1c3330c1db922baf135103db0527fa8}{\index{Database\-Manager@{Database\-Manager}!delete\-\_\-orders\-\_\-before@{delete\-\_\-orders\-\_\-before}}
+\index{delete\-\_\-orders\-\_\-before@{delete\-\_\-orders\-\_\-before}!DatabaseManager@{Database\-Manager}}
+\subsubsection[{delete\-\_\-orders\-\_\-before}]{\setlength{\rightskip}{0pt plus 5cm}bool Database\-Manager\-::delete\-\_\-orders\-\_\-before (
+\begin{DoxyParamCaption}
+\item[{int}]{timestamp}
+\end{DoxyParamCaption}
+)}}\label{class_database_manager_ab1c3330c1db922baf135103db0527fa8}
 \hypertarget{class_database_manager_aedc255310da21463f3297f3333898605}{\index{Database\-Manager@{Database\-Manager}!delete\-\_\-record@{delete\-\_\-record}}
 \index{delete\-\_\-record@{delete\-\_\-record}!DatabaseManager@{Database\-Manager}}
 \subsubsection[{delete\-\_\-record}]{\setlength{\rightskip}{0pt plus 5cm}bool Database\-Manager\-::delete\-\_\-record (
@@ -214,6 +230,34 @@ The getter for the orders.
 
 \begin{DoxyReturn}{Returns}
 A vector with all the orders (as \hyperlink{class_encomenda}{Encomenda} object pointers). 
+\end{DoxyReturn}
+\hypertarget{class_database_manager_a7f87b90b9507e3782458c7767f29e90e}{\index{Database\-Manager@{Database\-Manager}!get\-\_\-encomendas\-\_\-concluidas@{get\-\_\-encomendas\-\_\-concluidas}}
+\index{get\-\_\-encomendas\-\_\-concluidas@{get\-\_\-encomendas\-\_\-concluidas}!DatabaseManager@{Database\-Manager}}
+\subsubsection[{get\-\_\-encomendas\-\_\-concluidas}]{\setlength{\rightskip}{0pt plus 5cm}std\-::unordered\-\_\-set$<$ {\bf Encomenda}, {\bf henc}, {\bf eqenc} $>$ Database\-Manager\-::get\-\_\-encomendas\-\_\-concluidas (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_database_manager_a7f87b90b9507e3782458c7767f29e90e}
+
+
+The getter for the fulfilled orders. 
+
+\begin{DoxyReturn}{Returns}
+An unordered set with the orders (as \hyperlink{class_encomenda}{Encomenda} objects). 
+\end{DoxyReturn}
+\hypertarget{class_database_manager_a831d3c7ee70fe6a8ef4442409fa282ec}{\index{Database\-Manager@{Database\-Manager}!get\-\_\-encomendas\-\_\-nao\-\_\-concluidas@{get\-\_\-encomendas\-\_\-nao\-\_\-concluidas}}
+\index{get\-\_\-encomendas\-\_\-nao\-\_\-concluidas@{get\-\_\-encomendas\-\_\-nao\-\_\-concluidas}!DatabaseManager@{Database\-Manager}}
+\subsubsection[{get\-\_\-encomendas\-\_\-nao\-\_\-concluidas}]{\setlength{\rightskip}{0pt plus 5cm}std\-::priority\-\_\-queue$<$ {\bf Encomenda} $>$ Database\-Manager\-::get\-\_\-encomendas\-\_\-nao\-\_\-concluidas (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_database_manager_a831d3c7ee70fe6a8ef4442409fa282ec}
+
+
+The getter for the not fulfilled orders. 
+
+\begin{DoxyReturn}{Returns}
+A priority queue with the orders (as \hyperlink{class_encomenda}{Encomenda} objects). 
 \end{DoxyReturn}
 \hypertarget{class_database_manager_a5af3db3952fc2af64a43fd0403138c04}{\index{Database\-Manager@{Database\-Manager}!get\-\_\-maior\-\_\-id@{get\-\_\-maior\-\_\-id}}
 \index{get\-\_\-maior\-\_\-id@{get\-\_\-maior\-\_\-id}!DatabaseManager@{Database\-Manager}}
@@ -289,6 +333,20 @@ The getter for the translators.
 
 \begin{DoxyReturn}{Returns}
 A vector with all the translators. (as \hyperlink{class_tradutor}{Tradutor} object pointers). 
+\end{DoxyReturn}
+\hypertarget{class_database_manager_a86e4c763689ebc8e3c7b6ed3f01728aa}{\index{Database\-Manager@{Database\-Manager}!get\-\_\-tradutores\-\_\-nao\-\_\-contratados@{get\-\_\-tradutores\-\_\-nao\-\_\-contratados}}
+\index{get\-\_\-tradutores\-\_\-nao\-\_\-contratados@{get\-\_\-tradutores\-\_\-nao\-\_\-contratados}!DatabaseManager@{Database\-Manager}}
+\subsubsection[{get\-\_\-tradutores\-\_\-nao\-\_\-contratados}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-S\-T}$<$ {\bf Tradutor} $>$ Database\-Manager\-::get\-\_\-tradutores\-\_\-nao\-\_\-contratados (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_database_manager_a86e4c763689ebc8e3c7b6ed3f01728aa}
+
+
+The getter for the non-\/hired translators. 
+
+\begin{DoxyReturn}{Returns}
+A binary search tree with all the non-\/hired translators. (as \hyperlink{class_tradutor}{Tradutor} object pointers). 
 \end{DoxyReturn}
 
 
