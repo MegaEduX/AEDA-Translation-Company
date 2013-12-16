@@ -129,13 +129,6 @@ public:
     void get_textos_by_type(std::vector<TextoTecnico *> &textos_tecnicos, std::vector<TextoLiterario *> &textos_literarios, std::vector<TextoNoticioso *> &textos_noticiosos);
     
     /**
-     *  they see me not documentin'
-     *  they hatin'
-     */
-    
-    std::priority_queue<Texto> get_textos_prioridade();
-    
-    /**
      * The getter for the translators.
      * @return A vector with all the translators. (as Tradutor object pointers).
      */
@@ -158,10 +151,17 @@ public:
     
     /**
      * The getter for the fulfilled orders.
-     * @return An unordered set with the orders (as Encomenda object pointers).
+     * @return An unordered set with the orders (as Encomenda objects).
      */
     
     std::unordered_set<Encomenda, henc, eqenc> get_encomendas_concluidas();
+    
+    /**
+     * The getter for the not fulfilled orders.
+     * @return A priority queue with the orders (as Encomenda objects).
+     */
+    
+    std::priority_queue<Encomenda> get_encomendas_nao_concluidas();
     
     /**
      *  Creates a new record or updates an existing one.

@@ -276,12 +276,7 @@ BST<Tradutor> DatabaseManager::get_tradutores_nao_contratados() {
         toInsert.push_back(tradutor);
     }
     
-    if (!toInsert.size())
-        throw EmptyQuery("SELECT * FROM `tradutores` WHERE contratado=0");
-    
     BST<Tradutor> bst = BST<Tradutor>(Tradutor(0, "", 0, std::vector<std::string>()));
-    
-    //  toInsert.erase(toInsert.begin());
     
     for (std::vector<Tradutor>::iterator it = toInsert.begin(); it != toInsert.end(); ++it)
         bst.insert(*it);
@@ -363,6 +358,44 @@ std::unordered_set<Encomenda, henc, eqenc> DatabaseManager::get_encomendas_concl
     }
     
     return return_set;
+}
+
+std::priority_queue<Encomenda> DatabaseManager::get_encomendas_nao_concluidas() {
+    std::priority_queue<Encomenda> return_pq;
+    
+    init_db(db);
+    
+    query qry(db, string("SELECT * FROM `encomendas` WHERE `completion_date` > " + boost::lexical_cast<string>(Additions::currentTimestamp())).c_str());
+    
+    for (query::iterator i = qry.begin(); i != qry.end(); ++i) {
+        unsigned int id, texto_id, duracao_max_dias, trad_id;
+        
+        uint64_t timestamp_entrega;
+        
+        std::string lingua_destino;
+        
+        boost::tie(id, texto_id, lingua_destino, duracao_max_dias, trad_id, timestamp_entrega) = (*i).get_columns<int, int, std::string, int, int, long long>(0, 1, 2, 3, 4, 5);
+        
+        Texto *texto = _get_texto_with_id(texto_id);
+        
+        Tradutor *tradutor = nullptr;
+        
+        std::vector<Tradutor *> tradutores = get_tradutores();
+        
+        for (int i = 0; i < tradutores.size(); i++) {
+            if (tradutores[i]->get_id() == trad_id) {
+                tradutor = tradutores[i];
+                
+                break;
+            }
+        }
+        
+        Encomenda encomenda = Encomenda(id, texto, lingua_destino, duracao_max_dias, tradutor, timestamp_entrega);
+        
+        return_pq.push(encomenda);
+    }
+    
+    return return_pq;
 }
 
 bool DatabaseManager::create_update_record(Texto *texto) {

@@ -28,16 +28,12 @@ using namespace std;
 static const int baseASCIINumber = 48;
 
 #ifdef WIN32
-
 static const int returnKey = 13;
-static const int escKey = 27;
-
 #else
-
 static const int returnKey = 10;
-static const int escKey = 27;
-
 #endif
+
+static const int escKey = 27;
 
 static DatabaseManager dbman = DatabaseManager(db_path);
 
@@ -66,6 +62,9 @@ void edit_record();
 void edit_record_step2(unsigned int obj_type);
 
 void edit_record_step3(Tradutor *obj);
+void edit_record_step3(Encomenda *obj);
+
+void delete_orders_before();
 
 template <class T>
 void delete_record_step3(T *obj);
@@ -100,8 +99,9 @@ int main(int argc, const char * argv[]) {
     
     Additions::clearConsole();
     
-    cout << "  /////////////////////////////" << endl;
-    cout << " //   Translation Company   //" << endl;
+    cout << "   /////////////////////////////" << endl;
+    cout << "  //   Translation Company   //" << endl;
+    cout << " //            2.0          //" << endl;
     cout << "/////////////////////////////" << endl;
     
     cout << endl;
@@ -806,7 +806,7 @@ void search_translators_step2(unsigned int search_type) {
                             
                             Additions::clearConsole();
                             
-                            search_translators_step2(search_type);
+                            search_translators();
                             
                             done = true;
                             
@@ -965,8 +965,8 @@ void search_orders() {
     
     cout << endl;
     
-    cout << "5. List All Unfinished Orders" << endl;
-    cout << "6. List All Finished Orders" << endl;
+    cout << "5. List All Unfinished Orders (using priority_queue)" << endl;
+    cout << "6. List All Finished Orders (using unordered_set)" << endl;
     
     cout << endl;
     
@@ -982,7 +982,7 @@ void search_orders() {
     
     int ch = _getch();
     
-    while (ch != escKey && (ch < baseASCIINumber + 1 || ch > baseASCIINumber + 7)) {
+    while (ch != escKey && (ch < baseASCIINumber + 1 || ch > baseASCIINumber + 8)) {
         cout << endl;
         
         cout << endl << "Invalid choice." << endl;
@@ -996,8 +996,8 @@ void search_orders() {
         
         cout << endl;
         
-        cout << "5. List All Unfinished Orders" << endl;
-        cout << "6. List All Finished Orders" << endl;
+        cout << "5. List All Unfinished Orders (using priority_queue)" << endl;
+        cout << "6. List All Finished Orders (using unordered_set)" << endl;
         
         cout << endl;
         
@@ -1114,28 +1114,32 @@ void search_orders_step2(unsigned int search_type) {
                 break;
             }
                 
-            case 5:
+            case 5: {
+                priority_queue<Encomenda> encs = dbman.get_encomendas_nao_concluidas();
                 
-                if (!(enc->is_fulfilled()))
-                    display_info(enc);
+                while (!encs.empty()) {
+                    display_info(&encs.top());
+                    
+                    encs.pop();
+                }
                 
                 found = true;
                 
                 break;
+            }
                 
             case 6: {
+                unordered_set<Encomenda, henc, eqenc> unful = dbman.get_encomendas_concluidas();
                 
-                std::unordered_set<Encomenda, henc, eqenc> unful = dbman.get_encomendas_concluidas();
-                
-                for (auto &elem: unful) {
+                for (auto &elem: unful)
                     display_info(&elem);
-                }
+                
+                found = true;
                 
                 break;
             }
                 
             case 7: {
-                
                 display_info(enc);
                 
                 found = true;
@@ -1147,6 +1151,9 @@ void search_orders_step2(unsigned int search_type) {
                 
                 break;
         }
+        
+        if (found)
+            break;
     }
     
     cout << "End of listing." << endl;
@@ -1168,7 +1175,7 @@ void display_info(const Encomenda *enc) {
     cout << "Source Language: " << enc->get_texto()->get_lingua() << endl;
     cout << "Destination Language: " << enc->get_lingua_destino() << endl;
     cout << "Text Size (in words): " << enc->get_texto()->get_palavras() << endl;
-    cout << "Date of Delivery: " << Additions::timestampToString(enc->get_timestamp_entrega()) << endl;
+    cout << "Date of Delivery (per v1. method): " << Additions::timestampToString(enc->get_timestamp_entrega()) << endl;
     cout << "Deliveried? " << (time(NULL) > enc->get_timestamp_entrega() ? "Yes" : "No") << "." << endl;
     
     cout << endl;
@@ -1322,14 +1329,17 @@ void search_texts_step2(unsigned int search_type) {
             case 4: {
                 int in_intval = boost::lexical_cast<int>(str_in);
                 
-                vector<Encomenda *> orders = dbman.get_encomendas();
+                //vector<Encomenda *> orders = dbman.get_encomendas();
                 
-                for (unsigned int i = 0; i < orders.size(); i++)
-                    if (orders[i]->get_texto()->get_id() == in_intval) {
-                        display_info(txt);
+                std::unordered_set<Encomenda, henc, eqenc> orders = dbman.get_encomendas_concluidas();
+                
+                for (auto &order : orders) {
+                    if ((&order)->get_texto()->get_id() == in_intval) {
+                        display_info(&order);
                         
                         found = true;
                     }
+                }
                 
                 break;
             }
@@ -1538,7 +1548,7 @@ void add_record() {
     
     cout << endl << "Language Count: " << languages.size() << endl;
     
-    cout << endl << "Hired? (1 for Yes, 0 for No) ";
+    cout << endl << "Hired? (1 for Yes, 0 for No): ";
     
     bool hired_stat = false;
     
@@ -1614,6 +1624,11 @@ void edit_record() {
     cout << endl;
     
     cout << "4. Edit an Unemployed Translator" << endl;
+    cout << "5. Edit an Order from the Pending \"Wallet\"" << endl;
+    
+    cout << endl;
+    
+    cout << "6. Clean Finished Orders" << endl;
     
     cout << endl;
     
@@ -1637,8 +1652,17 @@ void edit_record() {
             case baseASCIINumber + 2:
             case baseASCIINumber + 3:
             case baseASCIINumber + 4:
+            case baseASCIINumber + 5:
                 
                 edit_record_step2(ch - baseASCIINumber);
+                
+                break;
+                
+            case baseASCIINumber + 6:
+                
+                Additions::clearConsole();
+                
+                delete_orders_before();
                 
                 break;
                 
@@ -1676,7 +1700,7 @@ void edit_record_step2(unsigned int obj_type) {
     
     string str_in = Additions::getline();
     
-    while (!Additions::checkForOnlyNumeric(str_in)) {
+    while (!str_in.size() || !Additions::checkForOnlyNumeric(str_in)) {
         if (Additions::gotESC(str_in)) {
             Additions::clearConsole();
             
@@ -1710,11 +1734,29 @@ void edit_record_step2(unsigned int obj_type) {
         }
             
         case 2: {
-            vector<Encomenda *> ord = dbman.get_encomendas();
+            /*
+             *  Iterating through the vector would be faster (and I think it was
+             *  used in v1), but we are doing it this way here so we stay inside
+             *  the project guidelines a bit more. :)
+             */
             
-            for (int i = 0; i < ord.size(); i++)
-                if (ord[i]->get_id() == in_intval) {
-                    delete_record_step3(ord[i]);
+            priority_queue<Encomenda> prqueue = dbman.get_encomendas_nao_concluidas();
+            
+            while (!prqueue.empty()) {
+                if (prqueue.top().get_id() == in_intval) {
+                    edit_record_step3(const_cast<Encomenda *>(&prqueue.top()));
+                    
+                    return;
+                }
+                
+                prqueue.pop();
+            }
+            
+            unordered_set<Encomenda> uset = dbman.get_encomendas_concluidas();
+            
+            for (auto &enc : uset)
+                if (enc->get_id() == in_intval) {
+                    edit_record_step3(enc);
                     
                     return;
                 }
@@ -1744,6 +1786,20 @@ void edit_record_step2(unsigned int obj_type) {
                     
                     return;
                 }
+            }
+        }
+            
+        case 5: {
+            priority_queue<Encomenda> enc = dbman.get_encomendas_nao_concluidas();
+            
+            while (!enc.empty()) {
+                if (enc.top().get_id() == in_intval) {
+                    edit_record_step3(const_cast<Encomenda *>(&enc.top()));
+                    
+                    return;
+                }
+                
+                enc.pop();
             }
         }
             
@@ -1946,6 +2002,121 @@ void edit_record_step3(Tradutor *obj) {
     }
 }
 
+void edit_record_step3(Encomenda *obj) {
+    cout << "-> Order Editor (ID: " << obj->get_id() << ")" << endl;
+    
+    cout << endl;
+    
+    cout << "1. Edit Record" << endl;
+    cout << "2. Delete Record" << endl;
+    
+    cout << endl;
+    
+    cout << "ESC. Go Back";
+    
+    cout << endl;
+    
+    cout << endl << "Please press the key corresponding to your new choice. ";
+    
+    int ch = _getch();
+    
+    switch (ch) {
+        case escKey:
+            
+            Additions::clearConsole();
+            
+            edit_record();
+            
+            break;
+            
+        case baseASCIINumber + 1: {
+            cout << endl << endl;
+            
+            cout << "Due to the nature of this record, you may only change its expected completion date." << endl;
+            cout << endl;
+            cout << "Changing the completion date to \"now\" or to a past date will mark the order as done. (The reverse also happens.)" << endl;
+            
+            while (true) {
+                cout << endl << "Completion Timestamp [" << obj->get_timestamp_entrega() << "] : ";
+                
+                string new_ctstp_str = Additions::getline();
+                
+                if (Additions::gotESC(new_ctstp_str)) {
+                    edit_record();
+                    
+                    return;
+                }
+                
+                if (new_ctstp_str.size() || new_ctstp_str != "") {
+                    if (Additions::checkForOnlyNumeric(new_ctstp_str)) {
+                        try {
+                            int new_ctstp = boost::lexical_cast<int>(new_ctstp_str);
+                            
+                            obj->set_timestamp_entrega(new_ctstp);
+                            
+                            break;
+                        } catch (...) {
+                            cout << endl << "A conversion error has happened. Perhaps the timestamp is too big?" << endl;
+                        }
+                    } else
+                        cout << endl << "Timestamp must be an integer. Please retry." << endl;
+                } else {
+                    break;
+                }
+            }
+            
+            dbman.create_update_record(obj);
+            
+            cout << endl << endl << "The operation was successful.";
+            cout << endl << "Press any key to continue.";
+            
+            _getch();
+            
+            Additions::clearConsole();
+            
+            edit_record();
+            
+            return;
+            
+            break;
+        }
+            
+        case baseASCIINumber + 2: {
+            dbman.delete_record(obj);
+            
+            cout << endl << endl << "The operation was successful.";
+            cout << endl << "Press any key to continue.";
+            
+            _getch();
+            
+            Additions::clearConsole();
+            
+            edit_record();
+            
+            return;
+            
+            break;
+        }
+            
+        default:
+            
+            cout << endl << "Invalid choice." << endl;
+            
+            cout << endl;
+            
+            cout << "1. Edit Record";
+            cout << "2. Delete Record";
+            
+            cout << endl;
+            
+            cout << "ESC. Go Back" << endl;
+            
+            cout << endl << "Please press the key corresponding to your new choice. ";
+            
+            break;
+    }
+}
+
 template <class T>
 void delete_record_step3(T *obj) {
     cout << "-> Order Editor (ID: " << obj->get_id() << ")" << endl;
@@ -2007,4 +2178,65 @@ void delete_record_step3(T *obj) {
             
             break;
     }
+}
+
+void delete_orders_before() {
+    cout << "-> Past Order Clean-Up" << endl;
+    
+    cout << endl;
+    
+    cout << "This function will remove all completed orders made before a given timestamp (in seconds since 1970)." << endl;
+    
+    cout << endl;
+    
+    cout << "Timestamp: ";
+    
+    string str_in = Additions::getline();
+    
+    while (!Additions::checkForOnlyNumeric(str_in)) {
+        if (Additions::gotESC(str_in)) {
+            Additions::clearConsole();
+            
+            edit_record();
+            
+            return;
+        }
+        
+        cout << endl << "The timestamp must not contain non-numeric characters." << endl << endl;
+        cout << "Timestamp: ";
+        
+        str_in = Additions::getline();
+    }
+    
+    int in_intval = boost::lexical_cast<int>(str_in);
+    
+    cout << endl << endl;
+    
+    unordered_set<Encomenda, henc, eqenc> unful = dbman.get_encomendas_concluidas();
+    
+    unsigned int count = 0;
+    
+    for (auto &elem: unful)
+        if (in_intval > elem.get_timestamp_entrega()) {
+            dbman.delete_record(const_cast<Encomenda *>(&elem));
+            
+            count++;
+        }
+    
+    cout << "Done. ";
+    
+    if (count)
+        cout << count;
+    else
+        cout << "0";
+    
+    cout << " " << "records were deleted." << endl;
+    
+    cout << endl;
+    
+    cout << "Press any key to go back to the Database Management menu. ";
+    
+    _getch();
+    
+    manage_database();
 }

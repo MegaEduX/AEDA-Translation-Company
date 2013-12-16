@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "translation_company/main.cpp"
-            timestampString = "406642256.309625"
+            timestampString = "408912617.362006"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "414"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "translation_company/main.cpp"
-            timestampString = "406642256.309625"
+            timestampString = "408912617.362006"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "420"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "translation_company/main.cpp"
-            timestampString = "406642256.309625"
+            timestampString = "408912617.362006"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "426"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "translation_company/main.cpp"
-            timestampString = "406642256.309625"
+            timestampString = "408912617.362006"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "434"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "translation_company/main.cpp"
-            timestampString = "406642256.309625"
+            timestampString = "408912617.362006"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "436"
@@ -152,43 +152,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "translation_company/DatabaseManager.cpp"
-            timestampString = "407247334.447647"
+            timestampString = "408912617.362006"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "344"
+            endingLineNumber = "344"
+            landmarkName = "DatabaseManager::get_encomendas_concluidas()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "translation_company/DatabaseManager.cpp"
+            timestampString = "408912617.362006"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "342"
+            endingLineNumber = "342"
+            landmarkName = "DatabaseManager::get_encomendas_concluidas()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "translation_company/DatabaseManager.cpp"
+            timestampString = "408912617.362006"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "349"
             endingLineNumber = "349"
-            landmarkName = "DatabaseManager::get_encomendas_concluidas()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "translation_company/DatabaseManager.cpp"
-            timestampString = "407247334.447647"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "347"
-            endingLineNumber = "347"
-            landmarkName = "DatabaseManager::get_encomendas_concluidas()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "translation_company/DatabaseManager.cpp"
-            timestampString = "407247334.447647"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "354"
-            endingLineNumber = "354"
             landmarkName = "DatabaseManager::get_encomendas_concluidas()"
             landmarkType = "5">
             <Locations>
@@ -199,11 +199,11 @@
                   symbolName = "DatabaseManager::get_encomendas_concluidas()"
                   moduleName = "translation_company"
                   urlString = "file:///Users/MegaEduX/Dropbox/Coding/Miscellaneous/translation_company/translation_company/DatabaseManager.cpp"
-                  timestampString = "407268816.78334"
+                  timestampString = "408912777.525113"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "354"
-                  endingLineNumber = "354"
+                  startingLineNumber = "349"
+                  endingLineNumber = "349"
                   offsetFromSymbolStart = "2594">
                </Location>
                <Location
@@ -213,11 +213,11 @@
                   symbolName = "DatabaseManager::get_encomendas_concluidas()"
                   moduleName = "translation_company"
                   urlString = "file:///Users/MegaEduX/Dropbox/Coding/Miscellaneous/translation_company/translation_company/DatabaseManager.cpp"
-                  timestampString = "407268816.783705"
+                  timestampString = "408912777.525385"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "354"
-                  endingLineNumber = "354"
+                  startingLineNumber = "349"
+                  endingLineNumber = "349"
                   offsetFromSymbolStart = "2646">
                </Location>
             </Locations>
@@ -230,11 +230,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "translation_company/DatabaseManager.cpp"
-            timestampString = "407247334.447647"
+            timestampString = "408912617.362006"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "357"
-            endingLineNumber = "357"
+            startingLineNumber = "352"
+            endingLineNumber = "352"
             landmarkName = "DatabaseManager::get_encomendas_concluidas()"
             landmarkType = "5">
          </BreakpointContent>
@@ -246,11 +246,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "translation_company/DatabaseManager.cpp"
-            timestampString = "407247334.447647"
+            timestampString = "408912617.362006"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "328"
-            endingLineNumber = "328"
+            startingLineNumber = "323"
+            endingLineNumber = "323"
             landmarkName = "DatabaseManager::get_encomendas()"
             landmarkType = "5">
             <Locations>
@@ -261,11 +261,11 @@
                   symbolName = "DatabaseManager::get_encomendas()"
                   moduleName = "translation_company"
                   urlString = "file:///Users/MegaEduX/Dropbox/Coding/Miscellaneous/translation_company/translation_company/DatabaseManager.cpp"
-                  timestampString = "407268816.784755"
+                  timestampString = "408912777.526061"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "328"
-                  endingLineNumber = "328"
+                  startingLineNumber = "323"
+                  endingLineNumber = "323"
                   offsetFromSymbolStart = "1476">
                </Location>
                <Location
@@ -275,11 +275,11 @@
                   symbolName = "DatabaseManager::get_encomendas()"
                   moduleName = "translation_company"
                   urlString = "file:///Users/MegaEduX/Dropbox/Coding/Miscellaneous/translation_company/translation_company/DatabaseManager.cpp"
-                  timestampString = "407268816.785059"
+                  timestampString = "408912777.526379"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "328"
-                  endingLineNumber = "328"
+                  startingLineNumber = "323"
+                  endingLineNumber = "323"
                   offsetFromSymbolStart = "1821">
                </Location>
                <Location
@@ -289,11 +289,11 @@
                   symbolName = "DatabaseManager::get_encomendas()"
                   moduleName = "translation_company"
                   urlString = "file:///Users/MegaEduX/Dropbox/Coding/Miscellaneous/translation_company/translation_company/DatabaseManager.cpp"
-                  timestampString = "407268816.785353"
+                  timestampString = "408912777.526689"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "328"
-                  endingLineNumber = "328"
+                  startingLineNumber = "323"
+                  endingLineNumber = "323"
                   offsetFromSymbolStart = "2234">
                </Location>
                <Location
@@ -303,11 +303,11 @@
                   symbolName = "DatabaseManager::get_encomendas()"
                   moduleName = "translation_company"
                   urlString = "file:///Users/MegaEduX/Dropbox/Coding/Miscellaneous/translation_company/translation_company/DatabaseManager.cpp"
-                  timestampString = "407268816.786534"
+                  timestampString = "408912777.526972"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "328"
-                  endingLineNumber = "328"
+                  startingLineNumber = "323"
+                  endingLineNumber = "323"
                   offsetFromSymbolStart = "2268">
                </Location>
                <Location
@@ -317,11 +317,11 @@
                   symbolName = "DatabaseManager::get_encomendas()"
                   moduleName = "translation_company"
                   urlString = "file:///Users/MegaEduX/Dropbox/Coding/Miscellaneous/translation_company/translation_company/DatabaseManager.cpp"
-                  timestampString = "407268816.78694"
+                  timestampString = "408912777.527258"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "328"
-                  endingLineNumber = "328"
+                  startingLineNumber = "323"
+                  endingLineNumber = "323"
                   offsetFromSymbolStart = "2403">
                </Location>
             </Locations>
@@ -334,11 +334,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "translation_company/DatabaseManager.cpp"
-            timestampString = "407247334.447647"
+            timestampString = "408912617.362006"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "319"
-            endingLineNumber = "319"
+            startingLineNumber = "314"
+            endingLineNumber = "314"
             landmarkName = "DatabaseManager::get_encomendas()"
             landmarkType = "5">
          </BreakpointContent>
@@ -350,11 +350,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "translation_company/DatabaseManager.cpp"
-            timestampString = "407247334.447647"
+            timestampString = "408912617.362006"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "321"
-            endingLineNumber = "321"
+            startingLineNumber = "316"
+            endingLineNumber = "316"
             landmarkName = "DatabaseManager::get_encomendas()"
             landmarkType = "5">
          </BreakpointContent>
@@ -366,11 +366,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "translation_company/DatabaseManager.cpp"
-            timestampString = "407247334.447647"
+            timestampString = "408912617.362006"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "330"
-            endingLineNumber = "330">
+            startingLineNumber = "325"
+            endingLineNumber = "325">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -380,11 +380,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "translation_company/DatabaseManager.cpp"
-            timestampString = "407247334.447647"
+            timestampString = "408912617.362006"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "334"
-            endingLineNumber = "334"
+            startingLineNumber = "329"
+            endingLineNumber = "329"
             landmarkName = "DatabaseManager::get_encomendas_concluidas()"
             landmarkType = "5">
             <Locations>
@@ -395,11 +395,11 @@
                   symbolName = "DatabaseManager::get_encomendas_concluidas()"
                   moduleName = "translation_company"
                   urlString = "file:///Users/MegaEduX/Dropbox/Coding/Miscellaneous/translation_company/translation_company/DatabaseManager.cpp"
-                  timestampString = "407268816.791006"
+                  timestampString = "408912777.528446"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "335"
-                  endingLineNumber = "335"
+                  startingLineNumber = "330"
+                  endingLineNumber = "330"
                   offsetFromSymbolStart = "1093">
                </Location>
                <Location
@@ -409,11 +409,11 @@
                   symbolName = "DatabaseManager::get_encomendas_concluidas()"
                   moduleName = "translation_company"
                   urlString = "file:///Users/MegaEduX/Dropbox/Coding/Miscellaneous/translation_company/translation_company/DatabaseManager.cpp"
-                  timestampString = "407268816.791316"
+                  timestampString = "408912777.52874"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "335"
-                  endingLineNumber = "335"
+                  startingLineNumber = "330"
+                  endingLineNumber = "330"
                   offsetFromSymbolStart = "1721">
                </Location>
             </Locations>
@@ -426,11 +426,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "translation_company/DatabaseManager.cpp"
-            timestampString = "407247334.447647"
+            timestampString = "408912617.362006"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "340"
-            endingLineNumber = "340"
+            startingLineNumber = "335"
+            endingLineNumber = "335"
             landmarkName = "DatabaseManager::get_encomendas_concluidas()"
             landmarkType = "5">
          </BreakpointContent>
@@ -457,7 +457,7 @@
                   symbolName = "test_2_load()"
                   moduleName = "translation_company"
                   urlString = "file:///Users/MegaEduX/Dropbox/Coding/Miscellaneous/translation_company/translation_company/Test.cpp"
-                  timestampString = "407268816.793011"
+                  timestampString = "408912777.529386"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "54"
@@ -471,7 +471,7 @@
                   symbolName = "test_2_load()"
                   moduleName = "translation_company"
                   urlString = "file:///Users/MegaEduX/Dropbox/Coding/Miscellaneous/translation_company/translation_company/Test.cpp"
-                  timestampString = "407268816.793442"
+                  timestampString = "408912777.529634"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "54"
@@ -488,11 +488,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "translation_company/main.cpp"
-            timestampString = "407268816.688076"
+            timestampString = "408912617.362006"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1698"
-            endingLineNumber = "1698"
+            startingLineNumber = "1722"
+            endingLineNumber = "1722"
             landmarkName = "edit_record_step2(unsigned int obj_type)"
             landmarkType = "7">
          </BreakpointContent>
@@ -504,11 +504,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "translation_company/main.cpp"
-            timestampString = "407268816.688076"
+            timestampString = "408912617.362006"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1704"
-            endingLineNumber = "1704"
+            startingLineNumber = "1728"
+            endingLineNumber = "1728"
             landmarkName = "edit_record_step2(unsigned int obj_type)"
             landmarkType = "7">
          </BreakpointContent>
@@ -520,11 +520,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "translation_company/main.cpp"
-            timestampString = "407268816.688076"
+            timestampString = "408912617.362006"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1699"
-            endingLineNumber = "1699"
+            startingLineNumber = "1723"
+            endingLineNumber = "1723"
             landmarkName = "edit_record_step2(unsigned int obj_type)"
             landmarkType = "7">
          </BreakpointContent>
@@ -536,11 +536,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "translation_company/main.cpp"
-            timestampString = "407268816.688076"
+            timestampString = "408912617.362006"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1700"
-            endingLineNumber = "1700"
+            startingLineNumber = "1724"
+            endingLineNumber = "1724"
             landmarkName = "edit_record_step2(unsigned int obj_type)"
             landmarkType = "7">
          </BreakpointContent>
@@ -552,12 +552,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "translation_company/main.cpp"
-            timestampString = "407248802.829746"
+            timestampString = "408912617.362006"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "786"
             endingLineNumber = "786"
             landmarkName = "search_translators_step2(unsigned int search_type)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "translation_company/main.cpp"
+            timestampString = "408912727.976197"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1718"
+            endingLineNumber = "1718"
+            landmarkName = "edit_record_step2(unsigned int obj_type)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

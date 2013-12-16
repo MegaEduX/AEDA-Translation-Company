@@ -147,6 +147,16 @@ public:
      */
     
     bool is_fulfilled() const;
+    
+    /**
+     *  Compares two orders, using the complexity of their texts as the comparision method.
+     *  @param cmp The object to compare to.
+     *  @return true or false, depending if the compared object is smaller than the current one or not.
+     */
+    
+    inline bool operator< (const Encomenda &cmp) const {
+        return !(_texto->complexidade() < cmp.get_texto()->complexidade());
+    }
 };
 
 #endif /* defined(__translation_company__Encomenda__) */

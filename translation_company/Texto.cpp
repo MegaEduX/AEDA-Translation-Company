@@ -84,5 +84,5 @@ void Texto::set_conteudo(std::string conteudo) {
 }
 
 unsigned int Texto::complexidade() {
-    return (unsigned int)(this->get_palavras() / 10);
+    return (unsigned int)(this->get_palavras() * 10);   //  /10 was too low for testing.
 }
