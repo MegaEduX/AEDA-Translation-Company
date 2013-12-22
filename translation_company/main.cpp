@@ -302,7 +302,7 @@ void order_translation() {
     }
     
     if (!possible_translators.size()) {
-        cout << endl << endl << "We don't currently have any translator that can do the requested translation job.";
+        cout << endl << endl << "We don't currently have any translator that can perform the requested translation job.";
         cout << endl << "Press any key to go back to the main menu.";
         
         _getch();
@@ -1752,11 +1752,11 @@ void edit_record_step2(unsigned int obj_type) {
                 prqueue.pop();
             }
             
-            unordered_set<Encomenda> uset = dbman.get_encomendas_concluidas();
+            unordered_set<Encomenda, henc, eqenc> uset = dbman.get_encomendas_concluidas();
             
             for (auto &enc : uset)
-                if (enc->get_id() == in_intval) {
-                    edit_record_step3(enc);
+                if (enc.get_id() == in_intval) {
+                    edit_record_step3(const_cast<Encomenda *>(&enc));
                     
                     return;
                 }

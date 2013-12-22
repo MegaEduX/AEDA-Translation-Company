@@ -7,7 +7,6 @@ var searchData=
   ['encomenda',['Encomenda',['../class_encomenda.html',1,'Encomenda'],['../class_encomenda.html#acd872b2d444252423746ee7529b48ae8',1,'Encomenda::Encomenda(unsigned int id, Texto *texto, std::string lingua_destino, unsigned int duracao_max_dias)'],['../class_encomenda.html#a5009ce207f856836a16e93a6454e93b8',1,'Encomenda::Encomenda(unsigned int id, Texto *texto, std::string lingua_destino, unsigned int duracao_max_dias, Tradutor *tradutor, uint64_t timestamp_entrega)']]],
   ['encomenda_2ecpp',['Encomenda.cpp',['../_encomenda_8cpp.html',1,'']]],
   ['encomenda_2eh',['Encomenda.h',['../_encomenda_8h.html',1,'']]],
-  ['eqcmp',['eqcmp',['../structeqcmp.html',1,'']]],
   ['eqenc',['eqenc',['../structeqenc.html',1,'']]],
   ['explode',['explode',['../namespace_additions.html#a1abf6964ffd9abf97c743c514c2f401a',1,'Additions']]]
 ];

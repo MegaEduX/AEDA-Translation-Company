@@ -16,10 +16,6 @@
 
 class Encomenda;
 
-typedef enum {
-    kOperatorOpNameComparision
-} kOperatorOp;
-
 /**
  *  Tradutor class.
  *  This class packages the details about a translator and provides some functionality on them.
@@ -27,8 +23,6 @@ typedef enum {
 
 class Tradutor {
     static unsigned int _maior_id_tradutor;
-    
-    static kOperatorOp _less_than_operation;
     
     bool _contratado;
     
@@ -168,19 +162,14 @@ public:
     
     /**
      *  Overloaded comparision < operator.
-     *  Can be changed with changeOperatorAction(kOperatorOp op).
-     *  @see changeOperatorAction(kOperatorOp op)
+     *  Compares the names of two translators.
      *  @param trad The translator to compare to.
      *  @result The comparision result.
      */
     
-    bool operator<(const Tradutor &trad) const;
-    
-    /*
-     *  TBD
-     */
-    
-    void changeOperatorAction(kOperatorOp op);
+    bool inline operator<(const Tradutor &trad) const {
+        return (_nome.compare(trad.get_nome()) < 0);
+    }
 };
 
 #endif /* defined(__translation_company__Tradutor__) */

@@ -30,7 +30,7 @@
 
 /**
  *  Text Types enum.
- *  Defines the types of the text class as a typedef.
+ *  Defines the types of the text class.
  */
 
 typedef enum {
@@ -51,21 +51,25 @@ typedef enum {
     kClassEncomenda     /**< Class Order. */
 } kClass;               /**< Class Enum. */
 
+/**
+ *  Encomenda Comparator.
+ *  This structure defines the comparator between the id's of two orders, for usage with an unordered set.
+ */
+
 struct eqenc {
     bool operator() (const Encomenda &e1, const Encomenda &e2) const {
         return e1.get_id() == e2.get_id();
     }
 };
 
+/**
+ *  Encomenda Hashes.
+ *  This structure defines the hash of an order, for usage with an unordered set.
+ */
+
 struct henc {
     int operator() (const Encomenda &e1) const {
         return e1.get_id();
-    }
-};
-
-struct eqcmp {
-    bool operator() (const Encomenda &e1, const Encomenda &e2) const {
-        return e1.get_tradutor()->tempoEstimado(e1.get_texto()) < e2.get_tradutor()->tempoEstimado(e2.get_texto());
     }
 };
 
@@ -210,6 +214,12 @@ public:
      */
     
     bool delete_record(Encomenda *encomenda);
+    
+    /**
+     *  Deletes all the order records before a given timestamp.
+     *  @param timestamp The minimum timestamp the orders should have to be kept.
+     *  @return true on success, false on error.
+     */
     
     bool delete_orders_before(int timestamp);
     

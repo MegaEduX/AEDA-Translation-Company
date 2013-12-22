@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -153,8 +153,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a33f43a54dbef52d8a25796c5ecd6c00a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tradutor.html#a33f43a54dbef52d8a25796c5ecd6c00a">operator&lt;</a> (const <a class="el" href="class_tradutor.html">Tradutor</a> &amp;trad) const </td></tr>
 <tr class="memdesc:a33f43a54dbef52d8a25796c5ecd6c00a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded comparision &lt; operator.  <a href="#a33f43a54dbef52d8a25796c5ecd6c00a">More...</a><br/></td></tr>
 <tr class="separator:a33f43a54dbef52d8a25796c5ecd6c00a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0478428426465ec21880ad0066501123"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tradutor.html#a0478428426465ec21880ad0066501123">changeOperatorAction</a> (<a class="el" href="_tradutor_8h.html#a5f121f8f8a3004c289fc2f33c3baa5d0">kOperatorOp</a> op)</td></tr>
-<tr class="separator:a0478428426465ec21880ad0066501123"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -272,22 +270,6 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a0478428426465ec21880ad0066501123"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Tradutor::changeOperatorAction </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="_tradutor_8h.html#a5f121f8f8a3004c289fc2f33c3baa5d0">kOperatorOp</a>&#160;</td>
-          <td class="paramname"><em>op</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="ab55718903fb3e7cc5c1b21b87d64393a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -432,6 +414,9 @@ Static Public Member Functions</h2></td></tr>
 <a class="anchor" id="a33f43a54dbef52d8a25796c5ecd6c00a"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool Tradutor::operator&lt; </td>
@@ -441,11 +426,15 @@ Static Public Member Functions</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Overloaded comparision &lt; operator. </p>
-<p>Can be changed with <a class="el" href="class_tradutor.html#a0478428426465ec21880ad0066501123">changeOperatorAction(kOperatorOp op)</a>. </p>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_tradutor.html#a0478428426465ec21880ad0066501123">changeOperatorAction(kOperatorOp op)</a> </dd></dl>
+<p>Compares the names of two translators. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">trad</td><td>The translator to compare to. </td></tr>
@@ -635,7 +624,7 @@ Static Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 16 2013 19:26:25 for Translation Company (AEDA) by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Dec 22 2013 15:51:16 for Translation Company (AEDA) by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

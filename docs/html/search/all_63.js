@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['changeoperatoraction',['changeOperatorAction',['../class_tradutor.html#a0478428426465ec21880ad0066501123',1,'Tradutor']]],
   ['checkforonlynumeric',['checkForOnlyNumeric',['../namespace_additions.html#a5b3d2c5561dcb114fbd92abc7acadc4d',1,'Additions']]],
   ['clearconsole',['clearConsole',['../namespace_additions.html#af13c3c94d99ca27753ac564159b625d3',1,'Additions']]],
   ['complexidade',['complexidade',['../class_texto.html#a92e0fb258179999bc6df2a9da1713a1d',1,'Texto::complexidade()'],['../class_texto_literario.html#a286c1693b71a45d4d577dcd15871892c',1,'TextoLiterario::complexidade()'],['../class_texto_noticioso.html#a1db491d92e2a467d258f0f470f994981',1,'TextoNoticioso::complexidade()'],['../class_texto_tecnico.html#aeeeff7367e226e4fc0f0d4cdb692e85d',1,'TextoTecnico::complexidade()']]],

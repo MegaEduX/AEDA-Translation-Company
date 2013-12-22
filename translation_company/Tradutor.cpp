@@ -123,7 +123,3 @@ bool Tradutor::get_contratado() {
 void Tradutor::set_contratado(bool cont) {
     _contratado = cont;
 }
-
-bool Tradutor::operator<(const Tradutor &trad) const {
-    return _nome.compare(trad.get_nome());
-}
