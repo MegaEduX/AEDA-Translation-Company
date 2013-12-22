@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Texto">
+    <Position X="4" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAACABCAEAACQAkgAAIAACAAAAASAA=</HashCode>
+      <FileName>c:\Users\MegaEduX\Downloads\translation-company-master\translation_company\Texto.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextoLiterario">
+    <Position X="0.75" Y="5.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAggAEEAAAAAAAAgAAACAAAAgAA=</HashCode>
+      <FileName>c:\Users\MegaEduX\Downloads\translation-company-master\translation_company\TextoLiterario.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextoNoticioso">
+    <Position X="4" Y="5.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAIABAAAAAAAAAAAAEAACAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>c:\Users\MegaEduX\Downloads\translation-company-master\translation_company\TextoNoticioso.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextoTecnico">
+    <Position X="7.25" Y="5.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAABAAAAAAAAAAAAgEAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>c:\Users\MegaEduX\Downloads\translation-company-master\translation_company\TextoTecnico.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tradutor">
+    <Position X="11" Y="1.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>EAAAIACAQAAAAAAABDBAAAAAAAAEBABgZAAkCIBIQAA=</HashCode>
+      <FileName>c:\Users\MegaEduX\Downloads\translation-company-master\translation_company\Tradutor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Encomenda">
+    <Position X="14.75" Y="1.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAgAAACCIAgAACAAQAJgAAACAAAEiIAoAAggAAACQAA=</HashCode>
+      <FileName>c:\Users\MegaEduX\Downloads\translation-company-master\translation_company\Encomenda.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DatabaseManager">
+    <Position X="18.5" Y="2" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>oAAAAAAKABCAAAAAAAAAAAAASiCEAgAEAAABAAAACAA=</HashCode>
+      <FileName>c:\Users\MegaEduX\Downloads\translation-company-master\translation_company\DatabaseManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
